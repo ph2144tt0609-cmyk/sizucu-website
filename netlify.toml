@@ -1,0 +1,13 @@
+# Netlify ビルド設定 — 静的サイト（ビルド工程なし）
+#
+# このリポジトリのルートをそのまま公開する。
+# 内部メモ（README.md / CLAUDE_CODE_GUIDE.md / deploy.ps1 など）は
+# .gitignore でリポジトリから除外しているため、Web 上には公開されない。
+
+[build]
+  publish = "."
+
+# 静的 HTML/CSS/JS のみ。ビルドコマンドは不要。
+
+[build.processing]
+  skip_processing = false

@@ -1,0 +1,31 @@
+# OS/環境固有ファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# 過去のバックアップ・作業フォルダ（Git管理不要）
+backup_*/
+Netlifyアップ用/
+files.zip
+
+# Claude Code の作業ファイル
+.claude/
+
+# Netlify ローカル開発用キャッシュ（将来 CLI を使う場合）
+.netlify/
+
+# Node.js（将来必要になった場合のため）
+node_modules/
+package-lock.json
+
+# IDE 設定ファイル
+.vscode/
+.idea/
+
+# 内部ドキュメント（Web 公開したくない・個人情報を含むため除外）
+# ※リポジトリのルートをそのまま公開する設定（netlify.toml）のため、
+#   これらをコミットすると Web 上にも露出してしまう。ローカル専用とする。
+README.md
+CLAUDE_CODE_GUIDE.md
+deploy.ps1

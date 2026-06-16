@@ -1,0 +1,16 @@
+# 全ページ共通：セキュリティ + ブラウザに任せる最適化
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# 画像はブラウザに長期キャッシュさせる（高速化＝Core Web Vitals 改善）
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# robots.txt と sitemap.xml も短めにキャッシュ
+/robots.txt
+  Cache-Control: public, max-age=3600
+/sitemap.xml
+  Cache-Control: public, max-age=3600
