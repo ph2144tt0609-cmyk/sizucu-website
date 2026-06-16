@@ -909,6 +909,55 @@
     }
     .service-desc { font-size: 13.5px; line-height: 2.1; color: var(--ink-sub); letter-spacing: 0.04em; font-weight: 500; }
 
+    /* 検査キットのお知らせ帯（連携強化加算に係る掲示） */
+    .service-notice {
+      margin-top: 56px; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, var(--meishi-blue-mist), var(--white));
+      border: 1px solid var(--line-soft);
+      padding: 48px 56px; display: flex; gap: 36px; align-items: center;
+    }
+    .service-notice::before {
+      content: ''; position: absolute; right: -70px; top: 50%;
+      width: 280px; height: 280px; transform: translateY(-50%);
+      border-radius: 50%; border: 1px solid rgba(61, 78, 94, 0.10);
+      box-shadow: 0 0 0 20px rgba(61, 78, 94, 0.04), 0 0 0 44px rgba(61, 78, 94, 0.022);
+      pointer-events: none;
+    }
+    .service-notice-mark {
+      flex: none; width: 56px; height: 56px; border-radius: 50%;
+      display: grid; place-items: center; color: var(--meishi-navy);
+      background: var(--white); border: 1px solid var(--line-soft);
+    }
+    .service-notice-body { position: relative; z-index: 1; }
+    .service-notice-label {
+      font-family: var(--latin); font-style: italic; font-size: 12px;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--meishi-navy); opacity: 0.55; margin-bottom: 12px;
+    }
+    .service-notice-title {
+      font-family: var(--serif); font-size: 20px; font-weight: 400;
+      color: var(--meishi-navy); letter-spacing: 0.1em; line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .service-notice-text {
+      font-size: 13.5px; line-height: 2.1; color: var(--ink-sub);
+      letter-spacing: 0.04em; font-weight: 500; max-width: 640px;
+    }
+    .service-notice-stores { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .service-notice-store {
+      font-size: 12px; letter-spacing: 0.06em; font-weight: 600;
+      padding: 6px 15px; border-radius: 999px; color: var(--white);
+    }
+    .service-notice-store.is-green { background: var(--c-green); }
+    .service-notice-store.is-orange { background: var(--c-orange); }
+    .service-notice-note {
+      margin-top: 18px; font-size: 11.5px; letter-spacing: 0.04em;
+      color: var(--meishi-navy-soft); opacity: 0.85;
+    }
+    @media (max-width: 760px) {
+      .service-notice { flex-direction: column; align-items: flex-start; padding: 36px 28px; gap: 22px; }
+    }
+
     /* ========== INNOVATION（AI・テクノロジー活用）========== */
     .innovation {
       background: linear-gradient(180deg, var(--meishi-blue-mist) 0%, var(--paper) 100%);
@@ -2076,6 +2125,28 @@
           <div class="service-number">06</div>
           <h3 class="service-title">地域医療連携</h3>
           <p class="service-desc">地域の医療機関、介護施設、行政と連携し、より包括的なヘルスケアをお届けする体制を整えています。</p>
+        </div>
+      </div>
+
+      <div class="service-notice reveal">
+        <div class="service-notice-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" width="26" height="26">
+            <rect x="14" y="5" width="12" height="30" rx="2"/>
+            <path d="M14 13h12"/>
+            <path d="M20 19v9M16 23.5h8"/>
+          </svg>
+        </div>
+        <div class="service-notice-body">
+          <div class="service-notice-label">Test Kits</div>
+          <h3 class="service-notice-title">新型コロナ・インフルエンザ抗原検査キットを販売しています</h3>
+          <p class="service-notice-text">
+            地域の健康危機管理に対応する体制づくりの一環として、両店舗にて新型コロナウイルス／インフルエンザの抗原検査キット（共通の検査キット）を取り扱っています。発熱などで受診前のセルフチェックが必要な際は、お気軽に店頭スタッフへお声がけください。
+          </p>
+          <div class="service-notice-stores">
+            <span class="service-notice-store is-green">緑ヶ丘薬局</span>
+            <span class="service-notice-store is-orange">鷹匠薬局 公園店</span>
+          </div>
+          <p class="service-notice-note">※ 連携強化加算（調剤）の算定要件に基づく、検査キット等の取扱いに関する掲示です。</p>
         </div>
       </div>
     </div>
