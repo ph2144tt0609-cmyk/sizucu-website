@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー（個人情報保護方針） | 株式会社しずく</title>
+  <meta name="description" content="株式会社しずく（緑ヶ丘薬局・鷹匠薬局 公園店）の個人情報保護方針。患者さまの個人情報の利用目的、第三者提供、安全管理、開示請求の窓口について掲載しています。">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#3d4e5e">
+  <link rel="canonical" href="https://sizucu.netlify.app/privacy.html">
+  <link rel="icon" type="image/png" href="images/logo-color.png">
+  <link rel="apple-touch-icon" href="images/logo-color.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --meishi-navy: #3d4e5e; --meishi-navy-soft: #5a6d7d;
+      --meishi-blue: #a8b8c4; --meishi-blue-light: #c2cfd8; --meishi-blue-mist: #e4ebef;
+      --c-green: #8fa83d; --c-orange: #d98f40;
+      --ink: #2a3540; --ink-sub: #5a6b76; --ink-mute: #8a98a2;
+      --paper: #fbfbf8; --line: #dde4e8; --line-soft: #eceff2; --white: #ffffff;
+      --serif: "Noto Serif JP","Yu Mincho","游明朝",serif;
+      --sans: "Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+      --latin: "Cormorant Garamond",serif;
+      --ease: cubic-bezier(0.22,0.61,0.36,1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.9; font-feature-settings: "palt"; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    br.pc-only { display: inline; }
+    @media (max-width: 720px) { br.pc-only { display: none; } }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 32px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(251,251,248,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; font-family: var(--serif); font-weight: 500; font-size: 15px; letter-spacing: 0.16em; color: var(--meishi-navy); }
+    .nav-logo img { width: 24px; height: 33px; }
+    .nav-back { display: inline-flex; align-items: center; gap: 9px; font-family: var(--latin); font-style: italic; font-size: 12px; letter-spacing: 0.22em; color: var(--ink-sub); text-transform: uppercase; transition: color 0.3s var(--ease); }
+    .nav-back:hover { color: var(--meishi-navy); }
+    .nav-back svg { width: 12px; height: 12px; transition: transform 0.3s var(--ease); }
+    .nav-back:hover svg { transform: translateX(-3px); }
+
+    .page-hero { padding: 132px 32px 56px; background: linear-gradient(180deg, var(--meishi-blue-light) 0%, var(--meishi-blue) 100%); text-align: center; }
+    .page-hero h1 { font-family: var(--serif); font-weight: 400; color: var(--meishi-navy); font-size: clamp(24px,4.6vw,38px); letter-spacing: 0.1em; }
+    .page-hero .latin { display: block; font-family: var(--latin); font-style: italic; color: var(--meishi-navy-soft); letter-spacing: 0.2em; margin-top: 8px; font-size: 13px; }
+
+    .doc { max-width: 860px; margin: 0 auto; padding: 60px 32px 30px; }
+    .doc-lead { font-size: 15px; line-height: 2.0; color: var(--ink-sub); margin-bottom: 48px; }
+    .doc-section { margin-bottom: 42px; }
+    .doc-section h2 { font-family: var(--serif); font-weight: 500; font-size: 18px; color: var(--meishi-navy); letter-spacing: 0.08em; padding-bottom: 12px; border-bottom: 1px solid var(--line); margin-bottom: 18px; display: flex; align-items: baseline; gap: 13px; }
+    .doc-section h2 .n { font-family: var(--latin); font-style: italic; font-size: 13px; color: var(--c-green); opacity: 0.85; }
+    .doc-section p { font-size: 15px; line-height: 2.0; color: var(--ink-sub); letter-spacing: 0.02em; margin-bottom: 12px; }
+    .doc-list { list-style: none; }
+    .doc-list li { position: relative; padding-left: 18px; margin-bottom: 9px; font-size: 15px; line-height: 1.95; color: var(--ink-sub); }
+    .doc-list li::before { content: ''; position: absolute; left: 0; top: 13px; width: 6px; height: 6px; border-radius: 50%; background: var(--c-green); }
+    a.inline { color: var(--meishi-navy); border-bottom: 1px solid rgba(61,78,94,0.35); }
+    a.inline:hover { color: var(--c-green); border-bottom-color: var(--c-green); }
+    .doc-info { background: var(--white); border: 1px solid var(--line); border-radius: 2px; padding: 22px 26px; }
+    .doc-info dl { display: grid; grid-template-columns: 130px 1fr; gap: 8px 16px; font-size: 14px; }
+    .doc-info dt { color: var(--meishi-navy); font-weight: 500; }
+    .doc-info dd { color: var(--ink-sub); }
+    .doc-meta { font-size: 12.5px; color: var(--ink-mute); margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line-soft); }
+
+    footer { background: var(--meishi-navy); color: rgba(255,255,255,0.7); padding: 40px 32px; text-align: center; }
+    .foot-links { display: flex; gap: 26px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+    .foot-links a { font-size: 13px; letter-spacing: 0.06em; color: rgba(255,255,255,0.82); transition: color 0.3s var(--ease); }
+    .foot-links a:hover { color: var(--white); }
+    .foot-copy { font-size: 11px; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); }
+    @media (max-width: 720px) { .doc-info dl { grid-template-columns: 1fr; } .doc-info dt { margin-top: 6px; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><img src="images/logo-color.png" alt="しずく"><span>株式会社しずく</span></a>
+    <a href="index.html" class="nav-back"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>Back to Home</a>
+  </nav>
+
+  <header class="page-hero">
+    <h1>プライバシーポリシー<span class="latin">Privacy Policy</span></h1>
+  </header>
+
+  <main class="doc">
+    <p class="doc-lead">株式会社しずく（以下「当社」）は、緑ヶ丘薬局および鷹匠薬局 公園店の運営にあたり、患者さまをはじめお客さまの個人情報を適切に取り扱うことが社会的責務であると考え、以下の方針に基づき個人情報の保護に努めます。</p>
+
+    <section class="doc-section">
+      <h2><span class="n">01</span>基本方針</h2>
+      <p>当社は、個人情報の保護に関する法律および関連法令・ガイドライン（医療・介護関係事業者における個人情報の適切な取扱いのためのガイダンス等）を遵守し、個人情報を適正に取得・利用・管理します。</p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="n">02</span>個人情報の利用目的</h2>
+      <p>当社は、取得した個人情報を以下の目的の範囲内で利用します。</p>
+      <ul class="doc-list">
+        <li>調剤、服薬指導、医薬品の交付および薬学的管理（薬歴管理）のため</li>
+        <li>処方医療機関・関係する医療機関・介護事業者等との連携のため</li>
+        <li>調剤報酬の請求、保険者・審査支払機関とのやり取りのため</li>
+        <li>在宅医療・訪問薬剤管理指導の実施のため</li>
+        <li>お薬手帳の作成・管理、お薬の取り寄せ、お問い合わせへの対応のため</li>
+        <li>医薬品の安全性情報の収集・提供、副作用報告のため</li>
+        <li>採用応募者の選考および採用業務のため</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="n">03</span>個人情報の第三者提供</h2>
+      <p>当社は、次のいずれかに該当する場合を除き、ご本人の同意なく個人情報を第三者に提供しません。</p>
+      <ul class="doc-list">
+        <li>法令に基づく場合</li>
+        <li>人の生命・身体・財産の保護のために必要で、本人の同意取得が困難な場合</li>
+        <li>適切な医療・介護サービス提供のために、他の医療機関・薬局・介護事業者等と連携する場合</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="n">04</span>安全管理措置</h2>
+      <p>当社は、個人情報の漏えい・滅失・き損の防止その他の安全管理のため、組織的・人的・物理的・技術的に必要かつ適切な措置を講じます。従業者に対しても、個人情報の適正な取扱いに関する教育を行います。</p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="n">05</span>開示・訂正・利用停止等のご請求</h2>
+      <p>ご本人から、個人情報の開示・訂正・追加・削除・利用停止等のお申し出があった場合は、ご本人であることを確認のうえ、法令に従い適切に対応いたします。下記の窓口までお問い合わせください。</p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="n">06</span>お問い合わせ窓口</h2>
+      <p>個人情報の取扱いに関するお問い合わせ・ご請求は、ご利用の店舗、または運営会社までお電話にてご連絡ください。</p>
+      <div class="doc-info">
+        <dl>
+          <dt>運営会社</dt><dd>株式会社しずく</dd>
+          <dt>緑ヶ丘薬局</dt><dd><a class="inline" href="tel:0559272311">055-927-2311</a>（沼津市緑ケ丘1-2）</dd>
+          <dt>鷹匠薬局 公園店</dt><dd><a class="inline" href="tel:0542475611">054-247-5611</a>（静岡市葵区東鷹匠町5-1）</dd>
+          <dt>会社概要</dt><dd><a class="inline" href="index.html#company">会社情報を見る</a></dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="n">07</span>本方針の改定</h2>
+      <p>当社は、法令の改正や事業内容の変更等に応じて、本方針を見直し・改定することがあります。改定後の内容は本ページに掲載した時点から適用されます。</p>
+    </section>
+
+    <p class="doc-meta">制定日：2024年10月10日 ／ 最終改定日：2026年6月　株式会社しずく</p>
+  </main>
+
+  <footer>
+    <div class="foot-links">
+      <a href="shisetsu-kijun.html">施設基準等の掲示</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="index.html">トップへ戻る</a>
+    </div>
+    <div class="foot-copy">© 2025 sizucu Co., Ltd. All rights reserved.</div>
+  </footer>
+</body>
+</html>
