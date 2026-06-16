@@ -612,6 +612,17 @@
       color: var(--ink-sub); letter-spacing: 0.06em;
       font-weight: 500;
     }
+    .benefit-desc a.dc-link {
+      color: var(--meishi-navy); text-decoration: none;
+      border-bottom: 1px solid rgba(61, 78, 94, 0.4);
+      padding-bottom: 1px; transition: color 0.3s ease, border-color 0.3s ease;
+    }
+    .benefit-desc a.dc-link:hover { color: var(--c-green); border-bottom-color: var(--c-green); }
+    .dc-link .dc-ext { margin-left: 3px; font-size: 0.8em; opacity: 0.7; vertical-align: 1px; }
+    .benefit-desc .dc-note {
+      display: block; margin-top: 10px; font-size: 12px;
+      color: var(--meishi-navy-soft); letter-spacing: 0.04em; opacity: 0.85;
+    }
     .benefit-desc strong {
       color: var(--meishi-navy);
       font-weight: 500;
@@ -975,8 +986,9 @@
             <h3 class="benefit-title">企業型DC 完備<small>Defined Contribution</small></h3>
           </div>
           <p class="benefit-desc">
-            企業型確定拠出年金（企業型DC）を完備。<br class="pc-only">
-            会社が毎月拠出し、将来の資産形成を会社全体でサポートいたします。
+            <a class="dc-link" href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/kyoshutsu/gaiyou.html" target="_blank" rel="noopener noreferrer" aria-label="企業型確定拠出年金（企業型DC）の制度解説（厚生労働省のサイト・新しいタブで開きます）" title="企業型DCの制度解説（厚生労働省）を新しいタブで開きます">企業型確定拠出年金（企業型DC）<span class="dc-ext" aria-hidden="true">↗</span></a>を完備。<br class="pc-only">
+            会社が毎月拠出し、将来の資産形成を会社全体でサポートいたします。<br class="pc-only">
+            <span class="dc-note">※「企業型DC」がはじめての方へ — 上記リンクから厚生労働省の制度解説をご覧いただけます。</span>
           </p>
         </div>
 
