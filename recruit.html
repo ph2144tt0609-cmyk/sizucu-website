@@ -727,6 +727,30 @@
       .cta { padding: 80px 24px; }
       footer { padding: 32px 24px; }
     }
+
+    /* ===== 手描き風イラスト ===== */
+    .position-illust {
+      margin: 0 0 28px;
+      text-align: center;
+    }
+    .position-illust img {
+      width: 130px; height: auto;
+      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.22));
+    }
+    .benefits-illust {
+      margin: -36px 0 60px;
+      text-align: center;
+    }
+    .benefits-illust img { width: min(225px, 56%); height: auto; }
+    .cta-illust {
+      margin: 0 0 36px;
+      text-align: center;
+    }
+    .cta-illust img { width: min(290px, 72%); height: auto; }
+    @media (max-width: 900px) {
+      .benefits-illust { margin: -12px 0 44px; }
+      .position-illust img { width: 112px; }
+    }
   </style>
 </head>
 <body>
@@ -865,6 +889,7 @@
         <!-- 薬剤師 -->
         <div class="position-card reveal">
           <div class="position-card-tag">Position 01 &mdash; Pharmacist</div>
+          <figure class="position-illust" aria-hidden="true"><img src="images/illust-pharmacist.svg" alt="" width="200" height="252" loading="lazy"></figure>
           <h3>薬剤師募集</h3>
           <p>処方せん調剤・服薬指導を中心に、在宅医療や地域連携にも携わっていただきます。</p>
           <dl>
@@ -894,6 +919,7 @@
         <!-- 事務 -->
         <div class="position-card reveal">
           <div class="position-card-tag">Position 02 &mdash; Clerk</div>
+          <figure class="position-illust" aria-hidden="true"><img src="images/illust-clerk.svg" alt="" width="200" height="252" loading="lazy"></figure>
           <h3>事務スタッフ募集</h3>
           <p>受付・レセプト業務・電話対応・薬局運営のサポートなど、薬局の「入り口」として患者さまを迎える大切なお仕事です。未経験からのスタートも歓迎しています。</p>
           <dl>
@@ -931,6 +957,8 @@
         <div class="section-label">Benefits</div>
         <h2 class="section-title">福利厚生<span class="section-title-small">スタッフとそのご家族の暮らしを守る</span></h2>
       </div>
+
+      <figure class="benefits-illust reveal" aria-hidden="true"><img src="images/illust-family.svg" alt="" width="260" height="236" loading="lazy"></figure>
 
       <div class="benefits-list">
 
@@ -990,6 +1018,17 @@
           </p>
         </div>
 
+        <div class="benefit-row reveal">
+          <div class="benefit-num">06</div>
+          <div class="benefit-title-wrap">
+            <h3 class="benefit-title">残業は1分単位で集計<small>Fair Overtime</small></h3>
+          </div>
+          <p class="benefit-desc">
+            残業時間は<strong>1分単位で集計</strong>し、働いた時間を正当に反映いたします。<br class="pc-only">
+            15分・30分単位での切り捨ては行いません。日々の頑張りをきちんと評価することが、安心して長く働ける職場づくりの基本だと考えています。
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -997,6 +1036,7 @@
   <!-- ========== CTA ========== -->
   <section class="cta">
     <div class="cta-inner">
+      <figure class="cta-illust" aria-hidden="true"><img src="images/illust-team.svg" alt="" width="340" height="232" loading="lazy"></figure>
       <div class="cta-eyebrow">Apply Now</div>
       <h2 class="cta-title">ともに、波紋を広げてくれる方へ。</h2>
       <p class="cta-lead">

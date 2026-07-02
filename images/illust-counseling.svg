@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 262" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- 背景の波紋 -->
+  <circle cx="240" cy="140" r="118" fill="#e4ebef" opacity="0.4"/>
+  <circle cx="240" cy="140" r="136" stroke="#c2cfd8" stroke-width="1.4" opacity="0.5"/>
+
+  <!-- 薬棚（左奥） -->
+  <rect x="34" y="34" width="120" height="120" rx="4" stroke="#c2cfd8" stroke-width="2"/>
+  <path d="M34 74 h120 M34 114 h120" stroke="#c2cfd8" stroke-width="2"/>
+  <!-- 棚の薬瓶たち -->
+  <g stroke="#3d4e5e" stroke-width="1.6">
+    <rect x="46" y="52" width="14" height="20" rx="2" fill="#ffffff"/>
+    <rect x="49" y="47" width="8" height="6" rx="1.5" fill="#8fa83d"/>
+    <rect x="68" y="56" width="16" height="16" rx="2" fill="#e4ebef"/>
+    <rect x="92" y="50" width="13" height="22" rx="2" fill="#ffffff"/>
+    <rect x="95" y="45" width="7" height="6" rx="1.5" fill="#d98f40"/>
+    <rect x="115" y="56" width="18" height="16" rx="3" fill="#c2cfd8" opacity="0.7"/>
+    <rect x="48" y="94" width="16" height="18" rx="2" fill="#ffffff"/>
+    <rect x="51" y="89" width="9" height="6" rx="1.5" fill="#6eb4c7"/>
+    <rect x="74" y="98" width="20" height="14" rx="2" fill="#e4ebef"/>
+    <rect x="102" y="92" width="14" height="20" rx="2" fill="#ffffff"/>
+    <rect x="105" y="87" width="8" height="6" rx="1.5" fill="#8fa83d"/>
+  </g>
+
+  <!-- 薬剤師（カウンターの奥・バストアップ） -->
+  <g>
+    <!-- 体・白衣 -->
+    <path d="M150 176 Q152 138 182 132 Q212 138 214 176 Z" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.4"/>
+    <path d="M170 134 L182 148 L194 134 Z" fill="#8fa83d"/>
+    <path d="M170 136 L182 149 L194 136" stroke="#3d4e5e" stroke-width="2"/>
+    <!-- お薬袋を差し出す腕 -->
+    <path d="M212 148 Q234 148 244 158" stroke="#3d4e5e" stroke-width="2.4"/>
+    <circle cx="248" cy="160" r="6" fill="#f6d7bd" stroke="#3d4e5e" stroke-width="2"/>
+    <!-- 首・頭 -->
+    <rect x="176" y="120" width="12" height="12" rx="4" fill="#f6d7bd"/>
+    <circle cx="182" cy="96" r="30" fill="#f6d7bd" stroke="#3d4e5e" stroke-width="2.4"/>
+    <circle cx="182" cy="60" r="10" fill="#5a6d7d"/>
+    <rect x="176" y="55" width="12" height="4" rx="2" fill="#8fa83d"/>
+    <path d="M152 96 Q151 66 182 64 Q213 66 212 96 Q210 87 202 84 Q194 81 182 81 Q170 81 162 84 Q154 87 152 96 Z" fill="#5a6d7d" stroke="#3d4e5e" stroke-width="2"/>
+    <circle cx="171" cy="98" r="2.4" fill="#3d4e5e"/>
+    <circle cx="193" cy="98" r="2.4" fill="#3d4e5e"/>
+    <ellipse cx="165" cy="106" rx="3.8" ry="2.4" fill="#f3b8a0" opacity="0.65"/>
+    <ellipse cx="199" cy="106" rx="3.8" ry="2.4" fill="#f3b8a0" opacity="0.65"/>
+    <path d="M177 109 Q182 113 187 109" stroke="#3d4e5e" stroke-width="2"/>
+  </g>
+
+  <!-- お薬袋（受け渡し） -->
+  <g>
+    <path d="M244 138 h34 l3 34 h-40 Z" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.2"/>
+    <path d="M252 138 q0 -8 9 -8 q9 0 9 8" stroke="#3d4e5e" stroke-width="2"/>
+    <path d="M258 150 h6 v-0 M261 147 v12 M255 153 h12" stroke="#8fa83d" stroke-width="2.4"/>
+  </g>
+
+  <!-- ハート -->
+  <path d="M240 108 c3 -6 12 -4 12 3 c0 6 -8 10 -12 12 c-4 -2 -12 -6 -12 -12 c0 -7 9 -9 12 -3 Z" fill="#f3b8a0" opacity="0.75"/>
+
+  <!-- カウンター -->
+  <rect x="96" y="176" width="196" height="12" rx="3" fill="#c2cfd8" stroke="#3d4e5e" stroke-width="2.2"/>
+  <rect x="108" y="188" width="172" height="62" rx="2" fill="#e4ebef" stroke="#c2cfd8" stroke-width="2"/>
+  <path d="M124 188 v62 M264 188 v62" stroke="#c2cfd8" stroke-width="1.6"/>
+
+  <!-- 患者（おばあさん） -->
+  <g>
+    <ellipse cx="352" cy="244" rx="9" ry="4.5" fill="#5a6d7d"/>
+    <ellipse cx="376" cy="244" rx="9" ry="4.5" fill="#5a6d7d"/>
+    <!-- 服 -->
+    <path d="M340 158 Q364 148 388 158 L396 234 Q364 242 332 234 Z" fill="#c2cfd8" stroke="#3d4e5e" stroke-width="2.4"/>
+    <!-- カーディガンの前 -->
+    <path d="M364 160 V236" stroke="#a8b8c4" stroke-width="2"/>
+    <circle cx="358" cy="176" r="1.7" fill="#5a6d7d"/>
+    <circle cx="358" cy="192" r="1.7" fill="#5a6d7d"/>
+    <!-- 受け取る両手 -->
+    <path d="M340 166 Q316 168 300 162" stroke="#3d4e5e" stroke-width="2.4"/>
+    <circle cx="296" cy="160" r="6" fill="#f6d7bd" stroke="#3d4e5e" stroke-width="2"/>
+    <!-- 首・頭 -->
+    <rect x="358" y="142" width="12" height="12" rx="4" fill="#f6d7bd"/>
+    <circle cx="364" cy="118" r="28" fill="#f6d7bd" stroke="#3d4e5e" stroke-width="2.4"/>
+    <!-- 白髪のお団子 -->
+    <circle cx="364" cy="86" r="10" fill="#eceff2" stroke="#3d4e5e" stroke-width="1.8"/>
+    <path d="M338 118 Q337 90 364 88 Q391 90 390 118 Q388 109 380 106 Q372 103 364 103 Q356 103 348 106 Q340 109 338 118 Z" fill="#eceff2" stroke="#3d4e5e" stroke-width="2"/>
+    <!-- 表情（にっこり閉じ目） -->
+    <path d="M348 118 q3 3 6 0 M374 118 q3 3 6 0" stroke="#3d4e5e" stroke-width="2"/>
+    <ellipse cx="347" cy="127" rx="3.8" ry="2.4" fill="#f3b8a0" opacity="0.65"/>
+    <ellipse cx="381" cy="127" rx="3.8" ry="2.4" fill="#f3b8a0" opacity="0.65"/>
+    <path d="M359 130 Q364 134 369 130" stroke="#3d4e5e" stroke-width="2"/>
+  </g>
+
+  <!-- 観葉植物（右端） -->
+  <g>
+    <path d="M432 226 h28 l-4 24 h-20 Z" fill="#e4ebef" stroke="#3d4e5e" stroke-width="2"/>
+    <path d="M446 226 V206 M446 214 q-12 -4 -14 -16 q12 2 14 16 Z M446 210 q12 -6 12 -18 q-12 4 -12 18 Z" fill="#8fa83d" stroke="#3d4e5e" stroke-width="1.8"/>
+  </g>
+</svg>

@@ -1845,6 +1845,28 @@
       .nav-logo { font-size: 14px; gap: 10px; letter-spacing: 0.1em; }
       .nav-logo-mark { width: 22px; height: 30px; }
     }
+
+    /* ===== 手描き風イラスト ===== */
+    .about-illust {
+      margin: 44px auto 0;
+      text-align: center;
+    }
+    .about-illust img { width: min(180px, 62%); height: auto; }
+    .section-illust {
+      margin: -44px auto 72px;
+      text-align: center;
+    }
+    .section-illust img { width: min(430px, 84%); height: auto; }
+    .section-illust--small img { width: min(185px, 52%); }
+    .teaser-illust {
+      margin: 4px 0 36px;
+      text-align: center;
+    }
+    .teaser-illust img { width: min(295px, 74%); height: auto; }
+    @media (max-width: 900px) {
+      .about-illust { margin: 8px auto 0; }
+      .section-illust { margin: -16px auto 48px; }
+    }
   </style>
 </head>
 <body>
@@ -1937,6 +1959,7 @@
         <div class="about-kanji reveal">
           水<br>の<br>如<br>く<br>
           <span>Like a drop of water</span>
+          <figure class="about-illust" aria-hidden="true"><img src="images/illust-pharmacist.svg" alt="" width="200" height="252" loading="lazy"></figure>
         </div>
 
         <div class="about-body reveal">
@@ -2132,6 +2155,8 @@
         <h2 class="section-title">サービスのご案内<span class="section-title-small">皆さまの健康を、多面的にお支えします。</span></h2>
       </div>
 
+      <figure class="section-illust reveal" aria-hidden="true"><img src="images/illust-counseling.svg" alt="" width="480" height="262" loading="lazy"></figure>
+
       <div class="services-grid reveal">
         <div class="service-item">
           <div class="service-number">01</div>
@@ -2258,6 +2283,7 @@
           薬剤師・事務スタッフを募集しています。<br class="pc-only">
           採用情報・福利厚生は専用ページにてご案内しています。
         </p>
+        <figure class="teaser-illust" aria-hidden="true"><img src="images/illust-team.svg" alt="" width="340" height="232" loading="lazy"></figure>
         <a href="recruit.html" class="recruit-teaser-btn">
           採用情報を見る
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
@@ -2315,6 +2341,8 @@
         <div class="section-label">Contact</div>
         <h2 class="section-title">お問い合わせ<span class="section-title-small">お気軽にご連絡ください。採用のご応募・業務のご相談も承ります。</span></h2>
       </div>
+
+      <figure class="section-illust section-illust--small reveal" aria-hidden="true"><img src="images/illust-clerk.svg" alt="" width="200" height="252" loading="lazy"></figure>
 
       <div class="contact-grid">
         <div class="contact-stores reveal">

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 236" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- 波紋背景 -->
+  <ellipse cx="130" cy="218" rx="112" ry="10" stroke="#c2cfd8" stroke-width="1.4" opacity="0.6"/>
+  <circle cx="130" cy="118" r="92" fill="#e4ebef" opacity="0.45"/>
+
+  <!-- ===== 母 ===== -->
+  <g>
+    <ellipse cx="86" cy="210" rx="8" ry="4" fill="#5a6d7d"/>
+    <ellipse cx="106" cy="210" rx="8" ry="4" fill="#5a6d7d"/>
+    <!-- ワンピース -->
+    <path d="M74 104 Q96 95 118 104 L128 198 Q96 206 64 198 Z" fill="#c2cfd8" stroke="#3d4e5e" stroke-width="2.2"/>
+    <path d="M80 128 h32" stroke="#a8b8c4" stroke-width="2"/>
+    <!-- 左腕（子の肩へ） -->
+    <path d="M118 112 Q136 122 146 136" stroke="#3d4e5e" stroke-width="2.2"/>
+    <circle cx="149" cy="139" r="5.5" fill="#f6d7bd" stroke="#3d4e5e" stroke-width="1.8"/>
+    <!-- 右腕下ろす -->
+    <path d="M74 112 Q62 124 65 146" stroke="#3d4e5e" stroke-width="2.2"/>
+    <circle cx="66" cy="150" r="5" fill="#f6d7bd" stroke="#3d4e5e" stroke-width="1.8"/>
+    <!-- 首・頭 -->
+    <rect x="91" y="88" width="10" height="10" rx="3" fill="#f6d7bd"/>
+    <circle cx="96" cy="64" r="27" fill="#f6d7bd" stroke="#3d4e5e" stroke-width="2.2"/>
+    <!-- ロングヘア -->
+    <path d="M69 64 Q68 37 96 36 Q124 37 123 64 Q121 55 114 52 Q106 49 96 49 Q86 49 79 52 Q71 55 69 64 Z" fill="#8a6d5c" stroke="#3d4e5e" stroke-width="1.8"/>
+    <path d="M69 64 q-6 20 0 34 q4 3 8 0" fill="#8a6d5c" stroke="#3d4e5e" stroke-width="1.8"/>
+    <path d="M123 64 q6 20 0 34 q-4 3 -8 0" fill="#8a6d5c" stroke="#3d4e5e" stroke-width="1.8"/>
+    <!-- 表情 -->
+    <circle cx="86" cy="66" r="2.2" fill="#3d4e5e"/>
+    <circle cx="106" cy="66" r="2.2" fill="#3d4e5e"/>
+    <ellipse cx="81" cy="74" rx="3.4" ry="2.1" fill="#f3b8a0" opacity="0.65"/>
+    <ellipse cx="111" cy="74" rx="3.4" ry="2.1" fill="#f3b8a0" opacity="0.65"/>
+    <path d="M92 76 Q96 80 100 76" stroke="#3d4e5e" stroke-width="1.8"/>
+  </g>
+
+  <!-- ===== 子ども ===== -->
+  <g>
+    <ellipse cx="156" cy="212" rx="7" ry="3.5" fill="#5a6d7d"/>
+    <ellipse cx="174" cy="212" rx="7" ry="3.5" fill="#5a6d7d"/>
+    <!-- シャツ -->
+    <path d="M148 142 Q165 135 182 142 L188 202 Q165 209 142 202 Z" fill="#b5c979" stroke="#3d4e5e" stroke-width="2.2"/>
+    <!-- 両手でお薬袋を持つ -->
+    <path d="M148 150 Q140 158 146 168 M182 150 Q190 158 184 168" stroke="#3d4e5e" stroke-width="2.2"/>
+    <circle cx="149" cy="170" r="4.5" fill="#f6d7bd" stroke="#3d4e5e" stroke-width="1.8"/>
+    <circle cx="181" cy="170" r="4.5" fill="#f6d7bd" stroke="#3d4e5e" stroke-width="1.8"/>
+    <!-- お薬袋 -->
+    <path d="M151 160 h28 l2 26 h-32 Z" fill="#ffffff" stroke="#3d4e5e" stroke-width="2"/>
+    <path d="M158 160 q0 -6 7 -6 q7 0 7 6" stroke="#3d4e5e" stroke-width="1.8"/>
+    <path d="M165 168 v10 M160 173 h10" stroke="#8fa83d" stroke-width="2.2"/>
+    <!-- 首・頭 -->
+    <rect x="160" y="128" width="10" height="9" rx="3" fill="#f6d7bd"/>
+    <circle cx="165" cy="106" r="24" fill="#f6d7bd" stroke="#3d4e5e" stroke-width="2.2"/>
+    <!-- 髪（男の子・ふんわり） -->
+    <path d="M141 106 Q140 82 165 81 Q190 82 189 106 Q187 97 180 95 Q173 93 165 93 Q157 93 150 95 Q143 97 141 106 Z" fill="#5a6d7d" stroke="#3d4e5e" stroke-width="1.8"/>
+    <path d="M158 82 q2 -6 7 -7" stroke="#3d4e5e" stroke-width="1.8"/>
+    <!-- 表情（にこにこ閉じ目） -->
+    <path d="M153 106 q3 3 6 0 M171 106 q3 3 6 0" stroke="#3d4e5e" stroke-width="2"/>
+    <ellipse cx="152" cy="114" rx="3.2" ry="2" fill="#f3b8a0" opacity="0.65"/>
+    <ellipse cx="178" cy="114" rx="3.2" ry="2" fill="#f3b8a0" opacity="0.65"/>
+    <path d="M160 116 Q165 121 170 116" stroke="#3d4e5e" stroke-width="1.8"/>
+  </g>
+
+  <!-- ハート -->
+  <path d="M206 92 c3 -6 12 -4 12 3 c0 6 -8 10 -12 12 c-4 -2 -12 -6 -12 -12 c0 -7 9 -9 12 -3 Z" fill="#f3b8a0" opacity="0.8"/>
+  <path d="M226 118 c2 -4 8 -3 8 2 c0 4 -5 7 -8 8 c-3 -1 -8 -4 -8 -8 c0 -5 6 -6 8 -2 Z" fill="#f3b8a0" opacity="0.55"/>
+</svg>
