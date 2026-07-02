@@ -264,8 +264,8 @@
     .hero-overlay {
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.35) 0%, transparent 60%),
-        linear-gradient(180deg, rgba(194,207,216,0.72) 0%, rgba(168,184,196,0.80) 100%);
+        radial-gradient(ellipse at 50% 42%, rgba(255,255,255,0.48) 0%, transparent 68%),
+        linear-gradient(180deg, rgba(194,207,216,0.30) 0%, rgba(168,184,196,0.42) 100%);
       z-index: 1;
     }
     @media (prefers-reduced-motion: reduce) {
@@ -1895,7 +1895,7 @@
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="top">
-    <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="images/hero-poster.jpg" aria-hidden="true">
       <source src="gemini_generated_video_692AC141.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay" aria-hidden="true"></div>

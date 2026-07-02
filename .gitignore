@@ -29,3 +29,4 @@ package-lock.json
 README.md
 CLAUDE_CODE_GUIDE.md
 deploy.ps1
+画像生成プロンプト集_*.md
