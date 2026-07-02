@@ -1895,7 +1895,7 @@
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="top">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="images/hero-poster.jpg" aria-hidden="true">
+    <video class="hero-video" muted loop playsinline preload="auto" poster="images/hero-poster.jpg" aria-hidden="true">
       <source src="gemini_generated_video_692AC141.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay" aria-hidden="true"></div>
@@ -2496,6 +2496,15 @@
   </footer>
 
   <script>
+    // ヒーロー動画: 全体をバッファしてから再生開始する（動き出しのカクつき防止）
+    // ポスター画像は動画の第1フレームと同一のため、静止画→再生の切り替えは目に見えない
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const startHeroVideo = () => heroVideo.play().catch(() => {});
+      if (heroVideo.readyState >= 4) startHeroVideo();
+      else heroVideo.addEventListener('canplaythrough', startHeroVideo, { once: true });
+    }
+
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 40) nav.classList.add('scrolled');
