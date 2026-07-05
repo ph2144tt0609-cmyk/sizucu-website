@@ -751,6 +751,45 @@
       .benefits-illust { margin: -12px 0 44px; }
       .position-illust img { width: 112px; }
     }
+
+    /* ===== 実写フォト（Unsplash License・商用可） ===== */
+    .benefits-photo { margin: -24px auto 64px; text-align: center; }
+    .benefits-photo .ph {
+      width: min(560px, 100%); margin: 0 auto;
+      aspect-ratio: 21 / 9;
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 14px 38px rgba(42, 53, 64, 0.16);
+    }
+    .benefits-photo .ph img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 60%;
+      filter: saturate(0.92);
+    }
+    .benefits-photo figcaption {
+      margin-top: 9px;
+      font-size: 10px; letter-spacing: 0.1em;
+      color: var(--ink-mute);
+    }
+    .cta-photo { margin: 0 auto 36px; text-align: center; }
+    .cta-photo .ph {
+      width: min(420px, 92%); margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 16px 42px rgba(42, 53, 64, 0.22);
+    }
+    .cta-photo .ph img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: saturate(0.94);
+    }
+    .cta-photo figcaption {
+      margin-top: 9px;
+      font-size: 10px; letter-spacing: 0.1em;
+      color: var(--meishi-navy-soft);
+    }
+    @media (max-width: 900px) {
+      .benefits-photo { margin: -8px auto 48px; }
+    }
   </style>
 </head>
 <body>
@@ -958,7 +997,10 @@
         <h2 class="section-title">福利厚生<span class="section-title-small">スタッフとそのご家族の暮らしを守る</span></h2>
       </div>
 
-      <figure class="benefits-illust reveal" aria-hidden="true"><img src="images/illust-family.svg" alt="" width="260" height="236" loading="lazy"></figure>
+      <figure class="benefits-photo reveal">
+        <div class="ph"><img src="images/photo-family-beach.jpg" alt="夕暮れの浜辺に集う家族のシルエット（イメージ）" width="1400" height="933" loading="lazy"></div>
+        <figcaption>※写真はイメージです</figcaption>
+      </figure>
 
       <div class="benefits-list">
 
@@ -1036,7 +1078,10 @@
   <!-- ========== CTA ========== -->
   <section class="cta">
     <div class="cta-inner">
-      <figure class="cta-illust" aria-hidden="true"><img src="images/illust-team.svg" alt="" width="340" height="232" loading="lazy"></figure>
+      <figure class="cta-photo">
+        <div class="ph"><img src="images/photo-team-hands.jpg" alt="手を重ね合わせるチーム（イメージ）" width="1200" height="800" loading="lazy"></div>
+        <figcaption>※写真はイメージです</figcaption>
+      </figure>
       <div class="cta-eyebrow">Apply Now</div>
       <h2 class="cta-title">ともに、波紋を広げてくれる方へ。</h2>
       <p class="cta-lead">

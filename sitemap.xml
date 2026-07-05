@@ -5,7 +5,7 @@
   <!-- トップページ -->
   <url>
     <loc>https://sizucu.netlify.app/</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -43,7 +43,7 @@
   <!-- 採用情報 -->
   <url>
     <loc>https://sizucu.netlify.app/recruit.html</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
