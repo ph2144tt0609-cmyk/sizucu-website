@@ -1916,6 +1916,10 @@
       letter-spacing: 0.22em; line-height: 2;
       text-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
     }
+    .photo-band--ripple > img { filter: saturate(0.9) brightness(1.12); }
+    .photo-band--ripple::after {
+      background: linear-gradient(180deg, rgba(20,28,38,0.30), rgba(20,28,38,0.10) 45%, rgba(20,28,38,0.36));
+    }
     .photo-band--fuji > img { object-position: center 62%; filter: saturate(0.98); }
     .photo-band--fuji::after {
       background: linear-gradient(180deg, rgba(20,28,38,0.30), rgba(20,28,38,0.10) 50%, rgba(20,28,38,0.38));
@@ -2106,8 +2110,8 @@
   </section>
 
   <!-- ========== BRAND PHOTO BAND ========== -->
-  <div class="photo-band" role="img" aria-label="両手で一滴の水を受けとめる写真">
-    <img src="images/photo-hands-water.jpg" alt="" width="1600" height="1000" loading="lazy">
+  <div class="photo-band photo-band--ripple" role="img" aria-label="一滴の水が波紋を広げる写真">
+    <img src="images/photo-water-ripple.jpg" alt="" width="1600" height="1000" loading="lazy">
     <div class="photo-band-text">
       <span class="en">Every drop makes ripples.</span>
       <span class="jp">一滴のやさしさが、<br class="sp-only">波紋となって広がる。</span>
@@ -2284,15 +2288,15 @@
       <div class="photo-strip-wrap reveal">
         <div class="photo-strip">
           <figure>
-            <div class="ph"><img src="images/photo-pharmacist.jpg" alt="調剤棚から医薬品を取り出す薬剤師（イメージ）" width="1200" height="800" loading="lazy"></div>
-            <figcaption>確かな調剤<span class="en">Dispensing</span></figcaption>
+            <div class="ph"><img src="images/photo-pharmacy-interior.jpg" alt="明るく清潔な薬局の店内（イメージ）" width="1200" height="801" loading="lazy"></div>
+            <figcaption>明るく入りやすい店内<span class="en">Store</span></figcaption>
           </figure>
           <figure>
             <div class="ph"><img src="images/photo-eucalyptus.jpg" alt="ユーカリの枝を生けた花瓶 — 落ち着いて相談できる空間のイメージ" width="1200" height="800" loading="lazy"></div>
             <figcaption>相談しやすい空間<span class="en">Consultation</span></figcaption>
           </figure>
           <figure>
-            <div class="ph"><img src="images/photo-smartphone.jpg" alt="白衣を着てスマートフォンを操作する手元（イメージ）" width="1200" height="800" loading="lazy"></div>
+            <div class="ph"><img src="images/photo-phone-desk.jpg" alt="デスクの上のスマートフォン — LINE受付・デジタル対応のイメージ" width="1200" height="800" loading="lazy"></div>
             <figcaption>デジタル対応<span class="en">Digital</span></figcaption>
           </figure>
         </div>
@@ -2426,8 +2430,7 @@
           採用情報・福利厚生は専用ページにてご案内しています。
         </p>
         <figure class="teaser-photo">
-          <div class="ph"><img src="images/photo-friends-sunset.jpg" alt="夕日に向かって肩を組む仲間たち（イメージ）" width="1400" height="933" loading="lazy"></div>
-          <figcaption>※写真はイメージです</figcaption>
+          <div class="ph"><img src="images/photo-sakura-sky.jpg" alt="青空と満開の桜" width="1400" height="927" loading="lazy"></div>
         </figure>
         <a href="recruit.html" class="recruit-teaser-btn">
           採用情報を見る
