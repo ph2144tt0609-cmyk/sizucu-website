@@ -1,5 +1,5 @@
 # publish.ps1 - Commit local changes and push to GitHub.
-# Netlify then auto-deploys to https://sizucu.netlify.app within ~30-60s.
+# GitHub Pages then auto-publishes to https://ph2144tt0609-cmyk.github.io/sizucu-website/ within ~1-2min.
 #
 # Usage:
 #   - Double-click "公開.bat", or
@@ -33,5 +33,5 @@ git push
 if ($LASTEXITCODE -ne 0) { Write-Host "Push failed." -ForegroundColor Red; exit 1 }
 
 Write-Host ""
-Write-Host "Done. Netlify is deploying. Live in ~30-60s:" -ForegroundColor Green
-Write-Host "  https://sizucu.netlify.app" -ForegroundColor Green
+Write-Host "Done. GitHub Pages is publishing. Live in ~1-2min:" -ForegroundColor Green
+Write-Host "  https://ph2144tt0609-cmyk.github.io/sizucu-website/" -ForegroundColor Green

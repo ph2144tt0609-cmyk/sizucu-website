@@ -1,5 +1,5 @@
 # 株式会社しずく — クローラー設定
-# https://sizucu.netlify.app/
+# https://ph2144tt0609-cmyk.github.io/sizucu-website/
 
 User-agent: *
 Allow: /
@@ -9,4 +9,4 @@ Disallow: /backup_完成版_2026-05-08/
 Disallow: /Netlifyアップ用/
 
 # サイトマップの場所を Google にお知らせ
-Sitemap: https://sizucu.netlify.app/sitemap.xml
+Sitemap: https://ph2144tt0609-cmyk.github.io/sizucu-website/sitemap.xml

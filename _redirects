@@ -1,24 +1,8 @@
-# 旧URLや単純な短縮URLを正規ページへリダイレクト（301 = 恒久的な移転）
-# Google に「これがホンモノのURLだよ」と伝える役割
+# ホスティングを GitHub Pages へ移行（2026-07-10）
+# このファイルは Netlify のみが解釈する。GitHub Pages では無視される。
+#
+# Netlify のデプロイが再開された時点（クレジットリセット 2026-07-23 以降）で、
+# 旧URL https://sizucu.netlify.app/* へのアクセスをすべて新URLへ 301（恒久移転）転送する。
+# 「!」はファイルが存在しても強制的にリダイレクトする指定。
 
-# 短縮URL：/midorigaoka → 個別ページへ
-/midorigaoka       /midorigaoka.html       301
-/midori            /midorigaoka.html       301
-/numazu            /midorigaoka.html       301
-
-# 鷹匠の短縮URL
-/takajo            /takajo.html            301
-/koen              /takajo.html            301
-/shizuoka          /takajo.html            301
-
-# 採用ページの短縮URL
-/recruit           /recruit.html           301
-/career            /recruit.html           301
-/jobs              /recruit.html           301
-
-# 旧 benefits.html へのアクセスは採用ページの福利厚生セクションへ
-/benefits.html     /recruit.html#benefits  301
-/benefits          /recruit.html#benefits  301
-
-# .html 抜きでもアクセス可能に（SEO的にもクリーンURL対応）
-/index             /                       301
+/* https://ph2144tt0609-cmyk.github.io/sizucu-website/:splat 301!
