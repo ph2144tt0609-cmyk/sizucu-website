@@ -470,6 +470,8 @@
       display: grid; grid-template-columns: repeat(2, 1fr);
       gap: 32px; position: relative; z-index: 2;
     }
+    .position-card--full { grid-column: 1 / -1; }
+    .position-card--full > p { min-height: 0; }
     .position-card {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -915,11 +917,12 @@
     <div class="section-wrap">
       <div class="section-head reveal">
         <div class="section-label">Positions</div>
-        <h2 class="section-title">募集職種<span class="section-title-small">Pharmacist &amp; Clerk</span></h2>
+        <h2 class="section-title">募集職種<span class="section-title-small">Pharmacist / Clerk / Freelance</span></h2>
       </div>
 
       <p class="positions-intro reveal">
         経験者はもちろん、新卒・ブランクのある方も歓迎です。<br class="pc-only">
+        副業やスキマ時間を活用したい薬剤師の方は、業務委託でのご参画もご相談いただけます。<br class="pc-only">
         まずはお気軽にお問い合わせください。
       </p>
 
@@ -981,6 +984,30 @@
             <a href="https://www.hellowork.mhlw.go.jp/" target="_blank" rel="noopener noreferrer" class="position-btn position-btn--outline">
               ハローワーク求人を見る
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M6 3h7v7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 業務委託薬剤師 -->
+        <div class="position-card position-card--full reveal">
+          <div class="position-card-tag">Position 03 &mdash; Freelance Pharmacist</div>
+          <figure class="position-illust" aria-hidden="true"><img src="images/illust-pharmacist.svg" alt="" width="200" height="252" loading="lazy"></figure>
+          <h3>業務委託 薬剤師募集</h3>
+          <p>副業やスキマ時間を活用して働きたい薬剤師の方を、業務委託契約で募集しています。「週1日だけ」「平日の数時間だけ」「本業のかたわらで」など、ライフスタイルに合わせた関わり方を一緒に設計します。まずはお気軽にご相談ください。</p>
+          <dl>
+            <dt>契約形態</dt>
+            <dd>業務委託</dd>
+            <dt>勤務地</dt>
+            <dd>緑ヶ丘薬局（沼津市） / 鷹匠薬局 公園店（静岡市葵区）</dd>
+            <dt>稼働日時</dt>
+            <dd>副業・スキマ時間の活用歓迎 / 日数・時間帯は応相談</dd>
+            <dt>報酬</dt>
+            <dd>経験・稼働内容を考慮のうえ決定 / 応相談</dd>
+          </dl>
+          <div class="position-btn-group">
+            <a href="index.html#contact" class="position-btn">
+              ご相談・お問い合わせ
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
             </a>
           </div>
         </div>

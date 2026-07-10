@@ -1051,6 +1051,30 @@
       text-transform: uppercase;
     }
 
+    /* ========== SUPPORT（薬局さま向け・外注受付）========== */
+    .support {
+      background: var(--paper);
+      position: relative;
+    }
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--line-soft);
+      border: 1px solid var(--line-soft);
+    }
+    .support-btn {
+      display: inline-flex; align-items: center; gap: 12px;
+      margin-top: 24px; padding: 15px 32px;
+      border: 1px solid var(--meishi-navy);
+      color: var(--meishi-navy);
+      font-size: 11.5px; letter-spacing: 0.24em; text-transform: uppercase;
+      font-family: var(--sans); font-weight: 500;
+      transition: all 0.4s var(--ease);
+    }
+    .support-btn:hover { background: var(--meishi-navy); color: var(--white); }
+    .support-btn svg { width: 14px; height: 14px; }
+
     /* ========== RECRUIT TEASER ========== */
     .recruit-teaser {
       background: var(--meishi-navy);
@@ -1667,7 +1691,7 @@
     .reveal.in { opacity: 1; transform: translateY(0); }
 
     /* ========== RESPONSIVE ========== */
-    @media (max-width: 1100px) {
+    @media (max-width: 1280px) {
       .nav-menu { gap: 20px; }
       .nav-menu a { font-size: 11px; }
     }
@@ -1708,7 +1732,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-kanji { position: relative; top: 0; font-size: 56px; }
       .about-body .lead { font-size: 17px; }
-      .services-grid, .benefits-grid, .recruit-cards, .innovation-grid { grid-template-columns: 1fr; }
+      .services-grid, .benefits-grid, .recruit-cards, .innovation-grid, .support-grid { grid-template-columns: 1fr; }
       .company-row { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
       .company-row dt { font-size: 11px; }
       .contact-grid { grid-template-columns: 1fr; gap: 50px; }
@@ -2032,6 +2056,7 @@
       <li><a href="#stores"><span class="nav-latin">Pharmacies</span>運営薬局</a></li>
       <li><a href="#services"><span class="nav-latin">Services</span>サービス</a></li>
       <li><a href="#innovation"><span class="nav-latin">Innovation</span>取り組み</a></li>
+      <li><a href="#support"><span class="nav-latin">Support</span>薬局サポート</a></li>
       <li><a href="recruit.html"><span class="nav-latin">Recruit</span>採用情報</a></li>
       <li><a href="#company"><span class="nav-latin">Company</span>会社概要</a></li>
       <li><a href="#contact"><span class="nav-latin">Contact</span>お問い合わせ</a></li>
@@ -2456,6 +2481,67 @@
     </div>
   </section>
 
+  <!-- ========== SUPPORT（薬局さま向け・外注受付）========== -->
+  <section class="support" id="support">
+    <div class="section-wrap">
+      <div class="section-head reveal">
+        <div class="section-label">For Pharmacies</div>
+        <h2 class="section-title">薬局さま向けサポート<span class="section-title-small">同業薬局さまの「手が回らない」を、外注でお引き受けします。</span></h2>
+      </div>
+
+      <div class="support-grid reveal">
+        <div class="innovation-item">
+          <div class="innovation-item-num">01 — Accounting Support</div>
+          <svg class="innovation-item-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+            <rect x="8" y="5" width="20" height="26" rx="1.5"/>
+            <path d="M12 11h12M12 15h8M12 19h10"/>
+            <circle cx="28" cy="28" r="7"/>
+            <path d="M25.5 25.5l2.5 3 2.5-3M28 28.5v4M25.8 30.5h4.4"/>
+          </svg>
+          <h3 class="innovation-item-title">施設等の経理業務の外注<br>受付中</h3>
+          <p class="innovation-item-body">
+            施設への請求書の発行、患者さまへの領収書の発行、引き落とし金額の管理など、施設調剤にまつわる経理業務の外注をお受けしています。日々の薬局業務で手一杯になりがちな事務作業を、現場を知る私たちがお手伝いします。
+          </p>
+          <span class="innovation-item-tag">Billing &amp; Receipts</span>
+        </div>
+        <div class="innovation-item">
+          <div class="innovation-item-num">02 — Dead Stock</div>
+          <svg class="innovation-item-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+            <rect x="5" y="6" width="13" height="13" rx="1.5"/>
+            <rect x="22" y="21" width="13" height="13" rx="1.5"/>
+            <path d="M24 12h11M31.5 8.5L35 12l-3.5 3.5"/>
+            <path d="M16 28H5M8.5 24.5L5 28l3.5 3.5"/>
+          </svg>
+          <h3 class="innovation-item-title">デッドストック管理の外注<br>受付中</h3>
+          <p class="innovation-item-body">
+            不動在庫（デッドストック）の管理も外注として受付中です。月1回、セカンダーのファイルをご共有いただくだけで、売買等のお手伝いをいたします。棚に眠る在庫の整理と有効活用に、ぜひお役立てください。
+          </p>
+          <span class="innovation-item-tag">Inventory Support</span>
+        </div>
+      </div>
+
+      <div class="service-notice reveal">
+        <div class="service-notice-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" width="26" height="26">
+            <path d="M6 9h28v18H21l-7 6v-6H6z"/>
+            <path d="M12 16h16M12 20h11"/>
+          </svg>
+        </div>
+        <div class="service-notice-body">
+          <div class="service-notice-label">Consultation</div>
+          <h3 class="service-notice-title">「薬局業務で手一杯」という薬局さまへ</h3>
+          <p class="service-notice-text">
+            調剤・服薬指導・在宅対応に追われ、経理や在庫管理までパンクしそう——。そんな薬局さまは、一度ご相談ください。業務の内容・量に応じて、柔軟に対応いたします。
+          </p>
+          <a href="#contact" class="support-btn">
+            外注について相談する
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== RECRUIT TEASER ========== -->
   <section class="recruit-teaser" id="recruit">
     <div class="section-wrap">
@@ -2467,6 +2553,7 @@
         </h2>
         <p class="recruit-teaser-lead">
           薬剤師・事務スタッフを募集しています。<br class="pc-only">
+          業務委託の薬剤師（副業・スキマ時間の活用）も募集中です。<br class="pc-only">
           採用情報・福利厚生は専用ページにてご案内しています。
         </p>
         <figure class="teaser-photo">
@@ -2601,7 +2688,10 @@
               <select name="inquiry-type" id="inquiry-type" required>
                 <option value="">選択してください</option>
                 <option value="採用（薬剤師）">採用について — 薬剤師</option>
+                <option value="採用（業務委託薬剤師）">採用について — 業務委託薬剤師（副業・スキマ時間）</option>
                 <option value="採用（事務）">採用について — 事務スタッフ</option>
+                <option value="外注相談（経理業務）">外注のご相談 — 経理業務（施設請求・領収書・引き落とし管理）</option>
+                <option value="外注相談（デッドストック）">外注のご相談 — デッドストック管理</option>
                 <option value="業務相談">業務のご相談</option>
                 <option value="服薬・健康相談">服薬・健康のご相談</option>
                 <option value="取材・メディア">取材・メディアの方</option>
@@ -2679,6 +2769,7 @@
           <li><a href="#about">ごあいさつ</a></li>
           <li><a href="#stores">運営薬局</a></li>
           <li><a href="#services">サービス</a></li>
+          <li><a href="#support">薬局サポート・外注受付</a></li>
           <li><a href="recruit.html">採用情報</a></li>
           <li><a href="recruit.html#benefits">福利厚生</a></li>
           <li><a href="#company">会社概要</a></li>
