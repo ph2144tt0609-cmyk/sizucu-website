@@ -17,7 +17,7 @@
   <!-- 緑ヶ丘薬局（沼津市） -->
   <url>
     <loc>https://ph2144tt0609-cmyk.github.io/sizucu-website/midorigaoka.html</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -30,7 +30,7 @@
   <!-- 鷹匠薬局 公園店（静岡市葵区） -->
   <url>
     <loc>https://ph2144tt0609-cmyk.github.io/sizucu-website/takajo.html</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -43,6 +43,14 @@
   <!-- 採用情報 -->
   <url>
     <loc>https://ph2144tt0609-cmyk.github.io/sizucu-website/recruit.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 請求業務サポート（法人・施設さま向け） -->
+  <url>
+    <loc>https://ph2144tt0609-cmyk.github.io/sizucu-website/shien.html</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

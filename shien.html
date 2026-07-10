@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>薬局・法人さま向けサポート（請求業務代行・医薬品融通） | 株式会社しずく</title>
+  <meta name="description" content="株式会社しずくが、薬局・法人さまのバックヤード業務を業務委託でお引き受けします。施設への請求書発行・売掛金回収・入金消し込みを代行する「請求業務サポート」（20人規模の施設で月額2万円目安）と、月末在庫と使用量を分析して薬局間でデッドストックを融通し合う「医薬品融通サポート」（月額1万円程度目安・掛け払い/請求書発行代行つき）をご提供します。">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#3d4e5e">
+  <link rel="canonical" href="https://ph2144tt0609-cmyk.github.io/sizucu-website/shien.html">
+  <link rel="icon" type="image/png" href="images/logo-color.png">
+  <link rel="apple-touch-icon" href="images/logo-color.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --meishi-navy: #3d4e5e; --meishi-navy-soft: #5a6d7d;
+      --meishi-blue: #b8c8d4; --meishi-blue-light: #d4dfe7; --meishi-blue-mist: #edf2f5;
+      --c-green: #8fa83d; --c-green-deep: #7a9130; --c-orange: #d98f40;
+      --ink: #2a3540; --ink-sub: #5a6b76; --ink-mute: #8a98a2;
+      --paper: #fbfbf8; --line: #dde4e8; --line-soft: #eceff2; --white: #ffffff;
+      --serif: "Noto Serif JP","Yu Mincho","游明朝",serif;
+      --sans: "Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+      --latin: "Cormorant Garamond",serif;
+      --ease: cubic-bezier(0.22,0.61,0.36,1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.9; font-feature-settings: "palt"; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    br.pc-only { display: inline; }
+    @media (max-width: 720px) { br.pc-only { display: none; } }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 32px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(251,251,248,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; font-family: var(--serif); font-weight: 500; font-size: 15px; letter-spacing: 0.16em; color: var(--meishi-navy); }
+    .nav-logo img { width: 24px; height: 33px; }
+    .nav-back { display: inline-flex; align-items: center; gap: 9px; font-family: var(--latin); font-style: italic; font-size: 12px; letter-spacing: 0.22em; color: var(--ink-sub); text-transform: uppercase; transition: color 0.3s var(--ease); }
+    .nav-back:hover { color: var(--meishi-navy); }
+    .nav-back svg { width: 12px; height: 12px; transition: transform 0.3s var(--ease); }
+    .nav-back:hover svg { transform: translateX(-3px); }
+
+    .page-hero { padding: 132px 32px 60px; background: linear-gradient(180deg, var(--meishi-blue-light) 0%, var(--meishi-blue) 100%); text-align: center; }
+    .page-hero .eyebrow { font-family: var(--latin); font-style: italic; letter-spacing: 0.24em; color: var(--meishi-navy-soft); font-size: 13px; text-transform: uppercase; margin-bottom: 14px; }
+    .page-hero h1 { font-family: var(--serif); font-weight: 400; color: var(--meishi-navy); font-size: clamp(23px,4.4vw,37px); letter-spacing: 0.07em; line-height: 1.5; }
+    .page-hero .sub { display: block; font-size: clamp(13px,2.4vw,15px); color: var(--meishi-navy-soft); letter-spacing: 0.06em; margin-top: 14px; font-family: var(--sans); }
+
+    .doc { max-width: 920px; margin: 0 auto; padding: 60px 32px 30px; }
+    .doc-lead { font-size: 15.5px; line-height: 2.05; color: var(--ink-sub); margin-bottom: 16px; }
+    .doc-lead strong { color: var(--meishi-navy); font-weight: 600; }
+    .doc-target { font-size: 13.5px; color: var(--meishi-navy); background: var(--meishi-blue-mist); padding: 13px 18px; border-radius: 3px; margin-bottom: 50px; letter-spacing: 0.03em; line-height: 1.9; }
+    .doc-target b { font-weight: 700; }
+
+    .doc-section { margin-bottom: 56px; }
+    .doc-section h2 { font-family: var(--serif); font-weight: 500; font-size: 19px; color: var(--meishi-navy); letter-spacing: 0.06em; padding-bottom: 12px; border-bottom: 1px solid var(--line); margin-bottom: 22px; display: flex; align-items: baseline; gap: 13px; }
+    .doc-section h2 .n { font-family: var(--latin); font-style: italic; font-size: 13px; color: var(--c-green); opacity: 0.9; flex: none; }
+    .doc-section > p { font-size: 15px; line-height: 2.0; color: var(--ink-sub); letter-spacing: 0.02em; margin-bottom: 12px; }
+
+    /* --- サービス見出し帯 --- */
+    .svc-band { display: flex; align-items: center; gap: 18px; background: var(--meishi-navy); color: var(--white); border-radius: 6px; padding: 20px 26px; margin: 0 0 36px; scroll-margin-top: 92px; }
+    .svc-band.is-green { background: var(--c-green-deep); }
+    .svc-band + .doc-section { margin-top: 0; }
+    .svc-band .svc-latin { font-family: var(--latin); font-style: italic; font-size: 13px; letter-spacing: 0.22em; color: rgba(255,255,255,0.75); text-transform: uppercase; flex: none; }
+    .svc-band h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(17px,3vw,21px); letter-spacing: 0.06em; margin: 0; }
+    .svc-band .svc-note { margin-left: auto; font-size: 12px; color: rgba(255,255,255,0.7); letter-spacing: 0.04em; text-align: right; }
+    @media (max-width: 720px) { .svc-band { flex-wrap: wrap; gap: 6px 16px; } .svc-band .svc-note { margin-left: 0; width: 100%; text-align: left; } }
+
+    /* --- 課題カード --- */
+    .problem-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .problem { background: var(--white); border: 1px solid var(--line); border-radius: 4px; padding: 20px 22px; display: flex; gap: 14px; align-items: flex-start; }
+    .problem .qmark { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--meishi-blue-mist); color: var(--meishi-navy); font-family: var(--latin); font-style: italic; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+    .problem p { font-size: 14px; line-height: 1.85; color: var(--ink-sub); margin: 3px 0 0; }
+
+    /* --- フロー --- */
+    .flow { position: relative; margin-top: 6px; }
+    .flow::before { content: ''; position: absolute; left: 21px; top: 20px; bottom: 20px; width: 2px; background: linear-gradient(180deg, var(--c-green) 0%, var(--meishi-blue) 100%); }
+    .flow-step { position: relative; display: flex; gap: 22px; padding: 0 0 30px; }
+    .flow-step:last-child { padding-bottom: 0; }
+    .flow-num { position: relative; z-index: 1; flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--meishi-navy); color: var(--white); font-family: var(--latin); font-size: 20px; letter-spacing: 0.02em; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(61,78,94,0.22); }
+    .flow-step:last-child .flow-num { background: var(--c-green-deep); }
+    .flow-body { flex: 1; background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 18px 22px; }
+    .flow-body h3 { font-size: 15.5px; color: var(--meishi-navy); font-weight: 700; letter-spacing: 0.03em; margin-bottom: 7px; }
+    .flow-body p { font-size: 14px; line-height: 1.85; color: var(--ink-sub); margin: 0; }
+    .flow-body .tag { display: inline-block; margin-top: 10px; font-size: 11.5px; letter-spacing: 0.06em; color: var(--c-green-deep); background: rgba(143,168,61,0.12); border-radius: 20px; padding: 4px 12px; }
+
+    /* --- 対応範囲 --- */
+    .scope-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .scope { background: var(--white); border: 1px solid var(--line); border-left: 3px solid var(--c-green); border-radius: 3px; padding: 16px 18px; }
+    .scope h4 { font-size: 14.5px; color: var(--meishi-navy); font-weight: 700; letter-spacing: 0.03em; margin-bottom: 6px; }
+    .scope p { font-size: 12.5px; line-height: 1.75; color: var(--ink-mute); margin: 0; }
+
+    /* --- 料金カード --- */
+    .price { background: var(--meishi-navy); color: var(--white); border-radius: 8px; padding: 34px 34px 30px; text-align: center; }
+    .price .price-label { font-family: var(--latin); font-style: italic; letter-spacing: 0.2em; font-size: 12.5px; color: var(--meishi-blue-light); text-transform: uppercase; margin-bottom: 12px; }
+    .price .price-main { font-size: clamp(20px,3.6vw,26px); font-weight: 500; letter-spacing: 0.04em; line-height: 1.6; }
+    .price .price-main .yen { font-family: var(--serif); font-size: clamp(34px,6vw,48px); color: var(--white); margin: 0 4px; letter-spacing: 0.02em; }
+    .price .price-main .unit { font-size: 15px; color: var(--meishi-blue-light); }
+    .price .price-scope { font-size: 13.5px; color: rgba(255,255,255,0.82); letter-spacing: 0.04em; margin-top: 14px; line-height: 1.85; }
+    .price .price-note { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 18px; line-height: 1.8; }
+
+    /* --- 導入ステップ --- */
+    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; counter-reset: st; }
+    .step { background: var(--white); border: 1px solid var(--line); border-radius: 5px; padding: 20px 16px; text-align: center; position: relative; }
+    .step .st-n { font-family: var(--latin); font-style: italic; font-size: 13px; color: var(--c-green); letter-spacing: 0.14em; margin-bottom: 8px; }
+    .step h4 { font-size: 14px; color: var(--meishi-navy); font-weight: 700; margin-bottom: 6px; letter-spacing: 0.02em; }
+    .step p { font-size: 12px; line-height: 1.7; color: var(--ink-mute); margin: 0; }
+
+    /* --- 安心 --- */
+    .assure-list { list-style: none; }
+    .assure-list li { position: relative; padding-left: 26px; margin-bottom: 11px; font-size: 14.5px; line-height: 1.9; color: var(--ink-sub); }
+    .assure-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 15px; height: 9px; border-left: 2px solid var(--c-green); border-bottom: 2px solid var(--c-green); transform: rotate(-45deg); }
+
+    a.inline { color: var(--meishi-navy); border-bottom: 1px solid rgba(61,78,94,0.35); }
+    a.inline:hover { color: var(--c-green); border-bottom-color: var(--c-green); }
+
+    /* --- CTA --- */
+    .cta { margin-top: 20px; background: linear-gradient(135deg, var(--meishi-blue-mist) 0%, var(--white) 100%); border: 1px solid var(--line); border-radius: 8px; padding: 40px 32px; text-align: center; }
+    .cta h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(19px,3.4vw,24px); color: var(--meishi-navy); letter-spacing: 0.05em; margin-bottom: 12px; border: none; padding: 0; display: block; }
+    .cta p { font-size: 14.5px; color: var(--ink-sub); line-height: 1.9; margin-bottom: 24px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary, .btn-tel { display: inline-flex; align-items: center; gap: 10px; padding: 14px 30px; border-radius: 40px; font-size: 14.5px; letter-spacing: 0.05em; font-weight: 500; transition: all 0.3s var(--ease); }
+    .btn-primary { background: var(--meishi-navy); color: var(--white); }
+    .btn-primary:hover { background: var(--c-green-deep); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(61,78,94,0.22); }
+    .btn-primary svg { width: 15px; height: 15px; }
+    .btn-tel { background: var(--white); color: var(--meishi-navy); border: 1px solid var(--meishi-navy-soft); }
+    .btn-tel:hover { background: var(--meishi-navy); color: var(--white); }
+
+    .doc-meta { font-size: 12.5px; color: var(--ink-mute); margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line-soft); line-height: 1.9; }
+
+    footer { background: var(--meishi-navy); color: rgba(255,255,255,0.7); padding: 40px 32px; text-align: center; }
+    .foot-links { display: flex; gap: 26px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+    .foot-links a { font-size: 13px; letter-spacing: 0.06em; color: rgba(255,255,255,0.82); transition: color 0.3s var(--ease); }
+    .foot-links a:hover { color: var(--white); }
+    .foot-copy { font-size: 11px; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); }
+
+    @media (max-width: 720px) {
+      .nav { padding: 14px 20px; }
+      .doc { padding: 44px 20px 24px; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .scope-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: repeat(2,1fr); }
+      .flow-step { gap: 15px; }
+      .cta-btns { flex-direction: column; }
+      .btn-primary, .btn-tel { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><img src="images/logo-color.png" alt="しずく"><span>株式会社しずく</span></a>
+    <a href="index.html" class="nav-back"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>Back to Home</a>
+  </nav>
+
+  <header class="page-hero">
+    <div class="eyebrow">Business Support</div>
+    <h1>薬局・法人さま向けサポート<span class="sub">施設請求の代行から、薬局間の医薬品融通まで。<br class="pc-only">バックヤードの手間を、しずくが伴走してお引き受けします。</span></h1>
+  </header>
+
+  <main class="doc">
+    <p class="doc-lead">
+      「本業に集中したいのに、請求や在庫のやりくりに追われている」——株式会社しずくは、薬局・法人さまのそうしたバックヤード業務を<strong>業務委託でお引き受け</strong>します。ご提供するのは、施設請求まわりを一気通貫で代行する<strong>「請求業務サポート」</strong>と、地域の薬局間で眠っている在庫を活かし合う<strong>「医薬品融通サポート」</strong>の2つ。いずれも、仕組みづくりから運用の定着まで、共に伴走します。
+    </p>
+    <div class="doc-target">
+      <b>対象</b>：介護施設・医療機関への請求業務を抱える薬局さま／複数施設への請求・回収を効率化したい法人さま／デッドストックの活用や地域の医薬品供給に課題をお持ちの薬局さま　ほか。<br>
+      レセコンの種類（オンプレミス版・クラウド版）は問いません。
+    </div>
+
+    <!-- ============ Service 01 請求業務サポート ============ -->
+    <div class="svc-band" id="service01">
+      <span class="svc-latin">Service 01</span>
+      <h2>請求業務サポート</h2>
+      <span class="svc-note">施設への請求書発行〜売掛金の回収・消し込みを代行</span>
+    </div>
+
+    <!-- 01 課題 -->
+    <section class="doc-section">
+      <h2><span class="n">01</span>こんなお悩みはありませんか</h2>
+      <div class="problem-grid">
+        <div class="problem"><span class="qmark">?</span><p>施設ごとの請求書づくりに、毎月まとまった時間を取られている</p></div>
+        <div class="problem"><span class="qmark">?</span><p>患者・利用者さん単位の請求と、入金の消し込みが煩雑でミスが怖い</p></div>
+        <div class="problem"><span class="qmark">?</span><p>未納・売掛金の管理や督促まで、手が回っていない</p></div>
+        <div class="problem"><span class="qmark">?</span><p>レセコンからのデータ書き出しやクラウド化に、どう進めればいいか不安</p></div>
+      </div>
+    </section>
+
+    <!-- 02 サービスの流れ -->
+    <section class="doc-section">
+      <h2><span class="n">02</span>サービスの流れ</h2>
+      <p>データの書き出しからお金の回収まで、実際の運用はこの流れで進みます。難しい操作は必要ありません。最初の仕組みづくりから一緒に整えます。</p>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-body">
+            <h3>レセコンから請求データを書き出す</h3>
+            <p>お使いのレセコンから、施設の請求データを CSV 形式・テキストファイル形式でダウンロードします。特別なソフトは不要。いつもの画面からの操作です。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-body">
+            <h3>データを保存し、クラウドへアップロード</h3>
+            <p>レセコンがオンプレミス版でもクラウド版でも、書き出したデータを所定のフォルダに保存し、そこからクラウドへアップロードします。この一連の流れは、初期設定から運用の定着まで、担当者さまと一緒に伴走します。</p>
+            <span class="tag">初期設定・運用サポートつき</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-body">
+            <h3>チャットワーク等でしずくへ送信</h3>
+            <p>アップロードしたデータは、チャットワークなどの使い慣れたツールで弊社しずくへお送りいただくだけ。あとの請求業務はこちらで進めます。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-body">
+            <h3>回収の仕組みを一緒に設計する</h3>
+            <p>お預かりしたデータをもとに、地方銀行などの金融機関・リース会社と連携し、回収の仕組み（制度設計）をお客さまと一緒に検討します。施設や患者・利用者さまの実情に合った、無理のない回収の形を組み立てます。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">5</div>
+          <div class="flow-body">
+            <h3>請求書を作成・発行し、請求する</h3>
+            <p>患者・利用者さまごとに請求書を作成・発行し、請求までを行います。請求書づくりも回収と同じタイミングでまとめて対応するため、二度手間がありません。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">6</div>
+          <div class="flow-body">
+            <h3>入金の消し込み・売掛金の管理</h3>
+            <p>入金された金額を突き合わせて消し込み、未納分は売掛金として管理します。「誰が・いくら・未納か」が常に見える状態を保ち、回収の抜け漏れを防ぎます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 対応範囲 -->
+    <section class="doc-section">
+      <h2><span class="n">03</span>ワンストップで対応する業務範囲</h2>
+      <p>請求書づくりだけ、消し込みだけ、といった一部のお引き受けも可能です。まずはお困りの工程からご相談ください。</p>
+      <div class="scope-grid">
+        <div class="scope"><h4>請求書の作成・発行</h4><p>患者・利用者さまごとの請求書を作成し、発行します。</p></div>
+        <div class="scope"><h4>患者・利用者単位の請求</h4><p>施設単位・個人単位いずれの請求にも対応。領収書の発行も承ります。</p></div>
+        <div class="scope"><h4>入金の消し込み</h4><p>入金・引き落とし金額と請求を突き合わせ、正確に消し込みます。</p></div>
+        <div class="scope"><h4>売掛金・未納の管理</h4><p>未回収の状況を可視化し、回収の抜け漏れを防ぎます。</p></div>
+        <div class="scope"><h4>回収スキームの設計</h4><p>金融機関・リース会社と連携し、回収の仕組みを設計します。</p></div>
+        <div class="scope"><h4>データ連携の伴走支援</h4><p>レセコン書き出し〜クラウド連携の初期設定・運用を支援します。</p></div>
+      </div>
+    </section>
+
+    <!-- 04 料金 -->
+    <section class="doc-section">
+      <h2><span class="n">04</span>料金の目安</h2>
+      <div class="price">
+        <div class="price-label">Reference Price</div>
+        <div class="price-main">20人規模の施設につき、月額<span class="yen">2</span>万円<span class="unit">（目安）</span></div>
+        <div class="price-scope">請求書の作成・発行から、請求・入金の消し込みまでを含みます。</div>
+        <div class="price-note">※ 金額はあくまで目安です。施設数・ご利用人数・お引き受けする業務範囲によって変動します。<br>※ 正式なお見積り・税区分・回収スキームの詳細は、面談時に個別にご案内します。</div>
+      </div>
+    </section>
+
+    <!-- ============ Service 02 医薬品融通サポート ============ -->
+    <div class="svc-band is-green" id="service02">
+      <span class="svc-latin">Service 02</span>
+      <h2>医薬品融通サポート</h2>
+      <span class="svc-note">眠っているデッドストックを、地域の薬局間で活かし合う</span>
+    </div>
+
+    <!-- 05 課題 -->
+    <section class="doc-section">
+      <h2><span class="n">05</span>こんなお悩みはありませんか</h2>
+      <p>眠っているデッドストックや、地域での医薬品供給に関して、こんな課題はございませんか。</p>
+      <div class="problem-grid">
+        <div class="problem"><span class="qmark">?</span><p>使う見込みのない医薬品（デッドストック）が棚で眠り、期限切れの廃棄ロスになっている</p></div>
+        <div class="problem"><span class="qmark">?</span><p>急な処方や欠品のとき、近隣で分けてもらえる当てが少ない</p></div>
+        <div class="problem"><span class="qmark">?</span><p>薬局間の融通はしたいが、都度都度のお金の支払い・精算のやり取りが手間</p></div>
+        <div class="problem"><span class="qmark">?</span><p>在庫や使用量のデータ整理、相手の薬局とのやり取りまで手が回らない</p></div>
+      </div>
+    </section>
+
+    <!-- 06 仕組み -->
+    <section class="doc-section">
+      <h2><span class="n">06</span>薬局間で薬を融通し合う仕組み</h2>
+      <p>月末の在庫状況と、当月1ヶ月間の薬の使用量を分析し、任意の薬局間で医薬品を融通し合う仕組みをつくります。どの薬局と組み合わせるかは、お客さまのニーズに合わせて設計します。</p>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-body">
+            <h3>月末在庫と当月使用量のデータをお送りいただく</h3>
+            <p>レセコン等から出力した「月末の在庫状況」と「当月1ヶ月間の使用量」のデータを、チャットワークなどでしずくへお送りいただきます。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-body">
+            <h3>しずくが分析し、融通の組み合わせをご提案</h3>
+            <p>「眠っている在庫」と「必要としている薬局」をデータから突き合わせ、融通の組み合わせをご提案します。薬局同士の組み合わせは、お客さまのニーズに合わせて柔軟に調整します。</p>
+            <span class="tag">組み合わせはニーズに合わせて設計</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-body">
+            <h3>薬局間で医薬品を融通（分譲）</h3>
+            <p>ご提案にもとづき、薬局間で医薬品を融通します。眠っていた在庫が動き出し、廃棄ロスの削減と、地域の医薬品供給の下支えにつながります。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-body">
+            <h3>精算は「掛け払い・月末締め」でまとめて</h3>
+            <p>都度都度のお金の支払いが手間な場合は、掛け払いとし、月末締めでまとめて精算する形にできます。融通のたびに振込や領収のやり取りをする必要はありません。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">5</div>
+          <div class="flow-body">
+            <h3>請求書の発行まで代行</h3>
+            <p>月末締めの請求書発行までしずくが代行します。バックヤードのデータ管理や、薬局間のコミュニケーションの調整も含めてお任せください。</p>
+            <span class="tag">バックヤード業務一式を代行</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 料金 -->
+    <section class="doc-section">
+      <h2><span class="n">07</span>料金の目安</h2>
+      <div class="price">
+        <div class="price-label">Reference Price</div>
+        <div class="price-main">月額<span class="yen">1</span>万円<span class="unit">程度（目安）</span></div>
+        <div class="price-scope">在庫・使用量データの管理、融通の組み合わせのご提案、掛け払いの精算・請求書発行、<br class="pc-only">薬局間コミュニケーションの調整など、バックヤード業務一式を含みます。</div>
+        <div class="price-note">※ 金額はあくまで目安です。参加薬局数・取扱量・お引き受けする業務範囲によって変動します。<br>※ 正式なお見積り・精算条件の詳細は、面談時に個別にご案内します。</div>
+      </div>
+    </section>
+
+    <!-- ============ 共通 ============ -->
+
+    <!-- 08 導入までの流れ -->
+    <section class="doc-section">
+      <h2><span class="n">08</span>ご相談から運用開始まで</h2>
+      <div class="steps">
+        <div class="step"><div class="st-n">STEP 1</div><h4>お問い合わせ</h4><p>フォームまたはお電話でご連絡ください。</p></div>
+        <div class="step"><div class="st-n">STEP 2</div><h4>ヒアリング面談</h4><p>現状の請求・回収の課題を伺います。</p></div>
+        <div class="step"><div class="st-n">STEP 3</div><h4>設計・初期設定</h4><p>回収の仕組みとデータ連携を整えます。</p></div>
+        <div class="step"><div class="st-n">STEP 4</div><h4>運用開始</h4><p>毎月の請求〜回収を伴走支援します。</p></div>
+      </div>
+    </section>
+
+    <!-- 09 安心 -->
+    <section class="doc-section">
+      <h2><span class="n">09</span>安心してお任せいただくために</h2>
+      <ul class="assure-list">
+        <li>薬局運営の現場を知る事業者として、請求・在庫の実務に即したサポートを行います。</li>
+        <li>お預かりする患者・利用者さまの情報は、業務に必要な範囲で適切に管理します。取扱いの詳細は<a class="inline" href="privacy.html">プライバシーポリシー</a>をご覧ください。</li>
+        <li>回収の仕組みは、施設・患者・利用者さまの実情に合わせて、無理のない形を一緒に設計します。</li>
+        <li>医薬品の融通は、品質・使用期限・保管状況を確認のうえ、薬局間の合意にもとづいて行います。</li>
+        <li>ご契約内容・料金・お引き受けする業務範囲は、面談で丁寧にすり合わせたうえで決定します。</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta">
+      <h2>まずは、お気軽にご相談ください</h2>
+      <p>請求・回収・在庫のどこにお困りかを伺うところから始めます。共に伴走いたしますので、一度ご相談ください。<br class="pc-only">詳細は面談時に個別にご案内します。</p>
+      <div class="cta-btns">
+        <a href="index.html#contact" class="btn-primary">
+          お問い合わせフォームへ
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="tel:0559272311" class="btn-tel">お電話：055-927-2311</a>
+      </div>
+    </div>
+
+    <p class="doc-meta">本ページに記載の料金・業務範囲は目安であり、実際の内容は面談のうえ個別に決定します。<br>株式会社しずく（緑ヶ丘薬局・鷹匠薬局 公園店 運営）</p>
+  </main>
+
+  <footer>
+    <div class="foot-links">
+      <a href="index.html">トップへ戻る</a>
+      <a href="shisetsu-kijun.html">施設基準等の掲示</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="index.html#contact">お問い合わせ</a>
+    </div>
+    <div class="foot-copy">© 2025 sizucu Co., Ltd. All rights reserved.</div>
+  </footer>
+</body>
+</html>

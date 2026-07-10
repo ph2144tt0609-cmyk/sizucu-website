@@ -119,9 +119,9 @@
   <style>
     :root {
       /* 名刺から忠実抽出 */
-      --meishi-blue: #a8b8c4;
-      --meishi-blue-light: #c2cfd8;
-      --meishi-blue-mist: #e4ebef;
+      --meishi-blue: #b8c8d4;
+      --meishi-blue-light: #d4dfe7;
+      --meishi-blue-mist: #edf2f5;
       --meishi-navy: #3d4e5e;
       --meishi-navy-soft: #5a6d7d;
       --meishi-ink: #6a7d8a;
@@ -264,8 +264,8 @@
     .hero-overlay {
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse at 50% 42%, rgba(255,255,255,0.48) 0%, transparent 68%),
-        linear-gradient(180deg, rgba(194,207,216,0.30) 0%, rgba(168,184,196,0.42) 100%);
+        radial-gradient(ellipse at 50% 42%, rgba(255,255,255,0.56) 0%, transparent 70%),
+        linear-gradient(180deg, rgba(219,229,236,0.32) 0%, rgba(190,205,216,0.38) 100%);
       z-index: 1;
     }
     @media (prefers-reduced-motion: reduce) {
@@ -1074,6 +1074,15 @@
     }
     .support-btn:hover { background: var(--meishi-navy); color: var(--white); }
     .support-btn svg { width: 14px; height: 14px; }
+    .support-more {
+      display: flex; width: fit-content; align-items: center; gap: 7px;
+      margin-top: 16px; padding-bottom: 2px;
+      font-size: 12.5px; letter-spacing: 0.06em; font-weight: 500;
+      color: var(--meishi-navy); border-bottom: 1px solid rgba(61,78,94,0.35);
+      transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+    }
+    .support-more:hover { color: var(--c-green-deep, #7a9130); border-bottom-color: currentColor; }
+    .support-more svg { width: 12px; height: 12px; }
 
     /* ========== RECRUIT TEASER ========== */
     .recruit-teaser {
@@ -2503,6 +2512,7 @@
             施設への請求書の発行、患者さまへの領収書の発行、引き落とし金額の管理など、施設調剤にまつわる経理業務の外注をお受けしています。日々の薬局業務で手一杯になりがちな事務作業を、現場を知る私たちがお手伝いします。
           </p>
           <span class="innovation-item-tag">Billing &amp; Receipts</span>
+          <a href="shien.html#service01" class="support-more">サービスの流れ・料金の目安を見る<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
         <div class="innovation-item">
           <div class="innovation-item-num">02 — Dead Stock</div>
@@ -2514,9 +2524,10 @@
           </svg>
           <h3 class="innovation-item-title">デッドストック管理の外注<br>受付中</h3>
           <p class="innovation-item-body">
-            不動在庫（デッドストック）の管理も外注として受付中です。月1回、セカンダーのファイルをご共有いただくだけで、売買等のお手伝いをいたします。棚に眠る在庫の整理と有効活用に、ぜひお役立てください。
+            不動在庫（デッドストック）の管理も外注として受付中です。月1回、セカンダーのファイルをご共有いただくだけで、売買等のお手伝いをいたします。月末在庫と使用量のデータから、薬局間で薬を融通し合う仕組みづくりまで伴走します。
           </p>
           <span class="innovation-item-tag">Inventory Support</span>
+          <a href="shien.html#service02" class="support-more">融通の仕組み・料金の目安を見る<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
 
@@ -2533,10 +2544,16 @@
           <p class="service-notice-text">
             調剤・服薬指導・在宅対応に追われ、経理や在庫管理までパンクしそう——。そんな薬局さまは、一度ご相談ください。業務の内容・量に応じて、柔軟に対応いたします。
           </p>
-          <a href="#contact" class="support-btn">
-            外注について相談する
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;">
+            <a href="#contact" class="support-btn">
+              外注について相談する
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+            <a href="shien.html" class="support-btn">
+              サービス詳細・料金の目安
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -2690,8 +2707,8 @@
                 <option value="採用（薬剤師）">採用について — 薬剤師</option>
                 <option value="採用（業務委託薬剤師）">採用について — 業務委託薬剤師（副業・スキマ時間）</option>
                 <option value="採用（事務）">採用について — 事務スタッフ</option>
-                <option value="外注相談（経理業務）">外注のご相談 — 経理業務（施設請求・領収書・引き落とし管理）</option>
-                <option value="外注相談（デッドストック）">外注のご相談 — デッドストック管理</option>
+                <option value="外注相談（請求業務・経理）">外注のご相談 — 請求業務・経理（施設請求・領収書・引き落とし管理）</option>
+                <option value="外注相談（デッドストック・医薬品融通）">外注のご相談 — デッドストック管理・医薬品融通</option>
                 <option value="業務相談">業務のご相談</option>
                 <option value="服薬・健康相談">服薬・健康のご相談</option>
                 <option value="取材・メディア">取材・メディアの方</option>
@@ -2774,6 +2791,7 @@
           <li><a href="recruit.html#benefits">福利厚生</a></li>
           <li><a href="#company">会社概要</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
+          <li><a href="shien.html">薬局・法人さま向けサポート（請求・医薬品融通）</a></li>
           <li><a href="shisetsu-kijun.html">施設基準等の掲示</a></li>
           <li><a href="privacy.html">プライバシーポリシー</a></li>
         </ul>
