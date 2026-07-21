@@ -1,5 +1,5 @@
 # publish.ps1 - Commit local changes and push to GitHub.
-# GitHub Pages then auto-publishes to https://ph2144tt0609-cmyk.github.io/sizucu-website/ within ~1-2min.
+# GitHub Pages then auto-publishes to https://www.sizucu.co.jp/ within ~1-2min.
 #
 # Usage:
 #   - Double-click "公開.bat", or
@@ -34,4 +34,4 @@ if ($LASTEXITCODE -ne 0) { Write-Host "Push failed." -ForegroundColor Red; exit 
 
 Write-Host ""
 Write-Host "Done. GitHub Pages is publishing. Live in ~1-2min:" -ForegroundColor Green
-Write-Host "  https://ph2144tt0609-cmyk.github.io/sizucu-website/" -ForegroundColor Green
+Write-Host "  https://www.sizucu.co.jp/" -ForegroundColor Green

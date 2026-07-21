@@ -4,24 +4,24 @@
 
   <!-- トップページ -->
   <url>
-    <loc>https://ph2144tt0609-cmyk.github.io/sizucu-website/</loc>
+    <loc>https://www.sizucu.co.jp/</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://ph2144tt0609-cmyk.github.io/sizucu-website/images/logo-color.png</image:loc>
+      <image:loc>https://www.sizucu.co.jp/images/logo-color.png</image:loc>
       <image:title>株式会社しずく ロゴ</image:title>
     </image:image>
   </url>
 
   <!-- 緑ヶ丘薬局（沼津市） -->
   <url>
-    <loc>https://ph2144tt0609-cmyk.github.io/sizucu-website/midorigaoka.html</loc>
+    <loc>https://www.sizucu.co.jp/midorigaoka.html</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://ph2144tt0609-cmyk.github.io/sizucu-website/images/midorigaoka.jpg</image:loc>
+      <image:loc>https://www.sizucu.co.jp/images/midorigaoka.jpg</image:loc>
       <image:title>緑ヶ丘薬局の外観</image:title>
       <image:caption>沼津市緑ケ丘1-2の調剤薬局</image:caption>
     </image:image>
@@ -29,12 +29,12 @@
 
   <!-- 鷹匠薬局 公園店（静岡市葵区） -->
   <url>
-    <loc>https://ph2144tt0609-cmyk.github.io/sizucu-website/takajo.html</loc>
+    <loc>https://www.sizucu.co.jp/takajo.html</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://ph2144tt0609-cmyk.github.io/sizucu-website/images/takajo.jpg</image:loc>
+      <image:loc>https://www.sizucu.co.jp/images/takajo.jpg</image:loc>
       <image:title>鷹匠薬局 公園店の外観</image:title>
       <image:caption>静岡市葵区東鷹匠町5-1の調剤薬局</image:caption>
     </image:image>
@@ -42,7 +42,7 @@
 
   <!-- 採用情報 -->
   <url>
-    <loc>https://ph2144tt0609-cmyk.github.io/sizucu-website/recruit.html</loc>
+    <loc>https://www.sizucu.co.jp/recruit.html</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -50,7 +50,7 @@
 
   <!-- 請求業務サポート（法人・施設さま向け） -->
   <url>
-    <loc>https://ph2144tt0609-cmyk.github.io/sizucu-website/shien.html</loc>
+    <loc>https://www.sizucu.co.jp/shien.html</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
