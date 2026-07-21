@@ -116,6 +116,64 @@
     "inLanguage": "ja-JP"
   }
   </script>
+
+  <!-- ========== Schema.org: 患者さま向けFAQ ========== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "どこの病院・クリニックの処方せんでも利用できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。全国どちらの医療機関で発行された処方せんでも受け付けています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "処方せんの有効期限はいつまでですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "原則として、発行日を含めて4日以内です。土曜日・日曜日・祝日も日数に含まれます。ただし、処方せんに別の使用期間が記載されている場合は、その日まで有効です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "在庫がない薬も取り寄せできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。店頭に在庫がない場合も、可能な限りお取り寄せします。在庫や流通状況によってはお時間をいただくことがあります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "駐車場はありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。緑ヶ丘薬局、鷹匠薬局 公園店ともに駐車場があります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "クレジットカードや電子決済は使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "現在、クレジットカード・電子決済の導入準備を進めています。現在利用できるお支払い方法は店舗へお問い合わせください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "在宅訪問や健康相談はお願いできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。薬剤師による在宅訪問のほか、お薬や日々の健康に関するご相談も承っています。"
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       /* 名刺から忠実抽出 */
@@ -163,6 +221,14 @@
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
     ::selection { background: var(--meishi-navy); color: var(--white); }
+    :focus-visible { outline: 3px solid var(--c-sky); outline-offset: 4px; }
+    .skip-link {
+      position: fixed; top: 10px; left: 10px; z-index: 1000;
+      padding: 10px 16px; background: var(--meishi-navy); color: var(--white);
+      font-size: 13px; font-weight: 600; transform: translateY(-160%);
+      transition: transform 0.2s ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
 
     /* ========== レスポンシブ改行制御 ========== */
     /* PC で表示されてスマホで消える改行（スマホでは自然な折り返しに） */
@@ -274,6 +340,9 @@
         radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.45) 0%, transparent 60%),
         linear-gradient(180deg, var(--meishi-blue-light) 0%, var(--meishi-blue) 100%);
       }
+      html { scroll-behavior: auto; }
+      .hero-mark, .hero-scroll::after { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
     }
     /* ヒーロー中央のロゴ：シンプルな呼吸アニメーション */
     .hero-mark {
@@ -414,10 +483,47 @@
     }
     .hero-lead {
       font-size: 15px; line-height: 2.3;
-      color: var(--meishi-navy); max-width: 560px; margin: 0 auto 64px;
+      color: var(--meishi-navy); max-width: 650px; margin: 0 auto 30px;
       letter-spacing: 0.06em;
       opacity: 1;
       font-weight: 500;
+    }
+    .hero-actions {
+      display: grid; grid-template-columns: repeat(2, minmax(230px, 1fr));
+      gap: 12px; width: min(620px, 100%); margin: 0 auto 20px;
+    }
+    .hero-store-action {
+      display: grid; grid-template-columns: 1fr auto; align-items: center;
+      gap: 4px 18px; padding: 17px 20px;
+      background: rgba(255, 255, 255, 0.92); color: var(--meishi-navy);
+      border: 1px solid rgba(61, 78, 94, 0.18);
+      box-shadow: 0 12px 30px rgba(61, 78, 94, 0.12);
+      text-align: left; transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+    }
+    .hero-store-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(61, 78, 94, 0.18);
+    }
+    .hero-store-action.green { border-top: 4px solid var(--c-green); }
+    .hero-store-action.orange { border-top: 4px solid var(--c-orange); }
+    .hero-store-place {
+      display: block; font-size: 10px; letter-spacing: 0.18em;
+      color: var(--ink-mute); font-weight: 500;
+    }
+    .hero-store-name {
+      display: block; font-family: var(--serif); font-size: 17px;
+      letter-spacing: 0.08em; font-weight: 500;
+    }
+    .hero-store-go {
+      grid-row: 1 / 3; grid-column: 2;
+      font-family: var(--latin); font-style: italic; font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+    .hero-faq-link {
+      display: inline-block; margin: 0 auto 42px;
+      padding-bottom: 3px; border-bottom: 1px solid rgba(61, 78, 94, 0.4);
+      color: var(--meishi-navy); font-size: 12px; letter-spacing: 0.12em;
+      font-weight: 600;
     }
     .hero-meta {
       display: flex; gap: 56px; justify-content: center;
@@ -889,6 +995,59 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     }
     .footer-col a.footer-tel:hover { border-bottom-color: rgba(255, 255, 255, 0.7); }
+
+    /* ========== FAQ（患者さま向け） ========== */
+    .faq { background: var(--white); }
+    .faq .section-wrap { max-width: 1000px; }
+    .faq-intro {
+      max-width: 720px; margin: -54px auto 58px; text-align: center;
+      color: var(--ink-sub); font-size: 14.5px; line-height: 2;
+      letter-spacing: 0.05em;
+    }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-question {
+      display: grid; grid-template-columns: 42px 1fr 28px;
+      gap: 16px; align-items: center; width: 100%;
+      padding: 27px 8px; cursor: pointer; list-style: none;
+      color: var(--meishi-navy); font-family: var(--serif);
+      font-size: 17px; line-height: 1.7; letter-spacing: 0.05em;
+    }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-question::before {
+      content: 'Q'; font-family: var(--latin); font-style: italic;
+      font-size: 25px; color: var(--c-sky); text-align: center;
+    }
+    .faq-question::after {
+      content: '+'; font-family: var(--sans); font-size: 24px;
+      font-weight: 300; text-align: center; transition: transform 0.2s ease;
+    }
+    .faq-item[open] .faq-question::after { transform: rotate(45deg); }
+    .faq-answer {
+      display: grid; grid-template-columns: 42px 1fr;
+      gap: 16px; padding: 0 52px 28px 8px;
+      color: var(--ink-sub); font-size: 14.5px; line-height: 2;
+    }
+    .faq-answer::before {
+      content: 'A'; font-family: var(--latin); font-style: italic;
+      font-size: 23px; color: var(--c-orange); text-align: center;
+    }
+    .faq-answer a {
+      color: var(--meishi-navy); border-bottom: 1px solid rgba(61, 78, 94, 0.35);
+    }
+    .faq-contact {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+      margin-top: 48px;
+    }
+    .faq-contact a {
+      padding: 20px; color: var(--white); text-align: center;
+      font-size: 13px; letter-spacing: 0.08em; font-weight: 600;
+    }
+    .faq-contact .green { background: var(--c-green); }
+    .faq-contact .orange { background: var(--c-orange); }
+
+    /* ========== スマートフォン用・患者さま固定メニュー ========== */
+    .patient-dock { display: none; }
 
     /* ========== SERVICES ========== */
     .services { background: var(--paper); }
@@ -1526,6 +1685,7 @@
       background: var(--ink);
       letter-spacing: 0.36em;
     }
+    .form-submit:disabled { opacity: 0.65; cursor: wait; letter-spacing: 0.32em; }
     .form-submit svg { width: 12px; height: 12px; transition: transform 0.4s var(--ease); }
     .form-submit:hover svg { transform: translateX(6px); }
     .form-note {
@@ -1746,6 +1906,7 @@
       .company-row dt { font-size: 11px; }
       .contact-grid { grid-template-columns: 1fr; gap: 50px; }
       .form-row { grid-template-columns: 1fr; }
+      .faq-intro { margin-top: -34px; }
       footer { padding: 60px 24px 24px; }
       .footer-wrap { grid-template-columns: 1fr; gap: 40px; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
@@ -1767,6 +1928,9 @@
       .hero-eyebrow { font-size: 12px; gap: 10px; letter-spacing: 0.24em; }
       .hero-eyebrow::before, .hero-eyebrow::after { width: 24px; }
       .hero-divider { margin-bottom: 24px; }
+      .hero-actions { grid-template-columns: 1fr; gap: 10px; }
+      .hero-store-action { padding: 15px 17px; }
+      .hero-faq-link { margin-bottom: 34px; }
 
       /* メタ情報を縦積みではなく横並びキープ（コンパクト） */
       .hero-meta {
@@ -1814,7 +1978,7 @@
       .store-details-label { font-size: 10px; letter-spacing: 0.18em; }
       .store-details-value strong { letter-spacing: 0.04em; }
       .store-links { gap: 8px; flex-direction: column; }
-      .store-link {
+      .store-link, .store-call {
         justify-content: center;
         padding: 13px 18px;
         font-size: 11px; letter-spacing: 0.16em;
@@ -1828,6 +1992,21 @@
         gap: 10px; font-size: 13.5px; line-height: 1.8;
       }
       .stores-notice-num { font-size: 15px; }
+
+      /* 患者さま向けFAQ */
+      .faq-intro { margin: -22px auto 38px; text-align: left; font-size: 13.5px; }
+      .faq-question {
+        grid-template-columns: 30px 1fr 22px; gap: 9px;
+        padding: 21px 0; font-size: 15px;
+      }
+      .faq-question::before { font-size: 21px; }
+      .faq-question::after { font-size: 20px; }
+      .faq-answer {
+        grid-template-columns: 30px 1fr; gap: 9px;
+        padding: 0 28px 24px 0; font-size: 13.5px;
+      }
+      .faq-answer::before { font-size: 20px; }
+      .faq-contact { grid-template-columns: 1fr; margin-top: 34px; }
 
       /* サービス・福利厚生・採用カード */
       .section-wrap { padding: 70px 20px; }
@@ -1877,6 +2056,35 @@
       .section-title { font-size: 22px; }
       .nav-logo { font-size: 14px; gap: 10px; letter-spacing: 0.1em; }
       .nav-logo-mark { width: 22px; height: 30px; }
+    }
+
+    @media (max-width: 720px) {
+      body { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
+      .patient-dock {
+        display: grid; grid-template-columns: 1fr 1fr 0.92fr;
+        position: fixed; left: 0; right: 0; bottom: 0; z-index: 200;
+        padding-bottom: env(safe-area-inset-bottom);
+        background: rgba(255, 255, 255, 0.98);
+        border-top: 1px solid var(--line);
+        box-shadow: 0 -8px 24px rgba(42, 53, 64, 0.12);
+      }
+      .patient-dock a {
+        min-height: 68px; padding: 9px 5px;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        border-right: 1px solid var(--line-soft);
+        color: var(--meishi-navy); text-align: center;
+      }
+      .patient-dock a:last-child { border-right: 0; }
+      .patient-dock small {
+        display: block; font-size: 9px; line-height: 1.25;
+        letter-spacing: 0.04em; color: var(--ink-mute);
+      }
+      .patient-dock strong {
+        display: block; margin-top: 3px; font-size: 12px; line-height: 1.25;
+        letter-spacing: 0.04em;
+      }
+      .patient-dock .green strong { color: var(--c-green); }
+      .patient-dock .orange strong { color: var(--c-orange); }
     }
 
     /* ===== イラスト＆フォトを「しずくの波紋」で一つの表情に統一 ===== */
@@ -2048,9 +2256,15 @@
       font-size: 10px; letter-spacing: 0.1em;
       color: var(--ink-mute);
     }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-mark, .hero-scroll::after { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
   </style>
 </head>
 <body>
+
+  <a class="skip-link" href="#main-content">本文へ移動</a>
 
   
 
@@ -2063,21 +2277,21 @@
     <ul class="nav-menu" id="navMenu">
       <li><a href="#about"><span class="nav-latin">About</span>ごあいさつ</a></li>
       <li><a href="#stores"><span class="nav-latin">Pharmacies</span>運営薬局</a></li>
+      <li><a href="#faq"><span class="nav-latin">FAQ</span>よくある質問</a></li>
       <li><a href="#services"><span class="nav-latin">Services</span>サービス</a></li>
-      <li><a href="#innovation"><span class="nav-latin">Innovation</span>取り組み</a></li>
       <li><a href="#support"><span class="nav-latin">Support</span>薬局サポート</a></li>
       <li><a href="recruit.html"><span class="nav-latin">Recruit</span>採用情報</a></li>
       <li><a href="#company"><span class="nav-latin">Company</span>会社概要</a></li>
       <li><a href="#contact"><span class="nav-latin">Contact</span>お問い合わせ</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="menu">
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="メニューを開く" aria-controls="navMenu" aria-expanded="false">
       <span></span><span></span>
     </button>
   </nav>
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="top">
-    <video class="hero-video" muted loop playsinline preload="auto" poster="images/hero-poster.jpg" aria-hidden="true">
+    <video class="hero-video" muted loop playsinline preload="metadata" poster="images/hero-poster.jpg" aria-hidden="true">
       <source src="hero-loop.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay" aria-hidden="true"></div>
@@ -2098,18 +2312,30 @@
 
     <div class="hero-text">
       <img src="images/logo-color.png" alt="株式会社しずく — 一滴のやさしさが、波紋となって広がる" class="hero-mark" width="200" height="280">
-      <div class="hero-eyebrow">sizucu Co., Ltd.</div>
+      <div class="hero-eyebrow">静岡県の地域密着型調剤薬局</div>
       <h1 class="hero-title">
         一滴の<em>やさしさ</em>が、<br>
         波紋となって広がる。
       </h1>
       <div class="hero-divider" aria-hidden="true"></div>
       <p class="hero-lead">
-        株式会社しずくは、静岡の地で薬局を運営しています。<br class="pc-only">
-        一人ひとりに向き合う良い仕事が、<br class="pc-only">
-        やがて良い関係となり、良い未来へとつながっていく。<br class="pc-only">
-        そんな波紋の連鎖を、地域のなかで重ねてまいります。
+        緑ヶ丘薬局（沼津市）と鷹匠薬局 公園店（静岡市葵区）では、<br class="pc-only">
+        どちらの医療機関の処方せんも受け付けています。<br class="pc-only">
+        お薬の取り寄せ、在宅訪問、健康相談もお気軽にご相談ください。
       </p>
+      <div class="hero-actions" aria-label="利用する薬局を選ぶ">
+        <a href="midorigaoka.html" class="hero-store-action green">
+          <span class="hero-store-place">沼津市緑ケ丘</span>
+          <strong class="hero-store-name">緑ヶ丘薬局</strong>
+          <span class="hero-store-go" aria-hidden="true">View →</span>
+        </a>
+        <a href="takajo.html" class="hero-store-action orange">
+          <span class="hero-store-place">静岡市葵区</span>
+          <strong class="hero-store-name">鷹匠薬局 公園店</strong>
+          <span class="hero-store-go" aria-hidden="true">View →</span>
+        </a>
+      </div>
+      <a class="hero-faq-link" href="#faq">患者さま向け・よくあるご質問</a>
       <div class="hero-meta">
         <div class="hero-meta-item">
           <span class="hero-meta-label">Pharmacies</span>
@@ -2128,6 +2354,8 @@
 
     <div class="hero-scroll"><span>SCROLL DOWN</span></div>
   </section>
+
+  <main id="main-content">
 
   <!-- ========== ABOUT ========== -->
   <section class="about" id="about">
@@ -2212,6 +2440,14 @@
             <span class="stores-notice-num">②</span>
             <span>お薬の取り寄せもご相談ください。お時間を数日いただく場合がございます。</span>
           </li>
+          <li>
+            <span class="stores-notice-num">③</span>
+            <span>両店舗とも駐車場をご用意しています。</span>
+          </li>
+          <li>
+            <span class="stores-notice-num">④</span>
+            <span>在宅訪問や、お薬・日々の健康に関するご相談も承ります。</span>
+          </li>
         </ul>
       </div>
 
@@ -2263,6 +2499,14 @@
             <li>
               <span class="store-details-label">HOURS</span>
               <span class="store-details-value">月・火・水・木・金 &nbsp;9:00 – 18:00<br>土 &nbsp;9:00 – 13:00</span>
+            </li>
+            <li>
+              <span class="store-details-label">PARKING</span>
+              <span class="store-details-value">駐車場あり</span>
+            </li>
+            <li>
+              <span class="store-details-label">PAYMENT</span>
+              <span class="store-details-value">クレジットカード・電子決済は準備中</span>
             </li>
           </ul>
           <div class="store-links">
@@ -2331,6 +2575,14 @@
               <span class="store-details-label">HOURS</span>
               <span class="store-details-value">月・火・水・木・金 &nbsp;9:00 – 18:00<br>土 &nbsp;9:00 – 13:00</span>
             </li>
+            <li>
+              <span class="store-details-label">PARKING</span>
+              <span class="store-details-value">駐車場あり</span>
+            </li>
+            <li>
+              <span class="store-details-label">PAYMENT</span>
+              <span class="store-details-value">クレジットカード・電子決済は準備中</span>
+            </li>
           </ul>
           <div class="store-links">
             <a href="tel:0542475611" class="store-call" aria-label="鷹匠薬局 公園店に電話をかける 054-247-5611">
@@ -2348,6 +2600,49 @@
           </div>
         </div>
       </article>
+    </div>
+  </section>
+
+  <!-- ========== PATIENT FAQ ========== -->
+  <section class="faq" id="faq" aria-labelledby="faq-heading">
+    <div class="section-wrap">
+      <div class="section-head reveal">
+        <div class="section-label">Frequently Asked Questions</div>
+        <h2 class="section-title" id="faq-heading">よくあるご質問<span class="section-title-small">薬局をご利用になる患者さまへ</span></h2>
+      </div>
+      <p class="faq-intro reveal">処方せんの受付、お薬のお取り寄せ、在宅訪問などについて、よくいただくご質問をまとめました。</p>
+
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary class="faq-question">どこの病院・クリニックの処方せんでも利用できますか？</summary>
+          <div class="faq-answer"><p>はい。全国どちらの医療機関で発行された処方せんでも受け付けています。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">処方せんの有効期限はいつまでですか？</summary>
+          <div class="faq-answer"><p>原則として、発行日を含めて4日以内です。土曜日・日曜日・祝日も日数に含まれます。ただし、処方せんに別の使用期間が記載されている場合は、その日まで有効です。期限内にお持ちください。<br><a href="https://www.mhlw.go.jp/stf/newpage_32041.html" target="_blank" rel="noopener noreferrer">厚生労働省「処方箋の使用期間にご留意ください」</a></p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">在庫がない薬も取り寄せできますか？</summary>
+          <div class="faq-answer"><p>はい。店頭に在庫がない場合も、可能な限りお取り寄せします。在庫や流通状況によってはお時間をいただくことがありますので、まずはお気軽にご相談ください。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">駐車場はありますか？</summary>
+          <div class="faq-answer"><p>はい。緑ヶ丘薬局、鷹匠薬局 公園店ともに駐車場があります。駐車場所などの詳細は、各店舗へお問い合わせください。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">クレジットカードや電子決済は使えますか？</summary>
+          <div class="faq-answer"><p>現在、クレジットカード・電子決済の導入準備を進めています。ご利用開始時にはホームページでお知らせします。現在利用できるお支払い方法は、店舗へお問い合わせください。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">在宅訪問や健康相談はお願いできますか？</summary>
+          <div class="faq-answer"><p>はい。薬剤師による在宅訪問のほか、お薬や日々の健康に関するご相談も承っています。まずはお近くの店舗へお電話ください。</p></div>
+        </details>
+      </div>
+
+      <div class="faq-contact reveal" aria-label="店舗へ電話する">
+        <a class="green" href="tel:0559272311">緑ヶ丘薬局へ電話する　055-927-2311</a>
+        <a class="orange" href="tel:0542475611">鷹匠薬局 公園店へ電話する　054-247-5611</a>
+      </div>
     </div>
   </section>
 
@@ -2742,12 +3037,14 @@
               ※ 内容を確認のうえ、お電話にてご連絡いたします。
             </p>
 
-            <div class="form-status" id="formStatus"></div>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
           </form>
         </div>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ========== FOOTER ========== -->
   <footer>
@@ -2785,6 +3082,7 @@
         <ul>
           <li><a href="#about">ごあいさつ</a></li>
           <li><a href="#stores">運営薬局</a></li>
+          <li><a href="#faq">よくあるご質問</a></li>
           <li><a href="#services">サービス</a></li>
           <li><a href="#support">薬局サポート・外注受付</a></li>
           <li><a href="recruit.html">採用情報</a></li>
@@ -2804,14 +3102,31 @@
     </div>
   </footer>
 
+  <nav class="patient-dock" aria-label="患者さま向けクイックメニュー">
+    <a class="green" href="tel:0559272311" aria-label="緑ヶ丘薬局へ電話する 055-927-2311">
+      <small>緑ヶ丘薬局</small>
+      <strong>電話する</strong>
+    </a>
+    <a class="orange" href="tel:0542475611" aria-label="鷹匠薬局 公園店へ電話する 054-247-5611">
+      <small>鷹匠薬局 公園店</small>
+      <strong>電話する</strong>
+    </a>
+    <a href="#stores">
+      <small>営業時間・場所</small>
+      <strong>店舗情報</strong>
+    </a>
+  </nav>
+
   <script>
-    // ヒーロー動画: 全体をバッファしてから再生開始する（動き出しのカクつき防止）
-    // ポスター画像は動画の第1フレームと同一のため、静止画→再生の切り替えは目に見えない
+    // ヒーロー動画: ポスターを先に表示し、初期表示を妨げないタイミングで再生する
     const heroVideo = document.querySelector('.hero-video');
     if (heroVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const startHeroVideo = () => heroVideo.play().catch(() => {});
-      if (heroVideo.readyState >= 4) startHeroVideo();
-      else heroVideo.addEventListener('canplaythrough', startHeroVideo, { once: true });
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(startHeroVideo, { timeout: 1200 });
+      } else {
+        window.setTimeout(startHeroVideo, 500);
+      }
     }
 
     const nav = document.getElementById('nav');
@@ -2822,9 +3137,20 @@
 
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
-    navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+    const setMenuOpen = (open) => {
+      navMenu.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    };
+    navToggle.addEventListener('click', () => setMenuOpen(!navMenu.classList.contains('open')));
     navMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => navMenu.classList.remove('open'));
+      a.addEventListener('click', () => setMenuOpen(false));
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && navMenu.classList.contains('open')) {
+        setMenuOpen(false);
+        navToggle.focus();
+      }
     });
 
     const reveals = document.querySelectorAll('.reveal');
@@ -2840,6 +3166,7 @@
 
     const form = document.getElementById('contactForm');
     const status = document.getElementById('formStatus');
+    const submitButton = form.querySelector('.form-submit');
 
     // 種別選択でフォームヘッダーと件名を動的に変更
     const inquirySelect = document.getElementById('inquiry-type');
@@ -2864,6 +3191,7 @@
     // Formspree 経由で送信。未設定（YOUR_FORM_ID）の場合は mailto にフォールバック
     form.addEventListener('submit', function(e) {
       e.preventDefault();
+      if (submitButton.disabled) return;
       const action = form.getAttribute('action') || '';
       const data = new FormData(form);
 
@@ -2884,6 +3212,9 @@
       }
 
       // Formspree に AJAX POST
+      submitButton.disabled = true;
+      status.textContent = '送信しています。しばらくお待ちください。';
+      status.className = 'form-status show';
       fetch(action, {
         method: 'POST',
         body: data,
@@ -2901,6 +3232,9 @@
       .catch(() => {
         status.textContent = '送信に失敗しました。恐れ入りますが、お電話にてご連絡いただくか、時間をおいて再度お試しください。';
         status.className = 'form-status show error';
+      })
+      .finally(() => {
+        submitButton.disabled = false;
       });
     });
   </script>
