@@ -5,4 +5,5 @@
 # 旧URL https://sizucu.netlify.app/* へのアクセスをすべて新URLへ 301（恒久移転）転送する。
 # 「!」はファイルが存在しても強制的にリダイレクトする指定。
 
+/shien.html /support.html 301!
 /* https://www.sizucu.co.jp/:splat 301!

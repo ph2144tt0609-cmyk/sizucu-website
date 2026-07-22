@@ -5,12 +5,13 @@
   <!-- トップページ -->
   <url>
     <loc>https://www.sizucu.co.jp/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.sizucu.co.jp/images/logo-color.png</image:loc>
-      <image:title>株式会社しずく ロゴ</image:title>
+      <image:loc>https://www.sizucu.co.jp/images/hero-ripple-v2.jpg</image:loc>
+      <image:title>一滴の水から広がる波紋</image:title>
+      <image:caption>一滴のやさしさが波紋となって広がる、株式会社しずくのブランドイメージ</image:caption>
     </image:image>
   </url>
 
@@ -43,17 +44,21 @@
   <!-- 採用情報 -->
   <url>
     <loc>https://www.sizucu.co.jp/recruit.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- 請求業務サポート（法人・施設さま向け） -->
   <url>
-    <loc>https://www.sizucu.co.jp/shien.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <loc>https://www.sizucu.co.jp/support.html</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.sizucu.co.jp/images/support-billing-v2.jpg</image:loc>
+      <image:title>薬局の請求業務サポート</image:title>
+    </image:image>
   </url>
 
 </urlset>

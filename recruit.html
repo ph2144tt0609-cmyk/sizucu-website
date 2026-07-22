@@ -775,14 +775,21 @@
       footer { padding: 32px 24px; }
     }
 
-    /* ===== 手描き風イラスト ===== */
-    .position-illust {
-      margin: 0 0 28px;
-      text-align: center;
+    /* ===== 職種番号：人物イラストに頼らない端正なタイポグラフィ ===== */
+    .position-monogram {
+      margin: 2px 0 28px;
+      display: flex; align-items: baseline; gap: 14px;
+      color: rgba(255,255,255,0.82);
     }
-    .position-illust img {
-      width: 130px; height: auto;
-      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.22));
+    .position-monogram span {
+      font-family: var(--latin); font-style: italic;
+      font-size: clamp(54px,7vw,82px); line-height: .8;
+      letter-spacing: -.04em; font-weight: 300;
+    }
+    .position-monogram small {
+      font-family: var(--latin); font-style: italic;
+      font-size: 12px; letter-spacing: .24em; text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
     }
     .benefits-illust {
       margin: -36px 0 60px;
@@ -796,7 +803,7 @@
     .cta-illust img { width: min(290px, 72%); height: auto; }
     @media (max-width: 900px) {
       .benefits-illust { margin: -12px 0 44px; }
-      .position-illust img { width: 112px; }
+      .position-monogram span { font-size: 56px; }
     }
 
     /* ===== 実写フォト（Unsplash License・商用可） ===== */
@@ -976,7 +983,7 @@
         <!-- 薬剤師 -->
         <div class="position-card reveal">
           <div class="position-card-tag">Position 01 &mdash; Pharmacist</div>
-          <figure class="position-illust" aria-hidden="true"><img src="images/illust-pharmacist.svg" alt="" width="200" height="252" loading="lazy"></figure>
+          <div class="position-monogram" aria-hidden="true"><span>01</span><small>Pharmacist</small></div>
           <h3>薬剤師募集</h3>
           <p>処方せん調剤・服薬指導を中心に、在宅医療や地域連携にも携わっていただきます。</p>
           <dl>
@@ -1006,7 +1013,7 @@
         <!-- 事務 -->
         <div class="position-card reveal">
           <div class="position-card-tag">Position 02 &mdash; Clerk</div>
-          <figure class="position-illust" aria-hidden="true"><img src="images/illust-clerk.svg" alt="" width="200" height="252" loading="lazy"></figure>
+          <div class="position-monogram" aria-hidden="true"><span>02</span><small>Clerk</small></div>
           <h3>事務スタッフ募集</h3>
           <p>受付・レセプト業務・電話対応・薬局運営のサポートなど、薬局の「入り口」として患者さまを迎える大切なお仕事です。未経験からのスタートも歓迎しています。</p>
           <dl>
@@ -1036,7 +1043,7 @@
         <!-- 業務委託薬剤師 -->
         <div class="position-card position-card--full reveal">
           <div class="position-card-tag">Position 03 &mdash; Freelance Pharmacist</div>
-          <figure class="position-illust" aria-hidden="true"><img src="images/illust-pharmacist.svg" alt="" width="200" height="252" loading="lazy"></figure>
+          <div class="position-monogram" aria-hidden="true"><span>03</span><small>Freelance</small></div>
           <h3>業務委託 薬剤師募集</h3>
           <p>副業やスキマ時間を活用して働きたい薬剤師の方を、業務委託契約で募集しています。「週1日だけ」「平日の数時間だけ」「本業のかたわらで」など、ライフスタイルに合わせた関わり方を一緒に設計します。まずはお気軽にご相談ください。</p>
           <dl>
