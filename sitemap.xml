@@ -61,4 +61,12 @@
     </image:image>
   </url>
 
+  <!-- 施設基準等の掲示 -->
+  <url>
+    <loc>https://www.sizucu.co.jp/shisetsu-kijun.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

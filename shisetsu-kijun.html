@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>施設基準等の掲示 | 株式会社しずく（緑ヶ丘薬局・鷹匠薬局 公園店）</title>
-  <meta name="description" content="株式会社しずく（緑ヶ丘薬局・鷹匠薬局 公園店）の保険調剤に関する施設基準等の掲示。医療DX推進体制整備加算・地域支援体制加算・連携強化加算・後発医薬品の使用・明細書発行・選定療養について掲載しています。">
+  <meta name="description" content="株式会社しずく（緑ヶ丘薬局・鷹匠薬局 公園店）の法定掲示。令和8年度調剤報酬改定と東海北陸厚生局の届出受理情報に基づき、調剤管理料・服薬管理指導料、店舗別施設基準、オンライン資格確認、明細書、選定療養等を掲載しています。">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#3d4e5e">
   <link rel="canonical" href="https://www.sizucu.co.jp/shisetsu-kijun.html">
@@ -62,6 +62,29 @@
     .doc-list li::before { content: ''; position: absolute; left: 0; top: 13px; width: 6px; height: 6px; border-radius: 50%; background: var(--c-green); }
     .kasan-list { list-style: none; display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; }
     .kasan-list li { background: var(--white); border: 1px solid var(--line); border-left: 3px solid var(--c-green); border-radius: 2px; padding: 13px 18px; font-size: 14.5px; color: var(--meishi-navy); font-weight: 500; letter-spacing: 0.03em; }
+    .notice-box { margin: 0 0 42px; padding: 20px 22px; background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--meishi-navy); }
+    .notice-box strong { display: block; margin-bottom: 5px; color: var(--meishi-navy); font-family: var(--serif); font-size: 15px; letter-spacing: 0.06em; }
+    .notice-box p { margin: 0; font-size: 13.5px; line-height: 1.9; color: var(--ink-sub); }
+    .fee-table-wrap { overflow-x: auto; margin-top: 16px; border: 1px solid var(--line); background: var(--white); }
+    .fee-table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 14px; }
+    .fee-table th, .fee-table td { padding: 13px 15px; border-bottom: 1px solid var(--line-soft); text-align: left; vertical-align: top; line-height: 1.75; }
+    .fee-table th { background: var(--meishi-blue-mist); color: var(--meishi-navy); font-weight: 600; white-space: nowrap; }
+    .fee-table tr:last-child td { border-bottom: 0; }
+    .fee-table td:last-child { color: var(--meishi-navy); font-weight: 600; white-space: nowrap; }
+    .section-note { margin-top: 12px; padding: 12px 15px; background: #fff8ed; border: 1px solid #ead8ba; color: #6f5731 !important; font-size: 12.5px !important; line-height: 1.85 !important; }
+    .store-standard-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; margin-top: 20px; }
+    .store-standard-card { background: var(--white); border: 1px solid var(--line); border-top: 4px solid var(--c-green); padding: 24px; }
+    .store-standard-card.orange { border-top-color: var(--c-orange); }
+    .store-standard-card h3 { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--meishi-navy); letter-spacing: 0.06em; margin-bottom: 4px; }
+    .store-standard-card .scope { display: block; margin-bottom: 18px; color: var(--ink-mute); font-size: 11.5px; letter-spacing: 0.05em; }
+    .standard-list { list-style: none; display: grid; gap: 10px; }
+    .standard-list li { padding: 12px 13px; background: var(--meishi-blue-mist); color: var(--ink); font-size: 13.5px; line-height: 1.65; border-left: 2px solid var(--c-green); }
+    .orange .standard-list li { border-left-color: var(--c-orange); }
+    .receipt-no { display: block; margin-top: 3px; color: var(--ink-mute); font-family: var(--sans); font-size: 10.5px; font-weight: 400; letter-spacing: 0.03em; }
+    .source-list { list-style: none; display: grid; gap: 10px; }
+    .source-list li { padding: 12px 15px; background: var(--white); border: 1px solid var(--line); font-size: 13.5px; line-height: 1.75; }
+    .source-list a { color: var(--meishi-navy); text-decoration: underline; text-decoration-color: rgba(61,78,94,0.35); text-underline-offset: 3px; }
+    .source-list a:hover { color: var(--c-green); text-decoration-color: var(--c-green); }
     a.inline { color: var(--meishi-navy); border-bottom: 1px solid rgba(61,78,94,0.35); }
     a.inline:hover { color: var(--c-green); border-bottom-color: var(--c-green); }
     .doc-meta { font-size: 12.5px; color: var(--ink-mute); margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line-soft); line-height: 1.9; }
@@ -71,7 +94,14 @@
     .foot-links a { font-size: 13px; letter-spacing: 0.06em; color: rgba(255,255,255,0.82); transition: color 0.3s var(--ease); }
     .foot-links a:hover { color: var(--white); }
     .foot-copy { font-size: 11px; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); }
-    @media (max-width: 720px) { .kasan-list { grid-template-columns: 1fr; } }
+    @media (max-width: 720px) {
+      .nav { padding: 14px 18px; }
+      .nav-logo span { display: none; }
+      .doc { padding: 48px 20px 24px; }
+      .kasan-list, .store-standard-grid { grid-template-columns: 1fr; }
+      .store-standard-card { padding: 20px 17px; }
+      .notice-box { padding: 17px; }
+    }
   </style>
 </head>
 <body>
@@ -85,82 +115,166 @@
   </header>
 
   <main class="doc">
-    <p class="doc-lead">保険薬局として、調剤報酬の施設基準等に関する事項を掲示します。本ページは、薬局内の掲示に加え、ウェブサイトへの掲載が求められる事項を掲載するものです。</p>
+    <p class="doc-lead">保険薬局として、療養の内容・費用、調剤報酬および地方厚生局へ届け出た施設基準等に関する事項を掲示します。</p>
     <div class="doc-stores">対象店舗：緑ヶ丘薬局（沼津市緑ケ丘1-2）／ 鷹匠薬局 公園店（静岡市葵区東鷹匠町5-1）</div>
 
-    <section class="doc-section">
-      <h2><span class="n">01</span>保険調剤について</h2>
-      <p>当薬局は、健康保険法等の規定に基づく保険薬局です。すべての保険調剤について、厚生労働大臣の定めた施設基準等に従い、適正に調剤・服薬指導を行っています。</p>
-    </section>
+    <div class="notice-box">
+      <strong>令和8年度調剤報酬改定に対応しました</strong>
+      <p>厚生労働省の法令・調剤報酬点数表と、東海北陸厚生局が公表する2026年7月1日現在の届出受理医療機関名簿を確認し、2026年7月23日に掲載内容を更新しています。</p>
+    </div>
 
     <section class="doc-section">
-      <h2><span class="n">02</span>届出を行っている主な施設基準</h2>
-      <p>当薬局は、地方厚生局長に対し、以下の施設基準等の届出を行っています。</p>
-      <ul class="kasan-list">
-        <li>調剤基本料1</li>
-        <li>地域支援体制加算</li>
-        <li>連携強化加算</li>
-        <li>医療DX推進体制整備加算</li>
-        <li>後発医薬品調剤体制加算</li>
-      </ul>
-    </section>
-
-    <section class="doc-section">
-      <h2><span class="n">03</span>医療DX推進体制整備加算に関する事項</h2>
-      <p>当薬局は、医療DXを通じて質の高い医療を提供するため、次の体制を整えています。</p>
+      <h2><span class="n">01</span>ウェブサイトに掲載する法定掲示事項</h2>
+      <p>保険薬局及び保険薬剤師療養担当規則により、薬局内の見やすい場所に掲示する事項は、原則としてウェブサイトにも掲載することが求められています。当社では、主に次の事項を本ページにまとめています。</p>
       <ul class="doc-list">
-        <li>オンライン資格確認により取得した診療情報・薬剤情報等を、調剤および服薬指導の際に閲覧・活用しています。</li>
-        <li>マイナンバーカードの健康保険証利用を促進する等、医療DXを通じて質の高い医療を提供できるよう取り組んでいます。</li>
-        <li>電子処方箋および電子カルテ情報共有サービス等を活用する等、医療DXに係る取組を実施しています。</li>
+        <li>調剤管理料および服薬管理指導料に関する事項</li>
+        <li>調剤報酬点数表に基づき、地方厚生局長等へ届け出た施設基準等</li>
+        <li>領収証・個別の調剤報酬算定項目が分かる明細書の発行状況</li>
+        <li>オンライン資格確認を行うために整備している体制</li>
+        <li>長期収載品の選定療養など、保険外併用療養の内容と費用</li>
       </ul>
     </section>
 
     <section class="doc-section">
-      <h2><span class="n">04</span>明細書の発行について</h2>
-      <p>当薬局では、医療の透明化や患者さまへの情報提供を積極的に推進する観点から、領収証発行の際に、個別の調剤報酬の算定項目が分かる明細書を無料で発行しています。明細書の発行を希望されない場合は、会計時にお申し出ください。</p>
+      <h2><span class="n">02</span>調剤管理料・服薬管理指導料</h2>
+      <p><strong>調剤管理料</strong>は、処方されたお薬について、患者さまやご家族から服薬状況等を伺い、必要な薬学的分析を行ったうえで、薬剤服用歴への記録その他の管理を行った場合に算定します。</p>
+      <p><strong>服薬管理指導料</strong>は、薬剤師が薬剤服用歴等に基づき、お薬の名称・用法・用量・効能効果・副作用・相互作用・服用上の注意等を説明し、必要な服薬指導を行った場合に算定します。</p>
+      <div class="fee-table-wrap">
+        <table class="fee-table">
+          <thead>
+            <tr><th>区分</th><th>主な算定内容</th><th>点数</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>調剤管理料</td><td>内服薬（1剤につき）・28日分以上</td><td>60点</td></tr>
+            <tr><td>調剤管理料</td><td>上記以外の内服薬、または内服薬以外</td><td>10点</td></tr>
+            <tr><td>服薬管理指導料</td><td>原則3か月以内に再来局し、お薬手帳を提示された場合</td><td>45点</td></tr>
+            <tr><td>服薬管理指導料</td><td>上記以外の場合</td><td>59点</td></tr>
+            <tr><td>服薬管理指導料</td><td>介護老人福祉施設等に入所する患者さまを訪問した場合</td><td>45点</td></tr>
+            <tr><td>服薬管理指導料</td><td>情報通信機器を用いた服薬指導</td><td>45点または59点</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="section-note">点数は2026年6月1日適用の調剤報酬点数表に基づきます。1点は10円で計算され、実際の窓口負担額は保険の負担割合や他の算定項目等により異なります。</p>
     </section>
 
     <section class="doc-section">
-      <h2><span class="n">05</span>後発医薬品があるお薬を希望される場合の費用（選定療養）</h2>
-      <p>後発医薬品（ジェネリック医薬品）のある先発医薬品（長期収載品）について、医療上の必要性等がなく、患者さまのご希望により先発医薬品を選択された場合は、その差額の一部を「選定療養」として、保険給付とは別にご負担いただきます（令和6年10月1日より）。</p>
+      <h2><span class="n">03</span>店舗別・届出済み施設基準等</h2>
+      <p>東海北陸厚生局「届出受理医療機関名簿（静岡県・薬局）」に掲載されている届出内容です。店舗により届出区分が異なります。</p>
+      <div class="store-standard-grid">
+        <article class="store-standard-card">
+          <h3>緑ヶ丘薬局</h3>
+          <span class="scope">2026年7月1日現在</span>
+          <ul class="standard-list">
+            <li>調剤基本料1 <span class="receipt-no">（調基1）第581244号</span></li>
+            <li>地域支援・医薬品供給対応体制加算1 <span class="receipt-no">（地支体1）第1471号</span></li>
+            <li>連携強化加算 <span class="receipt-no">（薬連強）第1564号</span></li>
+            <li>電子的調剤情報連携体制整備加算 <span class="receipt-no">（薬DX）第1601号</span></li>
+            <li>調剤ベースアップ評価料 <span class="receipt-no">（調剤ベ）第634号</span></li>
+            <li>在宅患者訪問薬剤管理指導料 <span class="receipt-no">（在薬）第32678号</span></li>
+          </ul>
+        </article>
+        <article class="store-standard-card orange">
+          <h3>鷹匠薬局 公園店</h3>
+          <span class="scope">2026年7月1日現在</span>
+          <ul class="standard-list">
+            <li>調剤基本料3ロ <span class="receipt-no">（調基3ロ）第335号</span></li>
+            <li>地域支援・医薬品供給対応体制加算1 <span class="receipt-no">（地支体1）第1738号</span></li>
+            <li>連携強化加算 <span class="receipt-no">（薬連強）第1646号</span></li>
+            <li>バイオ後続品調剤体制加算 <span class="receipt-no">（バ後体）第759号</span></li>
+            <li>電子的調剤情報連携体制整備加算 <span class="receipt-no">（薬DX）第1764号</span></li>
+            <li>在宅患者訪問薬剤管理指導料 <span class="receipt-no">（在薬）第32761号</span></li>
+          </ul>
+        </article>
+      </div>
     </section>
 
     <section class="doc-section">
-      <h2><span class="n">06</span>連携強化加算に関する事項</h2>
+      <h2><span class="n">04</span>オンライン資格確認・電子的調剤情報連携体制</h2>
+      <p>両店舗は、電子的調剤情報連携体制整備加算の届出を行い、医療DXを通じて質の高い調剤を行うため、次の体制を整えています。</p>
+      <ul class="doc-list">
+        <li>オンライン資格確認を行う体制を有し、患者さまの同意に基づき取得した診療情報・薬剤情報等を、調剤および服薬指導に活用します。</li>
+        <li>マイナ保険証の利用を促進し、質の高い調剤を実施するために必要な情報を取得・活用します。</li>
+        <li>調剤結果を電子処方箋管理サービスへ登録し、重複投薬や併用禁忌等の確認に活用する体制を整えています。</li>
+        <li>マイナポータルの医療情報等に基づく健康管理のご相談に対応します。</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="n">05</span>領収証・明細書の発行</h2>
+      <p>両店舗では、領収証の発行時に、個別の調剤報酬の算定項目が分かる明細書を無料で交付しています。公費負担医療により窓口でのお支払いがない場合も、原則として明細書を無料で交付します。明細書には使用した薬剤名等が記載されますので、ご家族など代理の方が会計される場合も含め、発行を希望されない場合は会計時にお申し出ください。</p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="n">06</span>地域支援・医薬品供給対応体制</h2>
+      <p>両店舗は、地域支援・医薬品供給対応体制加算1の届出を行っています。地域の患者さまが安心してお薬を使用できるよう、次の取組を行います。</p>
+      <ul class="doc-list">
+        <li>かかりつけ薬剤師・薬局として、お薬の一元的・継続的な管理と服薬支援を行います。</li>
+        <li>医薬品の供給状況を踏まえ、後発医薬品を含む必要な医薬品の確保と安定供給に努めます。</li>
+        <li>在宅療養中の患者さまへの訪問薬剤管理指導に対応します。</li>
+        <li>開局時間外の緊急相談は、各店舗の電話番号で受け付けます。</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="n">07</span>災害・新興感染症等への対応</h2>
       <p>当薬局は、地域の医薬品提供体制の確保および健康危機管理に対応する薬局として、次の取組を行っています。</p>
       <ul class="doc-list">
         <li>災害・新興感染症の発生時等に、医薬品や衛生用品の供給等を通じて、地域の医療提供体制を支える体制を整えています。</li>
-        <li>一般用医薬品・衛生材料に加え、新型コロナウイルス／インフルエンザの抗原検査キット（共通の検査キット）等を取り扱っています。</li>
+        <li>行政機関・医療機関・薬局等と連携し、地域の医薬品供給や衛生管理に必要な対応を行います。</li>
         <li>薬剤師は、感染症対応・災害対応をはじめとする健康危機管理に関する研修を受講しています。</li>
       </ul>
     </section>
 
     <section class="doc-section">
-      <h2><span class="n">07</span>地域支援体制加算に関する事項</h2>
-      <p>当薬局は、地域包括ケアシステムの一員として、かかりつけ薬剤師・薬局機能および在宅医療への対応等、地域に必要とされる薬局機能の提供に努めています。</p>
+      <h2><span class="n">08</span>バイオ後続品の調剤体制</h2>
+      <p><strong>対象：鷹匠薬局 公園店</strong></p>
+      <p>バイオ後続品を適切に保管し、患者さまへ分かりやすく説明したうえで調剤できる体制を整え、バイオ後続品の使用促進に積極的に取り組んでいます。処方内容により処方医への確認が必要な場合がありますので、ご希望の方は薬剤師へご相談ください。</p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="n">09</span>在宅患者訪問薬剤管理指導</h2>
+      <p>両店舗は、在宅患者訪問薬剤管理指導料の届出を行っています。通院が困難な患者さまのご自宅や入居施設を薬剤師が訪問し、処方箋に基づくお薬のお届け、服薬状況・保管状況・副作用等の確認、服薬支援を行い、必要に応じて医師やケアマネジャー等と情報を共有します。ご利用には医師の指示等が必要となるため、まずは店舗へご相談ください。</p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="n">10</span>後発医薬品・選定療養</h2>
+      <p>両店舗では、後発医薬品（ジェネリック医薬品）の品質・供給状況を確認し、患者さまへ説明したうえで、その使用を推進しています。医薬品の供給不足等により、処方されたお薬を別の銘柄へ変更する場合や、十分な量を用意できない場合は、変更内容や供給状況について説明します。</p>
+      <p>後発医薬品のある先発医薬品（長期収載品）について、医療上の必要性等がなく、患者さまのご希望により先発医薬品を選択された場合は、厚生労働省の定めに基づく「特別の料金」を、保険給付の一部負担金とは別にご負担いただきます。医療上の必要性がある場合や、後発医薬品を提供することが困難な場合は対象外です。</p>
+      <p><strong>特別の料金は、先発医薬品と最も薬価が高い後発医薬品との価格差の2分の1相当額です。</strong>この料金には消費税がかかります。端数処理等により、計算結果が2分の1ちょうどにならない場合があります。薬剤料以外の調剤費用は変わりません。</p>
+      <p>対象となるお薬や実際の費用については、調剤前に薬剤師からご説明します。</p>
+    </section>
+
+    <section class="doc-section">
+      <h2><span class="n">11</span>開局時間外の相談・在宅対応</h2>
+      <p>お薬の副作用、飲み合わせ、服用方法、在宅療養中の緊急のご相談は、ご利用の店舗へお電話ください。開局時間外の連絡方法は、各店舗の店頭掲示および電話案内をご確認ください。状況により、他の薬局・医療機関・救急相談窓口等をご案内する場合があります。</p>
       <ul class="doc-list">
-        <li>かかりつけ薬剤師による、お薬の一元的・継続的な管理を行っています。</li>
-        <li>在宅医療（訪問薬剤管理指導）に対応しています。</li>
-        <li>開局時間外のお問い合わせ・緊急のご相談は、各店舗の電話番号へご連絡ください（緑ヶ丘薬局 <a class="inline" href="tel:0559272311">055-927-2311</a> ／ 鷹匠薬局 公園店 <a class="inline" href="tel:0542475611">054-247-5611</a>）。</li>
+        <li>緑ヶ丘薬局：<a class="inline" href="tel:0559272311">055-927-2311</a></li>
+        <li>鷹匠薬局 公園店：<a class="inline" href="tel:0542475611">054-247-5611</a></li>
       </ul>
     </section>
 
     <section class="doc-section">
-      <h2><span class="n">08</span>後発医薬品（ジェネリック医薬品）の使用について</h2>
-      <p>当薬局では、後発医薬品の品質・安定供給を確認のうえ、患者さまのご理解とご希望を尊重しながら、後発医薬品の使用を積極的に推進しています。一般名で処方されたお薬や、先発医薬品から後発医薬品への変更調剤についても、丁寧にご説明いたします。</p>
-    </section>
-
-    <section class="doc-section">
-      <h2><span class="n">09</span>個人情報の取扱いについて</h2>
+      <h2><span class="n">12</span>個人情報の取扱い</h2>
       <p>患者さまの個人情報は、調剤・服薬指導・保険請求・医療連携等の業務に必要な範囲で、適切に利用・管理します。詳しくは<a class="inline" href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
     </section>
 
     <section class="doc-section">
-      <h2><span class="n">10</span>ご相談・お問い合わせの窓口</h2>
-      <p>施設基準やお薬に関するご相談・ご意見は、ご利用の店舗、または運営会社（株式会社しずく）までお気軽にお問い合わせください。</p>
+      <h2><span class="n">13</span>公的資料・確認元</h2>
+      <ul class="source-list">
+        <li><a href="https://www.mhlw.go.jp/web/t_doc?dataId=84046000&amp;dataType=0&amp;pageNo=1" target="_blank" rel="noopener noreferrer">保険薬局及び保険薬剤師療養担当規則（厚生労働省）</a></li>
+        <li><a href="https://www.mhlw.go.jp/web/t_doc?dataId=84aa7837&amp;dataType=0&amp;pageNo=1" target="_blank" rel="noopener noreferrer">療担規則及び薬担規則並びに療担基準に基づき厚生労働大臣が定める掲示事項等（厚生労働省）</a></li>
+        <li><a href="https://www.mhlw.go.jp/content/12400000/001665294.pdf" target="_blank" rel="noopener noreferrer">令和8年度 調剤報酬点数表（厚生労働省）</a></li>
+        <li><a href="https://kouseikyoku.mhlw.go.jp/tokaihokuriku/2607-06_01-22-04.pdf" target="_blank" rel="noopener noreferrer">届出受理医療機関名簿・静岡県薬局、2026年7月1日現在（東海北陸厚生局）</a></li>
+        <li><a href="https://www.mhlw.go.jp/stf/newpage_39830.html" target="_blank" rel="noopener noreferrer">後発医薬品のある先発医薬品（長期収載品）の選定療養（厚生労働省）</a></li>
+      </ul>
     </section>
 
-    <p class="doc-meta">本掲示の内容は、保険薬局の施設基準等の届出状況に応じて随時更新します。<br>最終更新：2026年6月　株式会社しずく</p>
+    <section class="doc-section">
+      <h2><span class="n">14</span>ご相談・お問い合わせ</h2>
+      <p>施設基準、調剤報酬、お薬に関するご質問は、ご利用の店舗へお電話いただくか、<a class="inline" href="index.html#contact">お問い合わせフォーム</a>をご利用ください。</p>
+    </section>
+
+    <p class="doc-meta">本掲示は、法令・調剤報酬改定および各店舗の施設基準等の届出状況に応じて随時更新します。<br>最終確認・更新：2026年7月23日　株式会社しずく</p>
   </main>
 
   <footer>
@@ -169,7 +283,7 @@
       <a href="privacy.html">プライバシーポリシー</a>
       <a href="index.html">トップへ戻る</a>
     </div>
-    <div class="foot-copy">© 2025 sizucu Co., Ltd. All rights reserved.</div>
+    <div class="foot-copy">© 2026 sizucu Co., Ltd. All rights reserved.</div>
   </footer>
 </body>
 </html>
