@@ -54,7 +54,6 @@
     "logo": "https://www.sizucu.co.jp/images/logo-color.png",
     "image": "https://www.sizucu.co.jp/images/logo-color.png",
     "foundingDate": "2024-10-10",
-    "email": "info@sizucu.co.jp",
     "founder": {
       "@type": "Person",
       "name": "田中 亨",
@@ -76,7 +75,6 @@
         "name": "緑ヶ丘薬局",
         "url": "https://www.sizucu.co.jp/midorigaoka.html",
         "telephone": "+81-55-927-2311",
-        "email": "midori@sizucu.co.jp",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "緑ケ丘1-2",
@@ -92,7 +90,6 @@
         "name": "鷹匠薬局 公園店",
         "url": "https://www.sizucu.co.jp/takajo.html",
         "telephone": "+81-54-247-5611",
-        "email": "takajo@sizucu.co.jp",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "東鷹匠町5-1",
@@ -1618,30 +1615,37 @@
     }
     .contact-store-card dd a { color: var(--meishi-navy); font-weight: 500; letter-spacing: 0.04em; }
 
-    .contact-email-direct {
-      background: var(--meishi-blue-mist);
-      padding: 20px 24px;
-      margin-top: 24px;
-      border-left: 3px solid var(--meishi-navy);
-    }
-    .contact-email-direct p {
-      font-size: 12px;
-      color: var(--ink-sub);
-      line-height: 1.8;
-      margin-bottom: 8px;
-    }
-    .contact-email-direct a {
-      font-family: var(--latin);
-      font-size: 15px;
-      color: var(--meishi-navy);
-      letter-spacing: 0.06em;
-      font-weight: 500;
-      word-break: break-all;
-    }
-
     .form-intro {
       font-size: 13px; line-height: 2;
-      color: var(--ink-sub); margin-bottom: 28px;
+      color: var(--ink-sub); margin-bottom: 20px;
+    }
+    .form-guidance {
+      margin-bottom: 24px;
+      padding: 18px 20px;
+      background: var(--meishi-blue-mist);
+      border-left: 3px solid var(--meishi-navy);
+    }
+    .form-guidance strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--meishi-navy);
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+    }
+    .form-guidance p {
+      color: var(--ink-sub);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .form-alert {
+      margin-bottom: 24px;
+      padding: 14px 16px;
+      background: #fff8ed;
+      border: 1px solid #ead8ba;
+      color: #6f5731;
+      font-size: 12px;
+      line-height: 1.8;
     }
     .form-group { margin-bottom: 22px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -1710,6 +1714,35 @@
       resize: vertical;
       min-height: 160px;
       line-height: 1.8;
+    }
+    .privacy-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin: 4px 0 0;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      cursor: pointer;
+    }
+    .privacy-consent input {
+      flex: 0 0 auto;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--meishi-navy);
+    }
+    .privacy-consent-text {
+      color: var(--ink-sub);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.8;
+      letter-spacing: 0.04em;
+    }
+    .privacy-consent-text a {
+      color: var(--meishi-navy);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
     .form-submit {
       margin-top: 20px; padding: 20px 52px;
@@ -2915,8 +2948,6 @@
               <dd><a href="tel:0559272311">055-927-2311</a></dd>
               <dt>FAX</dt>
               <dd>055-927-2312</dd>
-              <dt>MAIL</dt>
-              <dd><a href="mailto:midori@sizucu.co.jp">midori@sizucu.co.jp</a></dd>
               <dt>時間</dt>
               <dd>平日 9:00 – 18:00 / 土 9:00 – 13:00</dd>
             </dl>
@@ -2930,8 +2961,6 @@
               <dd><a href="tel:0542475611">054-247-5611</a></dd>
               <dt>FAX</dt>
               <dd>054-247-5612</dd>
-              <dt>MAIL</dt>
-              <dd><a href="mailto:takajo@sizucu.co.jp">takajo@sizucu.co.jp</a></dd>
               <dt>時間</dt>
               <dd>平日 9:00 – 18:00 / 土 9:00 – 13:00</dd>
             </dl>
@@ -2939,19 +2968,21 @@
         </div>
 
         <div class="contact-form reveal">
-          <h3 id="form-heading">メールでのお問い合わせ<span class="script">Mail Form</span></h3>
-          <p class="form-intro">
-            採用のご応募、業務のご相談、取材のご依頼など、どのようなご用件でもお気軽にどうぞ。<br class="pc-only">
-            内容を確認のうえ、担当者より折り返しご連絡いたします。<br>
-            代表メール：<a href="mailto:info@sizucu.co.jp">info@sizucu.co.jp</a>
+          <h3 id="form-heading">お問い合わせフォーム<span class="script">Contact Form</span></h3>
+          <p class="form-intro" id="form-use-note">
+            患者さま・ご家族からのご相談、採用、薬局・法人向けの業務支援、取材のご依頼などを受け付けています。<br class="pc-only">
+            内容を確認のうえ、担当者よりお電話で折り返しご連絡いたします。
           </p>
 
-          <!--
-            送信先: Formspree (https://formspree.io/f/mqenewrn)
-            info@sizucu.co.jp に通知メールが届くよう、公開時にFormspree側の通知先も変更する。
-            無料プランは月 50 件まで。それを超える場合は Formspree のダッシュボードで有料プランに切り替え。
-            フォームの確認は Formspree の Submissions タブからも可能です。
-          -->
+          <div class="form-guidance">
+            <strong>フォームで受け付けている内容</strong>
+            <p>お薬・健康のご相談／採用へのご応募／請求・経理・在庫などの業務相談／取材・その他のご連絡</p>
+          </div>
+          <p class="form-alert" id="form-urgent-note">
+            処方内容や体調に関するお急ぎのご相談は、フォームではなく利用される店舗へお電話ください。
+          </p>
+
+          <!-- 送信内容は Formspree の Submissions から確認できます。 -->
           <form action="https://formspree.io/f/mqenewrn" method="POST" id="contactForm">
             <!-- スパム対策ハニーポット（非表示） -->
             <p style="display:none">
@@ -2960,37 +2991,70 @@
             <!-- Formspree が件名を自動付与するため、種別を件名に反映 -->
             <input type="hidden" name="_subject" id="formSubject" value="【しずくHP】お問い合わせ">
 
-            <div class="form-group">
-              <label for="inquiry-type">お問い合わせ種別<span class="req">必須</span></label>
-              <select name="inquiry-type" id="inquiry-type" required>
-                <option value="">選択してください</option>
-                <option value="採用（薬剤師）">採用について — 薬剤師</option>
-                <option value="採用（業務委託薬剤師）">採用について — 業務委託薬剤師（副業・スキマ時間）</option>
-                <option value="採用（事務）">採用について — 事務スタッフ</option>
-                <option value="外注相談（請求業務・経理）">外注のご相談 — 請求業務・経理（施設請求・領収書・引き落とし管理）</option>
-                <option value="外注相談（デッドストック・医薬品融通）">外注のご相談 — デッドストック管理・医薬品融通</option>
-                <option value="業務相談">業務のご相談</option>
-                <option value="服薬・健康相談">服薬・健康のご相談</option>
-                <option value="取材・メディア">取材・メディアの方</option>
-                <option value="その他">その他</option>
-              </select>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inquiry-target">ご相談先<span class="req">必須</span></label>
+                <select name="inquiry-target" id="inquiry-target" required>
+                  <option value="">選択してください</option>
+                  <option value="株式会社しずく">株式会社しずく（会社・採用・業務相談）</option>
+                  <option value="緑ヶ丘薬局">緑ヶ丘薬局</option>
+                  <option value="鷹匠薬局 公園店">鷹匠薬局 公園店</option>
+                  <option value="わからない・その他">わからない・その他</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="inquiry-type">お問い合わせ種別<span class="req">必須</span></label>
+                <select name="inquiry-type" id="inquiry-type" required>
+                  <option value="">選択してください</option>
+                  <option value="処方せん・お薬">処方せん・お薬について</option>
+                  <option value="健康相談・在宅訪問">健康相談・在宅訪問について</option>
+                  <option value="採用（薬剤師）">採用について — 薬剤師</option>
+                  <option value="採用（業務委託薬剤師）">採用について — 業務委託薬剤師</option>
+                  <option value="採用（事務）">採用について — 事務スタッフ</option>
+                  <option value="薬局・法人向け業務支援">薬局・法人向け業務支援について</option>
+                  <option value="取材・メディア">取材・メディアのご依頼</option>
+                  <option value="その他">その他</option>
+                </select>
+              </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label for="name">お名前<span class="req">必須</span></label>
-                <input type="text" name="name" id="name" required placeholder="山田 太郎">
+                <input type="text" name="name" id="name" required autocomplete="name" placeholder="山田 太郎">
               </div>
               <div class="form-group">
+                <label for="organization">会社名・施設名<span class="opt">任意</span></label>
+                <input type="text" name="organization" id="organization" autocomplete="organization" placeholder="法人・施設の方のみ">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
                 <label for="tel">お電話番号<span class="req">必須</span></label>
-                <input type="tel" name="tel" id="tel" required placeholder="000-0000-0000">
+                <input type="tel" name="tel" id="tel" required autocomplete="tel" inputmode="tel" placeholder="000-0000-0000">
+              </div>
+              <div class="form-group">
+                <label for="contact-time">ご希望の連絡時間帯<span class="opt">任意</span></label>
+                <select name="contact-time" id="contact-time">
+                  <option value="指定なし">指定なし</option>
+                  <option value="平日 9:00〜12:00">平日 9:00〜12:00</option>
+                  <option value="平日 12:00〜15:00">平日 12:00〜15:00</option>
+                  <option value="平日 15:00〜18:00">平日 15:00〜18:00</option>
+                </select>
               </div>
             </div>
 
             <div class="form-group">
               <label for="message">お問い合わせ内容<span class="req">必須</span></label>
-              <textarea name="message" id="message" required placeholder="ご相談・ご質問などをご記入ください。"></textarea>
+              <textarea name="message" id="message" required aria-describedby="form-use-note form-urgent-note" placeholder="ご相談・ご質問の内容をご記入ください。&#10;店舗へのご相談は、処方せんの発行日やお薬の名前など、分かる範囲でご記入ください。"></textarea>
             </div>
+
+            <label class="privacy-consent" for="privacy-consent">
+              <input type="checkbox" name="privacy-consent" id="privacy-consent" value="同意する" required>
+              <span class="privacy-consent-text"><a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>をご確認のうえ、個人情報の取り扱いに同意します。</span>
+              <span class="req">必須</span>
+            </label>
 
             <button type="submit" class="form-submit">
               送信する
@@ -2998,8 +3062,8 @@
             </button>
 
             <p class="form-note">
-              ※ ご入力いただいた個人情報は、お問い合わせへの回答および採用選考のみに使用いたします。<br class="pc-only">
-              ※ 内容を確認のうえ、お電話にてご連絡いたします。
+              ※ 通常は 2〜3 営業日以内を目安に、お電話でご連絡いたします。<br class="pc-only">
+              ※ 営業・勧誘を目的とした送信はご遠慮ください。
             </p>
 
             <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
@@ -3122,46 +3186,33 @@
     const status = document.getElementById('formStatus');
     const submitButton = form.querySelector('.form-submit');
 
-    // 種別選択でフォームヘッダーと件名を動的に変更
+    // 相談先と種別を送信通知の件名へ反映
+    const targetSelect = document.getElementById('inquiry-target');
     const inquirySelect = document.getElementById('inquiry-type');
-    const formHeading = document.getElementById('form-heading');
     const formSubject = document.getElementById('formSubject');
-    if (inquirySelect) {
-      inquirySelect.addEventListener('change', function() {
-        const val = this.value;
-        if (formHeading) {
-          if (val === '採用（薬剤師）') formHeading.textContent = '薬剤師 応募フォーム';
-          else if (val === '採用（事務）') formHeading.textContent = '事務スタッフ 応募フォーム';
-          else formHeading.textContent = 'メールでのお問い合わせ';
-        }
-        if (formSubject) {
-          formSubject.value = val
-            ? `【しずくHP】${val}`
-            : '【しずくHP】お問い合わせ';
-        }
-      });
-    }
+    const updateFormSubject = function() {
+      if (!formSubject) return;
+      const details = [
+        targetSelect ? targetSelect.value : '',
+        inquirySelect ? inquirySelect.value : ''
+      ].filter(Boolean).join(' / ');
+      formSubject.value = details
+        ? `【しずくHP】${details}`
+        : '【しずくHP】お問い合わせ';
+    };
+    if (targetSelect) targetSelect.addEventListener('change', updateFormSubject);
+    if (inquirySelect) inquirySelect.addEventListener('change', updateFormSubject);
 
-    // Formspree 経由で送信。未設定（YOUR_FORM_ID）の場合は mailto にフォールバック
+    // Formspree 経由で送信
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       if (submitButton.disabled) return;
       const action = form.getAttribute('action') || '';
       const data = new FormData(form);
 
-      // YOUR_FORM_ID のままなら mailto: で送る
-      if (action.includes('YOUR_FORM_ID')) {
-        const subject = encodeURIComponent(data.get('_subject') || '【しずくHP】お問い合わせ');
-        const body = encodeURIComponent(
-          `お問い合わせ種別：${data.get('inquiry-type') || ''}\n` +
-          `お名前：${data.get('name') || ''}\n` +
-          `お電話番号：${data.get('tel') || ''}\n\n` +
-          `お問い合わせ内容：\n${data.get('message') || ''}\n`
-        );
-        window.location.href =
-          `mailto:info@sizucu.co.jp?subject=${subject}&body=${body}`;
-        status.textContent = 'メールアプリを起動しました。送信ボタンを押して送信を完了してください。';
-        status.className = 'form-status show success';
+      if (!action || action.includes('YOUR_FORM_ID')) {
+        status.textContent = '現在フォームを利用できません。恐れ入りますが、各店舗へお電話ください。';
+        status.className = 'form-status show error';
         return;
       }
 
@@ -3179,6 +3230,7 @@
           status.textContent = 'お問い合わせを受け付けました。担当者より 2〜3 営業日以内にご連絡いたします。';
           status.className = 'form-status show success';
           form.reset();
+          updateFormSubject();
         } else {
           throw new Error('Submission failed');
         }
