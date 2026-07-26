@@ -1,9 +1,0 @@
-# ホスティングを GitHub Pages へ移行（2026-07-10）
-# このファイルは Netlify のみが解釈する。GitHub Pages では無視される。
-#
-# Netlify のデプロイが再開された時点（クレジットリセット 2026-07-23 以降）で、
-# 旧URL https://sizucu.netlify.app/* へのアクセスをすべて新URLへ 301（恒久移転）転送する。
-# 「!」はファイルが存在しても強制的にリダイレクトする指定。
-
-/shien.html /support.html 301!
-/* https://www.sizucu.co.jp/:splat 301!
