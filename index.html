@@ -73,8 +73,11 @@
         "@type": "Pharmacy",
         "@id": "https://www.sizucu.co.jp/midorigaoka.html#pharmacy",
         "name": "緑ヶ丘薬局",
+        "alternateName": "Midorigaoka Pharmacy",
         "url": "https://www.sizucu.co.jp/midorigaoka.html",
+        "image": "https://www.sizucu.co.jp/images/midorigaoka.jpg",
         "telephone": "+81-55-927-2311",
+        "faxNumber": "+81-55-927-2312",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "緑ケ丘1-2",
@@ -82,14 +85,41 @@
           "addressRegion": "静岡県",
           "postalCode": "410-0063",
           "addressCountry": "JP"
-        }
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "35.0930",
+          "longitude": "138.8632"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "13:00"
+          }
+        ],
+        "hasMap": "https://maps.app.goo.gl/ssqVo9jPyD2CZVdd9",
+        "areaServed": [
+          {"@type": "City", "name": "沼津市"},
+          {"@type": "AdministrativeArea", "name": "静岡県東部"}
+        ]
       },
       {
         "@type": "Pharmacy",
         "@id": "https://www.sizucu.co.jp/takajo.html#pharmacy",
         "name": "鷹匠薬局 公園店",
+        "alternateName": "Takajo Pharmacy Park",
         "url": "https://www.sizucu.co.jp/takajo.html",
+        "image": "https://www.sizucu.co.jp/images/takajo.jpg",
         "telephone": "+81-54-247-5611",
+        "faxNumber": "+81-54-247-5612",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "東鷹匠町5-1",
@@ -97,7 +127,31 @@
           "addressRegion": "静岡県",
           "postalCode": "420-0833",
           "addressCountry": "JP"
-        }
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "34.9847",
+          "longitude": "138.3852"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "13:00"
+          }
+        ],
+        "hasMap": "https://maps.app.goo.gl/2xiULETgUZhSwbik6",
+        "areaServed": [
+          {"@type": "City", "name": "静岡市"},
+          {"@type": "AdministrativeArea", "name": "静岡市葵区"}
+        ]
       }
     ]
   }

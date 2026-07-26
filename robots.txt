@@ -5,8 +5,6 @@ User-agent: *
 Allow: /
 
 # 隠す必要のあるディレクトリは特になし。すべて公開。
-Disallow: /backup_完成版_2026-05-08/
-Disallow: /Netlifyアップ用/
 
 # サイトマップの場所を Google にお知らせ
 Sitemap: https://www.sizucu.co.jp/sitemap.xml
