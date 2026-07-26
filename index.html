@@ -274,6 +274,7 @@
     }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
+    picture { display: contents; }
     ::selection { background: var(--meishi-navy); color: var(--white); }
     :focus-visible { outline: 3px solid var(--c-sky); outline-offset: 4px; }
     .skip-link {
@@ -2272,7 +2273,7 @@
       height: clamp(300px, 42vw, 440px);
       overflow: hidden;
     }
-    .photo-band > img {
+    .photo-band img {
       position: absolute; inset: 0; z-index: 0;
       width: 100%; height: 100%;
       object-fit: cover;
@@ -2301,13 +2302,13 @@
       letter-spacing: 0.22em; line-height: 2;
       text-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
     }
-    .photo-band--ripple > img { filter: saturate(0.9) brightness(1.12); }
+    .photo-band--ripple img { filter: saturate(0.9) brightness(1.12); }
     .photo-band--ripple::after {
       background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(212,223,231,0.12) 45%, rgba(61,78,94,0.12));
     }
     .photo-band--ripple .photo-band-text { color: var(--meishi-navy); }
     .photo-band--ripple .photo-band-text .jp { text-shadow: 0 2px 22px rgba(255,255,255,0.9); }
-    .photo-band--fuji > img { object-position: center 62%; filter: saturate(1.05) brightness(1.05); }
+    .photo-band--fuji img { object-position: center 62%; filter: saturate(1.05) brightness(1.05); }
     .photo-band--fuji::after {
       background: linear-gradient(180deg, rgba(20,28,38,0.30), rgba(20,28,38,0.10) 50%, rgba(20,28,38,0.38));
     }
@@ -2406,7 +2407,7 @@
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="top">
-    <img class="hero-media" src="images/hero-ripple-v2.jpg" alt="" width="1672" height="941" fetchpriority="high" aria-hidden="true">
+    <picture><source type="image/webp" srcset="images/hero-ripple-v2.webp"><img class="hero-media" src="images/hero-ripple-v2.jpg" alt="" width="1672" height="941" fetchpriority="high" aria-hidden="true"></picture>
     <div class="hero-overlay" aria-hidden="true"></div>
 
     <!-- 波紋：全面に広がる同心円（名刺の哲学を全面に） -->
@@ -2481,7 +2482,7 @@
       <div class="about-grid">
         <figure class="about-visual reveal">
           <div class="about-visual-frame">
-            <img class="about-visual-img" src="images/about-fuji-layers-v4.jpg" alt="湖畔から望む、空と湖に囲まれた富士山の全景" width="1000" height="1250" loading="lazy">
+            <picture><source type="image/webp" srcset="images/about-fuji-layers-v4.webp"><img class="about-visual-img" src="images/about-fuji-layers-v4.jpg" alt="湖畔から望む、空と湖に囲まれた富士山の全景" width="1000" height="1250" loading="lazy"></picture>
           </div>
           <figcaption class="about-visual-caption">
             <span class="en">From Shizuoka</span>
@@ -2516,7 +2517,7 @@
 
   <!-- ========== BRAND PHOTO BAND ========== -->
   <div class="photo-band photo-band--ripple" role="img" aria-label="一滴の水が波紋を広げる写真">
-    <img src="images/hero-ripple-v2.jpg" alt="" width="1672" height="941" loading="lazy">
+    <picture><source type="image/webp" srcset="images/hero-ripple-v2.webp"><img src="images/hero-ripple-v2.jpg" alt="" width="1672" height="941" loading="lazy"></picture>
     <div class="photo-band-text">
       <span class="en">Every drop makes ripples.</span>
       <span class="jp">一滴のやさしさが、<br class="sp-only">波紋となって広がる。</span>
@@ -2558,7 +2559,7 @@
       <article class="store-card green reveal">
         <div class="store-visual">
           <div class="store-visual-photo">
-            <img src="images/midorigaoka.jpg" alt="緑ヶ丘薬局の外観 — 沼津市緑ケ丘1-2の調剤薬局" loading="lazy" width="1456" height="1080">
+            <picture><source type="image/webp" srcset="images/midorigaoka.webp"><img src="images/midorigaoka.jpg" alt="緑ヶ丘薬局の外観 — 沼津市緑ケ丘1-2の調剤薬局" loading="lazy" width="1456" height="1080"></picture>
           </div>
           <span class="store-visual-color-bar" aria-hidden="true"></span>
           <svg class="store-visual-ripples" viewBox="-400 -50 800 500" aria-hidden="true">
@@ -2633,7 +2634,7 @@
       <article class="store-card orange reverse reveal">
         <div class="store-visual">
           <div class="store-visual-photo">
-            <img src="images/takajo.jpg" alt="鷹匠薬局 公園店の外観 — 静岡市葵区東鷹匠町5-1の調剤薬局" loading="lazy" width="1456" height="1080">
+            <picture><source type="image/webp" srcset="images/takajo.webp"><img src="images/takajo.jpg" alt="鷹匠薬局 公園店の外観 — 静岡市葵区東鷹匠町5-1の調剤薬局" loading="lazy" width="1456" height="1080"></picture>
           </div>
           <span class="store-visual-color-bar" aria-hidden="true"></span>
           <svg class="store-visual-ripples" viewBox="-400 -50 800 500" aria-hidden="true">
@@ -2760,15 +2761,15 @@
       <div class="photo-strip-wrap reveal">
         <div class="photo-strip">
           <figure>
-            <div class="ph"><img src="images/photo-consultation-v2.jpg" alt="患者さまと丁寧に話す薬剤師（イメージ）" width="1536" height="1024" loading="lazy"></div>
+            <div class="ph"><picture><source type="image/webp" srcset="images/photo-consultation-v2.webp"><img src="images/photo-consultation-v2.jpg" alt="患者さまと丁寧に話す薬剤師（イメージ）" width="1536" height="1024" loading="lazy"></picture></div>
             <figcaption>一人ひとりに向き合う<span class="en">Consultation</span></figcaption>
           </figure>
           <figure>
-            <div class="ph"><img src="images/photo-team-v2.jpg" alt="情報を共有する薬局スタッフ（イメージ）" width="1536" height="1024" loading="lazy"></div>
+            <div class="ph"><picture><source type="image/webp" srcset="images/photo-team-v2.webp"><img src="images/photo-team-v2.jpg" alt="情報を共有する薬局スタッフ（イメージ）" width="1536" height="1024" loading="lazy"></picture></div>
             <figcaption>店舗で情報を共有する<span class="en">Teamwork</span></figcaption>
           </figure>
           <figure>
-            <div class="ph"><img src="images/support-inventory-v2.jpg" alt="医薬品の在庫を確認する薬剤師（イメージ）" width="1536" height="1024" loading="lazy"></div>
+            <div class="ph"><picture><source type="image/webp" srcset="images/support-inventory-v2.webp"><img src="images/support-inventory-v2.jpg" alt="医薬品の在庫を確認する薬剤師（イメージ）" width="1536" height="1024" loading="lazy"></picture></div>
             <figcaption>在庫確認・お取り寄せ<span class="en">Inventory</span></figcaption>
           </figure>
         </div>
@@ -2973,7 +2974,7 @@
           採用情報・福利厚生は専用ページにてご案内しています。
         </p>
         <figure class="teaser-photo">
-          <div class="ph"><img src="images/photo-team-v2.jpg" alt="協力して働く薬局チーム（イメージ）" width="1536" height="1024" loading="lazy"></div>
+          <div class="ph"><picture><source type="image/webp" srcset="images/photo-team-v2.webp"><img src="images/photo-team-v2.jpg" alt="協力して働く薬局チーム（イメージ）" width="1536" height="1024" loading="lazy"></picture></div>
           <figcaption>※写真はイメージです</figcaption>
         </figure>
         <a href="recruit.html" class="recruit-teaser-btn">
@@ -2987,7 +2988,7 @@
 
   <!-- ========== REGION PHOTO BAND ========== -->
   <div class="photo-band photo-band--fuji" role="img" aria-label="桜越しに望む富士山の写真">
-    <img src="images/photo-fuji-sakura.jpg" alt="" width="1600" height="1067" loading="lazy">
+    <picture><source type="image/webp" srcset="images/photo-fuji-sakura.webp"><img src="images/photo-fuji-sakura.jpg" alt="" width="1600" height="1067" loading="lazy"></picture>
     <div class="photo-band-text">
       <span class="en">Rooted in Shizuoka</span>
       <span class="jp">富士のふもと、<br class="sp-only">静岡の地とともに。</span>

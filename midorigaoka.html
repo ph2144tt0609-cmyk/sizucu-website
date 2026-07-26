@@ -141,6 +141,7 @@
     }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; height: auto; }
+    picture { display: contents; }
 
     /* レスポンシブ改行制御 */
     br.pc-only { display: inline; }
@@ -441,7 +442,7 @@
 
   <!-- ========== 店舗写真 ========== -->
   <div class="store-photo">
-    <img src="images/midorigaoka.jpg" alt="緑ヶ丘薬局の外観 — 緑色の看板が目印の沼津市の調剤薬局" width="1456" height="1080">
+    <picture><source type="image/webp" srcset="images/midorigaoka.webp"><img src="images/midorigaoka.jpg" alt="緑ヶ丘薬局の外観 — 緑色の看板が目印の沼津市の調剤薬局" width="1456" height="1080"></picture>
   </div>
 
   <!-- ========== 店舗情報 ========== -->

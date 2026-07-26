@@ -232,6 +232,7 @@
       overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
+    picture { display: contents; }
     ::selection { background: var(--meishi-navy); color: var(--white); }
 
     /* レスポンシブ改行制御 */
@@ -1073,7 +1074,7 @@
       </div>
 
       <figure class="benefits-photo reveal">
-        <div class="ph"><img src="images/photo-family-sakura.jpg" alt="桜の咲く川辺で過ごす家族（イメージ）" width="1400" height="600" loading="lazy"></div>
+        <div class="ph"><picture><source type="image/webp" srcset="images/photo-family-sakura.webp"><img src="images/photo-family-sakura.jpg" alt="桜の咲く川辺で過ごす家族（イメージ）" width="1400" height="600" loading="lazy"></picture></div>
         <figcaption>※写真はイメージです</figcaption>
       </figure>
 
@@ -1176,7 +1177,7 @@
   <section class="cta">
     <div class="cta-inner">
       <figure class="cta-photo">
-        <div class="ph"><img src="images/photo-pharmacy-team-v2.jpg" alt="調剤薬局で働く薬剤師とスタッフ（イメージ）" width="1200" height="675" loading="lazy"></div>
+        <div class="ph"><picture><source type="image/webp" srcset="images/photo-pharmacy-team-v2.webp"><img src="images/photo-pharmacy-team-v2.jpg" alt="調剤薬局で働く薬剤師とスタッフ（イメージ）" width="1200" height="675" loading="lazy"></picture></div>
         <figcaption>※写真はイメージです</figcaption>
       </figure>
       <div class="cta-eyebrow">Apply Now</div>
