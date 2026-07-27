@@ -1304,81 +1304,6 @@
       text-transform: uppercase;
     }
 
-    /* ========== SUPPORT（薬局さま向け・外注受付）========== */
-    .support {
-      background: var(--paper);
-      position: relative;
-    }
-    .support-teaser {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      gap: clamp(34px, 4.5vw, 68px);
-      align-items: center;
-      background: var(--white);
-      border: 1px solid var(--line-soft);
-      padding: clamp(36px, 4.4vw, 60px);
-    }
-    .support-teaser-lead {
-      margin: 0;
-      font-size: 14.5px; line-height: 2.2;
-      color: var(--ink-sub); letter-spacing: 0.05em;
-      font-weight: 500;
-    }
-    .support-teaser-links {
-      display: grid; gap: 1px;
-      background: var(--line-soft);
-      border: 1px solid var(--line-soft);
-    }
-    .support-teaser-link {
-      display: block; background: var(--white);
-      padding: 26px 28px;
-      transition: background 0.4s var(--ease);
-    }
-    .support-teaser-link:hover { background: #f6f9fb; }
-    .support-teaser-link .num {
-      display: block; margin-bottom: 12px;
-      font-family: var(--latin); font-style: italic;
-      font-size: 10.5px; letter-spacing: 0.3em; text-transform: uppercase;
-      color: var(--meishi-navy); opacity: 0.45;
-    }
-    .support-teaser-link .name {
-      display: flex; align-items: center; gap: 10px;
-      font-family: var(--serif); font-weight: 500;
-      font-size: 16.5px; letter-spacing: 0.1em;
-      color: var(--meishi-navy);
-    }
-    .support-teaser-link .name svg { width: 13px; height: 13px; transition: transform 0.4s var(--ease); }
-    .support-teaser-link:hover .name svg { transform: translateX(4px); }
-    .support-teaser-link .desc {
-      display: block; margin-top: 10px;
-      font-size: 12.5px; line-height: 1.95;
-      color: var(--ink-sub); letter-spacing: 0.04em;
-    }
-    .support-teaser-actions {
-      grid-column: 1 / -1;
-      display: flex; gap: 14px; flex-wrap: wrap;
-      padding-top: 30px;
-      border-top: 1px solid var(--line-soft);
-    }
-    .support-teaser-actions .support-btn { margin-top: 0; }
-    .support-btn {
-      display: inline-flex; align-items: center; gap: 12px;
-      margin-top: 24px; padding: 15px 32px;
-      border: 1px solid var(--meishi-navy);
-      color: var(--meishi-navy);
-      font-size: 11.5px; letter-spacing: 0.24em; text-transform: uppercase;
-      font-family: var(--sans); font-weight: 500;
-      transition: all 0.4s var(--ease);
-    }
-    .support-btn:hover { background: var(--meishi-navy); color: var(--white); }
-    .support-btn svg { width: 14px; height: 14px; }
-    .support-btn--fill { background: var(--meishi-navy); color: var(--white); }
-    .support-btn--fill:hover {
-      background: var(--c-green-deep, #7a9130);
-      border-color: var(--c-green-deep, #7a9130);
-      color: var(--white);
-    }
-
     /* ========== RECRUIT TEASER ========== */
     .recruit-teaser {
       background: var(--meishi-navy);
@@ -1700,228 +1625,6 @@
       line-height: 1.75;
     }
 
-    /* ========== CONTACT ========== */
-    .contact { background: var(--paper); }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px;
-    }
-    .contact-stores h3, .contact-form h3 {
-      font-family: var(--serif); font-size: 17px; font-weight: 400;
-      color: var(--meishi-navy); letter-spacing: 0.18em;
-      margin-bottom: 32px; padding-bottom: 16px;
-      border-bottom: 1px solid var(--line);
-      display: flex; align-items: baseline; gap: 14px;
-    }
-    .contact-stores h3 .script, .contact-form h3 .script {
-      font-family: var(--latin); font-style: italic;
-      font-size: 11px; color: var(--ink-mute);
-      font-weight: 400; letter-spacing: 0.28em;
-      margin-left: auto;
-      text-transform: uppercase;
-    }
-    .contact-store-card {
-      background: transparent;
-      border: none;
-      padding: 28px 0;
-      margin-bottom: 0;
-      position: relative;
-      border-bottom: 1px solid var(--line);
-    }
-    .contact-store-card:last-of-type { border-bottom: none; }
-    .contact-store-card::before {
-      content: ''; position: absolute;
-      top: 32px; left: -16px;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-    }
-    .contact-store-card.green::before { background: var(--c-green); }
-    .contact-store-card.orange::before { background: var(--c-orange); }
-    .contact-store-card h4 {
-      font-family: var(--serif); font-size: 18px; font-weight: 400;
-      color: var(--meishi-navy); letter-spacing: 0.12em; margin-bottom: 4px;
-    }
-    .contact-store-card .sub {
-      font-family: var(--latin); font-style: italic;
-      font-size: 11px; letter-spacing: 0.28em;
-      color: var(--ink-mute); margin-bottom: 22px;
-      text-transform: uppercase;
-    }
-    .contact-store-card dl {
-      display: grid; grid-template-columns: 50px 1fr;
-      gap: 10px 16px; font-size: 13px;
-    }
-    .contact-store-card dt {
-      font-family: var(--latin); font-style: italic;
-      color: var(--ink-mute);
-      font-size: 10.5px; letter-spacing: 0.24em;
-      padding-top: 4px;
-      text-transform: uppercase;
-    }
-    .contact-store-card dd a { color: var(--meishi-navy); font-weight: 500; letter-spacing: 0.04em; }
-
-    .form-intro {
-      font-size: 13px; line-height: 2;
-      color: var(--ink-sub); margin-bottom: 20px;
-    }
-    .form-guidance {
-      margin-bottom: 24px;
-      padding: 18px 20px;
-      background: var(--meishi-blue-mist);
-      border-left: 3px solid var(--meishi-navy);
-    }
-    .form-guidance strong {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--meishi-navy);
-      font-family: var(--sans);
-      font-size: 13px;
-      letter-spacing: 0.08em;
-    }
-    .form-guidance p {
-      color: var(--ink-sub);
-      font-size: 12px;
-      line-height: 1.8;
-    }
-    .form-alert {
-      margin-bottom: 24px;
-      padding: 14px 16px;
-      background: #fff8ed;
-      border: 1px solid #ead8ba;
-      color: #6f5731;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-    .form-group { margin-bottom: 22px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    /* フォームラベル：和文を読みやすく、必須/任意バッジを明確に */
-    label {
-      display: flex; align-items: center; gap: 10px;
-      font-family: var(--sans);
-      font-size: 14px; font-weight: 600;
-      color: var(--meishi-navy); letter-spacing: 0.08em;
-      margin-bottom: 12px;
-    }
-    label .req {
-      display: inline-block; font-size: 10.5px;
-      color: var(--white); background: #c25454;
-      padding: 2px 8px; letter-spacing: 0.12em; font-weight: 600;
-      font-family: var(--sans); font-style: normal;
-      border-radius: 2px;
-      line-height: 1.4;
-    }
-    label .opt {
-      display: inline-block; font-size: 10.5px;
-      color: var(--ink-mute); background: transparent;
-      padding: 2px 8px; letter-spacing: 0.12em; font-weight: 500;
-      font-family: var(--sans); font-style: normal;
-      border: 1px solid var(--line);
-      border-radius: 2px;
-      line-height: 1.4;
-    }
-    /* フォーム入力欄：枠付きで「ここに書く」と一目で分かる */
-    input[type="text"], input[type="email"], input[type="tel"],
-    select, textarea {
-      width: 100%; padding: 14px 16px;
-      border: 1px solid var(--line);
-      background: var(--white);
-      font-family: var(--sans); font-size: 15px;
-      color: var(--ink); letter-spacing: 0.04em;
-      transition: all 0.3s var(--ease);
-      border-radius: 3px;
-      font-weight: 500;
-    }
-    input::placeholder, textarea::placeholder {
-      color: var(--ink-mute);
-      opacity: 0.65;
-      font-weight: 400;
-    }
-    input:hover, select:hover, textarea:hover {
-      border-color: var(--meishi-navy-soft);
-    }
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-      border-color: var(--meishi-navy);
-      background: var(--white);
-      box-shadow: 0 0 0 3px rgba(61, 78, 94, 0.08);
-    }
-    select {
-      cursor: pointer; appearance: none; -webkit-appearance: none;
-      background-image:
-        linear-gradient(45deg, transparent 50%, var(--meishi-navy) 50%),
-        linear-gradient(135deg, var(--meishi-navy) 50%, transparent 50%);
-      background-position: calc(100% - 18px) 20px, calc(100% - 13px) 20px;
-      background-size: 5px 5px, 5px 5px;
-      background-repeat: no-repeat;
-      padding-right: 36px;
-    }
-    textarea {
-      resize: vertical;
-      min-height: 160px;
-      line-height: 1.8;
-    }
-    .privacy-consent {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin: 4px 0 0;
-      padding: 16px 18px;
-      border: 1px solid var(--line);
-      background: var(--white);
-      cursor: pointer;
-    }
-    .privacy-consent input {
-      flex: 0 0 auto;
-      width: 18px;
-      height: 18px;
-      margin-top: 2px;
-      accent-color: var(--meishi-navy);
-    }
-    .privacy-consent-text {
-      color: var(--ink-sub);
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 1.8;
-      letter-spacing: 0.04em;
-    }
-    .privacy-consent-text a {
-      color: var(--meishi-navy);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    .form-submit {
-      margin-top: 20px; padding: 20px 52px;
-      background: var(--meishi-navy); color: var(--white);
-      font-family: var(--sans); font-size: 12px; font-weight: 500;
-      letter-spacing: 0.32em; border: none; cursor: pointer;
-      transition: all 0.4s var(--ease);
-      display: inline-flex; align-items: center; gap: 16px;
-      text-transform: uppercase;
-    }
-    .form-submit:hover {
-      background: var(--ink);
-      letter-spacing: 0.36em;
-    }
-    .form-submit:disabled { opacity: 0.65; cursor: wait; letter-spacing: 0.32em; }
-    .form-submit svg { width: 12px; height: 12px; transition: transform 0.4s var(--ease); }
-    .form-submit:hover svg { transform: translateX(6px); }
-    .form-note {
-      margin-top: 18px; font-size: 11.5px;
-      color: var(--ink-mute); line-height: 1.9;
-    }
-    .form-status {
-      margin-top: 20px; padding: 14px 18px;
-      font-size: 13px; display: none;
-    }
-    .form-status.show { display: block; }
-    .form-status.success {
-      background: #e8f3ed; color: #2d6a4a;
-      border-left: 3px solid #4a9c73;
-    }
-    .form-status.error {
-      background: #fde8e8; color: #8a3838;
-      border-left: 3px solid #c25454;
-    }
-
     /* ========== FOOTER ========== */
     footer {
       background: var(--meishi-navy);
@@ -2117,11 +1820,9 @@
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
       .about-visual { position: relative; top: 0; }
       .about-body .lead { font-size: 17px; }
-      .services-grid, .benefits-grid, .recruit-cards, .innovation-grid, .support-teaser { grid-template-columns: 1fr; }
+      .services-grid, .benefits-grid, .recruit-cards, .innovation-grid { grid-template-columns: 1fr; }
       .company-row { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
       .company-row dt { font-size: 11px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 50px; }
-      .form-row { grid-template-columns: 1fr; }
       .faq-intro { margin-top: -34px; }
       footer { padding: 60px 24px 24px; }
       .footer-wrap { grid-template-columns: 1fr; gap: 40px; }
@@ -2247,17 +1948,6 @@
         grid-template-columns: 1fr;
         gap: 2px;
         padding-left: 20px;
-      }
-
-      /* お問い合わせ */
-      .contact-store-card { padding: 22px 18px; }
-      .contact-store-card h4 { font-size: 16px; letter-spacing: 0.08em; }
-      .contact-store-card .sub { font-size: 10px; letter-spacing: 0.18em; margin-bottom: 16px; }
-      .contact-store-card dl { font-size: 12.5px; }
-      .form-submit {
-        width: 100%; justify-content: center;
-        padding: 18px 28px;
-        font-size: 11.5px; letter-spacing: 0.22em;
       }
 
       /* フッター */
@@ -2440,7 +2130,7 @@
       <li><a href="support.html"><span class="nav-latin">Support</span>薬局サポート</a></li>
       <li><a href="recruit.html"><span class="nav-latin">Recruit</span>採用情報</a></li>
       <li><a href="#company"><span class="nav-latin">Company</span>会社概要</a></li>
-      <li><a href="#contact"><span class="nav-latin">Contact</span>お問い合わせ</a></li>
+      <li><a href="contact.html"><span class="nav-latin">Contact</span>お問い合わせ</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="メニューを開く" aria-controls="navMenu" aria-expanded="false">
       <span></span><span></span>
@@ -2931,47 +2621,6 @@
     </div>
   </section>
 
-  <!-- ========== SUPPORT（薬局さま向け・外注受付）========== -->
-  <section class="support" id="support">
-    <div class="section-wrap">
-      <div class="section-head reveal">
-        <div class="section-label">For Pharmacies</div>
-        <h2 class="section-title">薬局さま向けサポート<span class="section-title-small">同業薬局さまの「手が回らない」を、外注でお引き受けします。</span></h2>
-      </div>
-
-      <div class="support-teaser reveal">
-        <p class="support-teaser-lead">
-          施設への請求書の発行や入金の管理といった経理業務と、デッドストック（不動在庫）の管理・薬局間の医薬品融通。調剤や在宅対応で手一杯になりがちなバックヤード業務を、現場を知る私たちが業務委託でお引き受けします。<br>
-          サービスの流れ・業務範囲・料金の目安は、専用ページにてご案内しています。
-        </p>
-
-        <div class="support-teaser-links">
-          <a href="support.html#service01" class="support-teaser-link">
-            <span class="num">Service 01 — Accounting Support</span>
-            <span class="name">請求業務サポート<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-            <span class="desc">施設への請求書発行、患者さまへの領収書発行から、入金の消し込み・売掛金の管理まで代行します。</span>
-          </a>
-          <a href="support.html#service02" class="support-teaser-link">
-            <span class="num">Service 02 — Dead Stock</span>
-            <span class="name">医薬品融通サポート<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-            <span class="desc">月1回データをご共有いただくだけ。眠っている在庫を薬局間で活かし合う仕組みづくりまで伴走します。</span>
-          </a>
-        </div>
-
-        <div class="support-teaser-actions">
-          <a href="support.html" class="support-btn support-btn--fill">
-            薬局サポートを見る
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-          <a href="#contact" class="support-btn">
-            外注について相談する
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ========== RECRUIT TEASER ========== -->
   <section class="recruit-teaser" id="recruit">
     <div class="section-wrap">
@@ -2998,7 +2647,6 @@
       </div>
     </div>
   </section>
-
 
   <!-- ========== REGION PHOTO BAND ========== -->
   <div class="photo-band photo-band--fuji" role="img" aria-label="桜越しに望む富士山の写真">
@@ -3069,151 +2717,6 @@
     </div>
   </section>
 
-  <!-- ========== CONTACT ========== -->
-  <section class="contact" id="contact">
-    <div class="section-wrap">
-      <div class="section-head reveal">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title">お問い合わせ<span class="section-title-small">お気軽にご連絡ください。採用のご応募・業務のご相談も承ります。</span></h2>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-stores reveal">
-          <h3>店舗へのお問い合わせ<span class="script">Direct Call</span></h3>
-
-          <div class="contact-store-card green">
-            <h4>緑ヶ丘薬局</h4>
-            <div class="sub">01 Green — Midorigaoka Pharmacy</div>
-            <dl>
-              <dt>TEL</dt>
-              <dd><a href="tel:0559272311">055-927-2311</a></dd>
-              <dt>FAX</dt>
-              <dd>055-927-2312</dd>
-              <dt>時間</dt>
-              <dd>平日 9:00 – 18:00 / 土 9:00 – 13:00</dd>
-            </dl>
-          </div>
-
-          <div class="contact-store-card orange">
-            <h4>鷹匠薬局 公園店</h4>
-            <div class="sub">02 Orange — Takajo Pharmacy Park</div>
-            <dl>
-              <dt>TEL</dt>
-              <dd><a href="tel:0542475611">054-247-5611</a></dd>
-              <dt>FAX</dt>
-              <dd>054-247-5612</dd>
-              <dt>時間</dt>
-              <dd>平日 9:00 – 18:00 / 土 9:00 – 13:00</dd>
-            </dl>
-          </div>
-        </div>
-
-        <div class="contact-form reveal">
-          <h3 id="form-heading">お問い合わせフォーム<span class="script">Contact Form</span></h3>
-          <p class="form-intro" id="form-use-note">
-            患者さま・ご家族からのご相談、採用、薬局・法人向けの業務支援、取材のご依頼などを受け付けています。<br class="pc-only">
-            内容を確認のうえ、担当者よりお電話で折り返しご連絡いたします。
-          </p>
-
-          <div class="form-guidance">
-            <strong>フォームで受け付けている内容</strong>
-            <p>お薬・健康のご相談／採用へのご応募／請求・経理・在庫などの業務相談／取材・その他のご連絡</p>
-          </div>
-          <p class="form-alert" id="form-urgent-note">
-            処方内容や体調に関するお急ぎのご相談は、フォームではなく利用される店舗へお電話ください。
-          </p>
-
-          <!-- 送信内容は Formspree の Submissions から確認できます。 -->
-          <form action="https://formspree.io/f/mqenewrn" method="POST" id="contactForm">
-            <!-- スパム対策ハニーポット（非表示） -->
-            <p style="display:none">
-              <label>入力しないでください: <input name="_gotcha"></label>
-            </p>
-            <!-- Formspree が件名を自動付与するため、種別を件名に反映 -->
-            <input type="hidden" name="_subject" id="formSubject" value="【しずくHP】お問い合わせ">
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="inquiry-target">ご相談先<span class="req">必須</span></label>
-                <select name="inquiry-target" id="inquiry-target" required>
-                  <option value="">選択してください</option>
-                  <option value="株式会社しずく">株式会社しずく（会社・採用・業務相談）</option>
-                  <option value="緑ヶ丘薬局">緑ヶ丘薬局</option>
-                  <option value="鷹匠薬局 公園店">鷹匠薬局 公園店</option>
-                  <option value="わからない・その他">わからない・その他</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="inquiry-type">お問い合わせ種別<span class="req">必須</span></label>
-                <select name="inquiry-type" id="inquiry-type" required>
-                  <option value="">選択してください</option>
-                  <option value="処方せん・お薬">処方せん・お薬について</option>
-                  <option value="健康相談・在宅訪問">健康相談・在宅訪問について</option>
-                  <option value="採用（薬剤師）">採用について — 薬剤師</option>
-                  <option value="採用（業務委託薬剤師）">採用について — 業務委託薬剤師</option>
-                  <option value="採用（事務）">採用について — 事務スタッフ</option>
-                  <option value="薬局・法人向け業務支援">薬局・法人向け業務支援について</option>
-                  <option value="取材・メディア">取材・メディアのご依頼</option>
-                  <option value="その他">その他</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">お名前<span class="req">必須</span></label>
-                <input type="text" name="name" id="name" required autocomplete="name" placeholder="山田 太郎">
-              </div>
-              <div class="form-group">
-                <label for="organization">会社名・施設名<span class="opt">任意</span></label>
-                <input type="text" name="organization" id="organization" autocomplete="organization" placeholder="法人・施設の方のみ">
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="tel">お電話番号<span class="req">必須</span></label>
-                <input type="tel" name="tel" id="tel" required autocomplete="tel" inputmode="tel" placeholder="000-0000-0000">
-              </div>
-              <div class="form-group">
-                <label for="contact-time">ご希望の連絡時間帯<span class="opt">任意</span></label>
-                <select name="contact-time" id="contact-time">
-                  <option value="指定なし">指定なし</option>
-                  <option value="平日 9:00〜12:00">平日 9:00〜12:00</option>
-                  <option value="平日 12:00〜15:00">平日 12:00〜15:00</option>
-                  <option value="平日 15:00〜18:00">平日 15:00〜18:00</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="message">お問い合わせ内容<span class="req">必須</span></label>
-              <textarea name="message" id="message" required aria-describedby="form-use-note form-urgent-note" placeholder="ご相談・ご質問の内容をご記入ください。&#10;店舗へのご相談は、処方せんの発行日やお薬の名前など、分かる範囲でご記入ください。"></textarea>
-            </div>
-
-            <label class="privacy-consent" for="privacy-consent">
-              <input type="checkbox" name="privacy-consent" id="privacy-consent" value="同意する" required>
-              <span class="privacy-consent-text"><a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>をご確認のうえ、個人情報の取り扱いに同意します。</span>
-              <span class="req">必須</span>
-            </label>
-
-            <button type="submit" class="form-submit">
-              送信する
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </button>
-
-            <p class="form-note">
-              ※ 通常は 2〜3 営業日以内を目安に、お電話でご連絡いたします。<br class="pc-only">
-              ※ 営業・勧誘を目的とした送信はご遠慮ください。
-            </p>
-
-            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
   </main>
 
   <!-- ========== FOOTER ========== -->
@@ -3259,8 +2762,7 @@
           <li><a href="recruit.html">採用情報</a></li>
           <li><a href="recruit.html#benefits">福利厚生</a></li>
           <li><a href="#company">会社概要</a></li>
-          <li><a href="#contact">お問い合わせ</a></li>
-          <li><a href="support.html">薬局・法人さま向けサポート（請求・医薬品融通）</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
           <li><a href="shisetsu-kijun.html">施設基準等の掲示</a></li>
           <li><a href="privacy.html">プライバシーポリシー</a></li>
         </ul>
@@ -3324,67 +2826,6 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
     reveals.forEach(el => io.observe(el));
 
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('formStatus');
-    const submitButton = form.querySelector('.form-submit');
-
-    // 相談先と種別を送信通知の件名へ反映
-    const targetSelect = document.getElementById('inquiry-target');
-    const inquirySelect = document.getElementById('inquiry-type');
-    const formSubject = document.getElementById('formSubject');
-    const updateFormSubject = function() {
-      if (!formSubject) return;
-      const details = [
-        targetSelect ? targetSelect.value : '',
-        inquirySelect ? inquirySelect.value : ''
-      ].filter(Boolean).join(' / ');
-      formSubject.value = details
-        ? `【しずくHP】${details}`
-        : '【しずくHP】お問い合わせ';
-    };
-    if (targetSelect) targetSelect.addEventListener('change', updateFormSubject);
-    if (inquirySelect) inquirySelect.addEventListener('change', updateFormSubject);
-
-    // Formspree 経由で送信
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (submitButton.disabled) return;
-      const action = form.getAttribute('action') || '';
-      const data = new FormData(form);
-
-      if (!action || action.includes('YOUR_FORM_ID')) {
-        status.textContent = '現在フォームを利用できません。恐れ入りますが、各店舗へお電話ください。';
-        status.className = 'form-status show error';
-        return;
-      }
-
-      // Formspree に AJAX POST
-      submitButton.disabled = true;
-      status.textContent = '送信しています。しばらくお待ちください。';
-      status.className = 'form-status show';
-      fetch(action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(res => {
-        if (res.ok) {
-          status.textContent = 'お問い合わせを受け付けました。担当者より 2〜3 営業日以内にご連絡いたします。';
-          status.className = 'form-status show success';
-          form.reset();
-          updateFormSubject();
-        } else {
-          throw new Error('Submission failed');
-        }
-      })
-      .catch(() => {
-        status.textContent = '送信に失敗しました。恐れ入りますが、お電話にてご連絡いただくか、時間をおいて再度お試しください。';
-        status.className = 'form-status show error';
-      })
-      .finally(() => {
-        submitButton.disabled = false;
-      });
-    });
   </script>
 
 </body>
