@@ -1309,13 +1309,58 @@
       background: var(--paper);
       position: relative;
     }
-    .support-grid {
+    .support-teaser {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(34px, 4.5vw, 68px);
+      align-items: center;
+      background: var(--white);
+      border: 1px solid var(--line-soft);
+      padding: clamp(36px, 4.4vw, 60px);
+    }
+    .support-teaser-lead {
+      margin: 0;
+      font-size: 14.5px; line-height: 2.2;
+      color: var(--ink-sub); letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+    .support-teaser-links {
+      display: grid; gap: 1px;
       background: var(--line-soft);
       border: 1px solid var(--line-soft);
     }
+    .support-teaser-link {
+      display: block; background: var(--white);
+      padding: 26px 28px;
+      transition: background 0.4s var(--ease);
+    }
+    .support-teaser-link:hover { background: #f6f9fb; }
+    .support-teaser-link .num {
+      display: block; margin-bottom: 12px;
+      font-family: var(--latin); font-style: italic;
+      font-size: 10.5px; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--meishi-navy); opacity: 0.45;
+    }
+    .support-teaser-link .name {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--serif); font-weight: 500;
+      font-size: 16.5px; letter-spacing: 0.1em;
+      color: var(--meishi-navy);
+    }
+    .support-teaser-link .name svg { width: 13px; height: 13px; transition: transform 0.4s var(--ease); }
+    .support-teaser-link:hover .name svg { transform: translateX(4px); }
+    .support-teaser-link .desc {
+      display: block; margin-top: 10px;
+      font-size: 12.5px; line-height: 1.95;
+      color: var(--ink-sub); letter-spacing: 0.04em;
+    }
+    .support-teaser-actions {
+      grid-column: 1 / -1;
+      display: flex; gap: 14px; flex-wrap: wrap;
+      padding-top: 30px;
+      border-top: 1px solid var(--line-soft);
+    }
+    .support-teaser-actions .support-btn { margin-top: 0; }
     .support-btn {
       display: inline-flex; align-items: center; gap: 12px;
       margin-top: 24px; padding: 15px 32px;
@@ -1327,15 +1372,12 @@
     }
     .support-btn:hover { background: var(--meishi-navy); color: var(--white); }
     .support-btn svg { width: 14px; height: 14px; }
-    .support-more {
-      display: flex; width: fit-content; align-items: center; gap: 7px;
-      margin-top: 16px; padding-bottom: 2px;
-      font-size: 12.5px; letter-spacing: 0.06em; font-weight: 500;
-      color: var(--meishi-navy); border-bottom: 1px solid rgba(61,78,94,0.35);
-      transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+    .support-btn--fill { background: var(--meishi-navy); color: var(--white); }
+    .support-btn--fill:hover {
+      background: var(--c-green-deep, #7a9130);
+      border-color: var(--c-green-deep, #7a9130);
+      color: var(--white);
     }
-    .support-more:hover { color: var(--c-green-deep, #7a9130); border-bottom-color: currentColor; }
-    .support-more svg { width: 12px; height: 12px; }
 
     /* ========== RECRUIT TEASER ========== */
     .recruit-teaser {
@@ -2075,7 +2117,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
       .about-visual { position: relative; top: 0; }
       .about-body .lead { font-size: 17px; }
-      .services-grid, .benefits-grid, .recruit-cards, .innovation-grid, .support-grid { grid-template-columns: 1fr; }
+      .services-grid, .benefits-grid, .recruit-cards, .innovation-grid, .support-teaser { grid-template-columns: 1fr; }
       .company-row { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
       .company-row dt { font-size: 11px; }
       .contact-grid { grid-template-columns: 1fr; gap: 50px; }
@@ -2482,11 +2524,11 @@
       <div class="about-grid">
         <figure class="about-visual reveal">
           <div class="about-visual-frame">
-            <picture><source type="image/webp" srcset="images/about-fuji-layers-v4.webp"><img class="about-visual-img" src="images/about-fuji-layers-v4.jpg" alt="湖畔から望む、空と湖に囲まれた富士山の全景" width="1000" height="1250" loading="lazy"></picture>
+            <picture><source type="image/webp" srcset="images/about-ripple-v5.webp"><img class="about-visual-img" src="images/about-ripple-v5.jpg" alt="静かな水面に一滴の水が落ち、波紋が広がるようす" width="800" height="1000" loading="lazy"></picture>
           </div>
           <figcaption class="about-visual-caption">
             <span class="en">From Shizuoka</span>
-            <span class="jp">富士と水の恵みとともに。</span>
+            <span class="jp">水の恵みとともに、この地で。</span>
           </figcaption>
         </figure>
 
@@ -2897,62 +2939,34 @@
         <h2 class="section-title">薬局さま向けサポート<span class="section-title-small">同業薬局さまの「手が回らない」を、外注でお引き受けします。</span></h2>
       </div>
 
-      <div class="support-grid reveal">
-        <div class="innovation-item">
-          <div class="innovation-item-num">01 — Accounting Support</div>
-          <svg class="innovation-item-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
-            <rect x="8" y="5" width="20" height="26" rx="1.5"/>
-            <path d="M12 11h12M12 15h8M12 19h10"/>
-            <circle cx="28" cy="28" r="7"/>
-            <path d="M25.5 25.5l2.5 3 2.5-3M28 28.5v4M25.8 30.5h4.4"/>
-          </svg>
-          <h3 class="innovation-item-title">施設等の経理業務の外注<br>受付中</h3>
-          <p class="innovation-item-body">
-            施設への請求書の発行、患者さまへの領収書の発行、引き落とし金額の管理など、施設調剤にまつわる経理業務の外注をお受けしています。日々の薬局業務で手一杯になりがちな事務作業を、現場を知る私たちがお手伝いします。
-          </p>
-          <span class="innovation-item-tag">Billing &amp; Receipts</span>
-          <a href="support.html#service01" class="support-more">サービスの流れ・料金の目安を見る<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        </div>
-        <div class="innovation-item">
-          <div class="innovation-item-num">02 — Dead Stock</div>
-          <svg class="innovation-item-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
-            <rect x="5" y="6" width="13" height="13" rx="1.5"/>
-            <rect x="22" y="21" width="13" height="13" rx="1.5"/>
-            <path d="M24 12h11M31.5 8.5L35 12l-3.5 3.5"/>
-            <path d="M16 28H5M8.5 24.5L5 28l3.5 3.5"/>
-          </svg>
-          <h3 class="innovation-item-title">デッドストック管理の外注<br>受付中</h3>
-          <p class="innovation-item-body">
-            不動在庫（デッドストック）の管理も外注として受付中です。月1回、セカンダーのファイルをご共有いただくだけで、売買等のお手伝いをいたします。月末在庫と使用量のデータから、薬局間で薬を融通し合う仕組みづくりまで伴走します。
-          </p>
-          <span class="innovation-item-tag">Inventory Support</span>
-          <a href="support.html#service02" class="support-more">融通の仕組み・料金の目安を見る<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        </div>
-      </div>
+      <div class="support-teaser reveal">
+        <p class="support-teaser-lead">
+          施設への請求書の発行や入金の管理といった経理業務と、デッドストック（不動在庫）の管理・薬局間の医薬品融通。調剤や在宅対応で手一杯になりがちなバックヤード業務を、現場を知る私たちが業務委託でお引き受けします。<br>
+          サービスの流れ・業務範囲・料金の目安は、専用ページにてご案内しています。
+        </p>
 
-      <div class="service-notice reveal">
-        <div class="service-notice-mark" aria-hidden="true">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" width="26" height="26">
-            <path d="M6 9h28v18H21l-7 6v-6H6z"/>
-            <path d="M12 16h16M12 20h11"/>
-          </svg>
+        <div class="support-teaser-links">
+          <a href="support.html#service01" class="support-teaser-link">
+            <span class="num">Service 01 — Accounting Support</span>
+            <span class="name">請求業務サポート<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            <span class="desc">施設への請求書発行、患者さまへの領収書発行から、入金の消し込み・売掛金の管理まで代行します。</span>
+          </a>
+          <a href="support.html#service02" class="support-teaser-link">
+            <span class="num">Service 02 — Dead Stock</span>
+            <span class="name">医薬品融通サポート<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            <span class="desc">月1回データをご共有いただくだけ。眠っている在庫を薬局間で活かし合う仕組みづくりまで伴走します。</span>
+          </a>
         </div>
-        <div class="service-notice-body">
-          <div class="service-notice-label">Consultation</div>
-          <h3 class="service-notice-title">「薬局業務で手一杯」という薬局さまへ</h3>
-          <p class="service-notice-text">
-            調剤・服薬指導・在宅対応に追われ、経理や在庫管理までパンクしそう——。そんな薬局さまは、一度ご相談ください。業務の内容・量に応じて、柔軟に対応いたします。
-          </p>
-          <div style="display:flex;gap:14px;flex-wrap:wrap;">
-            <a href="#contact" class="support-btn">
-              外注について相談する
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
-            <a href="support.html" class="support-btn">
-              サービス詳細・料金の目安
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
-          </div>
+
+        <div class="support-teaser-actions">
+          <a href="support.html" class="support-btn support-btn--fill">
+            薬局サポートを見る
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="#contact" class="support-btn">
+            外注について相談する
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
         </div>
       </div>
     </div>
