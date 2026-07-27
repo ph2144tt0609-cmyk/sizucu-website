@@ -6,8 +6,8 @@
 
   <!-- ========== SEO 基本 ========== -->
   <title>株式会社しずく | 静岡県の調剤薬局グループ（沼津・静岡市）</title>
-  <meta name="description" content="株式会社しずくは静岡県内で緑ヶ丘薬局（沼津市）・鷹匠薬局 公園店（静岡市葵区）を運営する地域密着型の調剤薬局グループです。どの医療機関の処方せんもお受けします。在宅医療・服薬指導・お薬の取り寄せもご相談ください。薬局さま向けに施設経理業務・デッドストック管理の外注も受付中です。">
-  <meta name="keywords" content="株式会社しずく,静岡 薬局,沼津 薬局,静岡市 薬局,緑ヶ丘薬局,鷹匠薬局,公園店,調剤薬局,処方せん受付,在宅医療,薬剤師求人,業務委託 薬剤師,薬局 経理 外注,デッドストック 外注">
+  <meta name="description" content="株式会社しずくは静岡県内で緑ヶ丘薬局（沼津市）・鷹匠薬局 公園店（静岡市葵区）を運営する地域密着型の調剤薬局グループです。どの医療機関の処方せんもお受けします。在宅医療・服薬指導・お薬の取り寄せもご相談ください。">
+  <meta name="keywords" content="株式会社しずく,静岡 薬局,沼津 薬局,静岡市 薬局,緑ヶ丘薬局,鷹匠薬局,公園店,調剤薬局,処方せん受付,在宅医療,かかりつけ薬局,お薬の取り寄せ">
   <meta name="author" content="株式会社しずく">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="theme-color" content="#3d4e5e">
@@ -1304,79 +1304,6 @@
       text-transform: uppercase;
     }
 
-    /* ========== RECRUIT TEASER ========== */
-    .recruit-teaser {
-      background: var(--meishi-navy);
-      color: var(--white);
-      position: relative; overflow: hidden;
-    }
-    .recruit-teaser::before {
-      content: ''; position: absolute;
-      left: 50%; top: 50%;
-      transform: translate(-50%, -50%);
-      width: 1100px; height: 1100px; border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      box-shadow:
-        0 0 0 90px rgba(255, 255, 255, 0.025),
-        0 0 0 180px rgba(255, 255, 255, 0.018),
-        0 0 0 270px rgba(255, 255, 255, 0.012);
-      pointer-events: none;
-    }
-    .recruit-teaser .section-wrap {
-      padding: 130px 80px;
-      position: relative; z-index: 2;
-    }
-    .recruit-teaser-inner {
-      max-width: 720px; margin: 0 auto;
-      text-align: center;
-    }
-    .recruit-teaser-mark {
-      display: block;
-      width: 70px; height: auto;
-      margin: 0 auto 28px;
-      opacity: 0.95;
-      filter: drop-shadow(0 4px 14px rgba(0,0,0,0.25));
-    }
-    .recruit-teaser .section-label {
-      color: rgba(255,255,255,0.85);
-      justify-content: center;
-      margin-bottom: 28px;
-    }
-    .recruit-teaser .section-label::before,
-    .recruit-teaser .section-label::after {
-      background: rgba(255,255,255,0.4);
-    }
-    .recruit-teaser-title {
-      font-family: var(--serif); font-weight: 400;
-      font-size: clamp(28px, 3.6vw, 40px);
-      line-height: 1.6; letter-spacing: 0.14em;
-      color: var(--white); margin-bottom: 28px;
-    }
-    .recruit-teaser-lead {
-      font-size: 14px; line-height: 2.3;
-      color: rgba(255,255,255,0.78);
-      letter-spacing: 0.06em;
-      margin-bottom: 48px;
-    }
-    .recruit-teaser-btn {
-      display: inline-flex; align-items: center; gap: 14px;
-      padding: 18px 40px;
-      border: 1px solid rgba(255, 255, 255, 0.45);
-      font-size: 11.5px; letter-spacing: 0.28em;
-      color: var(--white); transition: all 0.4s var(--ease);
-      text-transform: uppercase;
-      font-family: var(--sans); font-weight: 500;
-    }
-    .recruit-teaser-btn:hover {
-      background: var(--white); color: var(--meishi-navy);
-      border-color: var(--white);
-    }
-    .recruit-teaser-btn svg {
-      width: 12px; height: 12px;
-      transition: transform 0.4s var(--ease);
-    }
-    .recruit-teaser-btn:hover svg { transform: translateX(4px); }
-
     /* ========== RECRUIT (legacy, used by hidden styles) ========== */
     .recruit {
       background: var(--meishi-navy); color: var(--white);
@@ -1933,9 +1860,6 @@
       .service-item { padding: 36px 24px; }
       .service-title { font-size: 17px; letter-spacing: 0.08em; }
       .recruit-card, .benefit-item { padding: 32px 24px; }
-      .recruit-teaser .section-wrap { padding: 80px 24px; }
-      .recruit-teaser-title { font-size: 22px; letter-spacing: 0.06em; line-height: 1.7; }
-      .recruit-teaser-mark { width: 56px; margin-bottom: 22px; }
 
       /* 会社概要 */
       .company-row { padding: 16px 0; }
@@ -2087,23 +2011,6 @@
       .photo-strip-note { text-align: center; }
     }
 
-    .teaser-photo { margin: 10px auto 40px; }
-    .teaser-photo .ph {
-      width: min(460px, 94%); margin: 0 auto;
-      aspect-ratio: 16 / 9;
-      border-radius: 12px; overflow: hidden;
-      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.30), inset 0 0 0 1px rgba(255, 255, 255, 0.18);
-    }
-    .teaser-photo .ph img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      filter: saturate(1.04) brightness(1.07);
-    }
-    .teaser-photo figcaption {
-      margin-top: 9px;
-      font-size: 10px; letter-spacing: 0.1em;
-      color: var(--ink-mute);
-    }
     @media (prefers-reduced-motion: reduce) {
       .hero-mark, .hero-scroll::after { animation: none; }
       .reveal { opacity: 1; transform: none; transition: none; }
@@ -2617,33 +2524,6 @@
           </p>
           <span class="innovation-item-tag">Digital Healthcare</span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== RECRUIT TEASER ========== -->
-  <section class="recruit-teaser" id="recruit">
-    <div class="section-wrap">
-      <div class="recruit-teaser-inner reveal">
-        <img src="images/logo-color.png" alt="" class="recruit-teaser-mark" aria-hidden="true">
-        <div class="section-label">Recruit</div>
-        <h2 class="recruit-teaser-title">
-          ともに、波紋を広げてくれる方へ。
-        </h2>
-        <p class="recruit-teaser-lead">
-          薬剤師・事務スタッフを募集しています。<br class="pc-only">
-          業務委託の薬剤師（副業・スキマ時間の活用）も募集中です。<br class="pc-only">
-          薬局見学は随時受付中です。「少し覗いてみたい」という方も歓迎します。<br class="pc-only">
-          採用情報・福利厚生は専用ページにてご案内しています。
-        </p>
-        <figure class="teaser-photo">
-          <div class="ph"><picture><source type="image/webp" srcset="images/photo-team-v2.webp"><img src="images/photo-team-v2.jpg" alt="協力して働く薬局チーム（イメージ）" width="1536" height="1024" loading="lazy"></picture></div>
-          <figcaption>※写真はイメージです</figcaption>
-        </figure>
-        <a href="recruit.html" class="recruit-teaser-btn">
-          採用情報を見る
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
       </div>
     </div>
   </section>
