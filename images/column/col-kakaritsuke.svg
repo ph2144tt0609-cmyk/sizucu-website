@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 84 640 292" role="img" aria-label="かかりつけ薬局とお薬手帳のイラスト">
+  <g transform="translate(320 210) scale(1.14) translate(-320 -210)">
+  <!-- ground line -->
+  <path d="M-40 318h720" stroke="#8fa83d" stroke-opacity=".35" stroke-width="2"/>
+
+  <!-- side buildings (other pharmacies / clinics) -->
+  <g fill="#ffffff" fill-opacity=".72" stroke="#b8c8d4" stroke-width="2">
+    <rect x="42" y="196" width="94" height="122" rx="4"/>
+    <rect x="504" y="182" width="96" height="136" rx="4"/>
+  </g>
+  <g fill="#b8c8d4" fill-opacity=".55">
+    <rect x="60" y="216" width="26" height="24" rx="3"/>
+    <rect x="94" y="216" width="26" height="24" rx="3"/>
+    <rect x="60" y="254" width="26" height="24" rx="3"/>
+    <rect x="94" y="254" width="26" height="24" rx="3"/>
+    <rect x="522" y="204" width="26" height="24" rx="3"/>
+    <rect x="556" y="204" width="26" height="24" rx="3"/>
+    <rect x="522" y="242" width="26" height="24" rx="3"/>
+    <rect x="556" y="242" width="26" height="24" rx="3"/>
+  </g>
+
+  <!-- main pharmacy -->
+  <g transform="translate(196 108)">
+    <rect x="0" y="52" width="248" height="158" rx="5" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.6"/>
+    <!-- roof -->
+    <path d="M-16 52L124 -2l140 54z" fill="#8fa83d" stroke="#3d4e5e" stroke-width="2.6" stroke-linejoin="round"/>
+    <!-- awning -->
+    <path d="M14 92h220v22H14z" fill="#8fa83d" fill-opacity=".22"/>
+    <!-- door -->
+    <rect x="96" y="132" width="56" height="78" rx="3" fill="#edf2f5" stroke="#3d4e5e" stroke-width="2.2"/>
+    <path d="M124 132v78" stroke="#3d4e5e" stroke-width="1.8" stroke-opacity=".6"/>
+    <!-- windows -->
+    <rect x="26" y="132" width="52" height="46" rx="3" fill="#d4dfe7" stroke="#3d4e5e" stroke-width="2.2"/>
+    <rect x="170" y="132" width="52" height="46" rx="3" fill="#d4dfe7" stroke="#3d4e5e" stroke-width="2.2"/>
+    <!-- sign: drop mark -->
+    <path d="M124 16c0 0-16 20-16 30a16 16 0 0 0 32 0c0-10-16-30-16-30z" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.2"/>
+  </g>
+
+  <!-- medication notebook -->
+  <g transform="translate(268 246)">
+    <rect x="0" y="0" width="150" height="104" rx="6" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.6"/>
+    <rect x="0" y="0" width="34" height="104" rx="6" fill="#8fa83d"/>
+    <rect x="26" y="0" width="10" height="104" fill="#8fa83d"/>
+    <g fill="#8a98a2" fill-opacity=".45">
+      <rect x="52" y="24" width="74" height="7" rx="3.5"/>
+      <rect x="52" y="44" width="60" height="7" rx="3.5"/>
+      <rect x="52" y="64" width="80" height="7" rx="3.5"/>
+    </g>
+    <circle cx="118" cy="88" r="13" fill="#d98f40" fill-opacity=".18"/>
+    <path d="M112 88l5 5 9-11" fill="none" stroke="#d98f40" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- arrows converging to one pharmacy -->
+  <g fill="none" stroke="#d98f40" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M150 156c34-16 56-20 74-20"/>
+    <path d="M218 128l8 8-9 8"/>
+    <path d="M492 142c-32-14-52-18-70-18"/>
+    <path d="M424 116l-9 8 8 8"/>
+  </g>
+  </g>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 58 572 342" role="img" aria-label="処方せんとカレンダーのイラスト">
+  <!-- soft ripples -->
+  <g fill="none" stroke="#b8c8d4" stroke-opacity=".38">
+    <circle cx="118" cy="330" r="58"/>
+    <circle cx="118" cy="330" r="88"/>
+    <circle cx="118" cy="330" r="118"/>
+  </g>
+
+  <!-- prescription sheet -->
+  <g transform="translate(96 74) rotate(-5)">
+    <rect x="0" y="0" width="228" height="278" rx="6" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.4"/>
+    <rect x="0" y="0" width="228" height="16" rx="6" fill="#8fa83d"/>
+    <rect x="0" y="10" width="228" height="6" fill="#8fa83d"/>
+    <rect x="26" y="42" width="120" height="9" rx="4.5" fill="#3d4e5e" fill-opacity=".72"/>
+    <rect x="26" y="68" width="176" height="7" rx="3.5" fill="#8a98a2" fill-opacity=".5"/>
+    <g fill="#8a98a2" fill-opacity=".38">
+      <rect x="26" y="112" width="150" height="7" rx="3.5"/>
+      <rect x="26" y="134" width="176" height="7" rx="3.5"/>
+      <rect x="26" y="156" width="132" height="7" rx="3.5"/>
+      <rect x="26" y="196" width="164" height="7" rx="3.5"/>
+      <rect x="26" y="218" width="112" height="7" rx="3.5"/>
+    </g>
+    <circle cx="176" cy="250" r="20" fill="none" stroke="#d98f40" stroke-width="2.4"/>
+    <path d="M167 250l7 7 12-15" fill="none" stroke="#d98f40" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- calendar -->
+  <g transform="translate(346 108)">
+    <rect x="0" y="0" width="216" height="196" rx="8" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.4"/>
+    <path d="M0 42h216" stroke="#3d4e5e" stroke-width="2.4"/>
+    <rect x="0" y="0" width="216" height="42" rx="8" fill="#3d4e5e"/>
+    <rect x="0" y="30" width="216" height="12" fill="#3d4e5e"/>
+    <rect x="34" y="-12" width="10" height="30" rx="5" fill="#3d4e5e"/>
+    <rect x="172" y="-12" width="10" height="30" rx="5" fill="#3d4e5e"/>
+    <g fill="#b8c8d4">
+      <rect x="26" y="62" width="26" height="22" rx="4"/>
+      <rect x="68" y="62" width="26" height="22" rx="4"/>
+      <rect x="110" y="62" width="26" height="22" rx="4"/>
+      <rect x="26" y="98" width="26" height="22" rx="4"/>
+      <rect x="110" y="98" width="26" height="22" rx="4"/>
+      <rect x="26" y="134" width="26" height="22" rx="4"/>
+      <rect x="68" y="134" width="26" height="22" rx="4"/>
+      <rect x="110" y="134" width="26" height="22" rx="4"/>
+      <rect x="152" y="134" width="26" height="22" rx="4"/>
+    </g>
+    <!-- the 4th day -->
+    <rect x="150" y="60" width="30" height="26" rx="5" fill="#d98f40"/>
+    <rect x="66" y="96" width="30" height="26" rx="5" fill="#8fa83d" fill-opacity=".85"/>
+    <rect x="150" y="98" width="26" height="22" rx="4" fill="#b8c8d4"/>
+  </g>
+
+  <!-- clock -->
+  <g transform="translate(506 268)">
+    <circle cx="0" cy="0" r="42" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.4"/>
+    <circle cx="0" cy="0" r="3.4" fill="#3d4e5e"/>
+    <path d="M0 0V-24M0 0l17 11" fill="none" stroke="#3d4e5e" stroke-width="3" stroke-linecap="round"/>
+    <path d="M0 -42v-9M0 42v9M-42 0h-9M42 0h9" stroke="#3d4e5e" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+</svg>

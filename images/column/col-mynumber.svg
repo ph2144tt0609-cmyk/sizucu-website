@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="62 26 528 300" role="img" aria-label="マイナ保険証とカードリーダーのイラスト">
+  <!-- signal arcs -->
+  <g fill="none" stroke="#8fa83d" stroke-opacity=".5" stroke-width="2.6" stroke-linecap="round">
+    <path d="M318 128a58 58 0 0 1 44 22"/>
+    <path d="M300 104a92 92 0 0 1 70 34"/>
+    <path d="M282 80a126 126 0 0 1 96 46"/>
+  </g>
+
+  <!-- card reader -->
+  <g transform="translate(330 176)">
+    <path d="M0 96h206a10 10 0 0 0 10-10V10a10 10 0 0 0-10-10H0z" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.6"/>
+    <rect x="26" y="18" width="150" height="60" rx="5" fill="#3d4e5e"/>
+    <g fill="#ffffff" fill-opacity=".85">
+      <rect x="46" y="34" width="86" height="7" rx="3.5"/>
+      <rect x="46" y="52" width="60" height="7" rx="3.5"/>
+    </g>
+    <circle cx="152" cy="52" r="13" fill="#8fa83d"/>
+    <path d="M146 52l5 5 9-11" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M0 96h216v14a10 10 0 0 1-10 10H10A10 10 0 0 1 0 110z" fill="#edf2f5" stroke="#3d4e5e" stroke-width="2.6"/>
+  </g>
+
+  <!-- my number card -->
+  <g transform="translate(88 150) rotate(-6)">
+    <rect x="0" y="0" width="232" height="146" rx="10" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.6"/>
+    <rect x="0" y="0" width="232" height="20" rx="10" fill="#b8c8d4"/>
+    <rect x="0" y="12" width="232" height="8" fill="#b8c8d4"/>
+    <!-- portrait -->
+    <rect x="20" y="36" width="66" height="82" rx="5" fill="#edf2f5" stroke="#3d4e5e" stroke-width="2"/>
+    <circle cx="53" cy="66" r="15" fill="#b8c8d4"/>
+    <path d="M30 110c4-18 12-26 23-26s19 8 23 26z" fill="#b8c8d4"/>
+    <!-- ic chip -->
+    <rect x="102" y="36" width="42" height="32" rx="5" fill="#d98f40" fill-opacity=".28" stroke="#d98f40" stroke-width="2"/>
+    <path d="M102 52h42M123 36v32" stroke="#d98f40" stroke-width="1.8"/>
+    <g fill="#8a98a2" fill-opacity=".45">
+      <rect x="102" y="82" width="106" height="8" rx="4"/>
+      <rect x="102" y="102" width="80" height="8" rx="4"/>
+    </g>
+  </g>
+
+  <!-- prescription history sheet -->
+  <g transform="translate(440 44) rotate(6)">
+    <rect x="0" y="0" width="126" height="104" rx="6" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.4"/>
+    <rect x="0" y="0" width="126" height="12" rx="6" fill="#8fa83d"/>
+    <rect x="0" y="6" width="126" height="6" fill="#8fa83d"/>
+    <g fill="#8a98a2" fill-opacity=".42">
+      <rect x="18" y="32" width="64" height="7" rx="3.5"/>
+      <rect x="18" y="52" width="90" height="7" rx="3.5"/>
+      <rect x="18" y="72" width="52" height="7" rx="3.5"/>
+    </g>
+  </g>
+</svg>

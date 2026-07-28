@@ -132,7 +132,13 @@
     .nav-back:hover svg { transform: translateX(-3px); }
 
     .page-hero { padding: 128px 32px 52px; background: linear-gradient(180deg, var(--meishi-blue-light) 0%, var(--meishi-blue) 100%); }
-    .page-hero-inner { max-width: 880px; margin: 0 auto; }
+    .page-hero-inner {
+      max-width: 880px; margin: 0 auto;
+      display: grid; grid-template-columns: minmax(0,1fr) 250px;
+      gap: 40px; align-items: center;
+    }
+    .hero-illust { margin: 0; background: rgba(255,255,255,.55); border: 1px solid rgba(255,255,255,.7); border-radius: 8px; padding: 12px; }
+    .hero-illust img { width: 100%; height: auto; }
     .page-hero .cat { display: inline-block; font-family: var(--latin); font-style: italic; font-size: 12.5px; letter-spacing: .2em; color: var(--meishi-navy-soft); margin-bottom: 12px; }
     .page-hero h1 { font-family: var(--serif); font-weight: 500; color: var(--meishi-navy); font-size: clamp(22px,3.6vw,33px); letter-spacing: 0.05em; line-height: 1.6; }
     .page-hero .date { display: block; margin-top: 18px; font-size: 12.5px; color: var(--meishi-navy-soft); letter-spacing: .06em; }
@@ -201,6 +207,8 @@
       .nav { padding: 14px 18px; }
       .nav-logo span { display: none; }
       .page-hero { padding: 112px 20px 42px; }
+      .page-hero-inner { grid-template-columns: 1fr; gap: 24px; }
+      .hero-illust { max-width: 300px; }
       .crumb { padding: 18px 20px 0; }
       .doc { padding: 22px 20px 24px; }
     }
@@ -214,9 +222,12 @@
 
   <header class="page-hero">
     <div class="page-hero-inner">
-      <span class="cat">Prescription</span>
-      <h1>処方せんの有効期限は何日？<br>切れてしまったときの対処法</h1>
-      <span class="date">2026年7月25日</span>
+      <div class="page-hero-copy">
+        <span class="cat">Prescription</span>
+        <h1>処方せんの有効期限は何日？<br>切れてしまったときの対処法</h1>
+        <span class="date">2026年7月25日</span>
+      </div>
+      <figure class="hero-illust"><img src="../images/column/col-shohosen.svg" alt="処方せんとカレンダーのイラスト" width="572" height="342"></figure>
     </div>
   </header>
 

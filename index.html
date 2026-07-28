@@ -337,7 +337,7 @@
       margin-right: 4px;
     }
     .nav-menu {
-      display: flex; gap: 36px; list-style: none;
+      display: flex; align-items: center; gap: 36px; list-style: none;
       font-size: 11.5px; letter-spacing: 0.22em; font-weight: 500;
     }
     .nav-menu a {
@@ -357,6 +357,47 @@
       letter-spacing: 0.32em; margin-bottom: 4px;
       text-transform: uppercase;
     }
+    /* 採用情報・薬局サポートは、求職者・薬局さま向けの入口として面で強調する。
+       色数と動きは足さず、面積・余白・明朝体で押し出す */
+    .nav-cta:first-of-type { margin-left: 12px; }
+    .nav-cta:last-of-type { margin-right: 12px; }
+    .nav-cta + .nav-cta { margin-left: -36px; }
+    .nav-menu a.nav-cta-link {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 13px 24px;
+      font-family: var(--serif); font-size: 13.5px;
+      font-weight: 500; letter-spacing: 0.18em;
+      border: 1px solid var(--meishi-navy-soft);
+      transition: background 0.5s var(--ease), color 0.5s var(--ease), border-color 0.5s var(--ease);
+    }
+    .nav-menu a.nav-cta-link::after { display: none; }
+    .nav-cta-link .nav-latin {
+      margin-bottom: 5px;
+      font-size: 9px; letter-spacing: 0.38em;
+    }
+
+    .nav-menu a.nav-cta-link--support {
+      color: var(--meishi-navy);
+      background: rgba(255, 255, 255, 0.55);
+      border-right: none;
+    }
+    .nav-menu a.nav-cta-link--support:hover {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--meishi-navy);
+    }
+    .nav-cta-link--support .nav-latin { color: var(--meishi-navy-soft); }
+
+    .nav-menu a.nav-cta-link--recruit {
+      background: var(--meishi-navy); border-color: var(--meishi-navy);
+      color: var(--white);
+      box-shadow: inset 0 2px 0 var(--c-green);
+    }
+    .nav-cta-link--recruit .nav-latin { color: rgba(255, 255, 255, 0.62); }
+    .nav-menu a.nav-cta-link--recruit:hover {
+      background: var(--ink); border-color: var(--ink);
+    }
+    .nav-cta-link--recruit:hover .nav-latin { color: rgba(255, 255, 255, 0.8); }
+
     .nav-toggle {
       display: none; background: none; border: none; cursor: pointer; padding: 10px;
     }
@@ -1153,6 +1194,55 @@
     .patient-dock { display: none; }
 
     /* ========== SERVICES ========== */
+    /* ========== COLUMN TEASER（お薬と薬局のコラム） ========== */
+    .column-teaser { background: linear-gradient(180deg, #f1f6f9 0%, var(--paper) 100%); }
+    .column-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .column-card {
+      display: flex; flex-direction: column;
+      background: var(--white); border: 1px solid var(--line);
+      border-top: 3px solid var(--accent, var(--c-green));
+      overflow: hidden;
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+    }
+    .column-card--green { --accent: var(--c-green); --accent-soft: rgba(143,168,61,.12); }
+    .column-card--orange { --accent: var(--c-orange); --accent-soft: rgba(217,143,64,.13); }
+    .column-card--blue { --accent: #5b8cb0; --accent-soft: rgba(91,140,176,.13); }
+    .column-card:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgba(61,78,94,.12); border-color: var(--accent); }
+    .column-card-thumb {
+      background: linear-gradient(150deg, #f5f8fa 0%, #e8f0f4 100%);
+      aspect-ratio: 16 / 10; overflow: hidden;
+    }
+    .column-card-thumb img {
+      width: 100%; height: 100%; object-fit: contain;
+      padding: 12px; transition: transform .5s var(--ease);
+    }
+    .column-card:hover .column-card-thumb img { transform: scale(1.04); }
+    .column-card-body { display: flex; flex-direction: column; flex: 1; padding: 22px 24px 26px; }
+    .column-card-cat {
+      align-self: flex-start;
+      font-family: var(--latin); font-style: italic;
+      font-size: 11px; letter-spacing: .18em;
+      color: var(--accent); background: var(--accent-soft);
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 13px;
+    }
+    .column-card-title {
+      font-family: var(--serif); font-weight: 500; font-size: 16px;
+      color: var(--meishi-navy); letter-spacing: .05em; line-height: 1.7; margin-bottom: 10px;
+    }
+    .column-card-text { font-size: 13px; line-height: 1.95; color: var(--ink-sub); }
+    .column-card-more { margin-top: auto; padding-top: 18px; font-size: 12.5px; letter-spacing: .06em; color: var(--accent); }
+    .column-more-wrap { text-align: center; }
+    .column-more {
+      display: inline-flex; align-items: center; gap: 12px;
+      margin-top: 44px; padding: 15px 34px;
+      border: 1px solid var(--meishi-navy); color: var(--meishi-navy);
+      font-family: var(--sans); font-size: 11.5px; font-weight: 500;
+      letter-spacing: .24em; text-transform: uppercase;
+      transition: all .4s var(--ease);
+    }
+    .column-more:hover { background: var(--meishi-navy); color: var(--white); }
+    .column-more svg { width: 14px; height: 14px; }
+
     .services { background: var(--paper); }
     .services-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -1718,6 +1808,8 @@
     @media (max-width: 1280px) {
       .nav-menu { gap: 20px; }
       .nav-menu a { font-size: 11px; }
+      .nav-menu a.nav-cta-link { padding: 13px 18px; font-size: 12.5px; letter-spacing: 0.12em; }
+      .nav-cta + .nav-cta { margin-left: -20px; }
     }
     @media (max-width: 960px) {
       .nav { padding: 16px 24px; }
@@ -1732,6 +1824,10 @@
         padding: 24px; gap: 20px;
         border-bottom: 1px solid var(--line);
       }
+      .nav-menu.open { align-items: stretch; }
+      .nav-menu.open .nav-cta { margin-left: 0; }
+      .nav-menu.open a.nav-cta-link { width: 100%; padding: 16px 20px; font-size: 14px; }
+      .nav-menu.open a.nav-cta-link--support { border-right: 1px solid var(--meishi-navy-soft); }
       .nav-toggle { display: block; }
       .hero {
         padding: 120px 28px 80px;
@@ -1756,7 +1852,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
       .about-visual { position: relative; top: 0; }
       .about-body .lead { font-size: 17px; }
-      .services-grid, .benefits-grid, .recruit-cards, .innovation-grid { grid-template-columns: 1fr; }
+      .services-grid, .benefits-grid, .recruit-cards, .innovation-grid, .column-cards { grid-template-columns: 1fr; }
       .company-row { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
       .company-row dt { font-size: 11px; }
       .faq-intro { margin-top: -34px; }
@@ -2043,8 +2139,8 @@
       <li><a href="#stores"><span class="nav-latin">Pharmacies</span>運営薬局</a></li>
       <li><a href="#faq"><span class="nav-latin">FAQ</span>よくある質問</a></li>
       <li><a href="#services"><span class="nav-latin">Services</span>サービス</a></li>
-      <li><a href="support.html"><span class="nav-latin">Support</span>薬局サポート</a></li>
-      <li><a href="recruit.html"><span class="nav-latin">Recruit</span>採用情報</a></li>
+      <li class="nav-cta"><a href="support.html" class="nav-cta-link nav-cta-link--support"><span class="nav-latin">Support</span>薬局サポート</a></li>
+      <li class="nav-cta"><a href="recruit.html" class="nav-cta-link nav-cta-link--recruit"><span class="nav-latin">Now Hiring</span>採用情報</a></li>
       <li><a href="#company"><span class="nav-latin">Company</span>会社概要</a></li>
       <li><a href="contact.html"><span class="nav-latin">Contact</span>お問い合わせ</a></li>
     </ul>
@@ -2394,6 +2490,55 @@
       <div class="faq-contact reveal" aria-label="店舗へ電話する">
         <a class="green" href="tel:0559272311">緑ヶ丘薬局へ電話する　055-927-2311</a>
         <a class="orange" href="tel:0542475611">鷹匠薬局 公園店へ電話する　054-247-5611</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COLUMN（お薬と薬局のコラム）========== -->
+  <section class="column-teaser" id="column">
+    <div class="section-wrap">
+      <div class="section-head reveal">
+        <div class="section-label">Column</div>
+        <h2 class="section-title">お薬と薬局のコラム<span class="section-title-small">窓口でよくいただくご質問を、薬剤師がわかりやすく解説します。</span></h2>
+      </div>
+
+      <div class="column-cards reveal">
+        <a class="column-card column-card--green" href="column/shohosen-kigen.html">
+          <div class="column-card-thumb"><img src="images/column/col-shohosen.svg" alt="処方せんとカレンダーのイラスト" width="572" height="342" loading="lazy"></div>
+          <div class="column-card-body">
+            <span class="column-card-cat">Prescription</span>
+            <h3 class="column-card-title">処方せんの有効期限は何日？<br>切れてしまったときの対処法</h3>
+            <p class="column-card-text">使える期間は「交付の日を含めて4日以内」。土日祝の数え方と、過ぎてしまったときの対応をまとめました。</p>
+            <span class="column-card-more">記事を読む →</span>
+          </div>
+        </a>
+
+        <a class="column-card column-card--orange" href="column/kakaritsuke-yakkyoku.html">
+          <div class="column-card-thumb"><img src="images/column/col-kakaritsuke.svg" alt="かかりつけ薬局とお薬手帳のイラスト" width="640" height="292" loading="lazy"></div>
+          <div class="column-card-body">
+            <span class="column-card-cat">Pharmacy</span>
+            <h3 class="column-card-title">薬局は病院の目の前でなくてもいい<br>かかりつけ薬局という考え方</h3>
+            <p class="column-card-text">処方せんはどの保険薬局でもお受けできます。薬局を1か所にまとめておくことの意味をご説明します。</p>
+            <span class="column-card-more">記事を読む →</span>
+          </div>
+        </a>
+
+        <a class="column-card column-card--blue" href="column/mynumber-hokensho.html">
+          <div class="column-card-thumb"><img src="images/column/col-mynumber.svg" alt="マイナ保険証とカードリーダーのイラスト" width="528" height="300" loading="lazy"></div>
+          <div class="column-card-body">
+            <span class="column-card-cat">Digital</span>
+            <h3 class="column-card-title">マイナ保険証を薬局で使うと<br>何が変わる？</h3>
+            <p class="column-card-text">これまでのお薬の情報を薬剤師が確認できるようになります。手続きの流れとつまずきやすい点を解説します。</p>
+            <span class="column-card-more">記事を読む →</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="column-more-wrap reveal">
+        <a href="column/" class="column-more">
+          コラムを一覧で見る
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
       </div>
     </div>
   </section>
