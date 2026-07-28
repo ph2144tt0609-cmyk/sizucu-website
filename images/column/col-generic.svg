@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" role="img" aria-label="先発医薬品とジェネリック医薬品、差額のイラスト">
+  <!-- brand-name medicine box -->
+  <g transform="translate(40 60)">
+    <rect x="0" y="0" width="150" height="118" rx="7" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.6"/>
+    <rect x="0" y="0" width="150" height="20" rx="7" fill="#5b8cb0"/>
+    <rect x="0" y="12" width="150" height="8" fill="#5b8cb0"/>
+    <g fill="#8a98a2" fill-opacity=".42">
+      <rect x="20" y="40" width="78" height="8" rx="4"/>
+      <rect x="20" y="60" width="56" height="8" rx="4"/>
+    </g>
+    <!-- tablets -->
+    <g fill="#edf2f5" stroke="#3d4e5e" stroke-width="2">
+      <circle cx="34" cy="94" r="11"/>
+      <circle cx="62" cy="94" r="11"/>
+      <circle cx="90" cy="94" r="11"/>
+    </g>
+  </g>
+
+  <!-- generic medicine box -->
+  <g transform="translate(370 60)">
+    <rect x="0" y="0" width="150" height="118" rx="7" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.6"/>
+    <rect x="0" y="0" width="150" height="20" rx="7" fill="#8fa83d"/>
+    <rect x="0" y="12" width="150" height="8" fill="#8fa83d"/>
+    <g fill="#8a98a2" fill-opacity=".42">
+      <rect x="20" y="40" width="78" height="8" rx="4"/>
+      <rect x="20" y="60" width="56" height="8" rx="4"/>
+    </g>
+    <g fill="#f2f5ea" stroke="#3d4e5e" stroke-width="2">
+      <circle cx="34" cy="94" r="11"/>
+      <circle cx="62" cy="94" r="11"/>
+      <circle cx="90" cy="94" r="11"/>
+    </g>
+  </g>
+
+  <!-- balance / comparison arrows -->
+  <g fill="none" stroke="#b8c8d4" stroke-width="2.4" stroke-linecap="round">
+    <path d="M206 120h146"/>
+  </g>
+  <g fill="none" stroke="#d98f40" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M212 108l-10 12 10 12"/>
+    <path d="M348 108l10 12-10 12"/>
+  </g>
+
+  <!-- price tag: extra charge -->
+  <g transform="translate(214 176)">
+    <rect x="0" y="0" width="132" height="86" rx="8" fill="#fdf6ee" stroke="#d98f40" stroke-width="2.6"/>
+    <circle cx="66" cy="30" r="17" fill="none" stroke="#d98f40" stroke-width="2.6"/>
+    <path d="M58 22l8 11 8-11M58 34h16M58 41h16M66 33v10" stroke="#d98f40" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <g fill="#d98f40" fill-opacity=".45">
+      <rect x="30" y="60" width="72" height="7" rx="3.5"/>
+    </g>
+  </g>
+
+  <!-- coins -->
+  <g transform="translate(258 268)">
+    <ellipse cx="22" cy="16" rx="34" ry="11" fill="#f0dcc2" stroke="#d98f40" stroke-width="2.2"/>
+    <ellipse cx="22" cy="6" rx="34" ry="11" fill="#fbf1e3" stroke="#d98f40" stroke-width="2.2"/>
+  </g>
+</svg>

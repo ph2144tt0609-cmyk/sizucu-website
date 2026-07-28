@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" role="img" aria-label="お薬の取り寄せと在庫棚のイラスト">
+  <!-- shelf -->
+  <g transform="translate(36 40)">
+    <rect x="0" y="0" width="212" height="208" rx="6" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.6"/>
+    <path d="M0 70h212M0 140h212" stroke="#3d4e5e" stroke-width="2.4"/>
+    <!-- boxes on shelves -->
+    <g stroke="#3d4e5e" stroke-width="2">
+      <rect x="18" y="26" width="34" height="42" rx="3" fill="#edf2f5"/>
+      <rect x="60" y="26" width="34" height="42" rx="3" fill="#e6efdc"/>
+      <rect x="102" y="26" width="34" height="42" rx="3" fill="#edf2f5"/>
+      <rect x="18" y="96" width="34" height="42" rx="3" fill="#fbf1e3"/>
+      <rect x="60" y="96" width="34" height="42" rx="3" fill="#edf2f5"/>
+      <rect x="18" y="166" width="34" height="40" rx="3" fill="#edf2f5"/>
+      <rect x="60" y="166" width="34" height="40" rx="3" fill="#e6efdc"/>
+      <rect x="102" y="166" width="34" height="40" rx="3" fill="#edf2f5"/>
+      <rect x="144" y="166" width="34" height="40" rx="3" fill="#fbf1e3"/>
+    </g>
+    <!-- empty slot -->
+    <rect x="146" y="96" width="46" height="42" rx="3" fill="none" stroke="#d98f40" stroke-width="2.4" stroke-dasharray="6 6"/>
+    <path d="M158 110l22 16M180 110l-22 16" stroke="#d98f40" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- delivery van -->
+  <g transform="translate(292 132)">
+    <rect x="0" y="18" width="132" height="76" rx="7" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.6"/>
+    <path d="M132 42h38l30 34v18a6 6 0 0 1-6 6h-62z" fill="#edf2f5" stroke="#3d4e5e" stroke-width="2.6" stroke-linejoin="round"/>
+    <rect x="140" y="50" width="26" height="22" rx="3" fill="#d4dfe7" stroke="#3d4e5e" stroke-width="2"/>
+    <rect x="16" y="36" width="60" height="14" rx="4" fill="#8fa83d" fill-opacity=".3"/>
+    <circle cx="40" cy="100" r="17" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.6"/>
+    <circle cx="40" cy="100" r="6" fill="#3d4e5e"/>
+    <circle cx="158" cy="100" r="17" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.6"/>
+    <circle cx="158" cy="100" r="6" fill="#3d4e5e"/>
+    <!-- speed lines -->
+    <g stroke="#b8c8d4" stroke-width="2.4" stroke-linecap="round">
+      <path d="M-16 44h-24M-16 62h-38M-16 80h-24"/>
+    </g>
+  </g>
+
+  <!-- clock: how many days -->
+  <g transform="translate(452 60)">
+    <circle cx="0" cy="0" r="40" fill="#ffffff" stroke="#3d4e5e" stroke-width="2.6"/>
+    <circle cx="0" cy="0" r="3.4" fill="#3d4e5e"/>
+    <path d="M0 0V-22M0 0l16 10" fill="none" stroke="#3d4e5e" stroke-width="3" stroke-linecap="round"/>
+    <path d="M0 -40v-8M0 40v8M-40 0h-8M40 0h8" stroke="#3d4e5e" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M28 -28a40 40 0 0 1 0 56" fill="none" stroke="#8fa83d" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>
