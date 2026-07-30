@@ -86,6 +86,7 @@
   </url>
 
   <!-- お薬と薬局のコラム -->
+  <!-- BUILD:COLUMN START（build_column.py が column/articles.json から自動生成。手で編集しない） -->
   <url>
     <loc>https://www.sizucu.co.jp/column/</loc>
     <lastmod>2026-07-28</lastmod>
@@ -93,25 +94,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sizucu.co.jp/column/shohosen-kigen.html</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sizucu.co.jp/column/kakaritsuke-yakkyoku.html</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sizucu.co.jp/column/mynumber-hokensho.html</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sizucu.co.jp/column/generic-senteiryoyo.html</loc>
+    <loc>https://www.sizucu.co.jp/column/kusuri-toriyose.html</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
@@ -123,10 +106,29 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sizucu.co.jp/column/kusuri-toriyose.html</loc>
+    <loc>https://www.sizucu.co.jp/column/generic-senteiryoyo.html</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://www.sizucu.co.jp/column/mynumber-hokensho.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sizucu.co.jp/column/kakaritsuke-yakkyoku.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sizucu.co.jp/column/shohosen-kigen.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- BUILD:COLUMN END -->
 
 </urlset>
