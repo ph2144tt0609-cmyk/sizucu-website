@@ -190,20 +190,37 @@ def render_range(a, b):
     return "\n".join(out)
 
 
-def answer_cells():
-    cells = []
-    for idx, (sec, typ, text, choices, ans) in enumerate(Q, 1):
-        color = SECTIONS[sec][2]
-        light = SECTIONS[sec][3]
-        val = CIRCLED[ans] if typ == MC else ans
-        cells.append(
-            f'<div class="ac" style="--c:{color};--l:{light}">'
-            f'<span class="an">{idx}</span><span class="av">{val}</span></div>'
+def answer_columns():
+    """こたえページよう: セクションごとに 1れつ (4れつ × 25こ)"""
+    cols = []
+    idx = 0
+    for sec in ["s1", "s2", "s3", "s4"]:
+        title, emoji, color, light = SECTIONS[sec]
+        rows = []
+        first = idx + 1
+        for _ in range(25):
+            idx += 1
+            _sec, typ, text, choices, ans = Q[idx - 1]
+            if typ == MC:
+                val = (f'<b style="color:{color}">{CIRCLED[ans]}</b> '
+                       f'{choices[ans - 1]}')
+            elif typ == OX:
+                val = f'<b style="color:{color};font-size:9.5pt">{ans}</b>'
+            else:
+                val = f'<b>{ans}</b>'
+            rows.append(
+                f'<div class="ar"><span class="arn">{idx}</span>'
+                f'<span class="arv">{val}</span></div>'
+            )
+        cols.append(
+            f'<div class="acol" style="--c:{color};--l:{light}">'
+            f'<div class="acol-h">{emoji} {title} <span class="rng">{first}〜{idx}</span></div>'
+            + "".join(rows) + "</div>"
         )
-    return "\n".join(cells)
+    return "\n".join(cols)
 
 
-def footer(page, total=3):
+def footer(page, total=4):
     return (
         f'<div class="foot"><span class="fl">📣 がんばれ! ドラゴンズ!</span>'
         f'<span class="fp">{page} / {total}</span>'
@@ -401,30 +418,103 @@ html = f"""<!DOCTYPE html>
   .db-emoji {{ position: absolute; right: 4mm; bottom: 3mm; font-size: 17pt; opacity: .55; }}
   .db-emoji2 {{ position: absolute; left: 4mm; bottom: 3mm; font-size: 13pt; opacity: .4; }}
 
-  /* ===== こたえコーナー ===== */
-  .anskey {{
-    margin-top: 2mm; background: #fffdf4;
-    border: 0.55mm dashed #d9a400; border-radius: 3mm; padding: 2.4mm 3mm 2.6mm;
+  /* ===== にんていしょう ===== */
+  .cert {{
+    margin-top: 2.5mm; height: 131mm; position: relative;
+    background:
+      radial-gradient(circle at 3mm 3mm, #f6e6b8 0, #f6e6b8 1mm, transparent 1.1mm),
+      linear-gradient(180deg, #fffdf4, #fdf6df);
+    background-size: 11mm 11mm, 100% 100%;
+    border: 1mm solid #d9a400; border-radius: 4mm;
+    box-shadow: inset 0 0 0 1.2mm #fffdf4, inset 0 0 0 1.6mm #e8c25c;
+    padding: 7mm 12mm 5mm; text-align: center;
   }}
-  .ak-head {{
-    display: flex; align-items: center; gap: 2.5mm; margin-bottom: 1.8mm;
+  .cert-deco {{ position: absolute; font-size: 15pt; }}
+  .cert-deco.tl {{ left: 5mm; top: 4mm; }}
+  .cert-deco.tr {{ right: 5mm; top: 4mm; }}
+  .cert-deco.bl {{ left: 5mm; bottom: 4mm; }}
+  .cert-deco.br {{ right: 5mm; bottom: 4mm; }}
+  .cert-stars {{ font-size: 10pt; letter-spacing: .6em; margin-bottom: 1mm; }}
+  .cert-title {{
+    font-family: 'Rounded Mplus 1c Black','Rounded Mplus 1c',sans-serif;
+    font-size: 19pt; color: #b57e00; letter-spacing: .35em; text-indent: .35em;
   }}
-  .ak-title {{
-    background: linear-gradient(100deg, #d99e00, #f2c220); color: #fff;
+  .cert-name {{ margin-top: 4mm; font-size: 12pt; font-weight: 800; }}
+  .cert-name .cline {{
+    display: inline-block; width: 62mm; border-bottom: 0.5mm solid #b57e00;
+    height: 8mm; vertical-align: bottom; margin-right: 2.5mm;
+  }}
+  .cert-text {{ margin-top: 3.5mm; font-size: 10.5pt; font-weight: 700; line-height: 1.65; color: #2c3c5e; }}
+  .cert-text ruby rt {{ font-size: 5.5pt; color: #b57e00; }}
+  .cert-score {{ margin-top: 2.5mm; font-size: 11pt; font-weight: 800; color: #2c3c5e; }}
+  .cert-score .cbox {{
+    display: inline-block; width: 17mm; height: 8.5mm; vertical-align: middle;
+    border: 0.5mm dashed #d9a400; border-radius: 2mm; background: #fff; margin: 0 1.5mm;
+  }}
+  .cert-grant {{ margin-top: 2.5mm; font-size: 9.5pt; font-weight: 700; line-height: 1.6; color: #2c3c5e; }}
+  .cert-grant b {{ color: #0a3ea0; font-size: 11.5pt; }}
+  .cert-date {{ margin-top: 3mm; font-size: 9pt; font-weight: 700; color: #55617e; }}
+  .cert-date .dline {{
+    display: inline-block; width: 12mm; border-bottom: 0.4mm solid #9db4dd; height: 5mm;
+    vertical-align: bottom;
+  }}
+  .cert-date .cert-from {{ margin-left: 6mm; font-size: 8pt; color: #8a6d1a; }}
+
+  /* ===== こたえページ ===== */
+  .notebar {{
+    display: flex; align-items: center; gap: 3mm;
+    background: #fff; border: 0.45mm solid #0a3ea0; border-radius: 2.5mm;
+    padding: 1.6mm 3.5mm; margin-bottom: 2.4mm; font-size: 8.5pt; font-weight: 700;
+    color: #2c3c5e; box-shadow: 0 .5mm 0 #c6d6f2;
+  }}
+  .notebar .nl {{ flex-shrink: 0; }}
+  .agrid {{ display: flex; gap: 2.6mm; }}
+  .acol {{
+    flex: 1; min-width: 0; background: #fff;
+    border: 0.35mm solid #ccd9ef; border-top: 1.7mm solid var(--c);
+    border-radius: 2.5mm; padding: 1.7mm 1.5mm;
+    box-shadow: 0 .5mm 0 rgba(10,62,160,.08);
+  }}
+  .acol-h {{
+    text-align: center; font-family: 'Rounded Mplus 1c ExtraBold','Rounded Mplus 1c',sans-serif;
+    font-size: 8.3pt; color: var(--c); margin-bottom: 1.3mm; white-space: nowrap;
+  }}
+  .acol-h .rng {{ font-size: 6.5pt; color: #93a1bd; }}
+  .ar {{
+    display: flex; align-items: center; gap: 1.3mm;
+    padding: .5mm 1mm; border-radius: 1.3mm; min-height: 5.9mm;
+  }}
+  .ar:nth-child(odd) {{ background: var(--l); }}
+  .arn {{
+    flex: 0 0 5.4mm; text-align: center; background: var(--c); color: #fff;
     font-family: 'Rounded Mplus 1c ExtraBold','Rounded Mplus 1c',sans-serif;
-    font-size: 10.5pt; border-radius: 5mm; padding: .8mm 5mm;
-    box-shadow: 0 .5mm 0 rgba(160,110,0,.25);
+    font-size: 6.8pt; border-radius: 2mm; padding: .15mm 0;
   }}
-  .ak-note {{ font-size: 7pt; font-weight: 700; color: #8a6d1a; }}
-  .ak-grid {{ display: grid; grid-template-columns: repeat(10, 1fr); gap: .9mm; }}
-  .ac {{
-    display: flex; align-items: center; justify-content: center; gap: .7mm;
-    background: #fff; border: 0.3mm solid color-mix(in srgb, var(--c) 40%, #fff);
-    border-top: 0.7mm solid var(--c);
-    border-radius: 1.3mm; padding: .5mm .3mm; min-height: 5.9mm;
+  .arv {{ font-size: 8.3pt; font-weight: 700; color: #1b2a4a; white-space: nowrap; letter-spacing: -.01em; }}
+  .kaisetsu {{
+    margin-top: 2.6mm; background: #fff; border: 0.45mm dashed #7fa3e0;
+    border-radius: 2.5mm; padding: 1.8mm 3mm;
   }}
-  .an {{ font-size: 6pt; font-weight: 800; color: #93a1bd; }}
-  .av {{ font-size: 7.1pt; font-weight: 800; color: var(--c); white-space: nowrap; letter-spacing: -.02em; }}
+  .kai-title {{
+    display: inline-block; background: #0a3ea0; color: #fff;
+    font-family: 'Rounded Mplus 1c ExtraBold','Rounded Mplus 1c',sans-serif;
+    font-size: 8pt; border-radius: 4mm; padding: .25mm 3mm; margin-bottom: 1.2mm;
+  }}
+  .kai-items {{ display: flex; flex-wrap: wrap; }}
+  .kai-items div {{ flex: 0 0 50%; font-size: 7.8pt; font-weight: 700; color: #2c3c5e;
+                    line-height: 1.5; padding-right: 3mm; box-sizing: border-box; }}
+  .kai-items b {{ color: #0a3ea0; }}
+  .rankrow {{ display: flex; gap: 2.6mm; margin-top: 2.6mm; }}
+  .rank {{
+    flex: 1; text-align: center; background: #fff; border: 0.4mm solid #e8c25c;
+    border-radius: 2.5mm; padding: 1.6mm 1mm 1.8mm; box-shadow: 0 .5mm 0 #ecd9a0;
+  }}
+  .rank .rr {{
+    font-family: 'Rounded Mplus 1c ExtraBold','Rounded Mplus 1c',sans-serif;
+    font-size: 9.5pt; color: #b57e00;
+  }}
+  .rank .rs {{ font-size: 8pt; margin: .4mm 0; }}
+  .rank .rl {{ font-size: 7.6pt; font-weight: 800; color: #2c3c5e; }}
 
   /* ===== 100てんバナー ===== */
   .goal {{
@@ -483,26 +573,58 @@ html = f"""<!DOCTYPE html>
   {footer(2)}
 </div>
 
-<!-- ============ 3ページめ (Q81-100 + こたえ) ============ -->
+<!-- ============ 3ページめ (Q81-100 + にんていしょう) ============ -->
 <div class="page p3">
   {MINIHEAD.format(emoji="🐨")}
   <div class="cols">
 {render_range(81, 100)}
   </div>
-  <div class="anskey">
-    <div class="ak-head">
-      <span class="ak-title">🏆 こたえ</span>
-      <span class="ak-note">まるつけを して、できた かずを 1ページめに かこう! ✏️</span>
+  <div class="cert">
+    <div class="cert-deco tl">🐉</div><div class="cert-deco tr">⚾</div>
+    <div class="cert-deco bl">📣</div><div class="cert-deco br">🐨</div>
+    <div class="cert-stars">⭐⭐⭐⭐⭐</div>
+    <div class="cert-title">にんていしょう</div>
+    <div class="cert-name"><span class="cline"></span>さん</div>
+    <div class="cert-text">あなたは 「<ruby>中日<rt>ちゅうにち</rt></ruby>ドラゴンズ だいすきクイズ」<br>100もんに チャレンジ しました!</div>
+    <div class="cert-score">せいかい <span class="cbox"></span> もん</div>
+    <div class="cert-grant">これからも ドラゴンズと やきゅうを たのしんでね。<br><b>きみを 『ドラゴンズはかせ』に にんてい します!</b></div>
+    <div class="cert-date"><span class="dline"></span> がつ <span class="dline"></span> にち<span class="cert-from">「だいすきクイズ 100もん」より</span></div>
+  </div>
+  {footer(3)}
+</div>
+
+<!-- ============ 4ページめ (こたえの ページ) ============ -->
+<div class="page p4">
+  {MINIHEAD.format(emoji="🏆")}
+  <div class="notebar">
+    <span class="nl">🏆 こたえの ページ</span>
+    <span>✏️ もんだいを といて から みてね! おうちの ひとと いっしょに まるつけを して、できた かずを 1ページめに かこう!</span>
+  </div>
+  <div class="agrid">
+{answer_columns()}
+  </div>
+  <div class="kaisetsu">
+    <div class="kai-title">💡 ワンポイント</div>
+    <div class="kai-items">
+      <div><b>14ばん:</b> しんぶんは かんじで チームを かくよ。ドラゴンズは 竜(りゅう)!</div>
+      <div><b>18ばん:</b> はるは あたたかい おきなわで れんしゅうを して、シーズンに そなえるんだ。</div>
+      <div><b>56ばん:</b> ストライクは 3つで アウト! ボールは 4つで フォアボールだよ。</div>
+      <div><b>61ばん:</b> ドラゴンズが できたのは 1936ねん。90ねんくらい まえだよ!</div>
+      <div><b>89ばん:</b> 6じの 3じかん あとは 9じ。とけいを みて たしかめて みよう。</div>
+      <div><b>97ばん:</b> 2じの 30ぷん まえは 1じ30ぷん。はやめに つくと あんしんだね。</div>
     </div>
-    <div class="ak-grid">
-{answer_cells()}
-    </div>
+  </div>
+  <div class="rankrow">
+    <div class="rank"><div class="rr">100もん</div><div class="rs">⭐⭐⭐</div><div class="rl">パーフェクト! ドラゴンズはかせ!</div></div>
+    <div class="rank"><div class="rr">80〜99もん</div><div class="rs">⭐⭐</div><div class="rl">すごい! はかせまで あとすこし!</div></div>
+    <div class="rank"><div class="rr">50〜79もん</div><div class="rs">⭐</div><div class="rl">いいちょうし! そのちょうし!</div></div>
+    <div class="rank"><div class="rr">0〜49もん</div><div class="rs">🌱</div><div class="rl">なんども チャレンジ して みよう!</div></div>
   </div>
   <div class="goal">
     <span>⭐ 100もん クリアで きみも ドラゴンズはかせ! ⭐</span>
     <span class="small">まちがえた もんだいは もういちど チャレンジ してみてね 🐉⚾</span>
   </div>
-  {footer(3)}
+  {footer(4)}
 </div>
 
 </body>
@@ -510,6 +632,7 @@ html = f"""<!DOCTYPE html>
 """
 
 import pathlib
-out = pathlib.Path(__file__).parent / "dragons_quiz.html"
+base = pathlib.Path(__file__).parent
+out = base / "dragons_quiz.html"
 out.write_text(html, encoding="utf-8")
 print(f"wrote {out} ({len(Q)} questions)")

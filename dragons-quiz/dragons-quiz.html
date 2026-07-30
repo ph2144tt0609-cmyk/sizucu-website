@@ -162,30 +162,103 @@
   .db-emoji { position: absolute; right: 4mm; bottom: 3mm; font-size: 17pt; opacity: .55; }
   .db-emoji2 { position: absolute; left: 4mm; bottom: 3mm; font-size: 13pt; opacity: .4; }
 
-  /* ===== こたえコーナー ===== */
-  .anskey {
-    margin-top: 2mm; background: #fffdf4;
-    border: 0.55mm dashed #d9a400; border-radius: 3mm; padding: 2.4mm 3mm 2.6mm;
+  /* ===== にんていしょう ===== */
+  .cert {
+    margin-top: 2.5mm; height: 131mm; position: relative;
+    background:
+      radial-gradient(circle at 3mm 3mm, #f6e6b8 0, #f6e6b8 1mm, transparent 1.1mm),
+      linear-gradient(180deg, #fffdf4, #fdf6df);
+    background-size: 11mm 11mm, 100% 100%;
+    border: 1mm solid #d9a400; border-radius: 4mm;
+    box-shadow: inset 0 0 0 1.2mm #fffdf4, inset 0 0 0 1.6mm #e8c25c;
+    padding: 7mm 12mm 5mm; text-align: center;
   }
-  .ak-head {
-    display: flex; align-items: center; gap: 2.5mm; margin-bottom: 1.8mm;
+  .cert-deco { position: absolute; font-size: 15pt; }
+  .cert-deco.tl { left: 5mm; top: 4mm; }
+  .cert-deco.tr { right: 5mm; top: 4mm; }
+  .cert-deco.bl { left: 5mm; bottom: 4mm; }
+  .cert-deco.br { right: 5mm; bottom: 4mm; }
+  .cert-stars { font-size: 10pt; letter-spacing: .6em; margin-bottom: 1mm; }
+  .cert-title {
+    font-family: 'Rounded Mplus 1c Black','Rounded Mplus 1c',sans-serif;
+    font-size: 19pt; color: #b57e00; letter-spacing: .35em; text-indent: .35em;
   }
-  .ak-title {
-    background: linear-gradient(100deg, #d99e00, #f2c220); color: #fff;
+  .cert-name { margin-top: 4mm; font-size: 12pt; font-weight: 800; }
+  .cert-name .cline {
+    display: inline-block; width: 62mm; border-bottom: 0.5mm solid #b57e00;
+    height: 8mm; vertical-align: bottom; margin-right: 2.5mm;
+  }
+  .cert-text { margin-top: 3.5mm; font-size: 10.5pt; font-weight: 700; line-height: 1.65; color: #2c3c5e; }
+  .cert-text ruby rt { font-size: 5.5pt; color: #b57e00; }
+  .cert-score { margin-top: 2.5mm; font-size: 11pt; font-weight: 800; color: #2c3c5e; }
+  .cert-score .cbox {
+    display: inline-block; width: 17mm; height: 8.5mm; vertical-align: middle;
+    border: 0.5mm dashed #d9a400; border-radius: 2mm; background: #fff; margin: 0 1.5mm;
+  }
+  .cert-grant { margin-top: 2.5mm; font-size: 9.5pt; font-weight: 700; line-height: 1.6; color: #2c3c5e; }
+  .cert-grant b { color: #0a3ea0; font-size: 11.5pt; }
+  .cert-date { margin-top: 3mm; font-size: 9pt; font-weight: 700; color: #55617e; }
+  .cert-date .dline {
+    display: inline-block; width: 12mm; border-bottom: 0.4mm solid #9db4dd; height: 5mm;
+    vertical-align: bottom;
+  }
+  .cert-date .cert-from { margin-left: 6mm; font-size: 8pt; color: #8a6d1a; }
+
+  /* ===== こたえページ ===== */
+  .notebar {
+    display: flex; align-items: center; gap: 3mm;
+    background: #fff; border: 0.45mm solid #0a3ea0; border-radius: 2.5mm;
+    padding: 1.6mm 3.5mm; margin-bottom: 2.4mm; font-size: 8.5pt; font-weight: 700;
+    color: #2c3c5e; box-shadow: 0 .5mm 0 #c6d6f2;
+  }
+  .notebar .nl { flex-shrink: 0; }
+  .agrid { display: flex; gap: 2.6mm; }
+  .acol {
+    flex: 1; min-width: 0; background: #fff;
+    border: 0.35mm solid #ccd9ef; border-top: 1.7mm solid var(--c);
+    border-radius: 2.5mm; padding: 1.7mm 1.5mm;
+    box-shadow: 0 .5mm 0 rgba(10,62,160,.08);
+  }
+  .acol-h {
+    text-align: center; font-family: 'Rounded Mplus 1c ExtraBold','Rounded Mplus 1c',sans-serif;
+    font-size: 8.3pt; color: var(--c); margin-bottom: 1.3mm; white-space: nowrap;
+  }
+  .acol-h .rng { font-size: 6.5pt; color: #93a1bd; }
+  .ar {
+    display: flex; align-items: center; gap: 1.3mm;
+    padding: .5mm 1mm; border-radius: 1.3mm; min-height: 5.9mm;
+  }
+  .ar:nth-child(odd) { background: var(--l); }
+  .arn {
+    flex: 0 0 5.4mm; text-align: center; background: var(--c); color: #fff;
     font-family: 'Rounded Mplus 1c ExtraBold','Rounded Mplus 1c',sans-serif;
-    font-size: 10.5pt; border-radius: 5mm; padding: .8mm 5mm;
-    box-shadow: 0 .5mm 0 rgba(160,110,0,.25);
+    font-size: 6.8pt; border-radius: 2mm; padding: .15mm 0;
   }
-  .ak-note { font-size: 7pt; font-weight: 700; color: #8a6d1a; }
-  .ak-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: .9mm; }
-  .ac {
-    display: flex; align-items: center; justify-content: center; gap: .7mm;
-    background: #fff; border: 0.3mm solid color-mix(in srgb, var(--c) 40%, #fff);
-    border-top: 0.7mm solid var(--c);
-    border-radius: 1.3mm; padding: .5mm .3mm; min-height: 5.9mm;
+  .arv { font-size: 8.3pt; font-weight: 700; color: #1b2a4a; white-space: nowrap; letter-spacing: -.01em; }
+  .kaisetsu {
+    margin-top: 2.6mm; background: #fff; border: 0.45mm dashed #7fa3e0;
+    border-radius: 2.5mm; padding: 1.8mm 3mm;
   }
-  .an { font-size: 6pt; font-weight: 800; color: #93a1bd; }
-  .av { font-size: 7.1pt; font-weight: 800; color: var(--c); white-space: nowrap; letter-spacing: -.02em; }
+  .kai-title {
+    display: inline-block; background: #0a3ea0; color: #fff;
+    font-family: 'Rounded Mplus 1c ExtraBold','Rounded Mplus 1c',sans-serif;
+    font-size: 8pt; border-radius: 4mm; padding: .25mm 3mm; margin-bottom: 1.2mm;
+  }
+  .kai-items { display: flex; flex-wrap: wrap; }
+  .kai-items div { flex: 0 0 50%; font-size: 7.8pt; font-weight: 700; color: #2c3c5e;
+                    line-height: 1.5; padding-right: 3mm; box-sizing: border-box; }
+  .kai-items b { color: #0a3ea0; }
+  .rankrow { display: flex; gap: 2.6mm; margin-top: 2.6mm; }
+  .rank {
+    flex: 1; text-align: center; background: #fff; border: 0.4mm solid #e8c25c;
+    border-radius: 2.5mm; padding: 1.6mm 1mm 1.8mm; box-shadow: 0 .5mm 0 #ecd9a0;
+  }
+  .rank .rr {
+    font-family: 'Rounded Mplus 1c ExtraBold','Rounded Mplus 1c',sans-serif;
+    font-size: 9.5pt; color: #b57e00;
+  }
+  .rank .rs { font-size: 8pt; margin: .4mm 0; }
+  .rank .rl { font-size: 7.6pt; font-weight: 800; color: #2c3c5e; }
 
   /* ===== 100てんバナー ===== */
   .goal {
@@ -284,7 +357,7 @@
       <div class="fb-text">バンテリンドームには 3まんにん いじょうの ファンが はいれるんだ! すごい ひろさだね!</div>
     </div>
   </div>
-  <div class="foot"><span class="fl">📣 がんばれ! ドラゴンズ!</span><span class="fp">1 / 3</span><span class="fr">⚾ たのしく やきゅうを おぼえよう!</span></div>
+  <div class="foot"><span class="fl">📣 がんばれ! ドラゴンズ!</span><span class="fp">1 / 4</span><span class="fr">⚾ たのしく やきゅうを おぼえよう!</span></div>
 </div>
 
 <!-- ============ 2ページめ (Q41-80) ============ -->
@@ -352,10 +425,10 @@
       <div class="db-emoji2">⚾</div>
     </div>
   </div>
-  <div class="foot"><span class="fl">📣 がんばれ! ドラゴンズ!</span><span class="fp">2 / 3</span><span class="fr">⚾ たのしく やきゅうを おぼえよう!</span></div>
+  <div class="foot"><span class="fl">📣 がんばれ! ドラゴンズ!</span><span class="fp">2 / 4</span><span class="fr">⚾ たのしく やきゅうを おぼえよう!</span></div>
 </div>
 
-<!-- ============ 3ページめ (Q81-100 + こたえ) ============ -->
+<!-- ============ 3ページめ (Q81-100 + にんていしょう) ============ -->
 <div class="page p3">
   
 <div class="minihead">
@@ -387,119 +460,61 @@
 <div class="q" style="--c:#159a4a;--l:#e2f5e9"><div class="num">99</div><div class="qb"><div class="qt">ファン 100にんの うち 60にんが タオルを もって いる。もって いないのは?</div></div><div class="ansbox"><span class="al">こたえ</span></div></div>
 <div class="q" style="--c:#159a4a;--l:#e2f5e9"><div class="num">100</div><div class="qb"><div class="qt">クイズは ぜんぶで 100もん。99もん おわった。のこりは なんもん?</div></div><div class="ansbox"><span class="al">こたえ</span></div></div>
   </div>
-  <div class="anskey">
-    <div class="ak-head">
-      <span class="ak-title">🏆 こたえ</span>
-      <span class="ak-note">まるつけを して、できた かずを 1ページめに かこう! ✏️</span>
+  <div class="cert">
+    <div class="cert-deco tl">🐉</div><div class="cert-deco tr">⚾</div>
+    <div class="cert-deco bl">📣</div><div class="cert-deco br">🐨</div>
+    <div class="cert-stars">⭐⭐⭐⭐⭐</div>
+    <div class="cert-title">にんていしょう</div>
+    <div class="cert-name"><span class="cline"></span>さん</div>
+    <div class="cert-text">あなたは 「<ruby>中日<rt>ちゅうにち</rt></ruby>ドラゴンズ だいすきクイズ」<br>100もんに チャレンジ しました!</div>
+    <div class="cert-score">せいかい <span class="cbox"></span> もん</div>
+    <div class="cert-grant">これからも ドラゴンズと やきゅうを たのしんでね。<br><b>きみを 『ドラゴンズはかせ』に にんてい します!</b></div>
+    <div class="cert-date"><span class="dline"></span> がつ <span class="dline"></span> にち<span class="cert-from">「だいすきクイズ 100もん」より</span></div>
+  </div>
+  <div class="foot"><span class="fl">📣 がんばれ! ドラゴンズ!</span><span class="fp">3 / 4</span><span class="fr">⚾ たのしく やきゅうを おぼえよう!</span></div>
+</div>
+
+<!-- ============ 4ページめ (こたえの ページ) ============ -->
+<div class="page p4">
+  
+<div class="minihead">
+  <span class="mh-ball">⚾</span>
+  <span class="mh-title"><ruby>中日<rt>ちゅうにち</rt></ruby>ドラゴンズ だいすき クイズ 100もん!</span>
+  <span class="mh-drag">🏆</span>
+</div>
+
+  <div class="notebar">
+    <span class="nl">🏆 こたえの ページ</span>
+    <span>✏️ もんだいを といて から みてね! おうちの ひとと いっしょに まるつけを して、できた かずを 1ページめに かこう!</span>
+  </div>
+  <div class="agrid">
+<div class="acol" style="--c:#0a3ea0;--l:#e3ecfb"><div class="acol-h">🐉 ドラゴンズの クイズ <span class="rng">1〜25</span></div><div class="ar"><span class="arn">1</span><span class="arv"><b style="color:#0a3ea0">①</b> りゅう</span></div><div class="ar"><span class="arn">2</span><span class="arv"><b style="color:#0a3ea0">②</b> あお</span></div><div class="ar"><span class="arn">3</span><span class="arv"><b style="color:#0a3ea0">③</b> なごや</span></div><div class="ar"><span class="arn">4</span><span class="arv"><b style="color:#0a3ea0">①</b> あいちけん</span></div><div class="ar"><span class="arn">5</span><span class="arv"><b style="color:#0a3ea0">②</b> バンテリンドーム</span></div><div class="ar"><span class="arn">6</span><span class="arv"><b style="color:#0a3ea0">③</b> コアラ</span></div><div class="ar"><span class="arn">7</span><span class="arv"><b style="color:#0a3ea0">②</b> バクてん</span></div><div class="ar"><span class="arn">8</span><span class="arv"><b style="color:#0a3ea0">③</b> りゅう</span></div><div class="ar"><span class="arn">9</span><span class="arv"><b style="color:#0a3ea0">③</b> 3にん</span></div><div class="ar"><span class="arn">10</span><span class="arv"><b style="color:#0a3ea0">②</b> パオロン</span></div><div class="ar"><span class="arn">11</span><span class="arv"><b style="color:#0a3ea0">①</b> セ・リーグ</span></div><div class="ar"><span class="arn">12</span><span class="arv"><b style="color:#0a3ea0">③</b> ジャイアンツ</span></div><div class="ar"><span class="arn">13</span><span class="arv"><b style="color:#0a3ea0">②</b> もえよドラゴンズ!</span></div><div class="ar"><span class="arn">14</span><span class="arv"><b style="color:#0a3ea0">①</b> 竜(りゅう)</span></div><div class="ar"><span class="arn">15</span><span class="arv"><b style="color:#0a3ea0">③</b> そのまま できる</span></div><div class="ar"><span class="arn">16</span><span class="arv"><b style="color:#0a3ea0">①</b> メガホン</span></div><div class="ar"><span class="arn">17</span><span class="arv"><b style="color:#0a3ea0">②</b> みそカツ</span></div><div class="ar"><span class="arn">18</span><span class="arv"><b style="color:#0a3ea0">③</b> おきなわ</span></div><div class="ar"><span class="arn">19</span><span class="arv"><b style="color:#0a3ea0">①</b> オーストラリア</span></div><div class="ar"><span class="arn">20</span><span class="arv"><b style="color:#0a3ea0">②</b> ひ</span></div><div class="ar"><span class="arn">21</span><span class="arv"><b style="color:#0a3ea0">①</b> ユーカリのは</span></div><div class="ar"><span class="arn">22</span><span class="arv"><b style="color:#0a3ea0">①</b> せばんごう</span></div><div class="ar"><span class="arn">23</span><span class="arv"><b style="color:#0a3ea0">③</b> ファン</span></div><div class="ar"><span class="arn">24</span><span class="arv"><b style="color:#0a3ea0">②</b> れんしゅう</span></div><div class="ar"><span class="arn">25</span><span class="arv"><b style="color:#0a3ea0">①</b> ずっと ひろい</span></div></div>
+<div class="acol" style="--c:#0077c8;--l:#e0f1fb"><div class="acol-h">⚾ やきゅうの きほん クイズ <span class="rng">26〜50</span></div><div class="ar"><span class="arn">26</span><span class="arv"><b style="color:#0077c8">②</b> 9にん</span></div><div class="ar"><span class="arn">27</span><span class="arv"><b style="color:#0077c8">①</b> アウト</span></div><div class="ar"><span class="arn">28</span><span class="arv"><b style="color:#0077c8">③</b> せめと まもり こうたい</span></div><div class="ar"><span class="arn">29</span><span class="arv"><b style="color:#0077c8">①</b> ピッチャー</span></div><div class="ar"><span class="arn">30</span><span class="arv"><b style="color:#0077c8">③</b> キャッチャー</span></div><div class="ar"><span class="arn">31</span><span class="arv"><b style="color:#0077c8">②</b> バット</span></div><div class="ar"><span class="arn">32</span><span class="arv"><b style="color:#0077c8">③</b> グローブ</span></div><div class="ar"><span class="arn">33</span><span class="arv"><b style="color:#0077c8">②</b> ホームラン</span></div><div class="ar"><span class="arn">34</span><span class="arv"><b style="color:#0077c8">③</b> 9かい</span></div><div class="ar"><span class="arn">35</span><span class="arv"><b style="color:#0077c8">②</b> 4つ</span></div><div class="ar"><span class="arn">36</span><span class="arv"><b style="color:#0077c8">①</b> 1てん はいる</span></div><div class="ar"><span class="arn">37</span><span class="arv"><b style="color:#0077c8">②</b> てんが おおい</span></div><div class="ar"><span class="arn">38</span><span class="arv"><b style="color:#0077c8">③</b> 1るいへ すすめる</span></div><div class="ar"><span class="arn">39</span><span class="arv"><b style="color:#0077c8">②</b> アウト</span></div><div class="ar"><span class="arn">40</span><span class="arv"><b style="color:#0077c8">①</b> 2るい</span></div><div class="ar"><span class="arn">41</span><span class="arv"><b style="color:#0077c8">②</b> 12チーム</span></div><div class="ar"><span class="arn">42</span><span class="arv"><b style="color:#0077c8">③</b> パ・リーグ</span></div><div class="ar"><span class="arn">43</span><span class="arv"><b style="color:#0077c8">①</b> しろ</span></div><div class="ar"><span class="arn">44</span><span class="arv"><b style="color:#0077c8">③</b> あか</span></div><div class="ar"><span class="arn">45</span><span class="arv"><b style="color:#0077c8">②</b> さくせんを きめる</span></div><div class="ar"><span class="arn">46</span><span class="arv"><b style="color:#0077c8">①</b> プレイボール!</span></div><div class="ar"><span class="arn">47</span><span class="arv"><b style="color:#0077c8">③</b> がいやしゅ</span></div><div class="ar"><span class="arn">48</span><span class="arv"><b style="color:#0077c8">①</b> ベースを 1しゅう</span></div><div class="ar"><span class="arn">49</span><span class="arv"><b style="color:#0077c8">②</b> ヘルメット</span></div><div class="ar"><span class="arn">50</span><span class="arv"><b style="color:#0077c8">③</b> セーフ</span></div></div>
+<div class="acol" style="--c:#e88a00;--l:#fdf0da"><div class="acol-h">⭕ まるばつ クイズ <span class="rng">51〜75</span></div><div class="ar"><span class="arn">51</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">×</b></span></div><div class="ar"><span class="arn">52</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">×</b></span></div><div class="ar"><span class="arn">53</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">○</b></span></div><div class="ar"><span class="arn">54</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">×</b></span></div><div class="ar"><span class="arn">55</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">○</b></span></div><div class="ar"><span class="arn">56</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">×</b></span></div><div class="ar"><span class="arn">57</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">×</b></span></div><div class="ar"><span class="arn">58</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">○</b></span></div><div class="ar"><span class="arn">59</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">○</b></span></div><div class="ar"><span class="arn">60</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">×</b></span></div><div class="ar"><span class="arn">61</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">○</b></span></div><div class="ar"><span class="arn">62</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">○</b></span></div><div class="ar"><span class="arn">63</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">×</b></span></div><div class="ar"><span class="arn">64</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">×</b></span></div><div class="ar"><span class="arn">65</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">○</b></span></div><div class="ar"><span class="arn">66</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">○</b></span></div><div class="ar"><span class="arn">67</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">×</b></span></div><div class="ar"><span class="arn">68</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">○</b></span></div><div class="ar"><span class="arn">69</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">○</b></span></div><div class="ar"><span class="arn">70</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">×</b></span></div><div class="ar"><span class="arn">71</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">○</b></span></div><div class="ar"><span class="arn">72</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">×</b></span></div><div class="ar"><span class="arn">73</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">×</b></span></div><div class="ar"><span class="arn">74</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">○</b></span></div><div class="ar"><span class="arn">75</span><span class="arv"><b style="color:#e88a00;font-size:9.5pt">○</b></span></div></div>
+<div class="acol" style="--c:#159a4a;--l:#e2f5e9"><div class="acol-h">✏️ ドラゴンズ さんすう <span class="rng">76〜100</span></div><div class="ar"><span class="arn">76</span><span class="arv"><b>5てん</b></span></div><div class="ar"><span class="arn">77</span><span class="arv"><b>3てん</b></span></div><div class="ar"><span class="arn">78</span><span class="arv"><b>7こ</b></span></div><div class="ar"><span class="arn">79</span><span class="arv"><b>10にん</b></span></div><div class="ar"><span class="arn">80</span><span class="arv"><b>4ほん</b></span></div><div class="ar"><span class="arn">81</span><span class="arv"><b>7ほん</b></span></div><div class="ar"><span class="arn">82</span><span class="arv"><b>30にん</b></span></div><div class="ar"><span class="arn">83</span><span class="arv"><b>3かい</b></span></div><div class="ar"><span class="arn">84</span><span class="arv"><b>200えん</b></span></div><div class="ar"><span class="arn">85</span><span class="arv"><b>2かい</b></span></div><div class="ar"><span class="arn">86</span><span class="arv"><b>8つ</b></span></div><div class="ar"><span class="arn">87</span><span class="arv"><b>18にん</b></span></div><div class="ar"><span class="arn">88</span><span class="arv"><b>15こ</b></span></div><div class="ar"><span class="arn">89</span><span class="arv"><b>よる9じ</b></span></div><div class="ar"><span class="arn">90</span><span class="arv"><b>8まい</b></span></div><div class="ar"><span class="arn">91</span><span class="arv"><b>8てん</b></span></div><div class="ar"><span class="arn">92</span><span class="arv"><b>12まい</b></span></div><div class="ar"><span class="arn">93</span><span class="arv"><b>4ほん</b></span></div><div class="ar"><span class="arn">94</span><span class="arv"><b>80えん</b></span></div><div class="ar"><span class="arn">95</span><span class="arv"><b>16こ</b></span></div><div class="ar"><span class="arn">96</span><span class="arv"><b>14かい</b></span></div><div class="ar"><span class="arn">97</span><span class="arv"><b>1じ30ぷん</b></span></div><div class="ar"><span class="arn">98</span><span class="arv"><b>5しょう</b></span></div><div class="ar"><span class="arn">99</span><span class="arv"><b>40にん</b></span></div><div class="ar"><span class="arn">100</span><span class="arv"><b>1もん</b></span></div></div>
+  </div>
+  <div class="kaisetsu">
+    <div class="kai-title">💡 ワンポイント</div>
+    <div class="kai-items">
+      <div><b>14ばん:</b> しんぶんは かんじで チームを かくよ。ドラゴンズは 竜(りゅう)!</div>
+      <div><b>18ばん:</b> はるは あたたかい おきなわで れんしゅうを して、シーズンに そなえるんだ。</div>
+      <div><b>56ばん:</b> ストライクは 3つで アウト! ボールは 4つで フォアボールだよ。</div>
+      <div><b>61ばん:</b> ドラゴンズが できたのは 1936ねん。90ねんくらい まえだよ!</div>
+      <div><b>89ばん:</b> 6じの 3じかん あとは 9じ。とけいを みて たしかめて みよう。</div>
+      <div><b>97ばん:</b> 2じの 30ぷん まえは 1じ30ぷん。はやめに つくと あんしんだね。</div>
     </div>
-    <div class="ak-grid">
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">1</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">2</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">3</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">4</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">5</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">6</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">7</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">8</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">9</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">10</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">11</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">12</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">13</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">14</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">15</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">16</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">17</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">18</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">19</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">20</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">21</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">22</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">23</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">24</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0a3ea0;--l:#e3ecfb"><span class="an">25</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">26</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">27</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">28</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">29</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">30</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">31</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">32</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">33</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">34</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">35</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">36</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">37</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">38</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">39</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">40</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">41</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">42</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">43</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">44</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">45</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">46</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">47</span><span class="av">③</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">48</span><span class="av">①</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">49</span><span class="av">②</span></div>
-<div class="ac" style="--c:#0077c8;--l:#e0f1fb"><span class="an">50</span><span class="av">③</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">51</span><span class="av">×</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">52</span><span class="av">×</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">53</span><span class="av">○</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">54</span><span class="av">×</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">55</span><span class="av">○</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">56</span><span class="av">×</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">57</span><span class="av">×</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">58</span><span class="av">○</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">59</span><span class="av">○</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">60</span><span class="av">×</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">61</span><span class="av">○</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">62</span><span class="av">○</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">63</span><span class="av">×</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">64</span><span class="av">×</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">65</span><span class="av">○</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">66</span><span class="av">○</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">67</span><span class="av">×</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">68</span><span class="av">○</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">69</span><span class="av">○</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">70</span><span class="av">×</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">71</span><span class="av">○</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">72</span><span class="av">×</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">73</span><span class="av">×</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">74</span><span class="av">○</span></div>
-<div class="ac" style="--c:#e88a00;--l:#fdf0da"><span class="an">75</span><span class="av">○</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">76</span><span class="av">5てん</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">77</span><span class="av">3てん</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">78</span><span class="av">7こ</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">79</span><span class="av">10にん</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">80</span><span class="av">4ほん</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">81</span><span class="av">7ほん</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">82</span><span class="av">30にん</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">83</span><span class="av">3かい</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">84</span><span class="av">200えん</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">85</span><span class="av">2かい</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">86</span><span class="av">8つ</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">87</span><span class="av">18にん</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">88</span><span class="av">15こ</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">89</span><span class="av">よる9じ</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">90</span><span class="av">8まい</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">91</span><span class="av">8てん</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">92</span><span class="av">12まい</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">93</span><span class="av">4ほん</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">94</span><span class="av">80えん</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">95</span><span class="av">16こ</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">96</span><span class="av">14かい</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">97</span><span class="av">1じ30ぷん</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">98</span><span class="av">5しょう</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">99</span><span class="av">40にん</span></div>
-<div class="ac" style="--c:#159a4a;--l:#e2f5e9"><span class="an">100</span><span class="av">1もん</span></div>
-    </div>
+  </div>
+  <div class="rankrow">
+    <div class="rank"><div class="rr">100もん</div><div class="rs">⭐⭐⭐</div><div class="rl">パーフェクト! ドラゴンズはかせ!</div></div>
+    <div class="rank"><div class="rr">80〜99もん</div><div class="rs">⭐⭐</div><div class="rl">すごい! はかせまで あとすこし!</div></div>
+    <div class="rank"><div class="rr">50〜79もん</div><div class="rs">⭐</div><div class="rl">いいちょうし! そのちょうし!</div></div>
+    <div class="rank"><div class="rr">0〜49もん</div><div class="rs">🌱</div><div class="rl">なんども チャレンジ して みよう!</div></div>
   </div>
   <div class="goal">
     <span>⭐ 100もん クリアで きみも ドラゴンズはかせ! ⭐</span>
     <span class="small">まちがえた もんだいは もういちど チャレンジ してみてね 🐉⚾</span>
   </div>
-  <div class="foot"><span class="fl">📣 がんばれ! ドラゴンズ!</span><span class="fp">3 / 3</span><span class="fr">⚾ たのしく やきゅうを おぼえよう!</span></div>
+  <div class="foot"><span class="fl">📣 がんばれ! ドラゴンズ!</span><span class="fp">4 / 4</span><span class="fr">⚾ たのしく やきゅうを おぼえよう!</span></div>
 </div>
 
 </body>
