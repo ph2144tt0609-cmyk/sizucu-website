@@ -15,7 +15,7 @@
 
   <!-- ========== SEO 基本 ========== -->
   <title>鷹匠薬局 公園店 | 静岡市葵区の調剤薬局・処方せん受付【株式会社しずく】</title>
-  <meta name="description" content="鷹匠薬局 公園店（静岡市葵区東鷹匠町5-1）は株式会社しずくが運営する調剤薬局です。どの医療機関の処方せんもお受けします。在宅医療・服薬指導・お薬の取り寄せもご相談ください。TEL: 054-247-5611 / 平日9:00–18:00・土9:00–13:00。">
+  <meta name="description" content="鷹匠薬局 公園店（静岡市葵区東鷹匠町5-1）は株式会社しずくが運営する調剤薬局です。どの医療機関の処方せんもお受けします。在宅医療・服薬指導・お薬の取り寄せもご相談ください。TEL: 054-247-5611 / 月〜木9:00–18:00、金曜は週により異なり、土曜は第2・第4週のみ9:00–13:00。">
   <meta name="keywords" content="鷹匠薬局,鷹匠 薬局,静岡市 薬局,静岡市葵区 薬局,東鷹匠町 薬局,公園店,処方せん受付,在宅医療,株式会社しずく">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="theme-color" content="#3d4e5e">
@@ -51,6 +51,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=Noto+Serif+JP:wght@400;500;700&amp;family=Zen+Kaku+Gothic+New:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 
   <!-- ========== Schema.org: Pharmacy ========== -->
+  <!-- 営業時間の注記：当店は「第1・3・5金曜は13:00まで」「土曜は第2・4週のみ」という隔週制。
+       schema.org の OpeningHoursSpecification は隔週（第N週）を表現できないため、
+       毎週開いていると誤って伝わらないよう安全側（実際より狭く）に倒して記載している。
+       ・月〜木 9:00-18:00 … 毎週確実に開いている時間帯のみ
+       ・金 9:00-13:00 … 全ての金曜で確実に開いている時間帯（第2・4金の13:00-18:00は含めない）
+       ・土 … 隔週のため構造化データには含めない（休みの日に来局させないことを優先）
+       正確な営業時間は本文の「店舗情報」を正とする。ここを毎週営業の形に戻さないこと。 -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -73,24 +80,27 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "34.9847",
-      "longitude": "138.3852"
+      "latitude": "34.9807295",
+      "longitude": "138.3910326"
     },
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
         "opens": "09:00",
         "closes": "18:00"
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
+        "dayOfWeek": "Friday",
         "opens": "09:00",
         "closes": "13:00"
       }
     ],
-    "hasMap": "https://maps.app.goo.gl/2xiULETgUZhSwbik6",
+    "hasMap": "https://www.google.com/maps?cid=14834270466679669677",
+    "sameAs": [
+      "https://www.google.com/maps?cid=14834270466679669677"
+    ],
     "areaServed": [
       {"@type": "City", "name": "静岡市"},
       {"@type": "AdministrativeArea", "name": "静岡市葵区"}
@@ -326,6 +336,23 @@
       width: 100%; height: 100%;
       border: 0;
     }
+    .map-links {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin-top: 20px;
+    }
+    .map-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.14em;
+      border: 1px solid var(--c-orange); color: var(--c-orange);
+      background: var(--white);
+      transition: all 0.3s var(--ease);
+    }
+    .map-link:hover { background: var(--c-orange); color: var(--white); }
+    .map-note {
+      margin-top: 12px;
+      font-size: 11px; letter-spacing: 0.1em; color: var(--ink-mute);
+    }
 
     /* ========== SERVICES ========== */
     .services-section {
@@ -470,13 +497,15 @@
         <li>
           <span class="info-table-label">営業時間</span>
           <span class="info-table-value">
-            <strong>平日（月〜金）9:00 – 18:00</strong><br>
-            <strong>土曜日 9:00 – 13:00</strong>
+            <strong>月曜〜木曜 9:00 – 18:00</strong><br>
+            <strong>金曜日（第1・第3・第5週）9:00 – 13:00</strong><br>
+            <strong>金曜日（第2・第4週）9:00 – 18:00</strong><br>
+            <strong>土曜日（第2・第4週のみ）9:00 – 13:00</strong>
           </span>
         </li>
         <li>
           <span class="info-table-label">休業日</span>
-          <span class="info-table-value">日曜・祝日</span>
+          <span class="info-table-value">日曜・祝日、第1・第3・第5土曜日<br>土曜日に開いているのは第2・第4週のみです。お越しの前にご確認ください。</span>
         </li>
         <li>
           <span class="info-table-label">対応処方せん</span>
@@ -541,6 +570,11 @@
           referrerpolicy="no-referrer-when-downgrade"
           allowfullscreen></iframe>
       </div>
+      <div class="map-links">
+        <a class="map-link" href="https://www.google.com/maps?cid=14834270466679669677" target="_blank" rel="noopener">Googleマップで開く</a>
+        <a class="map-link" href="https://www.google.com/maps?cid=14834270466679669677" target="_blank" rel="noopener">クチコミを見る・書く</a>
+      </div>
+      <p class="map-note">クチコミは当薬局のサービス向上のために拝見しております。お薬や体調に関するご相談は、クチコミではなく店頭またはお電話でお願いいたします。</p>
     </section>
   </main>
 

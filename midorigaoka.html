@@ -73,8 +73,8 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "35.0930",
-      "longitude": "138.8632"
+      "latitude": "35.1196003",
+      "longitude": "138.8721079"
     },
     "openingHoursSpecification": [
       {
@@ -90,7 +90,10 @@
         "closes": "13:00"
       }
     ],
-    "hasMap": "https://maps.app.goo.gl/ssqVo9jPyD2CZVdd9",
+    "hasMap": "https://www.google.com/maps?cid=8546323477233385343",
+    "sameAs": [
+      "https://www.google.com/maps?cid=8546323477233385343"
+    ],
     "areaServed": [
       {"@type": "City", "name": "沼津市"},
       {"@type": "AdministrativeArea", "name": "静岡県東部"}
@@ -326,6 +329,23 @@
       width: 100%; height: 100%;
       border: 0;
     }
+    .map-links {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin-top: 20px;
+    }
+    .map-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.14em;
+      border: 1px solid var(--c-green); color: var(--c-green);
+      background: var(--white);
+      transition: all 0.3s var(--ease);
+    }
+    .map-link:hover { background: var(--c-green); color: var(--white); }
+    .map-note {
+      margin-top: 12px;
+      font-size: 11px; letter-spacing: 0.1em; color: var(--ink-mute);
+    }
 
     /* ========== SERVICES ========== */
     .services-section {
@@ -551,6 +571,11 @@
           referrerpolicy="no-referrer-when-downgrade"
           allowfullscreen></iframe>
       </div>
+      <div class="map-links">
+        <a class="map-link" href="https://www.google.com/maps?cid=8546323477233385343" target="_blank" rel="noopener">Googleマップで開く</a>
+        <a class="map-link" href="https://g.page/r/CX-_ExTso5p2EBM/review" target="_blank" rel="noopener">クチコミを書く</a>
+      </div>
+      <p class="map-note">クチコミは当薬局のサービス向上のために拝見しております。お薬や体調に関するご相談は、クチコミではなく店頭またはお電話でお願いいたします。</p>
     </section>
   </main>
 

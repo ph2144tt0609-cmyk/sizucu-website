@@ -52,6 +52,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=Noto+Serif+JP:wght@400;500;700&amp;family=Zen+Kaku+Gothic+New:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 
   <!-- ========== Schema.org: Organization ========== -->
+  <!-- 鷹匠薬局 公園店の営業時間の注記：同店は「第1・3・5金曜は13:00まで」「土曜は第2・4週のみ」という隔週制。
+       schema.org の OpeningHoursSpecification は隔週（第N週）を表現できないため、
+       毎週開いていると誤って伝わらないよう安全側（実際より狭く）に倒して記載している。
+       ・月〜木 9:00-18:00 … 毎週確実に開いている時間帯のみ
+       ・金 9:00-13:00 … 全ての金曜で確実に開いている時間帯（第2・4金の13:00-18:00は含めない）
+       ・土 … 隔週のため構造化データには含めない（休みの日に来局させないことを優先）
+       takajo.html の同名ブロックと内容を一致させること。正確な営業時間は takajo.html の「店舗情報」を正とする。
+       ここを毎週営業の形に戻さないこと。なお緑ヶ丘薬局は月〜金・土の通常営業で、この注記の対象外。 -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -97,8 +105,8 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "35.0930",
-          "longitude": "138.8632"
+          "latitude": "35.1196003",
+          "longitude": "138.8721079"
         },
         "openingHoursSpecification": [
           {
@@ -114,7 +122,10 @@
             "closes": "13:00"
           }
         ],
-        "hasMap": "https://maps.app.goo.gl/ssqVo9jPyD2CZVdd9",
+        "hasMap": "https://www.google.com/maps?cid=8546323477233385343",
+        "sameAs": [
+          "https://www.google.com/maps?cid=8546323477233385343"
+        ],
         "areaServed": [
           {"@type": "City", "name": "沼津市"},
           {"@type": "AdministrativeArea", "name": "静岡県東部"}
@@ -139,24 +150,27 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "34.9847",
-          "longitude": "138.3852"
+          "latitude": "34.9807295",
+          "longitude": "138.3910326"
         },
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
             "opens": "09:00",
             "closes": "18:00"
           },
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Saturday",
+            "dayOfWeek": "Friday",
             "opens": "09:00",
             "closes": "13:00"
           }
         ],
-        "hasMap": "https://maps.app.goo.gl/2xiULETgUZhSwbik6",
+        "hasMap": "https://www.google.com/maps?cid=14834270466679669677",
+        "sameAs": [
+          "https://www.google.com/maps?cid=14834270466679669677"
+        ],
         "areaServed": [
           {"@type": "City", "name": "静岡市"},
           {"@type": "AdministrativeArea", "name": "静岡市葵区"}
@@ -2421,7 +2435,7 @@
             </li>
             <li>
               <span class="store-details-label">HOURS</span>
-              <span class="store-details-value">月・火・水・木・金 &nbsp;9:00 – 18:00<br>土 &nbsp;9:00 – 13:00</span>
+              <span class="store-details-value">月・火・水・木 &nbsp;9:00 – 18:00<br>金 &nbsp;9:00 – 13:00（第2・4週は18:00まで）<br>土 &nbsp;9:00 – 13:00（第2・4週のみ）</span>
             </li>
             <li>
               <span class="store-details-label">PARKING</span>
