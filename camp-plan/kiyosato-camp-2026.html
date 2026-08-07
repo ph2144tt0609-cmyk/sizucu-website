@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <title>清里ぼうけんキャンプ 栞＆完全プラン</title>
 <style>
+  @font-face { font-family:'ZenMaru'; src:url('fonts/ZenMaruGothic-Medium.ttf'); font-weight:500; }
+  @font-face { font-family:'ZenMaru'; src:url('fonts/ZenMaruGothic-Bold.ttf'); font-weight:700; }
+  @font-face { font-family:'ZenMaru'; src:url('fonts/ZenMaruGothic-Black.ttf'); font-weight:900; }
+  @font-face { font-family:'Yusei'; src:url('fonts/YuseiMagic-Regular.ttf'); font-weight:400; }
+
   @page { size: A4 portrait; margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -21,8 +26,108 @@
   }
   .page:last-child { page-break-after: auto; }
 
-  .kid { background: #fffdf5; }
+  /* ================= KID DESIGN SYSTEM ================= */
+  .kid {
+    font-family: 'ZenMaru','IPAPGothic',sans-serif; font-weight:500; color:#4a3728;
+    background-color:#fff9ec;
+    background-image: radial-gradient(#eadfc2 0.45mm, rgba(0,0,0,0) 0.5mm);
+    background-size: 6mm 6mm;
+  }
+  .kid b, .kid strong { font-weight: 700; }
+  .kid .foot { color:#bfae8f; border-color:#e9dcc0; font-family:'Yusei'; }
 
+  .yus { font-family:'Yusei','ZenMaru'; font-weight:400; }
+
+  /* day patch badge */
+  .patch {
+    flex:0 0 auto; width:21mm; height:21mm; border-radius:50%;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    color:#fff; font-family:'Yusei'; transform:rotate(-5deg); position:relative;
+    box-shadow:0 1.2mm 0 rgba(110,80,45,.25);
+  }
+  .patch::after {
+    content:""; position:absolute; inset:1.3mm; border:1.6px dashed rgba(255,255,255,.85); border-radius:50%;
+  }
+  .patch .s { font-size:7pt; line-height:1; } .patch .b { font-size:12.5pt; line-height:1.15; }
+
+  .kttl { display:flex; align-items:center; gap:4.5mm; margin-bottom:4.5mm; }
+  .kttl .big { font-family:'Yusei'; font-size:19.5pt; line-height:1.35; color:#443122; }
+  .hl { background:linear-gradient(rgba(0,0,0,0) 56%, #ffd76e 56%, #ffd76e 92%, rgba(0,0,0,0) 92%); padding:0 .8mm; }
+
+  /* washi tape */
+  .tape {
+    position:absolute; width:24mm; height:7mm; top:-3.6mm; left:50%;
+    transform:translateX(-50%) rotate(-2.5deg); opacity:.93; z-index:2;
+    box-shadow:0 .6mm 1.2mm rgba(90,60,30,.18);
+  }
+  .tp-c { background:repeating-linear-gradient(45deg,#ff8f70 0 2.5mm,#ffb9a4 2.5mm 5mm); }
+  .tp-s { background-color:#9fd3ef; background-image:radial-gradient(#fff 0.75mm, rgba(0,0,0,0) 0.85mm); background-size:3.6mm 3.6mm; }
+  .tp-l { background:repeating-linear-gradient(-45deg,#8fce7e 0 2.5mm,#bce4ae 2.5mm 5mm); }
+  .tp-y { background-color:#ffd970; background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.6) 0 1mm, rgba(0,0,0,0) 1mm 4mm); }
+
+  /* scrapbook card */
+  .card {
+    position:relative; background:#fffdf6; border:1.5px solid #ead9ba;
+    border-radius:3.5mm; box-shadow:0 1.5mm 0 rgba(122,92,58,.14);
+    padding:4mm 5mm; margin-bottom:4.2mm;
+  }
+  .rL { transform:rotate(-.65deg); } .rR { transform:rotate(.55deg); }
+  .card h4 { font-family:'Yusei'; font-weight:400; font-size:13pt; margin-bottom:2.5mm; }
+
+  /* fox + speech bubble */
+  .fox-row { display:flex; align-items:center; gap:3.5mm; margin-bottom:4.5mm; }
+  .bub { position:relative; background:#fff; border:2px solid #6b5238; border-radius:3.5mm; padding:2.6mm 4mm; font-size:10pt; line-height:1.55; flex:1; box-shadow:0 1mm 0 rgba(122,92,58,.12); }
+  .bub::after { content:""; position:absolute; left:-3.2mm; top:50%; width:3.6mm; height:3.6mm; background:#fff; border-left:2px solid #6b5238; border-bottom:2px solid #6b5238; transform:translateY(-50%) rotate(45deg); }
+
+  /* timeline — dashed trail with sticker time chips */
+  .tl { list-style:none; position:relative; }
+  .tl::before { content:""; position:absolute; left:10.5mm; top:3mm; bottom:3mm; border-left:2.5px dashed #dcc294; }
+  .tl li { display:flex; gap:4mm; margin-bottom:2.5mm; align-items:flex-start; position:relative; }
+  .tl .t {
+    flex:0 0 21mm; font-family:'Yusei'; font-size:11pt; color:#fff; text-align:center;
+    background:#5aa7d4; border:2px solid #fff; border-radius:100px; padding:.9mm 0;
+    box-shadow:0 .9mm 0 rgba(110,80,45,.22); position:relative; z-index:1;
+  }
+  .tl li:nth-child(odd) .t { transform:rotate(-2deg); }
+  .tl li:nth-child(even) .t { transform:rotate(1.6deg); }
+  .tl .t.night { background:#37407e; } .tl .t.food { background:#e8894a; } .tl .t.play { background:#63b552; }
+  .tl .d { flex:1; font-size:10.5pt; line-height:1.55; padding-top:.8mm; }
+  .tl .d b { color:#c05a2a; }
+  .tl .d .why { color:#8d7a5f; font-size:8.5pt; }
+
+  /* mission stamp cards */
+  .mis { display:flex; flex-wrap:wrap; gap:3.5mm; }
+  .mis .m {
+    flex:1 1 46%; background:#fff; border:2.5px dashed #f0a35e; border-radius:3mm;
+    padding:3mm 15mm 3mm 3.5mm; position:relative; font-size:10pt; line-height:1.5; min-height:14mm;
+  }
+  .mis .m:nth-child(odd){ transform:rotate(-.5deg);} .mis .m:nth-child(even){ transform:rotate(.5deg);}
+  .mbadge { display:inline-block; font-family:'Yusei'; font-size:10pt; background:#ff8a52; color:#fff; border-radius:100px; padding:.4mm 2.6mm .6mm; margin-right:1.5mm; }
+  .stamp {
+    position:absolute; right:2.6mm; top:50%; width:11.5mm; height:11.5mm;
+    transform:translateY(-50%) rotate(9deg);
+    border:2px dashed #dfae74; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:#d8b489; font-size:6.5pt; font-family:'Yusei'; text-align:center; line-height:1.25;
+  }
+
+  /* polaroid record cards */
+  .rec { display:flex; gap:4mm; align-items:stretch; }
+  .pol { background:#fff; border:1px solid #e6d8bc; box-shadow:0 1.3mm 0 rgba(122,92,58,.15); padding:2.8mm 3mm 3mm; position:relative; }
+  .pol .cap { font-family:'Yusei'; font-size:10pt; margin-bottom:1.6mm; }
+
+  /* colored soft boxes (kid) */
+  .box { border-radius:4mm; padding:4mm 5mm; margin-bottom:4mm; }
+  .box h4 { font-size:13pt; margin-bottom:2.5mm; }
+  .kid .box h4 { font-family:'Yusei'; font-weight:400; }
+  .b-sky   { background:#e6f3fb; border:2px solid #79bde3; }
+  .b-sun   { background:#fff4d6; border:2px solid #f5c33b; }
+  .b-leaf  { background:#e8f6e4; border:2px solid #7cc46a; }
+  .b-rose  { background:#ffeaf0; border:2px solid #f291ac; }
+  .b-night { background:#1b2450; border:2px solid #3a4a91; color:#fff; }
+  .b-gray  { background:#f1f2ee; border:2px solid #c8ccc2; }
+
+  /* adult title (unchanged) */
   .ttl {
     font-size: 21pt; font-weight: 900; color: #12496b;
     border-bottom: 4px solid #ffcf3f; padding-bottom: 2mm; margin-bottom: 5mm;
@@ -34,44 +139,16 @@
   }
   .lead { font-size: 11.5pt; line-height: 1.85; }
 
-  .box { border-radius: 4mm; padding: 4mm 5mm; margin-bottom: 4mm; }
-  .box h4 { font-size: 13pt; margin-bottom: 2.5mm; }
-  .b-sky   { background: #e6f3fb; border: 2px solid #79bde3; }
-  .b-sun   { background: #fff4d6; border: 2px solid #f5c33b; }
-  .b-leaf  { background: #e8f6e4; border: 2px solid #7cc46a; }
-  .b-rose  { background: #ffeaf0; border: 2px solid #f291ac; }
-  .b-night { background: #1b2450; border: 2px solid #3a4a91; color: #fff; }
-  .b-gray  { background: #f1f2ee; border: 2px solid #c8ccc2; }
-
-  .tl { list-style: none; }
-  .tl li { display: flex; gap: 3mm; margin-bottom: 3.1mm; align-items: flex-start; }
-  .tl .t {
-    flex: 0 0 21mm; font-weight: 900; font-size: 11.5pt; color: #fff;
-    background: #3d7ea6; border-radius: 2mm; text-align: center; padding: .8mm 0;
-  }
-  .tl .t.night { background: #2a2f63; }
-  .tl .t.food  { background: #d97b2f; }
-  .tl .t.play  { background: #43a047; }
-  .tl .d { flex: 1; font-size: 11pt; line-height: 1.55; padding-top: .6mm; }
-  .tl .d b { color: #12496b; }
-
-  .mis { display: flex; flex-wrap: wrap; gap: 3mm; }
-  .mis .m {
-    flex: 1 1 46%; background: #fff; border: 2.5px dashed #f5a623; border-radius: 3mm;
-    padding: 3mm 3mm 3mm 13mm; position: relative; font-size: 10.5pt; line-height: 1.55; min-height: 17mm;
-  }
-  .mis .m::before {
-    content: ""; position: absolute; left: 3.5mm; top: 3.5mm;
-    width: 7.5mm; height: 7.5mm; border: 2.5px solid #f5a623; border-radius: 1.5mm; background: #fffdf0;
-  }
-  .mis .m .mno { font-weight: 900; color: #e07b00; font-size: 11pt; }
-
   table { width: 100%; border-collapse: collapse; font-size: 9pt; }
   th, td { border: 1px solid #b9c2c9; padding: 1.8mm 2.2mm; vertical-align: top; line-height: 1.45; }
   th { background: #12496b; color: #fff; font-weight: 700; text-align: left; }
   tbody tr:nth-child(even) { background: #f4f7f9; }
   td.k { background: #eaf0f4; font-weight: 700; white-space: nowrap; }
-  .kid table { font-size: 10.5pt; }
+  .kid table { font-size:10pt; }
+  .kid th, .kid td { border-color:#d9c8a6; }
+  .kid th { background:#8a6f4d; }
+  .kid tbody tr:nth-child(even) { background:#faf3e3; }
+  .kid td.k { background:#f3e8cf; }
 
   .foot {
     position: absolute; bottom: 5mm; left: 13mm; right: 13mm;
@@ -79,154 +156,251 @@
     border-top: 1px solid #dfe3e0; padding-top: 1.5mm;
   }
   .chk { list-style: none; font-size: 9.5pt; line-height: 1.9; }
-  .kid .chk { font-size: 11pt; line-height: 2.05; }
+  .kid .chk { font-size: 10.5pt; line-height: 2.0; }
   .chk li::before { content: "☐ "; font-size: 11pt; color: #3d7ea6; font-weight: 900; }
+  .kid .chk li::before { color:#c0895a; }
   .two { column-count: 2; column-gap: 6mm; }
-
-  /* daily record strip */
-  .rec { display: flex; gap: 3mm; }
-  .rec > div { border-radius: 3mm; padding: 3mm 3.5mm; font-size: 10.5pt; line-height: 1.7; }
 </style>
 </head>
 <body>
 
 <!-- ============ P1 COVER ============ -->
-<div class="page kid" style="background:linear-gradient(175deg,#0f1c46 0%,#1c3570 45%,#2f6ea0 78%,#5fa36f 100%);color:#fff;padding:0;">
+<div class="page" style="padding:0; background:linear-gradient(180deg,#0a1130 0%,#152459 32%,#26507f 58%,#3a7a8c 76%,#2c5e45 90%,#1e4331 100%);">
   <svg width="100%" height="100%" viewBox="0 0 210 297" style="position:absolute;inset:0;">
+    <defs>
+      <radialGradient id="fireglow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#ffb347" stop-opacity=".55"/><stop offset="100%" stop-color="#ffb347" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="tentglow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#ffe9a8" stop-opacity=".6"/><stop offset="100%" stop-color="#ffe9a8" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <!-- milky way -->
+    <g transform="rotate(-24 105 90)">
+      <rect x="30" y="30" width="52" height="200" rx="26" fill="#c9d8f2" opacity=".055"/>
+      <rect x="42" y="20" width="26" height="215" rx="13" fill="#dfe9fa" opacity=".06"/>
+    </g>
+    <g fill="#e8eefc">
+      <circle cx="47" cy="52" r=".55" opacity=".8"/><circle cx="53" cy="84" r=".5" opacity=".7"/><circle cx="60" cy="118" r=".6" opacity=".75"/>
+      <circle cx="43" cy="99" r=".45" opacity=".6"/><circle cx="66" cy="70" r=".45" opacity=".65"/><circle cx="57" cy="38" r=".5" opacity=".7"/>
+      <circle cx="70" cy="95" r=".4" opacity=".55"/><circle cx="50" cy="132" r=".45" opacity=".6"/><circle cx="38" cy="70" r=".4" opacity=".55"/>
+    </g>
+
+    <!-- stars -->
     <g fill="#fff">
-      <circle cx="20" cy="24" r="0.9" opacity=".9"/><circle cx="52" cy="15" r="0.6" opacity=".7"/>
-      <circle cx="88" cy="30" r="1.1" opacity=".95"/><circle cx="120" cy="18" r="0.7" opacity=".8"/>
-      <circle cx="158" cy="27" r="0.9" opacity=".85"/><circle cx="188" cy="14" r="0.6" opacity=".7"/>
-      <circle cx="34" cy="52" r="0.7" opacity=".75"/><circle cx="70" cy="62" r="0.5" opacity=".6"/>
-      <circle cx="140" cy="55" r="0.8" opacity=".8"/><circle cx="176" cy="66" r="0.6" opacity=".7"/>
-      <circle cx="14" cy="86" r="0.6" opacity=".7"/><circle cx="196" cy="95" r="0.7" opacity=".7"/>
-      <circle cx="100" cy="8" r="0.6" opacity=".6"/><circle cx="64" cy="38" r="0.5" opacity=".6"/>
-      <circle cx="172" cy="44" r="0.5" opacity=".6"/><circle cx="28" cy="70" r="0.5" opacity=".55"/>
-      <circle cx="8" cy="118" r="0.5" opacity=".5"/><circle cx="202" cy="132" r="0.5" opacity=".5"/>
+      <circle cx="18" cy="22" r="1" opacity=".95"/><circle cx="60" cy="14" r=".7" opacity=".8"/>
+      <circle cx="95" cy="26" r="1.1" opacity=".95"/><circle cx="130" cy="15" r=".7" opacity=".8"/>
+      <circle cx="163" cy="24" r=".9" opacity=".9"/><circle cx="193" cy="12" r=".6" opacity=".75"/>
+      <circle cx="30" cy="47" r=".7" opacity=".8"/><circle cx="82" cy="55" r=".55" opacity=".7"/>
+      <circle cx="147" cy="49" r=".8" opacity=".85"/><circle cx="180" cy="60" r=".65" opacity=".75"/>
+      <circle cx="13" cy="80" r=".6" opacity=".7"/><circle cx="200" cy="88" r=".7" opacity=".75"/>
+      <circle cx="105" cy="9" r=".6" opacity=".7"/><circle cx="118" cy="42" r=".55" opacity=".65"/>
+      <circle cx="26" cy="112" r=".55" opacity=".6"/><circle cx="188" cy="118" r=".55" opacity=".6"/>
+      <circle cx="96" cy="72" r=".5" opacity=".6"/><circle cx="152" cy="80" r=".5" opacity=".6"/>
+      <circle cx="12" cy="140" r=".5" opacity=".55"/><circle cx="199" cy="146" r=".5" opacity=".5"/>
     </g>
-    <g stroke="#ffe98a" stroke-linecap="round" fill="none">
-      <path d="M150 20 L128 44" stroke-width="1.4" opacity=".95"/>
-      <path d="M42 34 L28 50" stroke-width="1" opacity=".8"/>
-      <path d="M182 58 L168 74" stroke-width=".8" opacity=".7"/>
+    <!-- sparkle crosses -->
+    <g stroke="#fff" stroke-width=".5" stroke-linecap="round" opacity=".9">
+      <path d="M95 21.5 L95 30.5 M90.5 26 L99.5 26"/>
+      <path d="M163 20.5 L163 27.5 M159.5 24 L166.5 24"/>
+      <path d="M18 18.5 L18 25.5 M14.5 22 L21.5 22"/>
     </g>
-    <circle cx="150" cy="20" r="1.6" fill="#fff8d0"/>
-    <path d="M0 218 L38 172 L64 200 L92 158 L132 212 L160 184 L210 226 L210 297 L0 297 Z" fill="#123a2e" opacity=".95"/>
-    <path d="M0 238 L44 206 L82 234 L120 202 L166 238 L210 214 L210 297 L0 297 Z" fill="#0d2a22"/>
-    <path d="M104 205 L118 184 L132 205 Z" fill="#f6b63c"/>
-    <path d="M118 184 L118 205" stroke="#c98a1c" stroke-width="1"/>
-    <path d="M114 205 L118 193 L122 205 Z" fill="#5a3a12"/>
-    <path d="M139 210 q2.5-6 5 0 q-2.5 2.5-5 0 Z" fill="#ff9a3c"/>
-    <path d="M136.5 211 l10 0" stroke="#8a5a2b" stroke-width="1.4" stroke-linecap="round"/>
+    <!-- shooting stars -->
+    <g stroke-linecap="round" fill="none">
+      <path d="M158 30 L128 62" stroke="#8899c9" stroke-width=".8" opacity=".5"/>
+      <path d="M140 49 L128 62" stroke="#ffe98a" stroke-width="1.6" opacity=".95"/>
+      <path d="M52 26 L34 46" stroke="#8899c9" stroke-width=".6" opacity=".45"/>
+      <path d="M41 38 L34 46" stroke="#ffe98a" stroke-width="1.2" opacity=".85"/>
+      <path d="M196 66 L182 82" stroke="#ffe98a" stroke-width=".9" opacity=".7"/>
+    </g>
+    <circle cx="128" cy="62" r="1.7" fill="#fff8d0"/>
+    <circle cx="34" cy="46" r="1.2" fill="#fff8d0"/>
+
+    <!-- mountains -->
+    <path d="M0 172 L34 132 L58 156 L88 118 L126 166 L156 138 L184 160 L210 144 L210 297 L0 297 Z" fill="#16324a" opacity=".9"/>
+    <path d="M0 196 L40 168 L78 192 L118 166 L162 198 L210 176 L210 297 L0 297 Z" fill="#103526"/>
+    <path d="M0 236 L210 226 L210 297 L0 297 Z" fill="#0b2519"/>
+
+    <!-- pines -->
+    <g fill="#0a2016">
+      <g transform="translate(12 192) scale(1.1)"><path d="M8 0 L15 12 L11.5 12 L17 24 L12.5 24 L19 37 L-3 37 L3.5 24 L-1 24 L4.5 12 L1 12 Z"/></g>
+      <g transform="translate(36 200) scale(.8)"><path d="M8 0 L15 12 L11.5 12 L17 24 L12.5 24 L19 37 L-3 37 L3.5 24 L-1 24 L4.5 12 L1 12 Z"/></g>
+      <g transform="translate(170 194) scale(1.2)"><path d="M8 0 L15 12 L11.5 12 L17 24 L12.5 24 L19 37 L-3 37 L3.5 24 L-1 24 L4.5 12 L1 12 Z"/></g>
+      <g transform="translate(194 204) scale(.85)"><path d="M8 0 L15 12 L11.5 12 L17 24 L12.5 24 L19 37 L-3 37 L3.5 24 L-1 24 L4.5 12 L1 12 Z"/></g>
+      <g transform="translate(54 206) scale(.6)"><path d="M8 0 L15 12 L11.5 12 L17 24 L12.5 24 L19 37 L-3 37 L3.5 24 L-1 24 L4.5 12 L1 12 Z"/></g>
+      <g transform="translate(152 208) scale(.65)"><path d="M8 0 L15 12 L11.5 12 L17 24 L12.5 24 L19 37 L-3 37 L3.5 24 L-1 24 L4.5 12 L1 12 Z"/></g>
+    </g>
+
+    <!-- tent -->
+    <ellipse cx="88" cy="228" rx="30" ry="11" fill="url(#tentglow)"/>
+    <path d="M62 232 L88 194 L114 232 Z" fill="#e8a636"/>
+    <path d="M62 232 L88 194 L96 205.5 L78 232 Z" fill="#f6bd4e"/>
+    <path d="M80 232 L88 215 L96 232 Z" fill="#ffe9a8"/>
+    <path d="M88 194 L88 189" stroke="#c98a1c" stroke-width="1.3" stroke-linecap="round"/>
+    <path d="M88 189 L96 191.5 L88 194.5 Z" fill="#e3554f"/>
+    <path d="M62 232 L52 236 M114 232 L124 236" stroke="#caa25c" stroke-width=".7"/>
+
+    <!-- campfire -->
+    <ellipse cx="140" cy="228" rx="21" ry="12" fill="url(#fireglow)"/>
+    <path d="M132 233 L148 227 M132 227 L148 233" stroke="#7a4a22" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M140 210 C144 215 146 218 146 222 C146 226 143.5 228.5 140 228.5 C136.5 228.5 134 226 134 222 C134 218 136 215 140 210 Z" fill="#ff7a35"/>
+    <path d="M140 215.5 C142.5 218.5 143.5 220.5 143.5 223 C143.5 225.6 142 227 140 227 C138 227 136.5 225.6 136.5 223 C136.5 220.5 137.5 218.5 140 215.5 Z" fill="#ffd166"/>
+    <circle cx="148" cy="208" r=".9" fill="#ffcf7a"/><circle cx="135" cy="204" r=".7" fill="#ffcf7a"/><circle cx="143" cy="199" r=".55" fill="#ffcf7a"/>
+
+    <!-- fox sitting -->
+    <g transform="translate(110 207)">
+      <path d="M8.5 22 C4 22 1.5 18 3 13.5 C4.2 10 7 8 10 8 L13 22 Z" fill="#f7a850"/>
+      <path d="M2.5 20 C-1 17.5 -1.5 13 1.5 11.5 C3.5 10.6 5.5 12 6 14.5 C6.5 17 5 20 2.5 20 Z" fill="#f08a3e"/>
+      <path d="M1 12.5 C2.2 11.6 3.8 12.3 4.5 13.8" stroke="#fff6e8" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+      <path d="M6 2 L8 -3.5 L11 0 Z" fill="#f08a3e"/>
+      <path d="M13.5 0 L16.5 -4 L18.5 1 Z" fill="#f08a3e"/>
+      <ellipse cx="12" cy="6" rx="7.2" ry="6.2" fill="#f7a850"/>
+      <ellipse cx="12.5" cy="8.8" rx="4.4" ry="3" fill="#fff6e8"/>
+      <circle cx="9.5" cy="5.2" r=".8" fill="#432b16"/><circle cx="15" cy="5.2" r=".8" fill="#432b16"/>
+      <path d="M11.5 7.6 L13.5 7.6 L12.5 9 Z" fill="#432b16"/>
+      <path d="M9 22 L16 22 C17.5 17 16.5 12.5 13 12 C10 11.6 8.5 15 9 22 Z" fill="#f7a850"/>
+      <path d="M11 22 L14.5 22 C15.2 18.5 14.6 15.5 12.8 15.3 C11.2 15.2 10.6 18 11 22 Z" fill="#fff6e8"/>
+    </g>
+
+    <!-- grass -->
+    <g stroke="#1d4a33" stroke-width=".8" stroke-linecap="round" fill="none" opacity=".9">
+      <path d="M30 288 q1-4 2.5-5 M34 289 q0-3.5 1.5-5.5 M156 290 q1-4 2.5-5 M162 288 q0-3.5 1.8-5 M70 290 q1-3.5 2.3-4.6 M186 286 q1-3.5 2.3-4.6"/>
+    </g>
   </svg>
 
-  <div style="position:absolute;top:26mm;left:0;right:0;text-align:center;">
-    <div style="font-size:11pt;letter-spacing:6px;color:#ffe07a;font-weight:700;">KIYOSATO CAMP 2026</div>
-    <div style="font-size:34pt;font-weight:900;margin-top:6mm;line-height:1.3;text-shadow:0 2px 12px rgba(0,0,0,.5);">
-      <ruby>星<rt>ほし</rt></ruby>のかけら<br>だいさくせん
+  <!-- title block -->
+  <div style="position:absolute;top:24mm;left:0;right:0;text-align:center;">
+    <div class="yus" style="font-size:10.5pt;letter-spacing:5.5px;color:#ffdf8a;">KIYOSATO CAMP 2026</div>
+    <div class="yus" style="font-size:37pt;margin-top:5mm;line-height:1.3;color:#fffdf2;text-shadow:0 0 6mm rgba(255,215,120,.5), 0 1.2mm 0 rgba(10,17,48,.9);">
+      <ruby>星<rt style="color:#ffd76e;">ほし</rt></ruby>のかけら<br>だいさくせん
     </div>
-    <div style="display:inline-block;margin-top:6mm;background:#ffcf3f;color:#12325e;font-size:12pt;font-weight:900;padding:2.5mm 8mm;border-radius:100px;">
-      <ruby>清里<rt>きよさと</rt></ruby><ruby>丘<rt>おか</rt></ruby>の<ruby>公園<rt>こうえん</rt></ruby>キャンプ<ruby>場<rt>じょう</rt></ruby>
+    <div class="yus" style="display:inline-block;margin-top:5.5mm;background:#ff8a52;color:#fff;font-size:10.5pt;padding:1.6mm 6mm;border-radius:100px;transform:rotate(-1.5deg);box-shadow:0 1mm 0 rgba(10,17,48,.5);">
+      すう<ruby>年<rt>ねん</rt></ruby>に1<ruby>度<rt>ど</rt></ruby>の「<ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>の あたり<ruby>年<rt>どし</rt></ruby>」に いく！
     </div>
-    <div style="margin-top:4mm;font-size:13pt;font-weight:700;">2026<ruby>年<rt>ねん</rt></ruby> 8<ruby>月<rt>がつ</rt></ruby>12<ruby>日<rt>にち</rt></ruby>（<ruby>水<rt>すい</rt></ruby>）〜 14<ruby>日<rt>にち</rt></ruby>（<ruby>金<rt>きん</rt></ruby>）　2<ruby>泊<rt>はく</rt></ruby>3<ruby>日<rt>か</rt></ruby></div>
-  </div>
-
-  <!-- three highlight badges -->
-  <div style="position:absolute;top:118mm;left:16mm;right:16mm;display:flex;gap:4mm;">
-    <div style="flex:1;background:rgba(255,255,255,.13);border:1.5px solid rgba(255,255,255,.4);border-radius:4mm;padding:4mm 3mm;text-align:center;">
-      <svg width="14mm" height="14mm" viewBox="0 0 40 40" style="display:block;margin:0 auto 2mm;">
-        <path d="M20 4 l4.6 9.4 10.4 1.5 -7.5 7.3 1.8 10.3 -9.3-4.9 -9.3 4.9 1.8-10.3 -7.5-7.3 10.4-1.5 Z" fill="#ffd66b"/>
-      </svg>
-      <div style="font-size:11pt;font-weight:900;color:#ffe07a;"><ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby></div>
-      <div style="font-size:9pt;margin-top:1.5mm;line-height:1.5;"><ruby>今年<rt>ことし</rt></ruby>いちばんの<br><ruby>当<rt>あ</rt></ruby>たり<ruby>年<rt>どし</rt></ruby>！</div>
-    </div>
-    <div style="flex:1;background:rgba(255,255,255,.13);border:1.5px solid rgba(255,255,255,.4);border-radius:4mm;padding:4mm 3mm;text-align:center;">
-      <svg width="14mm" height="14mm" viewBox="0 0 40 40" style="display:block;margin:0 auto 2mm;">
-        <path d="M6 32 L20 8 L34 32 Z" fill="#8fe0b0"/>
-        <path d="M20 8 L20 32" stroke="#2e7d5b" stroke-width="1.6"/>
-        <path d="M15 32 L20 19 L25 32 Z" fill="#1b4d3a"/>
-      </svg>
-      <div style="font-size:11pt;font-weight:900;color:#8fe0b0;"><ruby>標高<rt>ひょうこう</rt></ruby>1200m</div>
-      <div style="font-size:9pt;margin-top:1.5mm;line-height:1.5;"><ruby>東京<rt>とうきょう</rt></ruby>より<br>やく7℃ すずしい</div>
-    </div>
-    <div style="flex:1;background:rgba(255,255,255,.13);border:1.5px solid rgba(255,255,255,.4);border-radius:4mm;padding:4mm 3mm;text-align:center;">
-      <svg width="14mm" height="14mm" viewBox="0 0 40 40" style="display:block;margin:0 auto 2mm;">
-        <path d="M20 33 a13 13 0 1 1 0.01 0" fill="none" stroke="#a8d8f5" stroke-width="2.4"/>
-        <path d="M20 33 L20 20" stroke="#a8d8f5" stroke-width="2.4" stroke-linecap="round"/>
-        <ellipse cx="20" cy="15" rx="11" ry="5.5" fill="#a8d8f5" opacity=".55"/>
-      </svg>
-      <div style="font-size:11pt;font-weight:900;color:#a8d8f5;"><ruby>宇宙<rt>うちゅう</rt></ruby>の<ruby>耳<rt>みみ</rt></ruby></div>
-      <div style="font-size:9pt;margin-top:1.5mm;line-height:1.5;">45mの<ruby>望遠鏡<rt>ぼうえんきょう</rt></ruby><br>くるまで20<ruby>分<rt>ぷん</rt></ruby></div>
+    <!-- ticket -->
+    <div style="position:relative;width:132mm;margin:6mm auto 0;background:#fff8e6;border-radius:3mm;padding:3.5mm 8mm;color:#4a3728;">
+      <div style="position:absolute;inset:1.6mm;border:1.6px dashed #c9a96a;border-radius:2mm;"></div>
+      <div style="position:absolute;left:-4mm;top:50%;width:8mm;height:8mm;border-radius:50%;background:#1c3260;transform:translateY(-50%);"></div>
+      <div style="position:absolute;right:-4mm;top:50%;width:8mm;height:8mm;border-radius:50%;background:#1c3260;transform:translateY(-50%);"></div>
+      <div class="yus" style="font-size:12.5pt;position:relative;">
+        2026.8.12<span style="font-size:9pt;">（<ruby>水<rt>すい</rt></ruby>）</span> → 8.14<span style="font-size:9pt;">（<ruby>金<rt>きん</rt></ruby>）</span>　2<ruby>泊<rt>はく</rt></ruby>3<ruby>日<rt>か</rt></ruby>
+      </div>
+      <div style="font-family:'ZenMaru';font-weight:700;font-size:10.5pt;margin-top:1mm;position:relative;">
+        <ruby>清里<rt>きよさと</rt></ruby><ruby>丘<rt>おか</rt></ruby>の<ruby>公園<rt>こうえん</rt></ruby>キャンプ<ruby>場<rt>じょう</rt></ruby><span style="font-size:8.5pt;color:#8d7a5f;">（<ruby>山梨県<rt>やまなしけん</rt></ruby>・<ruby>標高<rt>ひょうこう</rt></ruby>1,200m）</span>
+      </div>
     </div>
   </div>
 
-  <div style="position:absolute;bottom:16mm;left:20mm;right:20mm;background:rgba(255,255,255,.95);color:#12325e;border-radius:5mm;padding:6mm 7mm;">
-    <div style="font-size:10pt;font-weight:900;color:#c8801a;letter-spacing:2px;margin-bottom:3mm;">たんけんたい いんしょう</div>
-    <div style="font-size:12pt;font-weight:900;border-bottom:2.5px dotted #12496b;padding-bottom:3mm;margin-bottom:3.5mm;">
-      なまえ　<span style="font-weight:400;">　　　　　　　　　　　　　　　　　　　</span>
+  <!-- passport card -->
+  <div style="position:absolute;bottom:13mm;left:24mm;right:24mm;background:#fff8e6;border-radius:4mm;padding:5mm 6mm 4.5mm;color:#4a3728;box-shadow:0 2mm 5mm rgba(0,0,0,.35);transform:rotate(-.6deg);font-family:'ZenMaru';">
+    <div class="tape tp-y" style="left:22%;"></div>
+    <div class="tape tp-s" style="left:80%;transform:translateX(-50%) rotate(3deg);"></div>
+    <div style="display:flex;gap:5mm;align-items:center;">
+      <div style="flex:0 0 auto;width:22mm;height:22mm;border-radius:50%;background:#fdefd0;border:2px solid #e0b850;display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 64 64" width="66">
+          <path d="M8 26 L13 6 L26 17 Z" fill="#ef8f3e"/><path d="M11.5 20.5 L14 11 L20.5 16.5 Z" fill="#7e4a20"/>
+          <path d="M56 26 L51 6 L38 17 Z" fill="#ef8f3e"/><path d="M52.5 20.5 L50 11 L43.5 16.5 Z" fill="#7e4a20"/>
+          <ellipse cx="32" cy="34" rx="24" ry="21" fill="#f7a850"/>
+          <path d="M32 40 C40 40 47 44 47 49 C47 54 40 55 32 55 C24 55 17 54 17 49 C17 44 24 40 32 40 Z" fill="#fff6e8"/>
+          <circle cx="23" cy="31" r="2.6" fill="#432b16"/><circle cx="41" cy="31" r="2.6" fill="#432b16"/>
+          <circle cx="24" cy="30" r=".9" fill="#fff"/><circle cx="42" cy="30" r=".9" fill="#fff"/>
+          <path d="M29 41 L35 41 L32 45 Z" fill="#432b16"/>
+          <path d="M32 45 C32 48 29 49 27 48 M32 45 C32 48 35 49 37 48" stroke="#432b16" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <ellipse cx="15" cy="38" rx="4" ry="2.5" fill="#ff9d9d" opacity=".7"/><ellipse cx="49" cy="38" rx="4" ry="2.5" fill="#ff9d9d" opacity=".7"/>
+          <path d="M18 51 C24 56 40 56 46 51 L44 59 C38 62 26 62 20 59 Z" fill="#e3554f"/>
+        </svg>
+      </div>
+      <div style="flex:1;">
+        <div class="yus" style="font-size:10pt;color:#c07b1a;letter-spacing:2px;">たんけんたい パスポート</div>
+        <div style="font-size:12pt;font-weight:900;border-bottom:2.5px dotted #8a6f4d;padding-bottom:2.2mm;margin-top:2mm;">
+          なまえ<span style="font-weight:500;">　　　　　　　　　　　　　　　</span>
+        </div>
+        <div style="display:flex;gap:5mm;font-size:10pt;font-weight:700;margin-top:2.2mm;">
+          <div>たいちょう：おとな3<ruby>人<rt>にん</rt></ruby></div>
+          <div>キャンプ <span class="yus" style="color:#e05a2a;font-size:15pt;">3</span> かいめ！</div>
+        </div>
+      </div>
     </div>
-    <div style="display:flex;gap:5mm;font-size:10.5pt;font-weight:700;">
-      <div style="flex:1;">たいちょう：おとな 3<ruby>人<rt>にん</rt></ruby></div>
-      <div style="flex:1;">キャンプ　<span style="color:#e07b00;font-size:16pt;">3</span>かいめ！</div>
-    </div>
-    <div style="margin-top:4mm;font-size:10pt;line-height:1.75;background:#fff4d6;border-radius:3mm;padding:3.5mm 4mm;">
-      <b>ミッション：</b>3<ruby>回目<rt>かいめ</rt></ruby>のキャンプで「<ruby>三<rt>み</rt></ruby>つ<ruby>星<rt>ぼし</rt></ruby>キャンパー」に なる。<br>
-      12ぜんぶの ミッションを クリアすると、さいごのページで <b>にんてい<ruby>証<rt>しょう</rt></ruby></b> が もらえるぞ！
+    <div style="margin-top:3mm;font-size:9.5pt;line-height:1.65;background:#fdf1cf;border-radius:2.5mm;padding:2.6mm 3.5mm;">
+      <b>ミッション：</b>12この ミッションを クリアして「<ruby>三<rt>み</rt></ruby>つ<ruby>星<rt>ぼし</rt></ruby>キャンパー」に なろう。さいごのページに <b>にんてい<ruby>証<rt>しょう</rt></ruby></b>が まっているぞ！
     </div>
   </div>
 </div>
 
 <!-- ============ P2 OVERVIEW ============ -->
 <div class="page kid">
-  <div class="ttl"><span class="num">PART 1</span>この3<ruby>日間<rt>かかん</rt></ruby>は、なにが すごい？</div>
+  <div class="kttl">
+    <div class="patch" style="background:#e0623c;"><span class="s">PART</span><span class="b">1</span></div>
+    <div class="big">この3<ruby>日間<rt>かかん</rt></ruby>は、<span class="hl">なにが すごい？</span></div>
+  </div>
 
-  <div class="box b-night" style="padding:5mm 6mm;">
-    <div style="font-size:10pt;color:#ffd66b;font-weight:900;letter-spacing:2px;">すごいこと ①</div>
-    <div style="font-size:17pt;font-weight:900;margin:2mm 0 3mm;">ペルセウス<ruby>座<rt>ざ</rt></ruby><ruby>流星群<rt>りゅうせいぐん</rt></ruby>が、<br>10<ruby>年<rt>ねん</rt></ruby>に<ruby>一度<rt>いちど</rt></ruby>の「<ruby>当<rt>あ</rt></ruby>たり<ruby>年<rt>どし</rt></ruby>」！</div>
-    <div style="font-size:11pt;line-height:1.75;">
+  <div class="fox-row">
+    <svg viewBox="0 0 64 64" width="52" style="flex:0 0 auto;">
+      <path d="M8 26 L13 6 L26 17 Z" fill="#ef8f3e"/><path d="M11.5 20.5 L14 11 L20.5 16.5 Z" fill="#7e4a20"/>
+      <path d="M56 26 L51 6 L38 17 Z" fill="#ef8f3e"/><path d="M52.5 20.5 L50 11 L43.5 16.5 Z" fill="#7e4a20"/>
+      <ellipse cx="32" cy="34" rx="24" ry="21" fill="#f7a850"/>
+      <path d="M32 40 C40 40 47 44 47 49 C47 54 40 55 32 55 C24 55 17 54 17 49 C17 44 24 40 32 40 Z" fill="#fff6e8"/>
+      <circle cx="23" cy="31" r="2.6" fill="#432b16"/><circle cx="41" cy="31" r="2.6" fill="#432b16"/>
+      <circle cx="24" cy="30" r=".9" fill="#fff"/><circle cx="42" cy="30" r=".9" fill="#fff"/>
+      <path d="M29 41 L35 41 L32 45 Z" fill="#432b16"/>
+      <path d="M32 45 C32 48 29 49 27 48 M32 45 C32 48 35 49 37 48" stroke="#432b16" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      <ellipse cx="15" cy="38" rx="4" ry="2.5" fill="#ff9d9d" opacity=".7"/><ellipse cx="49" cy="38" rx="4" ry="2.5" fill="#ff9d9d" opacity=".7"/>
+      <path d="M18 51 C24 56 40 56 46 51 L44 59 C38 62 26 62 20 59 Z" fill="#e3554f"/>
+    </svg>
+    <div class="bub">やあ！ ぼくは <b>ガイドの コンタ</b>。<ruby>清里<rt>きよさと</rt></ruby>の <ruby>森<rt>もり</rt></ruby>に すんでる キツネだよ。この <ruby>栞<rt>しおり</rt></ruby>で、きみの ぼうけんを あんないするね！</div>
+  </div>
+
+  <div class="card rL" style="background:#1b2450;border-color:#3a4a91;color:#fff;padding:4.5mm 5.5mm;">
+    <div class="tape tp-y" style="left:14%;"></div>
+    <div class="yus" style="font-size:9.5pt;color:#ffd66b;letter-spacing:2px;">すごいこと ①</div>
+    <div class="yus" style="font-size:16.5pt;margin:1.8mm 0 2.5mm;line-height:1.45;">ペルセウス<ruby>座<rt style="color:#aab6e8;">ざ</rt></ruby><ruby>流星群<rt style="color:#aab6e8;">りゅうせいぐん</rt></ruby>が、<br>10<ruby>年<rt style="color:#aab6e8;">ねん</rt></ruby>に<ruby>一度<rt style="color:#aab6e8;">いちど</rt></ruby>の「<span style="color:#ffd76e;"><ruby>当<rt>あ</rt></ruby>たり<ruby>年<rt>どし</rt></ruby></span>」！</div>
+    <div style="font-size:10.5pt;line-height:1.7;">
       8<ruby>月<rt>がつ</rt></ruby>13<ruby>日<rt>にち</rt></ruby>が いちばん <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>が おおい<ruby>日<rt>ひ</rt></ruby>（<ruby>極大<rt>きょくだい</rt></ruby>）。しかも おなじ<ruby>日<rt>ひ</rt></ruby>が <b style="color:#ffd66b;"><ruby>新月<rt>しんげつ</rt></ruby></b>＝<ruby>月<rt>つき</rt></ruby>あかりが ゼロ！<br>
       <b style="color:#ffd66b;">きみが キャンプしている まさに その<ruby>夜<rt>よる</rt></ruby></b>が、<ruby>今年<rt>ことし</rt></ruby>いちばんの チャンスなんだ。
     </div>
   </div>
 
-  <div class="box b-leaf">
-    <div style="font-size:10pt;color:#2f7d1f;font-weight:900;letter-spacing:2px;">すごいこと ②</div>
-    <div style="font-size:15pt;font-weight:900;margin:1.5mm 0 2mm;color:#256b18;">キャンプ<ruby>場<rt>じょう</rt></ruby>が「<ruby>空<rt>そら</rt></ruby>に ちかい」</div>
-    <div style="font-size:11pt;line-height:1.85;">
-      ここは <ruby>海<rt>うみ</rt></ruby>から やく <b>1,200メートル</b> も たかい ところ。<ruby>東京<rt>とうきょう</rt></ruby>タワー（333m）を <b>3こ<ruby>半<rt>はん</rt></ruby></b> つみあげた たかさだ。
-      たかい ところは すずしくて、<ruby>空気<rt>くうき</rt></ruby>が すんでいる。だから <ruby>星<rt>ほし</rt></ruby>が よく<ruby>見<rt>み</rt></ruby>える！
+  <div class="card rR" style="background:#eef8e8;border-color:#a5d391;">
+    <div class="tape tp-l" style="left:82%;transform:translateX(-50%) rotate(3deg);"></div>
+    <div class="yus" style="font-size:9.5pt;color:#3f8a2b;letter-spacing:2px;">すごいこと ②</div>
+    <div class="yus" style="font-size:14.5pt;margin:1.5mm 0 2mm;color:#2c6b1c;">キャンプ<ruby>場<rt>じょう</rt></ruby>が「<span class="hl"><ruby>空<rt>そら</rt></ruby>に ちかい</span>」</div>
+    <div style="font-size:10.5pt;line-height:1.7;">
+      ここは <ruby>海<rt>うみ</rt></ruby>から やく <b>1,200メートル</b>も たかい ところ。<ruby>東京<rt>とうきょう</rt></ruby>タワー（333m）を <b>3こ<ruby>半<rt>はん</rt></ruby></b> つみあげた たかさだ。たかい ところは すずしくて <ruby>空気<rt>くうき</rt></ruby>が すんでいる。だから <ruby>星<rt>ほし</rt></ruby>が よく<ruby>見<rt>み</rt></ruby>える！
     </div>
   </div>
 
-  <div class="box b-sun">
-    <div style="font-size:10pt;color:#a86a00;font-weight:900;letter-spacing:2px;">すごいこと ③</div>
-    <div style="font-size:15pt;font-weight:900;margin:1.5mm 0 2mm;color:#8a5500;">「<ruby>宇宙<rt>うちゅう</rt></ruby>の<ruby>耳<rt>みみ</rt></ruby>」が、くるまで20<ruby>分<rt>ぷん</rt></ruby></div>
-    <div style="font-size:11pt;line-height:1.85;">
-      おとなりの <ruby>野辺山<rt>のべやま</rt></ruby>には、<ruby>直径<rt>ちょっけい</rt></ruby><b>45メートル</b>の きょだいな <ruby>電波望遠鏡<rt>でんぱぼうえんきょう</rt></ruby>が ある。
-      <ruby>目<rt>め</rt></ruby>に <ruby>見<rt>み</rt></ruby>えない <ruby>光<rt>ひかり</rt></ruby>（<ruby>電波<rt>でんぱ</rt></ruby>）で、<ruby>星<rt>ほし</rt></ruby>が うまれる ばしょを しらべているんだ。しかも <b>タダで <ruby>見<rt>み</rt></ruby>られる！</b>
+  <div class="card rL" style="background:#fff3d4;border-color:#ecc35a;">
+    <div class="tape tp-c" style="left:20%;"></div>
+    <div class="yus" style="font-size:9.5pt;color:#b07510;letter-spacing:2px;">すごいこと ③</div>
+    <div class="yus" style="font-size:14.5pt;margin:1.5mm 0 2mm;color:#8a5500;">「<span class="hl"><ruby>宇宙<rt>うちゅう</rt></ruby>の<ruby>耳<rt>みみ</rt></ruby></span>」が、くるまで20<ruby>分<rt>ぷん</rt></ruby></div>
+    <div style="font-size:10.5pt;line-height:1.7;">
+      おとなりの <ruby>野辺山<rt>のべやま</rt></ruby>には、<ruby>直径<rt>ちょっけい</rt></ruby><b>45メートル</b>の きょだいな <ruby>電波望遠鏡<rt>でんぱぼうえんきょう</rt></ruby>が ある。<ruby>目<rt>め</rt></ruby>に <ruby>見<rt>み</rt></ruby>えない <ruby>光<rt>ひかり</rt></ruby>（<ruby>電波<rt>でんぱ</rt></ruby>）で <ruby>星<rt>ほし</rt></ruby>の うまれる ばしょを しらべているんだ。しかも <b>タダで <ruby>見<rt>み</rt></ruby>られる！</b>
     </div>
   </div>
 
-  <div class="box b-sky">
-    <h4 style="color:#0f5c8a;">3<ruby>日間<rt>かかん</rt></ruby>の ながれ</h4>
-    <table style="font-size:10pt;">
-      <tr>
-        <td class="k" style="background:#cfe6f5;">1日目<br>8/12（水）</td>
-        <td><b><ruby>森<rt>もり</rt></ruby>に すみかを つくる<ruby>日<rt>ひ</rt></ruby></b><br>いどう → せつえい → あそぶ → おふろ → たき<ruby>火<rt>び</rt></ruby> → ★<ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby></td>
-      </tr>
-      <tr>
-        <td class="k" style="background:#cfe6f5;">2日目<br>8/13（木）</td>
-        <td><b><ruby>宇宙<rt>うちゅう</rt></ruby>と ミルクの<ruby>日<rt>ひ</rt></ruby></b><br>★★<ruby>明<rt>あ</rt></ruby>けがたの<ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby> → <ruby>望遠鏡<rt>ぼうえんきょう</rt></ruby> → <ruby>牧場<rt>ぼくじょう</rt></ruby> → <ruby>川<rt>かわ</rt></ruby>か<ruby>牧場<rt>ぼくじょう</rt></ruby> → ★<ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby></td>
-      </tr>
-      <tr>
-        <td class="k" style="background:#cfe6f5;">3日目<br>8/14（金）</td>
-        <td><b>たからものを もって かえる<ruby>日<rt>ひ</rt></ruby></b><br>てっしゅう → メリーゴーラウンド → おうちへ</td>
-      </tr>
-    </table>
+  <div style="display:flex;gap:4mm;margin-bottom:5mm;">
+    <div class="card" style="flex:1;margin-bottom:0;padding:3mm 3.5mm;transform:rotate(-.8deg);">
+      <div class="yus" style="text-align:center;"><span style="display:inline-block;background:#5aa7d4;color:#fff;border-radius:100px;padding:.5mm 4mm;font-size:9.5pt;">DAY 1・8/12</span></div>
+      <div class="yus" style="font-size:11.5pt;text-align:center;margin:1.8mm 0 1.2mm;"><ruby>森<rt>もり</rt></ruby>に すみかを つくる<ruby>日<rt>ひ</rt></ruby></div>
+      <div style="font-size:9pt;line-height:1.6;text-align:center;color:#6b5a42;">いどう → せつえい → あそぶ<br>→ おふろ → たき<ruby>火<rt>び</rt></ruby> → ★<ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby></div>
+    </div>
+    <div class="card" style="flex:1;margin-bottom:0;padding:3mm 3.5mm;transform:rotate(.6deg);background:#fffbe8;border-color:#e8c85a;">
+      <div class="yus" style="text-align:center;"><span style="display:inline-block;background:#37407e;color:#fff;border-radius:100px;padding:.5mm 4mm;font-size:9.5pt;">DAY 2・8/13</span></div>
+      <div class="yus" style="font-size:11.5pt;text-align:center;margin:1.8mm 0 1.2mm;"><ruby>宇宙<rt>うちゅう</rt></ruby>と ミルクの<ruby>日<rt>ひ</rt></ruby></div>
+      <div style="font-size:9pt;line-height:1.6;text-align:center;color:#6b5a42;">★★<ruby>明<rt>あ</rt></ruby>けがたの<ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby> → <ruby>望遠鏡<rt>ぼうえんきょう</rt></ruby><br>→ <ruby>牧場<rt>ぼくじょう</rt></ruby> → ★<ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby></div>
+    </div>
+    <div class="card" style="flex:1;margin-bottom:0;padding:3mm 3.5mm;transform:rotate(-.5deg);">
+      <div class="yus" style="text-align:center;"><span style="display:inline-block;background:#63b552;color:#fff;border-radius:100px;padding:.5mm 4mm;font-size:9.5pt;">DAY 3・8/14</span></div>
+      <div class="yus" style="font-size:11.5pt;text-align:center;margin:1.8mm 0 1.2mm;">たからものを もってかえる<ruby>日<rt>ひ</rt></ruby></div>
+      <div style="font-size:9pt;line-height:1.6;text-align:center;color:#6b5a42;">てっしゅう → メリーゴーラウンド<br>→ おうちへ</div>
+    </div>
   </div>
 
-  <div class="box b-rose" style="margin-bottom:0;padding:3mm 5mm;">
-    <h4 style="color:#c2185b;">きみの リュックに <ruby>自分<rt>じぶん</rt></ruby>で つめる もの</h4>
-    <ul class="chk two" style="font-size:10pt;line-height:1.55;">
+  <div class="card rR" style="background:#fdeef3;border-color:#efa8bf;margin-bottom:0;padding:3.5mm 5mm;">
+    <div class="tape tp-s"></div>
+    <h4 style="color:#c2377b;">きみの リュックに <ruby>自分<rt>じぶん</rt></ruby>で つめる もの</h4>
+    <ul class="chk two" style="font-size:9.5pt;line-height:1.62;">
       <li>この <ruby>栞<rt>しおり</rt></ruby>（ぜったい！）</li>
       <li>えんぴつ・いろえんぴつ</li>
       <li>ぼうし</li>
@@ -242,139 +416,149 @@
     </ul>
   </div>
 
-  <div class="foot"><span>星のかけら だいさくせん / こども栞</span><span>2</span></div>
+  <div class="foot"><span>ほしのかけら だいさくせん * こども栞</span><span>- 2 -</span></div>
 </div>
 
 <!-- ============ P3 DAY1 ============ -->
 <div class="page kid">
-  <div class="ttl"><span class="num">DAY 1</span>8/12（<ruby>水<rt>すい</rt></ruby>）<ruby>森<rt>もり</rt></ruby>に すみかを つくる</div>
+  <div class="kttl">
+    <div class="patch" style="background:#4f9fce;"><span class="s">DAY</span><span class="b">1</span></div>
+    <div class="big">8/12（<ruby>水<rt>すい</rt></ruby>）<span class="hl"><ruby>森<rt>もり</rt></ruby>に すみかを つくる</span></div>
+  </div>
 
   <ul class="tl">
-    <li><span class="t">6:30</span><span class="d">おうちを しゅっぱつ！　<b>くるまの なかは「しりとり」か「<ruby>看板<rt>かんばん</rt></ruby>の <ruby>色<rt>いろ</rt></ruby>さがし」</b></span></li>
+    <li><span class="t">6:30</span><span class="d">おうちを しゅっぱつ！　<b>くるまの なかは「しりとり」か「<ruby>看板<rt>かんばん</rt></ruby>の<ruby>色<rt>いろ</rt></ruby>さがし」</b></span></li>
     <li><span class="t">11:00</span><span class="d"><ruby>山梨<rt>やまなし</rt></ruby>で かいだし（ひまわり<ruby>市場<rt>いちば</rt></ruby>）。<b>きみの しごと＝おやつを 1つ えらぶ</b></span></li>
     <li><span class="t food">12:00</span><span class="d">おひるごはん</span></li>
     <li><span class="t">13:00</span><span class="d"><b>チェックイン！</b>　ここから 2<ruby>泊<rt>はく</rt></ruby>の おうちづくり</span></li>
     <li><span class="t">13:15</span><span class="d">テントを たてる ＆ <b>ミッション①②</b>（<ruby>下<rt>した</rt></ruby>を <ruby>見<rt>み</rt></ruby>てね）</span></li>
-    <li><span class="t play">14:45</span><span class="d">パターゴルフ or <ruby>室内<rt>しつない</rt></ruby>あそび<ruby>場<rt>ば</rt></ruby>「SÖPÖ（ソポ）」で あそぶ<br><span style="font-size:9pt;color:#666;">※どちらも <b>16:00まで</b>。おわりの じかんに ちゅうい！</span></span></li>
+    <li><span class="t play">14:45</span><span class="d">パターゴルフ or <ruby>室内<rt>しつない</rt></ruby>あそび<ruby>場<rt>ば</rt></ruby>「SÖPÖ（ソポ）」<br><span class="why">※どちらも <b>16:00まで</b>。おわりの じかんに ちゅうい！</span></span></li>
     <li><span class="t">16:15</span><span class="d"><b>おんせん「<ruby>天女<rt>てんにょ</rt></ruby>の<ruby>湯<rt>ゆ</rt></ruby>」</b>　キャンプ<ruby>場<rt>じょう</rt></ruby>の となり</span></li>
     <li><span class="t food">17:30</span><span class="d">ばんごはん づくり。<b>ミッション③</b>：まきを はこべ！</span></li>
     <li><span class="t food">19:00</span><span class="d">たき<ruby>火<rt>び</rt></ruby> ＆ <b>マシュマロ</b>（やきすぎ ちゅうい）</span></li>
-    <li><span class="t night">20:00</span><span class="d"><ruby>長<rt>なが</rt></ruby>そで・ながズボン・くつしたに きがえる。<span style="color:#c0392b;font-weight:700;">よるは 18℃ぐらい！さむい！</span></span></li>
+    <li><span class="t night">20:00</span><span class="d"><ruby>長<rt>なが</rt></ruby>そで・ながズボン・くつしたに きがえる。<b>よるは 18℃ぐらい！さむい！</b></span></li>
     <li><span class="t night">20:30</span><span class="d"><b>★<ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby> だいさくせん <ruby>第<rt>だい</rt></ruby>1<ruby>部<rt>ぶ</rt></ruby>★</b>　レジャーシートに ねころんで <ruby>空<rt>そら</rt></ruby>を みる</span></li>
-    <li><span class="t night">21:30</span><span class="d">おやすみなさい。<span style="font-size:9pt;color:#666;">まわりの テントの <ruby>人<rt>ひと</rt></ruby>も ねているよ。こえは ちいさく。</span></span></li>
+    <li><span class="t night">21:30</span><span class="d">おやすみなさい。<span class="why">まわりの テントの <ruby>人<rt>ひと</rt></ruby>も ねているよ。こえは ちいさく。</span></span></li>
   </ul>
 
-  <div class="box b-rose" style="margin-top:4mm;">
-    <h4 style="color:#c2185b;">きょうの ミッション</h4>
+  <div class="card rL" style="background:#fdeef3;border-color:#efa8bf;margin-top:4.5mm;">
+    <div class="tape tp-c" style="left:12%;"></div>
+    <h4 style="color:#c2377b;">きょうの ミッション</h4>
     <div class="mis">
-      <div class="m"><span class="mno">① キャンプ場マップを つくれ</span><br>トイレ・<ruby>炊事場<rt>すいじば</rt></ruby>・<ruby>売店<rt>ばいてん</rt></ruby>・<ruby>灰<rt>はい</rt></ruby>すて<ruby>場<rt>ば</rt></ruby>が どこか、じぶんで あるいて さがす</div>
-      <div class="m"><span class="mno">② ペグを 5<ruby>本<rt>ほん</rt></ruby> うちこめ</span><br>おとなに ハンマーの もちかたを おそわってから！ ゆびに ちゅうい</div>
-      <div class="m"><span class="mno">③ まきを はこべ</span><br><ruby>軍手<rt>ぐんて</rt></ruby>を して、5<ruby>本<rt>ほん</rt></ruby>いじょう。とげに ちゅうい</div>
-      <div class="m"><span class="mno">④ <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>を 1つ みつけろ</span><br>これが できたら きょうは だいせいこう！</div>
+      <div class="m"><span class="mbadge">1</span><b>キャンプ<ruby>場<rt>じょう</rt></ruby>マップを つくれ</b><span class="stamp">クリア<br>スタンプ</span><br>トイレ・<ruby>炊事場<rt>すいじば</rt></ruby>・<ruby>売店<rt>ばいてん</rt></ruby>・<ruby>灰<rt>はい</rt></ruby>すて<ruby>場<rt>ば</rt></ruby>を じぶんの あしで さがす</div>
+      <div class="m"><span class="mbadge">2</span><b>ペグを 5<ruby>本<rt>ほん</rt></ruby> うちこめ</b><span class="stamp">クリア<br>スタンプ</span><br>ハンマーの もちかたを おそわってから！ ゆびに ちゅうい</div>
+      <div class="m"><span class="mbadge">3</span><b>まきを はこべ</b><span class="stamp">クリア<br>スタンプ</span><br><ruby>軍手<rt>ぐんて</rt></ruby>を して 5<ruby>本<rt>ほん</rt></ruby>いじょう。とげに ちゅうい</div>
+      <div class="m"><span class="mbadge">4</span><b><ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>を 1つ みつけろ</b><span class="stamp">クリア<br>スタンプ</span><br>できたら きょうは だいせいこう！</div>
     </div>
   </div>
 
   <div class="rec">
-    <div class="b-sky" style="flex:1;border:2px solid #79bde3;">
-      <b style="color:#0f5c8a;">きょうの てんき</b><br>
-      <span style="font-size:15pt;letter-spacing:4px;">☀　☁　☂　⚡</span><br>
-      <span style="font-size:10pt;">ひるの きおん　　　℃<br>よるの きおん　　　℃</span>
+    <div class="pol" style="flex:1;transform:rotate(-1.1deg);">
+      <div class="cap" style="color:#3f7ca8;">きょうの てんき</div>
+      <div style="font-size:14pt;letter-spacing:3.5px;">☀ ☁ ☂ ⚡</div>
+      <div style="font-size:9.5pt;margin-top:1.6mm;line-height:1.8;">ひる 　　　℃<br>よる 　　　℃</div>
     </div>
-    <div class="b-sun" style="flex:1.2;border:2px solid #f5c33b;">
-      <b style="color:#8a5500;">ばんごはん メニュー</b>
-      <div style="border-bottom:1.5px dotted #c8971a;height:5mm;"></div>
-      <div style="border-bottom:1.5px dotted #c8971a;height:5mm;"></div>
-      <div style="border-bottom:1.5px dotted #c8971a;height:5mm;"></div>
-      <div style="font-size:10pt;margin-top:1mm;">おいしさ ☆☆☆☆☆</div>
+    <div class="pol" style="flex:1.25;transform:rotate(.7deg);">
+      <div class="cap" style="color:#b06a10;">ばんごはん メニュー</div>
+      <div style="border-bottom:1.5px dotted #c9a96a;height:5.5mm;"></div>
+      <div style="border-bottom:1.5px dotted #c9a96a;height:5.5mm;"></div>
+      <div class="yus" style="font-size:9.5pt;margin-top:1.6mm;color:#8d7a5f;">おいしさ ☆☆☆☆☆</div>
     </div>
-    <div class="b-leaf" style="flex:1;border:2px solid #7cc46a;">
-      <b style="color:#2f7d1f;">きょうの <ruby>絵<rt>え</rt></ruby></b>
-      <div style="border:2px dashed #7cc46a;border-radius:2mm;height:22mm;margin-top:1.5mm;background:#fbfefa;"></div>
+    <div class="pol" style="flex:1;transform:rotate(-.6deg);">
+      <div class="cap" style="color:#3f8a2b;">きょうの <ruby>絵<rt>え</rt></ruby></div>
+      <div style="border:1.5px dashed #a5d391;border-radius:2mm;height:15mm;background:#fbfef8;"></div>
     </div>
   </div>
 
-  <div class="foot"><span>星のかけら だいさくせん / こども栞</span><span>3</span></div>
+  <div class="foot"><span>ほしのかけら だいさくせん * こども栞</span><span>- 3 -</span></div>
 </div>
 
 <!-- ============ P4 DAY2 ============ -->
 <div class="page kid">
-  <div class="ttl"><span class="num">DAY 2</span>8/13（<ruby>木<rt>もく</rt></ruby>）<ruby>宇宙<rt>うちゅう</rt></ruby>と ミルクの<ruby>日<rt>ひ</rt></ruby></div>
+  <div class="kttl">
+    <div class="patch" style="background:#37407e;"><span class="s">DAY</span><span class="b">2</span></div>
+    <div class="big">8/13（<ruby>木<rt>もく</rt></ruby>）<span class="hl"><ruby>宇宙<rt>うちゅう</rt></ruby>と ミルクの<ruby>日<rt>ひ</rt></ruby></span></div>
+  </div>
 
   <ul class="tl">
-    <li><span class="t night">3:30</span><span class="d"><b>★★ここが 1<ruby>年<rt>ねん</rt></ruby>で いちばんの チャンス ★★</b><br><ruby>夜<rt>よ</rt></ruby>あけまえは、<ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>が いちばん たくさん <ruby>飛<rt>と</rt></ruby>ぶ じかん。<span style="font-size:9pt;color:#666;">※ねむかったら むりしない</span></span></li>
+    <li><span class="t night">3:30</span><span class="d"><b>★★ここが 1<ruby>年<rt>ねん</rt></ruby>で いちばんの チャンス★★</b>　<ruby>夜<rt>よ</rt></ruby>あけまえは <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>が いちばん たくさん <ruby>飛<rt>と</rt></ruby>ぶ。<span class="why">※ねむかったら むりしない</span></span></li>
     <li><span class="t night">4:30</span><span class="d">もう<ruby>一度<rt>いちど</rt></ruby> ねる（<ruby>二度寝<rt>にどね</rt></ruby>も キャンプの たのしみ）</span></li>
     <li><span class="t">7:30</span><span class="d">おきる。<ruby>高原<rt>こうげん</rt></ruby>の あさは とりの こえだらけ。<b>なんしゅるい きこえる？</b></span></li>
     <li><span class="t food">8:00</span><span class="d">あさごはん（ホットサンド ＆ <ruby>清里<rt>きよさと</rt></ruby>の <ruby>牛乳<rt>ぎゅうにゅう</rt></ruby>）</span></li>
-    <li><span class="t">9:30</span><span class="d">くるまで <ruby>野辺山<rt>のべやま</rt></ruby>へ しゅっぱつ（やく20〜30<ruby>分<rt>ぷん</rt></ruby>）</span></li>
+    <li><span class="t">9:30</span><span class="d">くるまで <ruby>野辺山<rt>のべやま</rt></ruby>へ（やく20〜30<ruby>分<rt>ぷん</rt></ruby>）</span></li>
     <li><span class="t play">10:00</span><span class="d"><b><ruby>国立天文台<rt>こくりつてんもんだい</rt></ruby> <ruby>野辺山<rt>のべやま</rt></ruby></b>　45mの <ruby>電波望遠鏡<rt>でんぱぼうえんきょう</rt></ruby>。<b>むりょう</b></span></li>
-    <li><span class="t play">11:10</span><span class="d"><b>JR <ruby>鉄道<rt>てつどう</rt></ruby><ruby>最高<rt>さいこう</rt></ruby><ruby>地点<rt>ちてん</rt></ruby>（1,375m）</b>　<ruby>日本<rt>にほん</rt></ruby>で いちばん たかい <ruby>線路<rt>せんろ</rt></ruby>！</span></li>
-    <li><span class="t play">11:30</span><span class="d"><b><ruby>滝沢牧場<rt>たきざわぼくじょう</rt></ruby></b>　<ruby>牛<rt>うし</rt></ruby>の <ruby>乳<rt>ちち</rt></ruby>しぼり ＆ ソフトクリーム ＆ おひるごはん</span></li>
-    <li><span class="t play">13:30</span><span class="d"><b>きみが えらぶ ばん！</b>　Ａ）<ruby>吐竜<rt>どりゅう</rt></ruby>の<ruby>滝<rt>たき</rt></ruby>で <ruby>川<rt>かわ</rt></ruby>あそび（つめたい！）<br>　Ｂ）<ruby>清泉寮<rt>せいせんりょう</rt></ruby>の ソフトクリーム ＆ <ruby>八<rt>や</rt></ruby>ヶ<ruby>岳<rt>たけ</rt></ruby><ruby>自然<rt>しぜん</rt></ruby>ふれあいセンター</span></li>
+    <li><span class="t play">11:10</span><span class="d"><b>JR<ruby>鉄道<rt>てつどう</rt></ruby><ruby>最高地点<rt>さいこうちてん</rt></ruby>（1,375m）</b>　<ruby>日本<rt>にほん</rt></ruby>で いちばん たかい <ruby>線路<rt>せんろ</rt></ruby>！</span></li>
+    <li><span class="t play">11:30</span><span class="d"><b><ruby>滝沢牧場<rt>たきざわぼくじょう</rt></ruby></b>　<ruby>牛<rt>うし</rt></ruby>の<ruby>乳<rt>ちち</rt></ruby>しぼり ＆ ソフトクリーム ＆ おひるごはん</span></li>
+    <li><span class="t play">13:30</span><span class="d"><b>きみが えらぶ ばん！</b>　Ａ）<ruby>吐竜<rt>どりゅう</rt></ruby>の<ruby>滝<rt>たき</rt></ruby>で <ruby>川<rt>かわ</rt></ruby>あそび（つめたい！）<br>Ｂ）<ruby>清泉寮<rt>せいせんりょう</rt></ruby>の ソフトクリーム ＆ <ruby>自然<rt>しぜん</rt></ruby>ふれあいセンター</span></li>
     <li><span class="t">17:00</span><span class="d">おんせん「<ruby>天女<rt>てんにょ</rt></ruby>の<ruby>湯<rt>ゆ</rt></ruby>」</span></li>
     <li><span class="t food">18:30</span><span class="d">ばんごはん（きょうは ほんきの キャンプめし！）＋ たき<ruby>火<rt>び</rt></ruby></span></li>
     <li><span class="t night">20:00</span><span class="d"><b>★<ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby> だいさくせん <ruby>第<rt>だい</rt></ruby>2<ruby>部<rt>ぶ</rt></ruby>★</b>　きのうより たくさん みえるはず</span></li>
   </ul>
 
-  <div class="box b-rose" style="margin-top:3mm;">
-    <h4 style="color:#c2185b;">きょうの ミッション</h4>
+  <div class="card rR" style="background:#fdeef3;border-color:#efa8bf;margin-top:4mm;">
+    <div class="tape tp-l" style="left:85%;transform:translateX(-50%) rotate(4deg);"></div>
+    <h4 style="color:#c2377b;">きょうの ミッション</h4>
     <div class="mis">
-      <div class="m"><span class="mno">⑤ 45mの アンテナを <ruby>見上<rt>みあ</rt></ruby>げろ</span><br>まよこに たって、どれくらい 大きいか <ruby>体<rt>からだ</rt></ruby>で かんじる</div>
-      <div class="m"><span class="mno">⑥ 1,375mで <ruby>写真<rt>しゃしん</rt></ruby>を とれ</span><br><ruby>線路<rt>せんろ</rt></ruby>の <ruby>横<rt>よこ</rt></ruby>の しるしと いっしょに</div>
-      <div class="m"><span class="mno">⑦ <ruby>牛<rt>うし</rt></ruby>から ミルクを しぼれ</span><br>あたたかい？ つめたい？ さわった かんじを おぼえておく</div>
-      <div class="m"><span class="mno">⑧ <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>を 5つ みつけろ</span><br>2<ruby>日目<rt>かめ</rt></ruby>は レベルアップ！</div>
+      <div class="m"><span class="mbadge">5</span><b>45mの アンテナを <ruby>見上<rt>みあ</rt></ruby>げろ</b><span class="stamp">クリア<br>スタンプ</span><br>まよこに たって、大きさを <ruby>体<rt>からだ</rt></ruby>で かんじる</div>
+      <div class="m"><span class="mbadge">6</span><b>1,375mで <ruby>写真<rt>しゃしん</rt></ruby>を とれ</b><span class="stamp">クリア<br>スタンプ</span><br><ruby>線路<rt>せんろ</rt></ruby>の よこの しるしと いっしょに</div>
+      <div class="m"><span class="mbadge">7</span><b><ruby>牛<rt>うし</rt></ruby>から ミルクを しぼれ</b><span class="stamp">クリア<br>スタンプ</span><br>あたたかい？ つめたい？ かんじを おぼえておく</div>
+      <div class="m"><span class="mbadge">8</span><b><ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>を 5つ みつけろ</b><span class="stamp">クリア<br>スタンプ</span><br>2<ruby>日目<rt>かめ</rt></ruby>は レベルアップ！</div>
     </div>
   </div>
 
   <div class="rec">
-    <div class="b-sky" style="flex:1;border:2px solid #79bde3;">
-      <b style="color:#0f5c8a;">きょうの てんき</b><br>
-      <span style="font-size:15pt;letter-spacing:4px;">☀　☁　☂　⚡</span><br>
-      <span style="font-size:10pt;">ひるの きおん　　　℃<br>よるの きおん　　　℃</span>
+    <div class="pol" style="flex:1;transform:rotate(.9deg);">
+      <div class="cap" style="color:#3f7ca8;">きょうの てんき</div>
+      <div style="font-size:14pt;letter-spacing:3.5px;">☀ ☁ ☂ ⚡</div>
+      <div style="font-size:9.5pt;margin-top:1.6mm;line-height:1.8;">ひる 　　　℃<br>よる 　　　℃</div>
     </div>
-    <div class="b-sun" style="flex:1.2;border:2px solid #f5c33b;">
-      <b style="color:#8a5500;">ばんごはん メニュー</b>
-      <div style="border-bottom:1.5px dotted #c8971a;height:5mm;"></div>
-      <div style="border-bottom:1.5px dotted #c8971a;height:5mm;"></div>
-      <div style="border-bottom:1.5px dotted #c8971a;height:5mm;"></div>
-      <div style="font-size:10pt;margin-top:1mm;">おいしさ ☆☆☆☆☆</div>
+    <div class="pol" style="flex:1.25;transform:rotate(-.7deg);">
+      <div class="cap" style="color:#b06a10;">ばんごはん メニュー</div>
+      <div style="border-bottom:1.5px dotted #c9a96a;height:5.5mm;"></div>
+      <div style="border-bottom:1.5px dotted #c9a96a;height:5.5mm;"></div>
+      <div class="yus" style="font-size:9.5pt;margin-top:1.6mm;color:#8d7a5f;">おいしさ ☆☆☆☆☆</div>
     </div>
-    <div class="b-leaf" style="flex:1;border:2px solid #7cc46a;">
-      <b style="color:#2f7d1f;">きょうの <ruby>絵<rt>え</rt></ruby></b>
-      <div style="border:2px dashed #7cc46a;border-radius:2mm;height:22mm;margin-top:1.5mm;background:#fbfefa;"></div>
+    <div class="pol" style="flex:1;transform:rotate(.6deg);">
+      <div class="cap" style="color:#3f8a2b;">きょうの <ruby>絵<rt>え</rt></ruby></div>
+      <div style="border:1.5px dashed #a5d391;border-radius:2mm;height:15mm;background:#fbfef8;"></div>
     </div>
   </div>
 
-  <div class="foot"><span>星のかけら だいさくせん / こども栞</span><span>4</span></div>
+  <div class="foot"><span>ほしのかけら だいさくせん * こども栞</span><span>- 4 -</span></div>
 </div>
 
 <!-- ============ P5 DAY3 ============ -->
 <div class="page kid">
-  <div class="ttl"><span class="num">DAY 3</span>8/14（<ruby>金<rt>きん</rt></ruby>）たからものを もって かえる</div>
+  <div class="kttl">
+    <div class="patch" style="background:#5a9e48;"><span class="s">DAY</span><span class="b">3</span></div>
+    <div class="big">8/14（<ruby>金<rt>きん</rt></ruby>）<span class="hl">たからものを もって かえる</span></div>
+  </div>
 
   <ul class="tl">
     <li><span class="t">6:30</span><span class="d">おきる。<b>さいごの <ruby>朝<rt>あさ</rt></ruby>の <ruby>空気<rt>くうき</rt></ruby>を、おおきく すいこもう</b></span></li>
     <li><span class="t food">7:00</span><span class="d">あさごはん（のこりものを ぜんぶ たべきる！）</span></li>
     <li><span class="t">8:00</span><span class="d">てっしゅう スタート。<b>ミッション⑩⑪</b></span></li>
     <li><span class="t play">9:30</span><span class="d">さいごに もう<ruby>一<rt>いち</rt></ruby>あそび（<ruby>場内<rt>じょうない</rt></ruby>さんぽ or SÖPÖ）</span></li>
-    <li><span class="t">11:00</span><span class="d"><b>チェックアウト</b>　テントが あった ばしょに 「ありがとう」を いう</span></li>
+    <li><span class="t">11:00</span><span class="d"><b>チェックアウト</b>　テントが あった ばしょに「ありがとう」を いう</span></li>
     <li><span class="t play">11:15</span><span class="d"><b><ruby>萌木<rt>もえぎ</rt></ruby>の<ruby>村<rt>むら</rt></ruby> <ruby>森<rt>もり</rt></ruby>のメリーゴーラウンド</b>（1<ruby>回<rt>かい</rt></ruby>300<ruby>円<rt>えん</rt></ruby>）＋ おみやげ</span></li>
-    <li><span class="t">12:30</span><span class="d"><ruby>高速道路<rt>こうそくどうろ</rt></ruby>に のる。<span style="font-size:9pt;color:#c0392b;font-weight:700;">※じゅうたいの まえに ぬけるのが さくせん！</span></span></li>
+    <li><span class="t">12:30</span><span class="d"><ruby>高速道路<rt>こうそくどうろ</rt></ruby>に のる。<b>じゅうたいの まえに ぬけるのが さくせん！</b></span></li>
     <li><span class="t">15:00</span><span class="d">おうちに とうちゃく。<b>おつかれさま！</b></span></li>
   </ul>
 
-  <div class="box b-rose">
-    <h4 style="color:#c2185b;">さいごの ミッション</h4>
+  <div class="card rL" style="background:#fdeef3;border-color:#efa8bf;margin-top:4.5mm;">
+    <div class="tape tp-y" style="left:16%;"></div>
+    <h4 style="color:#c2377b;">さいごの ミッション</h4>
     <div class="mis">
-      <div class="m"><span class="mno">⑩ ゴミを わけて すてろ</span><br>もえるゴミ／かん／ビン／ペットボトル。ルールは うけつけで かくにん</div>
-      <div class="m"><span class="mno">⑪ 「<ruby>来<rt>き</rt></ruby>たときより きれいに」</span><br><ruby>小<rt>ちい</rt></ruby>さな ゴミも ひろう。これが <ruby>本物<rt>ほんもの</rt></ruby>の キャンパー</div>
-      <div class="m"><span class="mno">⑫ おみやげを じぶんで えらべ</span><br>だれに あげたいか かんがえて えらぶ</div>
-      <div class="m" style="border-color:#7cc46a;"><span class="mno" style="color:#3d8b2c;">＋ ボーナス</span><br>この<ruby>栞<rt>しおり</rt></ruby>の 「ぼうけん<ruby>日記<rt>にっき</rt></ruby>」を 3<ruby>日分<rt>にちぶん</rt></ruby> かく</div>
+      <div class="m"><span class="mbadge">10</span><b>ゴミを わけて すてろ</b><span class="stamp">クリア<br>スタンプ</span><br>もえるゴミ／かん／ビン／ペットボトル。ルールは うけつけで かくにん</div>
+      <div class="m"><span class="mbadge">11</span><b>「<ruby>来<rt>き</rt></ruby>たときより きれいに」</b><span class="stamp">クリア<br>スタンプ</span><br><ruby>小<rt>ちい</rt></ruby>さな ゴミも ひろう。これが <ruby>本物<rt>ほんもの</rt></ruby>の キャンパー</div>
+      <div class="m"><span class="mbadge">12</span><b>おみやげを じぶんで えらべ</b><span class="stamp">クリア<br>スタンプ</span><br>だれに あげたいか かんがえて えらぶ</div>
+      <div class="m" style="border-color:#8fce7e;"><span class="mbadge" style="background:#63b552;">＋</span><b>ボーナス</b><span class="stamp">クリア<br>スタンプ</span><br>「ぼうけん<ruby>日記<rt>にっき</rt></ruby>」を 3<ruby>日分<rt>にちぶん</rt></ruby> かく</div>
     </div>
   </div>
 
-  <div class="box b-sun">
-    <h4 style="color:#8a5500;">キャンプで しか できない こと リスト（できたら ☆をぬる）</h4>
-    <div class="two" style="font-size:11pt;line-height:2.15;">
+  <div class="card rR" style="background:#fff3d4;border-color:#ecc35a;">
+    <h4 style="color:#8a5500;">キャンプでしか できないこと（できたら ☆をぬる）</h4>
+    <div class="two" style="font-size:10pt;line-height:1.95;">
       ☆ <ruby>火<rt>ひ</rt></ruby>を つけるのを <ruby>手<rt>て</rt></ruby>つだう<br>
       ☆ <ruby>外<rt>そと</rt></ruby>で ごはんを たべる<br>
       ☆ <ruby>木<rt>き</rt></ruby>の みきを ぎゅっと だきしめる<br>
@@ -386,55 +570,76 @@
     </div>
   </div>
 
-  <div class="box b-sky" style="margin-bottom:0;">
-    <h4 style="color:#0f5c8a;">おみやげ メモ　—　だれに、なにを？</h4>
-    <table style="font-size:11pt;">
-      <tr><td class="k" style="background:#cfe6f5;width:38mm;">あげる <ruby>人<rt>ひと</rt></ruby></td><td class="k" style="background:#cfe6f5;">えらんだ もの</td></tr>
-      <tr><td style="height:8mm;"></td><td></td></tr>
-      <tr><td style="height:8mm;"></td><td></td></tr>
-      <tr><td style="height:8mm;"></td><td></td></tr>
+  <div class="card rL" style="background:#eaf4fb;border-color:#93c5e6;margin-bottom:0;">
+    <h4 style="color:#2c6d9c;">おみやげ メモ　—　だれに、なにを？</h4>
+    <table style="font-size:10.5pt;">
+      <tr><td class="k" style="width:38mm;">あげる <ruby>人<rt>ひと</rt></ruby></td><td class="k">えらんだ もの</td></tr>
+      <tr><td style="height:6.5mm;"></td><td></td></tr>
+      <tr><td style="height:6.5mm;"></td><td></td></tr>
+      <tr><td style="height:6.5mm;"></td><td></td></tr>
     </table>
   </div>
 
-  <div class="foot"><span>星のかけら だいさくせん / こども栞</span><span>5</span></div>
+  <div class="foot"><span>ほしのかけら だいさくせん * こども栞</span><span>- 5 -</span></div>
 </div>
 
-<!-- ============ P6 STARS ============ -->
-<div class="page kid" style="background:#101a3d;color:#fff;">
-  <div class="ttl" style="color:#ffe07a;border-color:#f5c33b;"><span class="num" style="background:#ffcf3f;color:#101a3d;">★</span><ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby> だいさくせん マニュアル</div>
+<!-- ============ P6 STAR MANUAL ============ -->
+<div class="page kid" style="background:#0f1836;background-image:none;color:#eef1ff;">
+  <svg width="100%" height="100%" viewBox="0 0 210 297" style="position:absolute;inset:0;" >
+    <g fill="#fff">
+      <circle cx="14" cy="14" r=".8" opacity=".8"/><circle cx="58" cy="8" r=".55" opacity=".6"/><circle cx="103" cy="16" r=".7" opacity=".7"/>
+      <circle cx="150" cy="9" r=".55" opacity=".6"/><circle cx="196" cy="15" r=".75" opacity=".7"/><circle cx="35" cy="30" r=".5" opacity=".5"/>
+      <circle cx="182" cy="34" r=".5" opacity=".5"/><circle cx="10" cy="150" r=".55" opacity=".45"/><circle cx="201" cy="160" r=".55" opacity=".45"/>
+      <circle cx="8" cy="240" r=".6" opacity=".5"/><circle cx="203" cy="250" r=".6" opacity=".5"/><circle cx="105" cy="291" r=".6" opacity=".5"/>
+      <circle cx="52" cy="288" r=".5" opacity=".4"/><circle cx="160" cy="290" r=".5" opacity=".4"/>
+    </g>
+    <g stroke="#fff" stroke-width=".45" stroke-linecap="round" opacity=".8">
+      <path d="M196 11.5 L196 18.5 M192.5 15 L199.5 15"/>
+      <path d="M14 10.5 L14 17.5 M10.5 14 L17.5 14"/>
+    </g>
+  </svg>
 
-  <div style="display:flex;gap:5mm;">
+  <div class="kttl" style="position:relative;">
+    <div class="patch" style="background:#e8b13c;color:#453113;"><span class="s">STAR</span><span class="b">★</span></div>
+    <div class="big" style="color:#ffe9a8;"><ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby> だいさくせん マニュアル</div>
+  </div>
+
+  <div style="display:flex;gap:5mm;position:relative;">
     <div style="flex:1.05;">
-      <div style="background:#1c2a5c;border:2px solid #4a5fa8;border-radius:4mm;padding:4mm 5mm;font-size:10.5pt;line-height:1.8;">
-        <div style="font-size:13pt;font-weight:900;color:#ffd66b;margin-bottom:2.5mm;">なぜ <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>が たくさん <ruby>飛<rt>と</rt></ruby>ぶの？</div>
-        「スイフト・タットル<ruby>彗星<rt>すいせい</rt></ruby>」という ほうきぼしが、<ruby>宇宙<rt>うちゅう</rt></ruby>に おとしていった <b>ちりの つぶ</b>の なかを、<ruby>地球<rt>ちきゅう</rt></ruby>が とおりぬける からだよ。<br><br>
-        つぶは <ruby>砂<rt>すな</rt></ruby>つぶ ぐらいの 大きさ。それが <ruby>秒速<rt>びょうそく</rt></ruby><b>やく60km</b>（マラソン42kmを 1<ruby>秒<rt>びょう</rt></ruby>で こえる はやさ！）で <ruby>空気<rt>くうき</rt></ruby>に ぶつかって、<ruby>光<rt>ひか</rt></ruby>って もえるんだ。<br><br>
-        つまり きみが <ruby>見<rt>み</rt></ruby>る <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>は、<b><ruby>何千年<rt>なんぜんねん</rt></ruby>も まえに ほうきぼしが おとした かけら</b>。だから この さくせんの なまえは「<ruby>星<rt>ほし</rt></ruby>のかけら だいさくせん」！
+      <div class="card" style="background:#1a2a5e;border-color:#41549e;box-shadow:0 1.5mm 0 rgba(0,0,0,.4);">
+        <h4 style="color:#ffd66b;">なぜ <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>が たくさん <ruby>飛<rt>と</rt></ruby>ぶの？</h4>
+        <div style="font-size:10pt;line-height:1.75;">
+          「スイフト・タットル<ruby>彗星<rt>すいせい</rt></ruby>」という ほうきぼしが <ruby>宇宙<rt>うちゅう</rt></ruby>に おとしていった <b style="color:#ffd66b;">ちりの つぶ</b>の なかを、<ruby>地球<rt>ちきゅう</rt></ruby>が とおりぬける からだよ。<br><br>
+          つぶは <ruby>砂<rt>すな</rt></ruby>つぶ ぐらい。それが <ruby>秒速<rt>びょうそく</rt></ruby><b style="color:#ffd66b;">やく60km</b>（マラソン42kmを 1<ruby>秒<rt>びょう</rt></ruby>で こえる はやさ！）で <ruby>空気<rt>くうき</rt></ruby>に ぶつかって、<ruby>光<rt>ひか</rt></ruby>って もえるんだ。<br><br>
+          つまり きみが <ruby>見<rt>み</rt></ruby>る <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>は、<b style="color:#ffd66b;"><ruby>何千年<rt>なんぜんねん</rt></ruby>も まえに ほうきぼしが おとした かけら</b>。だから「<ruby>星<rt>ほし</rt></ruby>のかけら だいさくせん」！
+        </div>
       </div>
 
-      <div style="background:#2a1c4a;border:2px solid #7a5fb8;border-radius:4mm;padding:4mm 5mm;margin-top:4mm;font-size:10.5pt;line-height:1.85;">
-        <div style="font-size:13pt;font-weight:900;color:#e3b8ff;margin-bottom:2.5mm;">みつけるための 6つの コツ</div>
-        <b>①</b> そとに <ruby>出<rt>で</rt></ruby>たら <b>15<ruby>分<rt>ふん</rt></ruby> まつ</b>。<ruby>目<rt>め</rt></ruby>が くらやみに なれると、<ruby>見<rt>み</rt></ruby>える<ruby>星<rt>ほし</rt></ruby>が どっと ふえる<br>
-        <b>②</b> スマホの <ruby>画面<rt>がめん</rt></ruby>を みない（<ruby>目<rt>め</rt></ruby>が リセットされちゃう）<br>
-        <b>③</b> ライトは <ruby>赤<rt>あか</rt></ruby>いセロファンを かぶせて、あしもとだけ<br>
-        <b>④</b> <b>ねころぶ</b>。<ruby>首<rt>くび</rt></ruby>が つかれないし、<ruby>空<rt>そら</rt></ruby>が ひろく <ruby>見<rt>み</rt></ruby>える<br>
-        <b>⑤</b> <ruby>一<rt>ひと</rt></ruby>つの ほうこうを じっと <ruby>見<rt>み</rt></ruby>ない。<b><ruby>空<rt>そら</rt></ruby>ぜんたいを ぼんやり</b> <ruby>見<rt>み</rt></ruby>る<br>
-        <b>⑥</b> あつぎする。うごかないと ものすごく さむい
+      <div class="card" style="background:#2c1e52;border-color:#7a5fb8;box-shadow:0 1.5mm 0 rgba(0,0,0,.4);">
+        <h4 style="color:#e3b8ff;">みつけるための 6つの コツ</h4>
+        <div style="font-size:10pt;line-height:1.8;">
+          <b>①</b> そとに <ruby>出<rt>で</rt></ruby>たら <b>15<ruby>分<rt>ふん</rt></ruby> まつ</b>。<ruby>目<rt>め</rt></ruby>が くらやみに なれると <ruby>星<rt>ほし</rt></ruby>が どっと ふえる<br>
+          <b>②</b> スマホの <ruby>画面<rt>がめん</rt></ruby>を みない（<ruby>目<rt>め</rt></ruby>が リセットされちゃう）<br>
+          <b>③</b> ライトは <ruby>赤<rt>あか</rt></ruby>いセロファンを かぶせて あしもとだけ<br>
+          <b>④</b> <b>ねころぶ</b>。<ruby>首<rt>くび</rt></ruby>が らくで <ruby>空<rt>そら</rt></ruby>が ひろく <ruby>見<rt>み</rt></ruby>える<br>
+          <b>⑤</b> <ruby>一<rt>ひと</rt></ruby>つを じっと <ruby>見<rt>み</rt></ruby>ない。<b><ruby>空<rt>そら</rt></ruby>ぜんたいを ぼんやり</b> <ruby>見<rt>み</rt></ruby>る<br>
+          <b>⑥</b> あつぎする。うごかないと ものすごく さむい
+        </div>
       </div>
 
-      <div style="background:#3a2410;border:2px solid #c8801a;border-radius:4mm;padding:4mm 5mm;margin-top:4mm;font-size:10.5pt;line-height:1.8;">
-        <div style="font-size:13pt;font-weight:900;color:#ffcf3f;margin-bottom:2.5mm;">だいじ！ どこを <ruby>見<rt>み</rt></ruby>ればいい？</div>
-        <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>は ペルセウス<ruby>座<rt>ざ</rt></ruby>（<ruby>北東<rt>ほくとう</rt></ruby>）から <ruby>放射状<rt>ほうしゃじょう</rt></ruby>に とんでくる。
-        でも <b>ペルセウス<ruby>座<rt>ざ</rt></ruby>を <ruby>見<rt>み</rt></ruby>つめる ひつようは ない！</b>
-        <ruby>空<rt>そら</rt></ruby>の どこにでも あらわれるから、いちばん <ruby>広<rt>ひろ</rt></ruby>く <ruby>空<rt>そら</rt></ruby>が <ruby>見<rt>み</rt></ruby>える ほうを ぼんやり <ruby>見<rt>み</rt></ruby>よう。
+      <div class="card" style="background:#3d2712;border-color:#c8801a;box-shadow:0 1.5mm 0 rgba(0,0,0,.4);margin-bottom:0;">
+        <h4 style="color:#ffcf3f;">だいじ！ どこを <ruby>見<rt>み</rt></ruby>ればいい？</h4>
+        <div style="font-size:10pt;line-height:1.75;">
+          <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>は ペルセウス<ruby>座<rt>ざ</rt></ruby>（<ruby>北東<rt>ほくとう</rt></ruby>）から <ruby>放射状<rt>ほうしゃじょう</rt></ruby>に とんでくる。でも <b style="color:#ffcf3f;">そこを <ruby>見<rt>み</rt></ruby>つめる ひつようは ない！</b> <ruby>空<rt>そら</rt></ruby>の どこにでも あらわれるから、いちばん <ruby>広<rt>ひろ</rt></ruby>く <ruby>見<rt>み</rt></ruby>える ほうを ぼんやり <ruby>見<rt>み</rt></ruby>よう。
+        </div>
       </div>
     </div>
 
     <div style="flex:0.95;">
-      <div style="background:#0a1128;border:2px solid #4a5fa8;border-radius:4mm;padding:3mm;">
-        <div style="font-size:11pt;font-weight:900;color:#ffd66b;text-align:center;margin-bottom:2mm;"><ruby>夏<rt>なつ</rt></ruby>の <ruby>大三角<rt>だいさんかく</rt></ruby>を さがそう</div>
+      <div class="card" style="background:#0a1128;border-color:#41549e;padding:3mm;box-shadow:0 1.5mm 0 rgba(0,0,0,.4);">
+        <div class="yus" style="font-size:11pt;color:#ffd66b;text-align:center;margin-bottom:2mm;"><ruby>夏<rt>なつ</rt></ruby>の <ruby>大三角<rt>だいさんかく</rt></ruby>を さがそう</div>
         <svg viewBox="0 0 100 118" width="100%">
-          <rect width="100" height="118" fill="#060b1d"/>
+          <rect width="100" height="118" fill="#060b1d" rx="3"/>
           <path d="M18 0 Q34 40 30 118 L52 118 Q54 44 40 0 Z" fill="#2a3566" opacity=".55"/>
           <path d="M30 26 L20 62 L58 52 Z" stroke="#ffd66b" stroke-width=".7" fill="none" stroke-dasharray="2 1.6"/>
           <circle cx="30" cy="26" r="2.4" fill="#fff"/><circle cx="30" cy="26" r="4.2" fill="#fff" opacity=".18"/>
@@ -459,119 +664,129 @@
         </svg>
       </div>
 
-      <div style="background:#12332a;border:2px solid #4a9b6a;border-radius:4mm;padding:4mm 5mm;margin-top:4mm;font-size:10.5pt;line-height:1.8;">
-        <div style="font-size:12.5pt;font-weight:900;color:#8fe0b0;margin-bottom:2mm;">よるの おやくそく</div>
-        ・ひとりで あるかない<br>
-        ・こえは ちいさく（みんな ねてる）<br>
-        ・ライトは <ruby>人<rt>ひと</rt></ruby>の テントに むけない<br>
-        ・さむく なったら すぐ いう<br>
-        ・トイレは かならず おとなと
+      <div class="card" style="background:#12332a;border-color:#4a9b6a;box-shadow:0 1.5mm 0 rgba(0,0,0,.4);">
+        <h4 style="color:#8fe0b0;">よるの おやくそく</h4>
+        <div style="font-size:10pt;line-height:1.8;">
+          ・ひとりで あるかない<br>
+          ・こえは ちいさく（みんな ねてる）<br>
+          ・ライトは <ruby>人<rt>ひと</rt></ruby>の テントに むけない<br>
+          ・さむく なったら すぐ いう<br>
+          ・トイレは かならず おとなと
+        </div>
       </div>
 
-      <div style="background:#3a1a26;border:2px solid #c05a75;border-radius:4mm;padding:4mm 5mm;margin-top:4mm;font-size:10.5pt;line-height:1.8;">
-        <div style="font-size:12.5pt;font-weight:900;color:#ffb0c4;margin-bottom:2mm;">しっぱいしない ために</div>
-        <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>は <b>ずっと <ruby>出<rt>で</rt></ruby>つづける わけじゃ ない</b>。
-        くらい ばしょでも <b>1<ruby>時間<rt>じかん</rt></ruby>に 35こ ぐらい</b>＝だいたい <b>2<ruby>分<rt>ふん</rt></ruby>に 1こ</b>。<br>
-        つまり「まつ じかん」が いちばん <ruby>長<rt>なが</rt></ruby>い。そこが おもしろい ところ！<br><br>
-        <b style="color:#ffb0c4;">くもって <ruby>見<rt>み</rt></ruby>えない ときは？</b><br>
-        だいじょうぶ。<ruby>夜<rt>よる</rt></ruby>は <b>2かい</b> ある。それでも ダメなら、たき<ruby>火<rt>び</rt></ruby>を <ruby>見<rt>み</rt></ruby>ながら <ruby>星<rt>ほし</rt></ruby>の はなしを しよう。
+      <div class="card" style="background:#3a1a26;border-color:#c05a75;box-shadow:0 1.5mm 0 rgba(0,0,0,.4);margin-bottom:0;">
+        <h4 style="color:#ffb0c4;">しっぱいしない ために</h4>
+        <div style="font-size:10pt;line-height:1.75;">
+          <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>は <b>ずっと <ruby>出<rt>で</rt></ruby>つづける わけじゃない</b>。くらい ばしょでも <b>1<ruby>時間<rt>じかん</rt></ruby>に 35こ</b>＝だいたい <b>2<ruby>分<rt>ふん</rt></ruby>に 1こ</b>。「まつ じかん」が いちばん <ruby>長<rt>なが</rt></ruby>い。そこが おもしろい ところ！<br><br>
+          <b style="color:#ffb0c4;">くもって <ruby>見<rt>み</rt></ruby>えない ときは？</b><br>
+          だいじょうぶ、<ruby>夜<rt>よる</rt></ruby>は <b>2かい</b> ある。それでも ダメなら たき<ruby>火<rt>び</rt></ruby>を <ruby>見<rt>み</rt></ruby>ながら <ruby>星<rt>ほし</rt></ruby>の はなしを しよう。
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="foot" style="color:#6b7aad;border-color:#2a3566;"><span>星のかけら だいさくせん / こども栞</span><span>6</span></div>
+  <div class="foot" style="color:#5f6ea6;border-color:#2a3566;"><span>ほしのかけら だいさくせん * こども栞</span><span>- 6 -</span></div>
 </div>
 
 <!-- ============ P7 COUNT SHEET ============ -->
 <div class="page kid">
-  <div class="ttl"><span class="num">RECORD</span><ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby> カウントシート</div>
-  <div class="lead" style="margin-bottom:4mm;">みつけたら 〇を 1つ ぬる。ぜんぶ ぬれたら…… きみは <b><ruby>星<rt>ほし</rt></ruby>のかけら ハンター</b>だ！</div>
-
-  <div class="box b-sky">
-    <h4 style="color:#0f5c8a;">① 8/12（<ruby>水<rt>すい</rt></ruby>）よる 20:30〜21:30　＜ウォーミングアップ＞</h4>
-    <svg viewBox="0 0 180 22" width="100%" height="19mm">
-      <g fill="none" stroke="#3d7ea6" stroke-width="1.1">
-        <circle cx="8" cy="7" r="5"/><circle cx="24" cy="7" r="5"/><circle cx="40" cy="7" r="5"/><circle cx="56" cy="7" r="5"/><circle cx="72" cy="7" r="5"/><circle cx="88" cy="7" r="5"/><circle cx="104" cy="7" r="5"/><circle cx="120" cy="7" r="5"/><circle cx="136" cy="7" r="5"/><circle cx="152" cy="7" r="5"/>
-        <circle cx="8" cy="18" r="5"/><circle cx="24" cy="18" r="5"/><circle cx="40" cy="18" r="5"/><circle cx="56" cy="18" r="5"/><circle cx="72" cy="18" r="5"/><circle cx="88" cy="18" r="5"/><circle cx="104" cy="18" r="5"/><circle cx="120" cy="18" r="5"/><circle cx="136" cy="18" r="5"/><circle cx="152" cy="18" r="5"/>
-      </g>
-    </svg>
+  <div class="kttl">
+    <div class="patch" style="background:#e8b13c;color:#453113;"><span class="s">RECORD</span><span class="b">★</span></div>
+    <div class="big"><ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby> <span class="hl">カウントシート</span></div>
   </div>
 
-  <div class="box b-night">
-    <h4 style="color:#ffd66b;">② 8/13（<ruby>木<rt>もく</rt></ruby>）あかつき 3:30〜4:30　★★ここが 1<ruby>年<rt>ねん</rt></ruby>で さいこう★★</h4>
-    <svg viewBox="0 0 180 34" width="100%" height="29mm">
-      <g fill="none" stroke="#ffd66b" stroke-width="1.1">
-        <circle cx="8" cy="7" r="5"/><circle cx="24" cy="7" r="5"/><circle cx="40" cy="7" r="5"/><circle cx="56" cy="7" r="5"/><circle cx="72" cy="7" r="5"/><circle cx="88" cy="7" r="5"/><circle cx="104" cy="7" r="5"/><circle cx="120" cy="7" r="5"/><circle cx="136" cy="7" r="5"/><circle cx="152" cy="7" r="5"/><circle cx="168" cy="7" r="5"/>
-        <circle cx="8" cy="18" r="5"/><circle cx="24" cy="18" r="5"/><circle cx="40" cy="18" r="5"/><circle cx="56" cy="18" r="5"/><circle cx="72" cy="18" r="5"/><circle cx="88" cy="18" r="5"/><circle cx="104" cy="18" r="5"/><circle cx="120" cy="18" r="5"/><circle cx="136" cy="18" r="5"/><circle cx="152" cy="18" r="5"/><circle cx="168" cy="18" r="5"/>
-        <circle cx="8" cy="29" r="5"/><circle cx="24" cy="29" r="5"/><circle cx="40" cy="29" r="5"/><circle cx="56" cy="29" r="5"/><circle cx="72" cy="29" r="5"/><circle cx="88" cy="29" r="5"/><circle cx="104" cy="29" r="5"/><circle cx="120" cy="29" r="5"/><circle cx="136" cy="29" r="5"/><circle cx="152" cy="29" r="5"/><circle cx="168" cy="29" r="5"/>
-      </g>
+  <div class="fox-row">
+    <svg viewBox="0 0 64 64" width="46" style="flex:0 0 auto;">
+      <path d="M8 26 L13 6 L26 17 Z" fill="#ef8f3e"/><path d="M11.5 20.5 L14 11 L20.5 16.5 Z" fill="#7e4a20"/>
+      <path d="M56 26 L51 6 L38 17 Z" fill="#ef8f3e"/><path d="M52.5 20.5 L50 11 L43.5 16.5 Z" fill="#7e4a20"/>
+      <ellipse cx="32" cy="34" rx="24" ry="21" fill="#f7a850"/>
+      <path d="M32 40 C40 40 47 44 47 49 C47 54 40 55 32 55 C24 55 17 54 17 49 C17 44 24 40 32 40 Z" fill="#fff6e8"/>
+      <circle cx="23" cy="31" r="2.6" fill="#432b16"/><circle cx="41" cy="31" r="2.6" fill="#432b16"/>
+      <circle cx="24" cy="30" r=".9" fill="#fff"/><circle cx="42" cy="30" r=".9" fill="#fff"/>
+      <path d="M29 41 L35 41 L32 45 Z" fill="#432b16"/>
+      <path d="M32 45 C32 48 29 49 27 48 M32 45 C32 48 35 49 37 48" stroke="#432b16" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      <ellipse cx="15" cy="38" rx="4" ry="2.5" fill="#ff9d9d" opacity=".7"/><ellipse cx="49" cy="38" rx="4" ry="2.5" fill="#ff9d9d" opacity=".7"/>
+      <path d="M18 51 C24 56 40 56 46 51 L44 59 C38 62 26 62 20 59 Z" fill="#e3554f"/>
     </svg>
+    <div class="bub">1つ みつけたら <ruby>星<rt>ほし</rt></ruby>を 1つ ぬろう。ぜんぶ ぬれたら…… きみは <b><ruby>星<rt>ほし</rt></ruby>のかけら ハンター</b>だ！</div>
   </div>
 
-  <div class="box b-leaf">
-    <h4 style="color:#2f7d1f;">③ 8/13（<ruby>木<rt>もく</rt></ruby>）よる 20:00〜21:30　＜ラストチャンス＞</h4>
-    <svg viewBox="0 0 180 22" width="100%" height="19mm">
-      <g fill="none" stroke="#4a9b3a" stroke-width="1.1">
-        <circle cx="8" cy="7" r="5"/><circle cx="24" cy="7" r="5"/><circle cx="40" cy="7" r="5"/><circle cx="56" cy="7" r="5"/><circle cx="72" cy="7" r="5"/><circle cx="88" cy="7" r="5"/><circle cx="104" cy="7" r="5"/><circle cx="120" cy="7" r="5"/><circle cx="136" cy="7" r="5"/><circle cx="152" cy="7" r="5"/>
-        <circle cx="8" cy="18" r="5"/><circle cx="24" cy="18" r="5"/><circle cx="40" cy="18" r="5"/><circle cx="56" cy="18" r="5"/><circle cx="72" cy="18" r="5"/><circle cx="88" cy="18" r="5"/><circle cx="104" cy="18" r="5"/><circle cx="120" cy="18" r="5"/><circle cx="136" cy="18" r="5"/><circle cx="152" cy="18" r="5"/>
-      </g>
-    </svg>
+  <div class="card rL" style="background:#eaf4fb;border-color:#93c5e6;padding:3.5mm 5mm;">
+    <div class="tape tp-s" style="left:15%;"></div>
+    <h4 style="color:#2c6d9c;">① 8/12（<ruby>水<rt>すい</rt></ruby>）よる 20:30〜21:30　＜ウォーミングアップ＞</h4>
+    <div style="font-family:'ZenMaru';font-size:19pt;letter-spacing:4.2px;line-height:1.5;color:#5aa7d4;">☆☆☆☆☆☆☆☆☆☆<br>☆☆☆☆☆☆☆☆☆☆</div>
   </div>
 
-  <div style="display:flex;gap:4mm;">
-    <div class="box b-sun" style="flex:1;margin-bottom:0;">
-      <h4 style="color:#8a5500;">いちばん すごかった <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>の <ruby>絵<rt>え</rt></ruby></h4>
-      <div style="height:48mm;border:2px dashed #d9a93a;border-radius:3mm;background:#fffdf0;"></div>
-      <div style="font-size:10pt;margin-top:2mm;">じかん：　　　　　　　　　いろ：</div>
+  <div class="card rR" style="background:#1b2450;border-color:#3a4a91;color:#fff;padding:3.5mm 5mm;">
+    <h4 style="color:#ffd66b;">② 8/13（<ruby>木<rt>もく</rt></ruby>）あかつき 3:30〜4:30　★★1<ruby>年<rt>ねん</rt></ruby>で さいこうの1<ruby>時間<rt>じかん</rt></ruby>★★</h4>
+    <div style="font-family:'ZenMaru';font-size:19pt;letter-spacing:4.2px;line-height:1.5;color:#ffd66b;">☆☆☆☆☆☆☆☆☆☆☆<br>☆☆☆☆☆☆☆☆☆☆☆<br>☆☆☆☆☆☆☆☆☆☆☆</div>
+  </div>
+
+  <div class="card rL" style="background:#eef8e8;border-color:#a5d391;padding:3.5mm 5mm;">
+    <h4 style="color:#3f8a2b;">③ 8/13（<ruby>木<rt>もく</rt></ruby>）よる 20:00〜21:30　＜ラストチャンス＞</h4>
+    <div style="font-family:'ZenMaru';font-size:19pt;letter-spacing:4.2px;line-height:1.5;color:#63b552;">☆☆☆☆☆☆☆☆☆☆<br>☆☆☆☆☆☆☆☆☆☆</div>
+  </div>
+
+  <div style="display:flex;gap:5mm;">
+    <div class="pol" style="flex:1;transform:rotate(-.9deg);margin-bottom:0;">
+      <div class="cap" style="color:#b06a10;">いちばん すごかった <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>の <ruby>絵<rt>え</rt></ruby></div>
+      <div style="height:42mm;border:1.5px dashed #d9a93a;border-radius:2mm;background:#fffdf0;"></div>
+      <div style="font-size:9.5pt;margin-top:2mm;">じかん：　　　　　　いろ：</div>
     </div>
-    <div class="box b-rose" style="flex:1;margin-bottom:0;">
-      <h4 style="color:#c2185b;">ねがいごと（3<ruby>回<rt>かい</rt></ruby> となえられた？）</h4>
-      <div style="font-size:11pt;line-height:3.0;">
-        1つめ　<span style="border-bottom:1.5px dotted #c2185b;display:inline-block;width:40mm;"></span><br>
-        2つめ　<span style="border-bottom:1.5px dotted #c2185b;display:inline-block;width:40mm;"></span><br>
-        3つめ　<span style="border-bottom:1.5px dotted #c2185b;display:inline-block;width:40mm;"></span>
+    <div class="card rR" style="flex:1;background:#fdeef3;border-color:#efa8bf;margin-bottom:0;">
+      <div class="tape tp-c" style="left:78%;transform:translateX(-50%) rotate(3deg);"></div>
+      <h4 style="color:#c2377b;">ねがいごと（3<ruby>回<rt>かい</rt></ruby> となえられた？）</h4>
+      <div style="font-size:10.5pt;line-height:2.9;">
+        1つめ　<span style="border-bottom:1.5px dotted #c2377b;display:inline-block;width:40mm;"></span><br>
+        2つめ　<span style="border-bottom:1.5px dotted #c2377b;display:inline-block;width:40mm;"></span><br>
+        3つめ　<span style="border-bottom:1.5px dotted #c2377b;display:inline-block;width:40mm;"></span>
       </div>
-      <div style="font-size:9.5pt;margin-top:3mm;line-height:1.7;color:#8a3a55;">
-        ※<ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>は 1<ruby>秒<rt>びょう</rt></ruby>くらいで きえちゃう。<ruby>先<rt>さき</rt></ruby>に ねがいごとを きめておくのが プロの わざ！
+      <div style="font-size:9pt;margin-top:2.5mm;line-height:1.65;color:#a04a6a;">
+        ※<ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>は 1<ruby>秒<rt>びょう</rt></ruby>で きえちゃう。<b><ruby>先<rt>さき</rt></ruby>に ねがいごとを きめておく</b>のが プロの わざ！
       </div>
     </div>
   </div>
 
-  <div class="foot"><span>星のかけら だいさくせん / こども栞</span><span>7</span></div>
+  <div class="foot"><span>ほしのかけら だいさくせん * こども栞</span><span>- 7 -</span></div>
 </div>
 
 <!-- ============ P8 BINGO + QUIZ ============ -->
 <div class="page kid">
-  <div class="ttl"><span class="num">GAME</span>いきものビンゴ ＆ キャンプクイズ</div>
+  <div class="kttl">
+    <div class="patch" style="background:#5a9e48;"><span class="s">GAME</span><span class="b">!!</span></div>
+    <div class="big">いきものビンゴ ＆ <span class="hl">キャンプクイズ</span></div>
+  </div>
 
   <div style="display:flex;gap:5mm;">
     <div style="flex:1;">
-      <div class="box b-leaf" style="margin-bottom:4mm;">
-        <h4 style="color:#2f7d1f;">みつけたら ぬる ビンゴ</h4>
-        <table style="text-align:center;table-layout:fixed;">
+      <div class="card rL" style="background:#eef8e8;border-color:#a5d391;">
+        <div class="tape tp-l" style="left:18%;"></div>
+        <h4 style="color:#3f8a2b;">みつけたら ぬる ビンゴ</h4>
+        <table style="text-align:center;table-layout:fixed;border-collapse:separate;border-spacing:1.3mm;font-size:9.5pt;">
           <tr>
-            <td style="height:18mm;">セミ<br><span style="font-size:8.5pt;color:#666;">なきごえでOK</span></td>
-            <td>トンボ</td>
-            <td>チョウ</td>
+            <td style="height:16mm;border:1.8px solid #8faf6d;border-radius:2mm;background:#fff;">セミ<br><span style="font-size:7.5pt;color:#8d7a5f;">なきごえでOK</span></td>
+            <td style="border:1.8px solid #8faf6d;border-radius:2mm;background:#f3fae8;">トンボ</td>
+            <td style="border:1.8px solid #8faf6d;border-radius:2mm;background:#fff;">チョウ</td>
           </tr>
           <tr>
-            <td>カブトムシ<br>orクワガタ</td>
-            <td style="background:#ffe9a8;font-weight:900;">★<br><ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby></td>
-            <td>キノコ<br><span style="font-size:8.5pt;color:#666;">さわらない</span></td>
+            <td style="height:16mm;border:1.8px solid #8faf6d;border-radius:2mm;background:#f3fae8;">カブトムシ<br>orクワガタ</td>
+            <td class="yus" style="border:2.2px solid #e8b13c;border-radius:2mm;background:#ffe9a8;font-size:10.5pt;">★<br><ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby></td>
+            <td style="border:1.8px solid #8faf6d;border-radius:2mm;background:#f3fae8;">キノコ<br><span style="font-size:7.5pt;color:#8d7a5f;">さわらない</span></td>
           </tr>
           <tr>
-            <td>リス or<br>シカ</td>
-            <td>カエル</td>
-            <td>キツツキ<br>の<ruby>音<rt>おと</rt></ruby></td>
+            <td style="height:16mm;border:1.8px solid #8faf6d;border-radius:2mm;background:#fff;">リス or<br>シカ</td>
+            <td style="border:1.8px solid #8faf6d;border-radius:2mm;background:#f3fae8;">カエル</td>
+            <td style="border:1.8px solid #8faf6d;border-radius:2mm;background:#fff;">キツツキ<br>の<ruby>音<rt>おと</rt></ruby></td>
           </tr>
         </table>
       </div>
 
-      <div class="box b-sky" style="margin-bottom:0;">
-        <h4 style="color:#0f5c8a;"><ruby>音<rt>おと</rt></ruby>さがし（<ruby>目<rt>め</rt></ruby>を とじて 3<ruby>分<rt>ぷん</rt></ruby>）</h4>
-        <ul class="chk" style="line-height:2.35;">
+      <div class="card rR" style="background:#eaf4fb;border-color:#93c5e6;margin-bottom:0;">
+        <h4 style="color:#2c6d9c;"><ruby>音<rt>おと</rt></ruby>さがし（<ruby>目<rt>め</rt></ruby>を とじて 3<ruby>分<rt>ぷん</rt></ruby>）</h4>
+        <ul class="chk" style="font-size:10pt;line-height:2.1;">
           <li>とりの こえ（なんしゅるい？　　しゅるい）</li>
-          <li><ruby>風<rt>かぜ</rt></ruby>で <ruby>木<rt>き</rt></ruby>の <ruby>葉<rt>は</rt></ruby>が ゆれる <ruby>音<rt>おと</rt></ruby></li>
+          <li><ruby>風<rt>かぜ</rt></ruby>で <ruby>木<rt>き</rt></ruby>の<ruby>葉<rt>は</rt></ruby>が ゆれる <ruby>音<rt>おと</rt></ruby></li>
           <li>まきが パチッと はぜる <ruby>音<rt>おと</rt></ruby></li>
           <li><ruby>虫<rt>むし</rt></ruby>の こえ</li>
           <li><ruby>川<rt>かわ</rt></ruby>か <ruby>水<rt>みず</rt></ruby>の <ruby>音<rt>おと</rt></ruby></li>
@@ -582,150 +797,156 @@
     </div>
 
     <div style="flex:1.05;">
-      <div class="box b-sun" style="margin-bottom:0;">
-        <h4 style="color:#8a5500;">キャンプ クイズ ６もん</h4>
-        <div style="font-size:10.5pt;line-height:1.75;">
-          <div style="margin-bottom:3.5mm;padding-bottom:3mm;border-bottom:1px dashed #d9a93a;">
-            <b>Q1.</b> <ruby>清里<rt>きよさと</rt></ruby>は <ruby>海<rt>うみ</rt></ruby>から どれくらい たかい？<br>
-            <span style="font-size:9.5pt;color:#8a5500;">A. やく1,200m。<ruby>東京<rt>とうきょう</rt></ruby>タワー3こ<ruby>半分<rt>はんぶん</rt></ruby>！</span>
+      <div class="card rR" style="background:#fff3d4;border-color:#ecc35a;margin-bottom:0;">
+        <div class="tape tp-y" style="left:80%;transform:translateX(-50%) rotate(3deg);"></div>
+        <h4 style="color:#8a5500;">キャンプ クイズ 6もん</h4>
+        <div style="font-size:9.8pt;line-height:1.68;">
+          <div style="margin-bottom:3.2mm;padding-bottom:2.8mm;border-bottom:1.5px dashed #d9a93a;">
+            <span class="yus" style="color:#e05a2a;">Q1.</span> <ruby>清里<rt>きよさと</rt></ruby>は <ruby>海<rt>うみ</rt></ruby>から どれくらい たかい？<br>
+            <span style="font-size:8.8pt;color:#8a5500;">A. やく1,200m。<ruby>東京<rt>とうきょう</rt></ruby>タワー3こ<ruby>半分<rt>はんぶん</rt></ruby>！</span>
           </div>
-          <div style="margin-bottom:3.5mm;padding-bottom:3mm;border-bottom:1px dashed #d9a93a;">
-            <b>Q2.</b> <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>の <ruby>正体<rt>しょうたい</rt></ruby>は なに？<br>
-            <span style="font-size:9.5pt;color:#8a5500;">A. ほうきぼしが おとした <ruby>砂<rt>すな</rt></ruby>つぶ。<ruby>星<rt>ほし</rt></ruby>そのものじゃ ない！</span>
+          <div style="margin-bottom:3.2mm;padding-bottom:2.8mm;border-bottom:1.5px dashed #d9a93a;">
+            <span class="yus" style="color:#e05a2a;">Q2.</span> <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>の <ruby>正体<rt>しょうたい</rt></ruby>は なに？<br>
+            <span style="font-size:8.8pt;color:#8a5500;">A. ほうきぼしが おとした <ruby>砂<rt>すな</rt></ruby>つぶ。<ruby>星<rt>ほし</rt></ruby>そのものじゃ ない！</span>
           </div>
-          <div style="margin-bottom:3.5mm;padding-bottom:3mm;border-bottom:1px dashed #d9a93a;">
-            <b>Q3.</b> どれくらいの はやさで <ruby>飛<rt>と</rt></ruby>んでくる？<br>
-            <span style="font-size:9.5pt;color:#8a5500;">A. <ruby>秒速<rt>びょうそく</rt></ruby>やく60km。マラソン(42km)を 1<ruby>秒<rt>びょう</rt></ruby>で こえる！</span>
+          <div style="margin-bottom:3.2mm;padding-bottom:2.8mm;border-bottom:1.5px dashed #d9a93a;">
+            <span class="yus" style="color:#e05a2a;">Q3.</span> どれくらいの はやさで <ruby>飛<rt>と</rt></ruby>んでくる？<br>
+            <span style="font-size:8.8pt;color:#8a5500;">A. <ruby>秒速<rt>びょうそく</rt></ruby>やく60km。マラソン(42km)を 1<ruby>秒<rt>びょう</rt></ruby>で こえる！</span>
           </div>
-          <div style="margin-bottom:3.5mm;padding-bottom:3mm;border-bottom:1px dashed #d9a93a;">
-            <b>Q4.</b> <ruby>牛<rt>うし</rt></ruby>の おっぱいは いくつ？<br>
-            <span style="font-size:9.5pt;color:#8a5500;">A. 4つ。しぼる<ruby>順番<rt>じゅんばん</rt></ruby>にも コツが あるよ</span>
+          <div style="margin-bottom:3.2mm;padding-bottom:2.8mm;border-bottom:1.5px dashed #d9a93a;">
+            <span class="yus" style="color:#e05a2a;">Q4.</span> <ruby>牛<rt>うし</rt></ruby>の おっぱいは いくつ？<br>
+            <span style="font-size:8.8pt;color:#8a5500;">A. 4つ。しぼる<ruby>順番<rt>じゅんばん</rt></ruby>にも コツが あるよ</span>
           </div>
-          <div style="margin-bottom:3.5mm;padding-bottom:3mm;border-bottom:1px dashed #d9a93a;">
-            <b>Q5.</b> 45mの アンテナは なにを <ruby>聞<rt>き</rt></ruby>いてる？<br>
-            <span style="font-size:9.5pt;color:#8a5500;">A. <ruby>宇宙<rt>うちゅう</rt></ruby>から とどく <ruby>電波<rt>でんぱ</rt></ruby>。<ruby>星<rt>ほし</rt></ruby>が うまれる ばしょが わかる</span>
+          <div style="margin-bottom:3.2mm;padding-bottom:2.8mm;border-bottom:1.5px dashed #d9a93a;">
+            <span class="yus" style="color:#e05a2a;">Q5.</span> 45mの アンテナは なにを <ruby>聞<rt>き</rt></ruby>いてる？<br>
+            <span style="font-size:8.8pt;color:#8a5500;">A. <ruby>宇宙<rt>うちゅう</rt></ruby>から とどく <ruby>電波<rt>でんぱ</rt></ruby>。<ruby>星<rt>ほし</rt></ruby>の うまれる ばしょが わかる</span>
           </div>
           <div>
-            <b>Q6.</b> たかい ばしょは なぜ すずしい？<br>
-            <span style="font-size:9.5pt;color:#8a5500;">A. 100m のぼると やく0.6℃ さがるから。<ruby>清里<rt>きよさと</rt></ruby>は <ruby>東京<rt>とうきょう</rt></ruby>より やく7℃ すずしい</span>
+            <span class="yus" style="color:#e05a2a;">Q6.</span> たかい ばしょは なぜ すずしい？<br>
+            <span style="font-size:8.8pt;color:#8a5500;">A. 100mで やく0.6℃ さがる。<ruby>清里<rt>きよさと</rt></ruby>は <ruby>東京<rt>とうきょう</rt></ruby>より やく7℃ すずしい</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="box b-rose" style="margin-top:4mm;margin-bottom:0;">
-    <h4 style="color:#c2185b;">おとなに チャレンジ！ キャンプ<ruby>係<rt>がかり</rt></ruby>に りっこうほ</h4>
-    <div style="font-size:11pt;line-height:1.95;">
-      「これは ぼく／わたしの しごと」と <ruby>宣言<rt>せんげん</rt></ruby>して、3<ruby>日間<rt>かかん</rt></ruby> やりきろう。3<ruby>回目<rt>かいめ</rt></ruby>の キャンプなら、もう できる！<br>
-      <b style="color:#c2185b;">えらべる かかり：</b>
-      ①<ruby>火<rt>ひ</rt></ruby>ばん（まき<ruby>運<rt>はこ</rt></ruby>び）　②<ruby>水<rt>みず</rt></ruby>ばん（<ruby>水<rt>みず</rt></ruby>くみ・<ruby>食器<rt>しょっき</rt></ruby>あらい）　③<ruby>光<rt>ひかり</rt></ruby>ばん（ランタン・ライト<ruby>管理<rt>かんり</rt></ruby>）　④<ruby>星<rt>ほし</rt></ruby>ばん（<ruby>天気<rt>てんき</rt></ruby>と <ruby>空<rt>そら</rt></ruby>の みはり）
-      <div style="margin-top:3.5mm;font-size:12pt;font-weight:900;">わたしの かかりは　<span style="border-bottom:2.5px dotted #c2185b;display:inline-block;width:55mm;"></span>　です！</div>
+  <div class="card rL" style="background:#fdeef3;border-color:#efa8bf;margin-top:4.5mm;margin-bottom:0;">
+    <h4 style="color:#c2377b;">おとなに チャレンジ！ キャンプ<ruby>係<rt>がかり</rt></ruby>に りっこうほ</h4>
+    <div style="font-size:10pt;line-height:1.8;">
+      「これは ぼく／わたしの しごと」と <ruby>宣言<rt>せんげん</rt></ruby>して 3<ruby>日間<rt>かかん</rt></ruby> やりきろう。3<ruby>回目<rt>かいめ</rt></ruby>なら もう できる！<br>
+      <span style="display:inline-block;margin:1.5mm 1mm 0 0;background:#fff;border:1.8px solid #e0623c;border-radius:100px;padding:.8mm 3.5mm;"><b style="color:#e0623c;"><ruby>火<rt>ひ</rt></ruby>ばん</b> まき<ruby>運<rt>はこ</rt></ruby>び</span>
+      <span style="display:inline-block;margin:1.5mm 1mm 0 0;background:#fff;border:1.8px solid #4f9fce;border-radius:100px;padding:.8mm 3.5mm;"><b style="color:#4f9fce;"><ruby>水<rt>みず</rt></ruby>ばん</b> <ruby>水<rt>みず</rt></ruby>くみ・<ruby>食器<rt>しょっき</rt></ruby>あらい</span>
+      <span style="display:inline-block;margin:1.5mm 1mm 0 0;background:#fff;border:1.8px solid #d9a93a;border-radius:100px;padding:.8mm 3.5mm;"><b style="color:#b07510;"><ruby>光<rt>ひかり</rt></ruby>ばん</b> ランタン<ruby>管理<rt>かんり</rt></ruby></span>
+      <span style="display:inline-block;margin:1.5mm 0 0 0;background:#fff;border:1.8px solid #7a5fb8;border-radius:100px;padding:.8mm 3.5mm;"><b style="color:#7a5fb8;"><ruby>星<rt>ほし</rt></ruby>ばん</b> <ruby>天気<rt>てんき</rt></ruby>と<ruby>空<rt>そら</rt></ruby>の みはり</span>
+      <div class="yus" style="margin-top:3mm;font-size:12.5pt;">わたしの かかりは　<span style="border-bottom:2.5px dotted #c2377b;display:inline-block;width:52mm;"></span>　です！</div>
     </div>
   </div>
 
-  <div class="box b-sun" style="margin-top:4mm;margin-bottom:0;padding:3mm 4mm;">
-    <h4 style="color:#8a5500;">おまけ：たき<ruby>火<rt>び</rt></ruby>マスターへの みち（<ruby>火<rt>ひ</rt></ruby>ばんの きみへ）</h4>
-    <div style="display:flex;gap:3mm;font-size:9.5pt;line-height:1.5;">
-      <div style="flex:1;background:#fffdf0;border-radius:2mm;padding:3mm;">
-        <b style="color:#e07b00;">STEP 1</b><br>
-        まきを <b>3しゅるい</b>に わける。<br>
-        ①ほそい（えんぴつ）<br>②ふつう（うでぐらい）<br>③ふとい（あしぐらい）
-      </div>
-      <div style="flex:1;background:#fffdf0;border-radius:2mm;padding:3mm;">
-        <b style="color:#e07b00;">STEP 2</b><br>
-        <b>ほそい まきから</b> ならべる。<br>ぎゅうぎゅうに つめない。<br><b><ruby>空気<rt>くうき</rt></ruby>の みちを あける</b>のが コツ！
-      </div>
-      <div style="flex:1;background:#fffdf0;border-radius:2mm;padding:3mm;">
-        <b style="color:#e07b00;">STEP 3</b><br>
-        <ruby>火<rt>ひ</rt></ruby>が ついたら <b>さわらない</b>。<br>けむいのは まきが しめってるか、<ruby>空気<rt>くうき</rt></ruby>が たりない しるし。
-      </div>
-      <div style="flex:1;background:#ffeaea;border-radius:2mm;padding:3mm;border:1.5px solid #e07b7b;">
-        <b style="color:#c0392b;">やくそく</b><br>
-        ・<ruby>火<rt>ひ</rt></ruby>に <ruby>水<rt>みず</rt></ruby>を いきなり かけない<br>
-        ・かおを ちかづけない<br>
-        ・<ruby>軍手<rt>ぐんて</rt></ruby>は <ruby>熱<rt>あつ</rt></ruby>い ものを つかむ ためじゃない
-      </div>
-    </div>
-  </div>
-
-  <div class="foot"><span>星のかけら だいさくせん / こども栞</span><span>8</span></div>
+  <div class="foot"><span>ほしのかけら だいさくせん * こども栞</span><span>- 8 -</span></div>
 </div>
 
 <!-- ============ P9 SAFETY + DIARY ============ -->
 <div class="page kid">
-  <div class="ttl"><span class="num">SAFETY</span>あんぜんの おやくそく 8か<ruby>条<rt>じょう</rt></ruby></div>
+  <div class="kttl">
+    <div class="patch" style="background:#d94f4f;"><span class="s">SAFETY</span><span class="b">8</span></div>
+    <div class="big">あんぜんの <span class="hl">おやくそく 8か<ruby>条<rt>じょう</rt></ruby></span></div>
+  </div>
 
-  <div class="box" style="border:2px solid #e07b7b;background:#fdf0f0;">
-    <div style="font-size:11pt;line-height:2.1;">
-      <b style="color:#c0392b;">1.</b> <ruby>火<rt>ひ</rt></ruby>の まわりは <b>あるく</b>。ぜったい はしらない。たき<ruby>火<rt>び</rt></ruby>から 1<ruby>歩<rt>ぽ</rt></ruby> さがって すわる<br>
-      <b style="color:#c0392b;">2.</b> テントの ロープは <b>またがない・とばない</b>（<ruby>夜<rt>よる</rt></ruby>は <ruby>見<rt>み</rt></ruby>えない！）<br>
-      <b style="color:#c0392b;">3.</b> くらく なったら <b>かならず おとなと いっしょ</b>。トイレも いっしょに<br>
-      <b style="color:#c0392b;">4.</b> ライトは <b>あしもと</b>を てらす。<ruby>人<rt>ひと</rt></ruby>の <ruby>顔<rt>かお</rt></ruby>や テントには むけない<br>
-      <b style="color:#c0392b;">5.</b> <b>ゴロゴロと <ruby>音<rt>おと</rt></ruby>が したら すぐ くるまか たてものへ！</b> かみなりは <ruby>木<rt>き</rt></ruby>の<ruby>下<rt>した</rt></ruby>が いちばん あぶない<br>
-      <b style="color:#c0392b;">6.</b> <ruby>川<rt>かわ</rt></ruby>では かかとベルトの ある サンダル。<ruby>深<rt>ふか</rt></ruby>いところに <ruby>行<rt>い</rt></ruby>かない<br>
-      <b style="color:#c0392b;">7.</b> きれいな <ruby>虫<rt>むし</rt></ruby>ほど さわらない。<ruby>草<rt>くさ</rt></ruby>むらは <ruby>長<rt>なが</rt></ruby>ズボンで<br>
-      <b style="color:#c0392b;">8.</b> はぐれたら <b>その<ruby>場<rt>ば</rt></ruby>で とまる</b>。うごかず、ふえを ふく（ふえは くびから さげる）
+  <div class="card rL" style="background:#fdf0f0;border-color:#e39a9a;">
+    <div class="tape tp-c" style="left:50%;"></div>
+    <div style="font-size:10.5pt;line-height:2.05;">
+      <span class="yus" style="color:#c0392b;">1.</span> <ruby>火<rt>ひ</rt></ruby>の まわりは <b>あるく</b>。ぜったい はしらない。たき<ruby>火<rt>び</rt></ruby>から 1<ruby>歩<rt>ぽ</rt></ruby> さがって すわる<br>
+      <span class="yus" style="color:#c0392b;">2.</span> テントの ロープは <b>またがない・とばない</b>（<ruby>夜<rt>よる</rt></ruby>は <ruby>見<rt>み</rt></ruby>えない！）<br>
+      <span class="yus" style="color:#c0392b;">3.</span> くらく なったら <b>かならず おとなと いっしょ</b>。トイレも いっしょに<br>
+      <span class="yus" style="color:#c0392b;">4.</span> ライトは <b>あしもと</b>を てらす。<ruby>人<rt>ひと</rt></ruby>の<ruby>顔<rt>かお</rt></ruby>や テントには むけない<br>
+      <span class="yus" style="color:#c0392b;">5.</span> <b>ゴロゴロと<ruby>音<rt>おと</rt></ruby>が したら すぐ くるまか たてものへ！</b> かみなりは <ruby>木<rt>き</rt></ruby>の<ruby>下<rt>した</rt></ruby>が いちばん あぶない<br>
+      <span class="yus" style="color:#c0392b;">6.</span> <ruby>川<rt>かわ</rt></ruby>では かかとベルトの ある サンダル。<ruby>深<rt>ふか</rt></ruby>いところに <ruby>行<rt>い</rt></ruby>かない<br>
+      <span class="yus" style="color:#c0392b;">7.</span> きれいな <ruby>虫<rt>むし</rt></ruby>ほど さわらない。<ruby>草<rt>くさ</rt></ruby>むらは <ruby>長<rt>なが</rt></ruby>ズボンで<br>
+      <span class="yus" style="color:#c0392b;">8.</span> はぐれたら <b>その<ruby>場<rt>ば</rt></ruby>で とまる</b>。うごかず ふえを ふく（ふえは くびから さげる）
     </div>
   </div>
 
-  <div class="ttl" style="font-size:18pt;margin-top:5mm;"><span class="num">DIARY</span>ぼうけん<ruby>日記<rt>にっき</rt></ruby></div>
-
-  <div style="display:flex;flex-direction:column;gap:4mm;">
-    <div style="border:2px solid #79bde3;border-radius:3mm;padding:3.5mm 4mm;background:#f4fafd;">
-      <div style="font-size:11pt;font-weight:900;color:#0f5c8a;">1<ruby>日目<rt>にちめ</rt></ruby> 8/12　いちばん たのしかったこと</div>
-      <div style="height:11mm;border-bottom:1.5px dotted #79bde3;margin-top:2.5mm;"></div>
-      <div style="height:11mm;border-bottom:1.5px dotted #79bde3;"></div>
-      <div style="height:11mm;border-bottom:1.5px dotted #79bde3;"></div>
-    </div>
-    <div style="border:2px solid #7cc46a;border-radius:3mm;padding:3.5mm 4mm;background:#f5fbf3;">
-      <div style="font-size:11pt;font-weight:900;color:#2f7d1f;">2<ruby>日目<rt>にちめ</rt></ruby> 8/13　みつけた <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>：　　　こ</div>
-      <div style="height:11mm;border-bottom:1.5px dotted #7cc46a;margin-top:2.5mm;"></div>
-      <div style="height:11mm;border-bottom:1.5px dotted #7cc46a;"></div>
-      <div style="height:11mm;border-bottom:1.5px dotted #7cc46a;"></div>
-    </div>
-    <div style="border:2px solid #f291ac;border-radius:3mm;padding:3.5mm 4mm;background:#fef6f8;">
-      <div style="font-size:11pt;font-weight:900;color:#c2185b;">3<ruby>日目<rt>にちめ</rt></ruby> 8/14　つぎの キャンプで やりたいこと</div>
-      <div style="height:11mm;border-bottom:1.5px dotted #f291ac;margin-top:2.5mm;"></div>
-      <div style="height:11mm;border-bottom:1.5px dotted #f291ac;"></div>
-      <div style="height:11mm;border-bottom:1.5px dotted #f291ac;"></div>
-    </div>
+  <div class="kttl" style="margin-top:6mm;">
+    <div class="patch" style="background:#4f9fce;width:17mm;height:17mm;"><span class="s">DIARY</span><span class="b">✎</span></div>
+    <div class="big">ぼうけん<ruby>日記<rt>にっき</rt></ruby></div>
   </div>
 
-  <div class="foot"><span>星のかけら だいさくせん / こども栞</span><span>9</span></div>
+  <div class="card rR" style="background:#eaf4fb;border-color:#93c5e6;padding:3.5mm 4.5mm;">
+    <div class="yus" style="font-size:11pt;color:#2c6d9c;">1<ruby>日目<rt>にちめ</rt></ruby> 8/12　いちばん たのしかったこと</div>
+    <div style="height:10.5mm;border-bottom:1.5px dotted #79bde3;margin-top:2mm;"></div>
+    <div style="height:10.5mm;border-bottom:1.5px dotted #79bde3;"></div>
+    <div style="height:10.5mm;border-bottom:1.5px dotted #79bde3;"></div>
+  </div>
+  <div class="card rL" style="background:#eef8e8;border-color:#a5d391;padding:3.5mm 4.5mm;">
+    <div class="yus" style="font-size:11pt;color:#3f8a2b;">2<ruby>日目<rt>にちめ</rt></ruby> 8/13　みつけた <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>：　　　こ</div>
+    <div style="height:10.5mm;border-bottom:1.5px dotted #8fce7e;margin-top:2mm;"></div>
+    <div style="height:10.5mm;border-bottom:1.5px dotted #8fce7e;"></div>
+    <div style="height:10.5mm;border-bottom:1.5px dotted #8fce7e;"></div>
+  </div>
+  <div class="card rR" style="background:#fdeef3;border-color:#efa8bf;padding:3.5mm 4.5mm;margin-bottom:0;">
+    <div class="yus" style="font-size:11pt;color:#c2377b;">3<ruby>日目<rt>にちめ</rt></ruby> 8/14　つぎの キャンプで やりたいこと</div>
+    <div style="height:10.5mm;border-bottom:1.5px dotted #f291ac;margin-top:2mm;"></div>
+    <div style="height:10.5mm;border-bottom:1.5px dotted #f291ac;"></div>
+    <div style="height:10.5mm;border-bottom:1.5px dotted #f291ac;"></div>
+  </div>
+
+  <div class="foot"><span>ほしのかけら だいさくせん * こども栞</span><span>- 9 -</span></div>
 </div>
 
 <!-- ============ P10 CERTIFICATE ============ -->
-<div class="page kid" style="background:#fffaf0;">
-  <div style="border:5px double #c8971a;border-radius:6mm;height:100%;padding:14mm 12mm;position:relative;background:linear-gradient(160deg,#fffdf5,#fff4d9);">
-    <div style="text-align:center;">
-      <div style="font-size:11pt;letter-spacing:8px;color:#a8791a;font-weight:700;">CERTIFICATE</div>
-      <div style="font-size:30pt;font-weight:900;color:#8a5a00;margin-top:6mm;">にんてい<ruby>証<rt>しょう</rt></ruby></div>
-      <div style="font-size:13pt;color:#a8791a;font-weight:700;margin-top:2mm;">みつぼし キャンパー</div>
+<div class="page kid" style="background-color:#fffaf0;background-image:repeating-conic-gradient(from -90deg at 50% 16%, rgba(255,205,110,.16) 0deg 6deg, rgba(255,205,110,0) 6deg 12deg);">
+  <div style="border:2.5px solid #c8971a;border-radius:5mm;height:100%;position:relative;padding:12mm 12mm;background:rgba(255,253,245,.6);">
+    <div style="position:absolute;inset:2mm;border:1.2px dashed #d9b45a;border-radius:4mm;"></div>
 
-      <svg width="46mm" height="46mm" viewBox="0 0 100 100" style="margin:8mm auto 0;display:block;">
-        <circle cx="50" cy="50" r="46" fill="#fff7e0" stroke="#c8971a" stroke-width="2.5"/>
-        <circle cx="50" cy="50" r="40" fill="none" stroke="#e0b850" stroke-width="1" stroke-dasharray="3 2"/>
-        <path d="M50 20 l6.6 13.4 14.8 2.2 -10.7 10.4 2.5 14.7 -13.2-6.9 -13.2 6.9 2.5-14.7 -10.7-10.4 14.8-2.2 Z" fill="#f5c33b" stroke="#c8971a" stroke-width="1"/>
-        <text x="50" y="80" text-anchor="middle" font-size="11" font-weight="bold" fill="#8a5a00">★ ★ ★</text>
+    <!-- corner stars -->
+    <svg viewBox="0 0 20 19" width="9mm" style="position:absolute;top:5mm;left:5mm;"><path d="M10 1.5 L12.6 7 L18.6 7.8 L14.2 12 L15.3 18 L10 15.1 L4.7 18 L5.8 12 L1.4 7.8 L7.4 7 Z" fill="#f5c33b"/></svg>
+    <svg viewBox="0 0 20 19" width="9mm" style="position:absolute;top:5mm;right:5mm;"><path d="M10 1.5 L12.6 7 L18.6 7.8 L14.2 12 L15.3 18 L10 15.1 L4.7 18 L5.8 12 L1.4 7.8 L7.4 7 Z" fill="#f5c33b"/></svg>
+    <svg viewBox="0 0 20 19" width="7mm" style="position:absolute;bottom:5mm;left:5mm;"><path d="M10 1.5 L12.6 7 L18.6 7.8 L14.2 12 L15.3 18 L10 15.1 L4.7 18 L5.8 12 L1.4 7.8 L7.4 7 Z" fill="#e8b13c"/></svg>
+    <svg viewBox="0 0 20 19" width="7mm" style="position:absolute;bottom:5mm;right:5mm;"><path d="M10 1.5 L12.6 7 L18.6 7.8 L14.2 12 L15.3 18 L10 15.1 L4.7 18 L5.8 12 L1.4 7.8 L7.4 7 Z" fill="#e8b13c"/></svg>
+
+    <div style="text-align:center;position:relative;">
+      <div class="yus" style="font-size:10.5pt;letter-spacing:7px;color:#b08a2a;">CERTIFICATE</div>
+      <div class="yus" style="font-size:31pt;color:#8a5a00;margin-top:4.5mm;">にんてい<ruby>証<rt>しょう</rt></ruby></div>
+      <div class="yus" style="font-size:13pt;color:#b08a2a;margin-top:1.5mm;">✦ みつぼし キャンパー ✦</div>
+
+      <!-- rosette medal -->
+      <svg width="44mm" height="52mm" viewBox="0 0 100 118" style="margin:5mm auto 0;display:block;">
+        <path d="M38 76 L30 112 L44 103 L50 116 L56 103 L70 112 L62 76 Z" fill="#e3554f"/>
+        <path d="M44 76 L40 104 L50 97 L60 104 L56 76 Z" fill="#c23e38"/>
+        <circle cx="50" cy="48" r="40" fill="#f9dc8e"/>
+        <circle cx="50" cy="48" r="40" fill="none" stroke="#c8971a" stroke-width="2.5"/>
+        <circle cx="50" cy="48" r="33.5" fill="#fff7e0" stroke="#e0b850" stroke-width="1" stroke-dasharray="3 2"/>
+        <path d="M50 22 l6.9 14 15.5 2.3 -11.2 10.9 2.6 15.4 -13.8-7.2 -13.8 7.2 2.6-15.4 -11.2-10.9 15.5-2.3 Z" fill="#f5c33b" stroke="#c8971a" stroke-width="1.2"/>
+        <text x="50" y="82" text-anchor="middle" font-size="10" font-weight="bold" fill="#8a5a00">★ ★ ★</text>
       </svg>
 
-      <div style="margin-top:8mm;font-size:16pt;font-weight:900;">
-        <span style="border-bottom:2.5px solid #c8971a;display:inline-block;min-width:90mm;padding-bottom:2mm;">&nbsp;</span>　どの
+      <div class="yus" style="margin-top:5.5mm;font-size:16pt;">
+        <span style="border-bottom:2.5px solid #c8971a;display:inline-block;min-width:88mm;padding-bottom:2mm;">&nbsp;</span>　どの
       </div>
 
-      <div style="margin-top:9mm;font-size:11.5pt;line-height:2.1;text-align:left;background:#fffdf5;border-radius:4mm;padding:6mm 8mm;border:1.5px solid #e0c98a;">
-        あなたは 2026<ruby>年<rt>ねん</rt></ruby>8<ruby>月<rt>がつ</rt></ruby>12<ruby>日<rt>にち</rt></ruby>から 14<ruby>日<rt>にち</rt></ruby>まで、<ruby>標高<rt>ひょうこう</rt></ruby>1,200mの <ruby>清里<rt>きよさと</rt></ruby><ruby>丘<rt>おか</rt></ruby>の<ruby>公園<rt>こうえん</rt></ruby>キャンプ<ruby>場<rt>じょう</rt></ruby>にて、<br>
-        <b>3<ruby>回目<rt>かいめ</rt></ruby>の キャンプ</b>を やりとげ、<br>
-        <b>ペルセウス<ruby>座<rt>ざ</rt></ruby><ruby>流星群<rt>りゅうせいぐん</rt></ruby>の「<ruby>当<rt>あ</rt></ruby>たり<ruby>年<rt>どし</rt></ruby>」</b>の <ruby>空<rt>そら</rt></ruby>を じぶんの <ruby>目<rt>め</rt></ruby>で <ruby>見<rt>み</rt></ruby>た ことを ここに <ruby>証明<rt>しょうめい</rt></ruby>します。<br><br>
-        <span style="font-size:10.5pt;color:#7a5a20;">
-        みつけた <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>：<span style="border-bottom:1.5px dotted #c8971a;display:inline-block;width:22mm;"></span> こ　／　クリアした ミッション：<span style="border-bottom:1.5px dotted #c8971a;display:inline-block;width:22mm;"></span> / 12
+      <div style="margin-top:6mm;font-size:11pt;line-height:2.05;text-align:left;background:#fffdf5;border-radius:4mm;padding:5mm 7mm;border:1.5px solid #e0c98a;">
+        あなたは 2026<ruby>年<rt>ねん</rt></ruby>8<ruby>月<rt>がつ</rt></ruby>12<ruby>日<rt>にち</rt></ruby>から 14<ruby>日<rt>にち</rt></ruby>まで、<ruby>標高<rt>ひょうこう</rt></ruby>1,200mの <ruby>清里<rt>きよさと</rt></ruby><ruby>丘<rt>おか</rt></ruby>の<ruby>公園<rt>こうえん</rt></ruby>キャンプ<ruby>場<rt>じょう</rt></ruby>にて <b>3<ruby>回目<rt>かいめ</rt></ruby>の キャンプ</b>を やりとげ、<b>ペルセウス<ruby>座<rt>ざ</rt></ruby><ruby>流星群<rt>りゅうせいぐん</rt></ruby>の「<ruby>当<rt>あ</rt></ruby>たり<ruby>年<rt>どし</rt></ruby>」</b>の <ruby>空<rt>そら</rt></ruby>を じぶんの <ruby>目<rt>め</rt></ruby>で <ruby>見<rt>み</rt></ruby>た ことを、ここに <ruby>証明<rt>しょうめい</rt></ruby>します。<br>
+        <span style="font-size:10pt;color:#7a5a20;">
+        みつけた <ruby>流<rt>なが</rt></ruby>れ<ruby>星<rt>ぼし</rt></ruby>：<span style="border-bottom:1.5px dotted #c8971a;display:inline-block;width:20mm;"></span> こ　／　クリアした ミッション：<span style="border-bottom:1.5px dotted #c8971a;display:inline-block;width:20mm;"></span> / 12
         </span>
       </div>
 
-      <div style="margin-top:9mm;font-size:11pt;display:flex;justify-content:space-between;padding:0 6mm;">
+      <div style="margin-top:6mm;font-size:10.5pt;display:flex;justify-content:space-between;align-items:flex-end;padding:0 4mm;">
         <div>2026<ruby>年<rt>ねん</rt></ruby> 8<ruby>月<rt>がつ</rt></ruby> 14<ruby>日<rt>にち</rt></ruby></div>
-        <div><ruby>清里<rt>きよさと</rt></ruby>ぼうけんたい　たいちょう　<span style="border-bottom:1.5px dotted #c8971a;display:inline-block;width:32mm;"></span> <span style="font-size:9pt;">㊞</span></div>
+        <div style="display:flex;align-items:center;gap:3mm;">
+          <div><ruby>清里<rt>きよさと</rt></ruby>ぼうけんたい たいちょう　<span style="border-bottom:1.5px dotted #c8971a;display:inline-block;width:28mm;"></span> <span style="font-size:9pt;">㊞</span></div>
+          <svg viewBox="0 0 64 64" width="44">
+            <path d="M8 26 L13 6 L26 17 Z" fill="#ef8f3e"/><path d="M11.5 20.5 L14 11 L20.5 16.5 Z" fill="#7e4a20"/>
+            <path d="M56 26 L51 6 L38 17 Z" fill="#ef8f3e"/><path d="M52.5 20.5 L50 11 L43.5 16.5 Z" fill="#7e4a20"/>
+            <ellipse cx="32" cy="34" rx="24" ry="21" fill="#f7a850"/>
+            <path d="M32 40 C40 40 47 44 47 49 C47 54 40 55 32 55 C24 55 17 54 17 49 C17 44 24 40 32 40 Z" fill="#fff6e8"/>
+            <path d="M20 30 C22 28 24 28 26 30 M38 30 C40 28 42 28 44 30" stroke="#432b16" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            <path d="M29 41 L35 41 L32 45 Z" fill="#432b16"/>
+            <path d="M32 45 C32 48 29 49.5 26.5 48.5 M32 45 C32 48 35 49.5 37.5 48.5" stroke="#432b16" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+            <ellipse cx="15" cy="38" rx="4" ry="2.5" fill="#ff9d9d" opacity=".7"/><ellipse cx="49" cy="38" rx="4" ry="2.5" fill="#ff9d9d" opacity=".7"/>
+            <path d="M18 51 C24 56 40 56 46 51 L44 59 C38 62 26 62 20 59 Z" fill="#e3554f"/>
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -768,7 +989,7 @@
         </table>
       </div>
 
-      <div class="box b-gray" style="margin-bottom:0;">
+      <div class="box b-gray" style="margin-top:4mm;margin-bottom:0;">
         <h4 style="color:#1d3557;">3回目だからこそ足す「一段上」</h4>
         <div style="font-size:8.8pt;line-height:1.6;">
           <b>①</b> <b>「係」を持たせる</b>（火・水・光・星）。責任を渡すと行動が変わる<br>
