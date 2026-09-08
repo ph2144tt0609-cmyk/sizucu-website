@@ -290,7 +290,7 @@
     </p>
     <div class="doc-target">
       <b>受付時間</b>：平日 9:00 – 18:00 ／ 土曜 9:00 – 13:00（日曜・祝日は休業）<br>
-      フォームは24時間受け付けています。通常は 2〜3 営業日以内に、お電話で折り返しご連絡いたします。
+      フォームは24時間受け付けています。通常は 2〜3 営業日以内に、お電話またはメールでご連絡いたします。
     </div>
 
     <!-- 店舗へのお問い合わせ -->
@@ -334,7 +334,7 @@
       <h2><span class="n">02</span>お問い合わせフォーム</h2>
       <p class="form-intro" id="form-use-note">
         患者さま・ご家族からのご相談、採用、薬局・法人向けの業務支援、取材のご依頼などを受け付けています。<br class="pc-only">
-        内容を確認のうえ、担当者よりお電話で折り返しご連絡いたします。
+        内容を確認のうえ、担当者よりお電話またはメールでご連絡いたします。
       </p>
 
       <div class="form-guidance">
@@ -409,6 +409,11 @@
         </div>
 
         <div class="form-group">
+          <label for="email">メールアドレス<span class="req">必須</span></label>
+          <input type="email" name="email" id="email" required autocomplete="email" inputmode="email" placeholder="example@example.com">
+        </div>
+
+        <div class="form-group">
           <label for="message">お問い合わせ内容<span class="req">必須</span></label>
           <textarea name="message" id="message" required aria-describedby="form-use-note form-urgent-note" placeholder="ご相談・ご質問の内容をご記入ください。&#10;店舗へのご相談は、処方せんの発行日やお薬の名前など、分かる範囲でご記入ください。"></textarea>
         </div>
@@ -425,7 +430,7 @@
         </button>
 
         <p class="form-note">
-          ※ 通常は 2〜3 営業日以内を目安に、お電話でご連絡いたします。<br class="pc-only">
+          ※ 通常は 2〜3 営業日以内を目安に、お電話またはメールでご連絡いたします。<br class="pc-only">
           ※ 営業・勧誘を目的とした送信はご遠慮ください。
         </p>
 
