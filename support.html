@@ -218,6 +218,18 @@
     .btn-primary { background: var(--meishi-navy); color: var(--white); }
     .btn-primary:hover { background: var(--c-green-deep); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(61,78,94,0.22); }
     .btn-primary svg { width: 15px; height: 15px; }
+    .btn-secondary { background: var(--white); color: var(--meishi-navy); border: 1px solid var(--meishi-navy-soft); }
+    .btn-secondary:hover { color: var(--white); }
+    /* 請求業務の説明の直後に置く、専用フォームへの入口 */
+    .form-cta { margin-top: 28px; text-align: center; }
+    .form-cta p { margin-top: 12px; font-size: 12.5px; line-height: 1.9; color: var(--ink-sub); }
+    /* 見出しとボタンの文字が語の途中で折れないようにする（スマホで「い」「合わせ」だけ次の行に落ちていた） */
+    .cta h2, .btn-primary, .form-cta p { word-break: auto-phrase; }
+    @media (max-width: 720px) {
+      .cta h2 { font-size: 19px; }
+      .btn-primary, .btn-tel { padding: 14px 20px; font-size: 13.5px; letter-spacing: 0.02em; }
+      .btn-primary { white-space: nowrap; }
+    }
     .btn-tel { background: var(--white); color: var(--meishi-navy); border: 1px solid var(--meishi-navy-soft); }
     .btn-tel:hover { background: var(--meishi-navy); color: var(--white); }
 
@@ -385,6 +397,13 @@
         <div class="price-scope">請求書の作成・発行から、請求・入金の消し込みまでを含みます。</div>
         <div class="price-note">※ 金額はあくまで目安です。施設数・ご利用人数・お引き受けする業務範囲によって変動します。<br>※ 正式なお見積り・税区分・回収スキームの詳細は、面談時に個別にご案内します。</div>
       </div>
+      <div class="form-cta">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSerkGddT3xFQO8XWIU1dvL6Ql13AQdizPGUrUxA-K4Y1MyZgQ/viewform" class="btn-primary" target="_blank" rel="noopener">
+          請求業務サポートのご相談フォーム
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <p>件数やいまの集金の流れを、お分かりになる範囲でお知らせください（5分ほど）。<br class="pc-only">患者さまのお名前など個人情報は入力しないでください。</p>
+      </div>
     </section>
 
     <!-- ============ Service 02 医薬品融通サポート ============ -->
@@ -496,8 +515,12 @@
       <h2>まずは、お気軽にご相談ください</h2>
       <p>請求・回収・在庫のどこにお困りかを伺うところから始めます。共に伴走いたしますので、一度ご相談ください。<br class="pc-only">詳細は面談時に個別にご案内します。</p>
       <div class="cta-btns">
-        <a href="contact.html" class="btn-primary">
-          お問い合わせフォームへ
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSerkGddT3xFQO8XWIU1dvL6Ql13AQdizPGUrUxA-K4Y1MyZgQ/viewform" class="btn-primary" target="_blank" rel="noopener">
+          請求業務のご相談フォーム
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="contact.html" class="btn-primary btn-secondary">
+          医薬品融通・その他のお問い合わせ
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         </a>
         <a href="tel:0559272311" class="btn-tel">お電話：055-927-2311</a>
