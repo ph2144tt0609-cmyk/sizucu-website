@@ -1397,6 +1397,14 @@
     }
     .company-history span {
       line-height: 1.75;
+      word-break: auto-phrase;
+    }
+    /* 「旧運営法人から事業承継」は小さな2行目に分け、途中で折れて「継）」だけ残るのを防ぐ */
+    .company-history small {
+      display: block;
+      font-size: 0.82em;
+      color: var(--ink-sub);
+      white-space: nowrap;
     }
 
     /* ========== FOOTER ========== */
@@ -2747,11 +2755,11 @@
               </li>
               <li>
                 <time datetime="2024-12-01">2024年12月1日</time>
-                <span>緑ヶ丘薬局の運営を開始（旧運営法人から事業承継）</span>
+                <span>緑ヶ丘薬局の運営を開始<small>旧運営法人から事業承継</small></span>
               </li>
               <li>
                 <time datetime="2025-10-01">2025年10月1日</time>
-                <span>鷹匠薬局 公園店の運営を開始（旧運営法人から事業承継）</span>
+                <span>鷹匠薬局 公園店の運営を開始<small>旧運営法人から事業承継</small></span>
               </li>
             </ol>
           </dd>
